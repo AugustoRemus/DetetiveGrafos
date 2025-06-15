@@ -42,7 +42,7 @@ func _init() -> void:
 func _physics_process(delta):
 	_move()
 	_animation()
-	
+	#play audio de passos
 	#botar um teste para o player nao conseguir sair do mapa
 	
 	player.move_and_slide()
