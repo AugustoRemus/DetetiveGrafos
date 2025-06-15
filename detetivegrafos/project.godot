@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DetetiveGrafos"
-run/main_scene="res://Scenes/DebugTeste/start.tscn"
+run/main_scene="uid://cbqdr3clwff2u"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

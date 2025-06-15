@@ -2,6 +2,7 @@ extends Node
 @export var player: CharacterBody2D
 @export var sprite: Sprite2D
 
+#adicionar corrida?
 
 
 #este script cuida da movimentação e animação de movimentação do jogador
@@ -24,13 +25,7 @@ var Speed: float = GlobalPlayer.velocidadeMovimentoPlayer
 #endregion
 
 
-#region animationVars
-#contador do bob
-var bob_time := 0.0
-var bob_speed := GlobalPlayer.bobSpeedPlayer
-var bob_height := 3.0
 
-#endregion
 
 
 func _init() -> void:
@@ -41,7 +36,8 @@ func _init() -> void:
 
 func _physics_process(delta):
 	_move()
-	_animation()
+	#quando andar faz a animação
+	sprite._animation(direcao)
 	#play audio de passos
 	#botar um teste para o player nao conseguir sair do mapa
 	
@@ -65,15 +61,3 @@ func _move():
 	player.velocity.x = lerp(player.velocity.x, direcao.normalized().x * Speed, fric)
 	player.velocity.y = lerp(player.velocity.y, direcao.normalized().y * Speed, fric)
 	
-
-
-func _animation():
-	#personagem esta se movendo
-	#vai gerar uma onda e vai definindo a posição do sprite
-	#basiada nesse calculo, muita doidera e matematica
-	if direcao != Vector2.ZERO:
-		bob_time += bob_speed
-		sprite.position.y = sin(bob_time) * bob_height
-	else:
-		#esta parado entao vai resetando aos poucos
-		sprite.position.y = lerp(sprite.position.y, 0.0, 0.2)

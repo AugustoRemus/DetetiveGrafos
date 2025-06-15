@@ -1,15 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkbcnmufbpy2f"]
+[gd_scene load_steps=7 format=3 uid="uid://dkbcnmufbpy2f"]
 
 [ext_resource type="Texture2D" uid="uid://c3ytclafnvlpb" path="res://Sprites/Placeholders/NPCVerde.png" id="1_7g32v"]
 [ext_resource type="Script" uid="uid://bgyj8csyi11cf" path="res://Scripts/Player/protagonista.gd" id="1_e0vkn"]
 [ext_resource type="Script" uid="uid://cnixnyhqnp2yp" path="res://Scripts/Player/move.gd" id="2_e0vkn"]
+[ext_resource type="Script" uid="uid://4sk7gtg25vtl" path="res://Scripts/Player/sprite_2d.gd" id="3_k2hie"]
 [ext_resource type="Script" uid="uid://cmhbux8hgvj7" path="res://Scripts/Player/camera_2d.gd" id="4_65hur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2hie"]
+size = Vector2(14, 7)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_e0vkn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7g32v")
+script = ExtResource("3_k2hie")
 
 [node name="Move" type="Node" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("2_e0vkn")
@@ -20,3 +25,7 @@ fric = 0.1531
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("4_65hur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25.5)
+shape = SubResource("RectangleShape2D_k2hie")
