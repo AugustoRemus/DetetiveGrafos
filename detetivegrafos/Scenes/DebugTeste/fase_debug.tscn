@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=7 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="2_dhdj0"]
+[ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="3_ywf2r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -83,6 +84,11 @@ texture = ExtResource("1_bskgw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_dhdj0")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
+vertices = PackedVector2Array(419.039, -51.0313, 420.953, 335.07, -66, 338.922, -66, -52.9609)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431, 345, -76, 349)])
+
 [node name="FaseDebug" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -93,3 +99,18 @@ layer_0/tile_data = PackedInt32Array(262151, 458752, 0, 327686, 458752, 0, 39322
 
 [node name="Player" parent="." instance=ExtResource("2_dhdj0")]
 position = Vector2(173, 154)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_dhdj0")
+
+[node name="BaseNPCs" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
+position = Vector2(236, 174)
+nodosDestino = [NodePath("../ArrayPontos/1"), NodePath("../ArrayPontos/2")]
+
+[node name="ArrayPontos" type="Node" parent="."]
+
+[node name="1" type="Node2D" parent="ArrayPontos"]
+position = Vector2(370, 21)
+
+[node name="2" type="Node2D" parent="ArrayPontos"]
+position = Vector2(16, 267)
