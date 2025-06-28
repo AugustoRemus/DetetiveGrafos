@@ -3,6 +3,9 @@ extends CharacterBody2D
 ##Resource que define oque o npc vai ter de starts
 @export var resourceNPC: NPCs
 
+##define o id dele para montar o grafo e tals, definir na cena
+@export var id: int
+
 ##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
 

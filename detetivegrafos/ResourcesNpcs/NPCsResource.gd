@@ -13,6 +13,9 @@ class_name NPCs
 ##Velociade que o npc anda
 @export var Rspeed: float
 
+##define a velocidade da animacao
+@export var RbobSpeed: float
+
 ##tempo min ate andar dnv
 @export var RtempoEsperaMin: float
 
