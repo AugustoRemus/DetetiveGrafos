@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=7 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
 [ext_resource type="Script" uid="uid://do2li500nlhjs" path="res://Scripts/NPCs/spriteNPCs.gd" id="3_y6ahf"]
 [ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logica_destino.gd" id="5_ujk41"]
+[ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
 
-[node name="BaseNPCs" type="CharacterBody2D"]
+[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode")]
 script = ExtResource("1_cf2bg")
+animacaoNode = NodePath("animacao")
 speedNPC = 100.0
 tempoEsperaMin = 1.0
 tempoEsperaMax = 3.0
@@ -28,5 +30,9 @@ npc = NodePath("../..")
 
 [node name="timerDestino" type="Timer" parent="."]
 one_shot = true
+
+[node name="animacao" type="Node" parent="." node_paths=PackedStringArray("spriteNPC")]
+script = ExtResource("6_ypi4a")
+spriteNPC = NodePath("../Sprite")
 
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]
