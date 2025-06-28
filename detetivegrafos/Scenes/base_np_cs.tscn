@@ -10,12 +10,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
 
-[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode")]
+[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite")]
 script = ExtResource("1_cf2bg")
-animacaoNode = NodePath("animacao")
 speedNPC = 100.0
 tempoEsperaMin = 1.0
 tempoEsperaMax = 3.0
+animacaoNode = NodePath("animacao")
+sprite = NodePath("Sprite")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_udhxp")

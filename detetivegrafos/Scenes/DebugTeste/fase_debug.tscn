@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=8 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="2_dhdj0"]
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="3_ywf2r"]
+[ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -105,15 +106,8 @@ navigation_polygon = SubResource("NavigationPolygon_dhdj0")
 
 [node name="BaseNPCs" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
 position = Vector2(236, 174)
+resourceNPC = ExtResource("4_k7s56")
 nodosDestino = [NodePath("../ArrayPontos/0"), NodePath("../ArrayPontos/1")]
-
-[node name="BaseNPCs2" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
-position = Vector2(57, 218)
-nodosDestino = [NodePath("../ArrayPontos/0"), NodePath("../ArrayPontos/1"), NodePath("../ArrayPontos/2"), NodePath("../ArrayPontos/4")]
-
-[node name="BaseNPCs3" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
-position = Vector2(178, 304)
-nodosDestino = [NodePath("../ArrayPontos/1")]
 
 [node name="ArrayPontos" type="Node" parent="."]
 

@@ -1,14 +1,26 @@
 extends CharacterBody2D
 
-@export var animacaoNode: Node
+##Resource que define oque o npc vai ter de starts
+@export var resourceNPC: NPCs
 
-@export var speedNPC: float
-
-
+##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
 
+@export_group("Atriburos resource")
+
+##Vai ser definido pelo Resource
+@export var speedNPC: float
+
+##tempo min ate andar dnv, definido pelo resource
 @export var tempoEsperaMin: float
+##tempo max ate andar dnv, definido pelo resource
 @export var tempoEsperaMax: float
+
+
+
+@export_group("Nodos")
+@export var animacaoNode: Node
+@export var sprite: Sprite2D
 
 
 
@@ -17,6 +29,12 @@ extends CharacterBody2D
 #bota aqui e é utilizado por outro nodo dele para a logica
 
 func _ready() -> void:
+	
+	#essa parte seta o boneco base com os atributos do resource
+	speedNPC = resourceNPC.Rspeed
+	tempoEsperaMin = resourceNPC.RtempoEsperaMin
+	tempoEsperaMax = resourceNPC.RtempoEsperaMax
+	sprite.texture = resourceNPC.Rsprite
 	
 	pass
 
