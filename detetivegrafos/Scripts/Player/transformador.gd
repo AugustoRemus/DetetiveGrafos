@@ -19,12 +19,16 @@ func _input(event: InputEvent) -> void:
 			
 	#se transforma na cor, porem apenas se ele n estiver perto de alguem
 	#pensar como posso fazer isso ou adicionar outra tecla
-	if Input.is_action_just_pressed("E"):
-		if podeTransformar:
-			sprite.texture = podeTransformar.sprite.texture
-		else:
-			print("n da pra se transformar")
-			#barulho erro
-			
+	
+	#passar o teste de input para cima e fazer o teste da area
+	#para ver se n tem alguem
+	
+func transformar():
+	if podeTransformar:
+		sprite.texture = podeTransformar.sprite.texture
+	else:
+		print("n da pra se transformar")
+		#barulho erro
+		
 		
 		

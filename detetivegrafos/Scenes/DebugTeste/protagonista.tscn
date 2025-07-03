@@ -14,8 +14,10 @@ size = Vector2(14, 7)
 [sub_resource type="CircleShape2D" id="CircleShape2D_k2hie"]
 radius = 68.0074
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("area", "transformador")]
 script = ExtResource("1_e0vkn")
+area = NodePath("area")
+transformador = NodePath("transformador")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7g32v")
