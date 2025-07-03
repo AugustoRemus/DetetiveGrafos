@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=9 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="2_dhdj0"]
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="3_ywf2r"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
+[ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="5_tow86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -104,11 +105,6 @@ position = Vector2(173, 154)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_dhdj0")
 
-[node name="BaseNPCs" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
-position = Vector2(236, 174)
-resourceNPC = ExtResource("4_k7s56")
-nodosDestino = [NodePath("../ArrayPontos/0"), NodePath("../ArrayPontos/1")]
-
 [node name="ArrayPontos" type="Node" parent="."]
 
 [node name="0" type="Node2D" parent="ArrayPontos"]
@@ -118,5 +114,19 @@ position = Vector2(370, 21)
 position = Vector2(16, 267)
 
 [node name="2" type="Node2D" parent="ArrayPontos"]
+position = Vector2(357, 281)
 
 [node name="4" type="Node2D" parent="ArrayPontos"]
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="BaseNPCs" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
+position = Vector2(236, 174)
+resourceNPC = ExtResource("4_k7s56")
+id = 9
+nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1")]
+
+[node name="BaseNPCs2" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
+position = Vector2(65, 149)
+resourceNPC = ExtResource("5_tow86")
+nodosDestino = [NodePath("../../ArrayPontos/4"), NodePath("../../ArrayPontos/2")]

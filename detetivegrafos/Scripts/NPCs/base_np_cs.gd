@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 ##Resource que define oque o npc vai ter de starts
 @export var resourceNPC: NPCs
 
@@ -24,6 +25,7 @@ extends CharacterBody2D
 @export_group("Nodos")
 @export var animacaoNode: Node
 @export var sprite: Sprite2D
+@export var silhuetaNodo: Sprite2D
 
 
 
@@ -44,4 +46,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 
 	animacaoNode._animation(velocity)
+	
+	
+func silhueta(numero):
+	if numero == 1:
+		silhuetaNodo.visible= true
+	if numero == 0:
+		silhuetaNodo.visible= false
+		
+		
+		
 	

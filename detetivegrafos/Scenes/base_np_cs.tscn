@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=9 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
 [ext_resource type="Script" uid="uid://do2li500nlhjs" path="res://Scripts/NPCs/spriteNPCs.gd" id="3_y6ahf"]
+[ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/Placeholders/silhueta.png" id="4_nf2cc"]
 [ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logica_destino.gd" id="5_ujk41"]
 [ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
@@ -10,17 +11,24 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
 
-[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite")]
+[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite", "silhuetaNodo") groups=["Alvo"]]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_cf2bg")
 speedNPC = 100.0
 tempoEsperaMin = 1.0
 tempoEsperaMax = 3.0
 animacaoNode = NodePath("animacao")
 sprite = NodePath("Sprite")
+silhuetaNodo = NodePath("Sprite/Silhueta")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_udhxp")
 script = ExtResource("3_y6ahf")
+
+[node name="Silhueta" type="Sprite2D" parent="Sprite"]
+visible = false
+texture = ExtResource("4_nf2cc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "logica", "timer")]
 script = ExtResource("4_y6ahf")
@@ -42,6 +50,5 @@ spriteNPC = NodePath("../Sprite")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 24)
 shape = SubResource("RectangleShape2D_ypi4a")
-disabled = true
 
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]
