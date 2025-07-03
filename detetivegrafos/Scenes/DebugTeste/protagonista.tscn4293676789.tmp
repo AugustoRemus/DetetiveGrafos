@@ -45,15 +45,9 @@ player = NodePath("..")
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_k2hie")
 
-[node name="Tester" type="Timer" parent="area"]
-wait_time = 0.25
-autostart = true
-
-[node name="transformador" type="Node" parent="." node_paths=PackedStringArray("sprite", "area")]
+[node name="transformador" type="Node" parent="." node_paths=PackedStringArray("area")]
 script = ExtResource("7_yl5ap")
-sprite = NodePath("../Sprite2D")
 area = NodePath("../area")
 
 [connection signal="body_entered" from="area" to="area" method="_on_body_entered"]
 [connection signal="body_exited" from="area" to="area" method="_on_body_exited"]
-[connection signal="timeout" from="area/Tester" to="area" method="_on_tester_timeout"]

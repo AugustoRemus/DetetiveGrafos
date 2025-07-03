@@ -120,13 +120,11 @@ position = Vector2(357, 281)
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="BaseNPCs" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
-position = Vector2(236, 174)
+[node name="BaseNPCs" parent="NPCs" instance=ExtResource("3_ywf2r")]
+position = Vector2(208, 200)
 resourceNPC = ExtResource("4_k7s56")
 id = 9
-nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1")]
 
-[node name="BaseNPCs2" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
-position = Vector2(65, 149)
+[node name="BaseNPCs2" parent="NPCs" instance=ExtResource("3_ywf2r")]
+position = Vector2(147, 198)
 resourceNPC = ExtResource("5_tow86")
-nodosDestino = [NodePath("../../ArrayPontos/4"), NodePath("../../ArrayPontos/2")]

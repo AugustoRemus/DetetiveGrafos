@@ -1,9 +1,30 @@
 extends Node
-
+@export var sprite: Sprite2D
 @export var area : Area2D
 
+#quando clicar E vai se transformar nesse
+#adicionar quadrado no canto para saber em qual cor
+#vc pode se transformar no caso essa cor aqui
+var podeTransformar: CharacterBody2D
+
+#quando clica Q ele separa esse pra se transformar
 func _input(event: InputEvent) -> void:
+	#pega um possivel candidato para salvar a cor
 	if Input.is_action_just_pressed("Q"):
-		print(area.getAtual().id)
+		if area.corpoAtual:
+			podeTransformar = area.corpoAtual
+		else:
+			#barulho erro
+			print("nada perto")
+			
+	#se transforma na cor, porem apenas se ele n estiver perto de alguem
+	#pensar como posso fazer isso ou adicionar outra tecla
+	if Input.is_action_just_pressed("E"):
+		if podeTransformar:
+			sprite.texture = podeTransformar.sprite.texture
+		else:
+			print("n da pra se transformar")
+			#barulho erro
+			
 		
 		
