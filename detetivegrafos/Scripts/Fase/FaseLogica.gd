@@ -3,16 +3,16 @@ extends Node2D
 @export var ListaNPCs: Array[NPCClasse]
 
 ##vai receber um nodo de logica, aleatorio ou pré selecionado
-@export var logicaRelacoes: LogicaGrafo
+@export var logicaRelacoes: Node
 
 ##vai ser a matriz que tem as relaçoes
 var matrizNPCs 
 
-
-
 func _ready() -> void:
 	marcadoID()
-	#LogicaGrafo.CriarGrafo()
+	matrizNPCs = logicaRelacoes.CriarGrafo(ListaNPCs)
+	print(matrizNPCs)
+	
 	
 func marcadoID():
 	#sortei os ids
@@ -20,6 +20,3 @@ func marcadoID():
 	for npc in ListaNPCs:
 		npc.id = contador
 		contador+= 1
-		#
-	#for npc in ListaNPCs:
-		#print(npc.id)
