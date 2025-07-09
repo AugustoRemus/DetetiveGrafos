@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name NPCClasse
 
 
 ##Resource que define oque o npc vai ter de starts

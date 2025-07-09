@@ -7,8 +7,8 @@ class_name NPCs
 ##sprite do npc
 @export var Rsprite: Texture2D
 
-##id do npc, talvez seja melhor criar no proprio npc character
-@export var Rid: int
+##nome cor
+@export var RnomeCor: String
 
 ##Velociade que o npc anda
 @export var Rspeed: float

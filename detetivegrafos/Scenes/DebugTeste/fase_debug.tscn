@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=10 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
+[ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="2_dhdj0"]
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="3_ywf2r"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
@@ -91,7 +92,9 @@ vertices = PackedVector2Array(419.039, -51.0313, 420.953, 335.07, -66, 338.922, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431, 345, -76, 349)])
 
-[node name="FaseDebug" type="Node2D"]
+[node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("ListaNPCs")]
+script = ExtResource("1_umjxx")
+ListaNPCs = [NodePath("NPCs/BaseNPCs"), NodePath("NPCs/BaseNPCs2")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)

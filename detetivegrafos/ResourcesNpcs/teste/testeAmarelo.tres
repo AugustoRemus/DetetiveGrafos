@@ -7,6 +7,7 @@
 script = ExtResource("2_0bnas")
 Rsprite = ExtResource("1_q2dm3")
 Rid = 2
+RnomeCor = "Amarelo"
 Rspeed = 300.0
 RbobSpeed = 0.6
 RtempoEsperaMin = 0.0
