@@ -95,8 +95,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431
 
 [node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("ListaNPCs", "logicaRelacoes")]
 script = ExtResource("1_umjxx")
-ListaNPCs = [NodePath("NPCs/BaseNPCs"), NodePath("NPCs/BaseNPCs2")]
-logicaRelacoes = NodePath("logica")
+ListaNPCs = [NodePath("NPCs/BaseNPCs"), NodePath("NPCs/BaseNPCs2"), NodePath("NPCs/BaseNPCs3"), NodePath("NPCs/BaseNPCs4")]
+logicaRelacoes = NodePath("logicaCriacaoGrafo")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
@@ -134,5 +134,12 @@ id = 9
 position = Vector2(147, 198)
 resourceNPC = ExtResource("5_tow86")
 
-[node name="logica" type="Node" parent="."]
+[node name="BaseNPCs3" parent="NPCs" instance=ExtResource("3_ywf2r")]
+position = Vector2(292, -5)
+resourceNPC = ExtResource("4_k7s56")
+
+[node name="BaseNPCs4" parent="NPCs" instance=ExtResource("3_ywf2r")]
+resourceNPC = ExtResource("5_tow86")
+
+[node name="logicaCriacaoGrafo" type="Node" parent="."]
 script = ExtResource("7_0odl8")
