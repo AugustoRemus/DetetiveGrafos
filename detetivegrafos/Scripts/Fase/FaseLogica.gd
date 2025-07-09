@@ -11,7 +11,10 @@ var matrizNPCs
 func _ready() -> void:
 	marcadoID()
 	matrizNPCs = logicaRelacoes.CriarGrafo(ListaNPCs)
-	printar_matriz(matrizNPCs)
+	startNPCs()
+	
+	#printar_matriz(matrizNPCs)
+	
 	
 	
 func marcadoID():
@@ -28,4 +31,9 @@ func printar_matriz(matriz: Array) -> void:
 		for valor in linha:
 			linha_str += str(valor) + " "
 		print(linha_str.strip_edges())  
+
+func startNPCs():
+	#ta dando erro aqui, n ta passando
+	for npc in ListaNPCs:
+		npc.LogicaInteraçoes.setMatriz(matrizNPCs)
 		

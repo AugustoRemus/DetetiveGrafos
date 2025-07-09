@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=11 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
@@ -8,11 +8,12 @@
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logica_destino.gd" id="5_ujk41"]
 [ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
 [ext_resource type="Script" uid="uid://sp1uarpyia7f" path="res://Scripts/NPCs/nome_cor.gd" id="8_lxbre"]
+[ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
 
-[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite", "silhuetaNodo") groups=["Alvo"]]
+[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite", "silhuetaNodo", "LogicaInteraçoes") groups=["Alvo"]]
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_cf2bg")
@@ -22,6 +23,7 @@ tempoEsperaMax = 3.0
 animacaoNode = NodePath("animacao")
 sprite = NodePath("Sprite")
 silhuetaNodo = NodePath("Sprite/Silhueta")
+"LogicaInteraçoes" = NodePath("LogicaInteracoes")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_udhxp")
@@ -62,5 +64,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("8_lxbre")
+
+[node name="LogicaInteracoes" type="Node" parent="."]
+script = ExtResource("9_taqbl")
 
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]

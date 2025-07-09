@@ -27,6 +27,7 @@ class_name NPCClasse
 @export var animacaoNode: Node
 @export var sprite: Sprite2D
 @export var silhuetaNodo: Sprite2D
+@export var LogicaInteraçoes: Node
 
 
 
@@ -57,4 +58,3 @@ func silhueta(numero):
 		
 		
 		
-	
