@@ -22,7 +22,7 @@ func setMatriz(MatrizNpc):
 	#copia a matriz
 	_matriz = MatrizNpc.duplicate(true)
 	
-	printar_matriz(_matriz)
+	#printar_matriz(_matriz)
 
 
 
