@@ -1,6 +1,8 @@
 extends Node
 @export var sprite: Sprite2D
 @export var area : Area2D
+@onready var player: CharacterBody2D = $".."
+
 
 #quando clicar E vai se transformar nesse
 #adicionar quadrado no canto para saber em qual cor
@@ -26,6 +28,7 @@ func _input(event: InputEvent) -> void:
 func transformar():
 	if podeTransformar:
 		sprite.texture = podeTransformar.sprite.texture
+		player.idNPCTransformado = podeTransformar.id
 	else:
 		print("n da pra se transformar")
 		#barulho erro

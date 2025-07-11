@@ -4,17 +4,10 @@ extends Node
 #matriz
 var _matriz
 
-#id
-var _id
-
-#seta o valor do id
-func _ready() -> void:
-	setId()
 
 
-#seta valor id
-func setId():
-	_id = base_np_cs.id
+
+
 
 
 #copia matriz
@@ -32,3 +25,21 @@ func printar_matriz(matriz: Array) -> void:
 		for valor in linha:
 			linha_str += str(valor) + " "
 		print(linha_str.strip_edges())  
+
+#cuida das inteacoes, peso nas arestas pode ser feito com 
+#numeros negativos pq ele testa se n é igual antes
+func interacaoID(idInteracao:int):
+	
+	#sao da mesma cor, esta pedindo o id igual
+	if(idInteracao == base_np_cs.id):
+		print("somos iguais")
+		#sai para n testar
+		return
+		
+	#pela matriz de adjacencia
+	if(_matriz[idInteracao][base_np_cs.id] == 0):
+		print("nao te gosto")
+		
+	elif(_matriz[idInteracao][base_np_cs.id] == 1):
+		print("te gosto")
+	

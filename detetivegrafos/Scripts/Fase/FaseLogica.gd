@@ -13,7 +13,7 @@ func _ready() -> void:
 	matrizNPCs = logicaRelacoes.CriarGrafo(ListaNPCs)
 	startNPCs()
 	
-	#printar_matriz(matrizNPCs)
+	printar_matriz(matrizNPCs)
 	
 	
 	
@@ -21,7 +21,8 @@ func marcadoID():
 	#sortei os ids
 	var contador = 0
 	for npc in ListaNPCs:
-		npc.id = contador
+		npc.setID(contador)
+		print(npc.id)
 		contador+= 1
 		
 		

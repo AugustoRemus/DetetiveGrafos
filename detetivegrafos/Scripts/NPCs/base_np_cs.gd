@@ -6,7 +6,7 @@ class_name NPCClasse
 @export var resourceNPC: NPCs
 
 ##define o id dele para montar o grafo e tals, definir na cena
-@export var id: int
+var id: int
 
 ##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
@@ -57,4 +57,5 @@ func silhueta(numero):
 		silhuetaNodo.visible= false
 		
 		
-		
+func setID(novoId: int):
+	id = novoId

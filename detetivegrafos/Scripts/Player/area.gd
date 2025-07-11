@@ -55,4 +55,5 @@ func _on_tester_timeout() -> void:
 				menorDist = distanciaAtual
 		
 	#mostra a silhueta do corpo atual
+	#caso for null mudar na iu oq da pra fazer
 	corpoAtual.silhueta(1)
