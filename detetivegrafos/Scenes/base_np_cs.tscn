@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=12 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
 [ext_resource type="Script" uid="uid://sp1uarpyia7f" path="res://Scripts/NPCs/nome_cor.gd" id="8_lxbre"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
+[ext_resource type="Texture2D" uid="uid://blqrrynie23yc" path="res://Sprites/Placeholders/BalaoBasePNG.png" id="10_wbx1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
@@ -24,6 +25,10 @@ animacaoNode = NodePath("animacao")
 sprite = NodePath("Sprite")
 silhuetaNodo = NodePath("Sprite/Silhueta")
 "LogicaInteraçoes" = NodePath("LogicaInteracoes")
+
+[node name="BalaoBasePng" type="Sprite2D" parent="."]
+position = Vector2(1, -38)
+texture = ExtResource("10_wbx1d")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_udhxp")
