@@ -1,5 +1,6 @@
 extends Node
 @onready var base_np_cs: NPCClasse = $".."
+@export var logicaBalao: Sprite2D
 
 #matriz
 var _matriz
@@ -32,14 +33,13 @@ func interacaoID(idInteracao:int):
 	
 	#sao da mesma cor, esta pedindo o id igual
 	if(idInteracao == base_np_cs.id):
-		print("somos iguais")
+		logicaBalao.exibirBalao(0)
 		#sai para n testar
+		#chama funcao de fantasma da logica
 		return
 		
-	#pela matriz de adjacencia
-	if(_matriz[idInteracao][base_np_cs.id] == 0):
-		print("nao te gosto")
+	#chama com o numero da interacao
+	logicaBalao.exibirBalao(_matriz[idInteracao][base_np_cs.id])
 		
-	elif(_matriz[idInteracao][base_np_cs.id] == 1):
-		print("te gosto")
+
 	

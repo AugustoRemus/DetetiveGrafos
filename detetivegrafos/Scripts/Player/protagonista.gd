@@ -9,6 +9,19 @@ extends CharacterBody2D
 #id do npc transformado, vai ser um int
 var idNPCTransformado = null
 
+#se o personagem pode se transformar (n tem nada perto)
+var possoTransformar: bool 
+#se o personagem pode conversar
+var possoConversar: bool
+#se o personagem pode roubar a cor 
+var possoRoubarCor: bool
+
+
+func _process(delta: float) -> void:
+	if(idNPCTransformado == null):
+		possoConversar = false
+
+
 #debug
 #zoom esta bugando as texturas
 func _input(event: InputEvent) -> void:

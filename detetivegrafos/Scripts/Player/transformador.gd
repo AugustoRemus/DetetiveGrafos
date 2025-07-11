@@ -15,6 +15,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Q"):
 		if area.corpoAtual:
 			podeTransformar = area.corpoAtual
+			#player.possoTransformar = true
 		else:
 			#barulho erro
 			print("nada perto")
@@ -29,6 +30,8 @@ func transformar():
 	if podeTransformar:
 		sprite.texture = podeTransformar.sprite.texture
 		player.idNPCTransformado = podeTransformar.id
+		
+		#player.possoTransformar = false
 	else:
 		print("n da pra se transformar")
 		#barulho erro

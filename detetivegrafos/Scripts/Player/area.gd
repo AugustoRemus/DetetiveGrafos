@@ -33,6 +33,16 @@ func _on_tester_timeout() -> void:
 		#n ta vazio
 	if corpos.size() == 0:
 		corpoAtual = null
+		#o jogador n tem ninguem perto para conversar nem roubar
+		#player.possoConversar = false
+		#player.possoRoubarCor = false
+		
+		#se n tem o id é pq ele n tem cor pra roubar
+		#if(player.idNPCTransformado != null):
+		#	player.possoTranformar = true
+		#else:
+		#	player.possoTranformar = false
+			
 		return
 	
 	
@@ -45,15 +55,24 @@ func _on_tester_timeout() -> void:
 		#caso inicial
 		if menorDist == null:
 			menorDist = corpo.global_position.distance_to(player.global_position)
+			
+			
 			corpoAtual = corpo
 		else:
 			#calcula distancia
 			var distanciaAtual = corpo.global_position.distance_to(player.global_position)
 			#se for menor muda o corpo atual
 			if distanciaAtual < menorDist:
+				
+				
 				corpoAtual = corpo
 				menorDist = distanciaAtual
 		
 	#mostra a silhueta do corpo atual
 	#caso for null mudar na iu oq da pra fazer
 	corpoAtual.silhueta(1)
+	
+	#tem alguem perto para roubar
+	#player.possoRoubarCor = true
+	#player.possoConversar = true
+	#player.possoTransformar = false
