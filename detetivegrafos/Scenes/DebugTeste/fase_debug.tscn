@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=12 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="5_tow86"]
 [ext_resource type="Script" uid="uid://bmd3dfd08ts5m" path="res://Scripts/Fase/AleatorioBase.gd" id="7_0odl8"]
+[ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="7_bfw4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -93,9 +94,9 @@ vertices = PackedVector2Array(419.039, -51.0313, 420.953, 335.07, -66, 338.922, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431, 345, -76, 349)])
 
-[node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("ListaNPCs", "logicaRelacoes")]
+[node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("nodoNPCs", "logicaRelacoes")]
 script = ExtResource("1_umjxx")
-ListaNPCs = [NodePath("NPCs/BaseNPCs"), NodePath("NPCs/BaseNPCs2")]
+nodoNPCs = NodePath("NPCs")
 logicaRelacoes = NodePath("logicaCriacaoGrafo")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -133,6 +134,11 @@ nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1")
 [node name="BaseNPCs2" parent="NPCs" instance=ExtResource("3_ywf2r")]
 position = Vector2(147, 198)
 resourceNPC = ExtResource("5_tow86")
+
+[node name="BaseNPCs3" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
+position = Vector2(-3, 83)
+resourceNPC = ExtResource("7_bfw4o")
+nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/4")]
 
 [node name="logicaCriacaoGrafo" type="Node" parent="."]
 script = ExtResource("7_0odl8")

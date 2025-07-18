@@ -1,5 +1,6 @@
 extends Node
 @onready var base_np_cs: NPCClasse = $".."
+
 @export var logicaBalao: Sprite2D
 
 #matriz

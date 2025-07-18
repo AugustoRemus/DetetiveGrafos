@@ -1,6 +1,10 @@
 extends Node2D
 ##lista de todos os NPCs
-@export var ListaNPCs: Array[NPCClasse]
+var ListaNPCs: Array[NPCClasse]
+
+##nodo aonde estao os npcs
+@export var nodoNPCs: Node
+
 
 ##vai receber um nodo de logica, aleatorio ou pré selecionado
 @export var logicaRelacoes: Node
@@ -9,6 +13,19 @@ extends Node2D
 var matrizNPCs 
 
 func _ready() -> void:
+	#pega os filhos do nodo dos npcs
+	ListaNPCs.clear()
+	
+	var nodosFilhos = nodoNPCs.get_children()
+	#adiciona cada filho individualmente
+	for filho in nodosFilhos:
+		if filho != null:
+			ListaNPCs.append(filho)
+	#ListaNPCs = 
+	
+	
+	
+	
 	marcadoID()
 	matrizNPCs = logicaRelacoes.CriarGrafo(ListaNPCs)
 	startNPCs()
