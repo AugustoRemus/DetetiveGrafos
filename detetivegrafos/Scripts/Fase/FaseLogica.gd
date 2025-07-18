@@ -5,14 +5,17 @@ var ListaNPCs: Array[NPCClasse]
 ##nodo aonde estao os npcs
 @export var nodoNPCs: Node
 
-
-##vai receber um nodo de logica, aleatorio ou pré selecionado
-@export var logicaRelacoes: Node
+##script com afunçao de criação da matriz
+@export var scriptCriacaoGrafo: Script
 
 ##vai ser a matriz que tem as relaçoes
 var matrizNPCs 
 
+#objeto que vai ser criado para chamar a função do script
+var scriptCarregadoLogica
+
 func _ready() -> void:
+	scriptCarregadoLogica = scriptCriacaoGrafo.new()
 	#pega os filhos do nodo dos npcs
 	ListaNPCs.clear()
 	
@@ -25,9 +28,10 @@ func _ready() -> void:
 	
 	
 	
-	
+	#sorteia os id pros jogadores
 	marcadoID()
-	matrizNPCs = logicaRelacoes.CriarGrafo(ListaNPCs)
+	#cria a matriz chamando a função desse script
+	matrizNPCs = scriptCarregadoLogica.CriarGrafo(ListaNPCs)
 	startNPCs()
 	
 	printar_matriz(matrizNPCs)

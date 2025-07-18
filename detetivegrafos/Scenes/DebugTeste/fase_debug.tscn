@@ -94,10 +94,10 @@ vertices = PackedVector2Array(419.039, -51.0313, 420.953, 335.07, -66, 338.922, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431, 345, -76, 349)])
 
-[node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("nodoNPCs", "logicaRelacoes")]
+[node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("nodoNPCs")]
 script = ExtResource("1_umjxx")
 nodoNPCs = NodePath("NPCs")
-logicaRelacoes = NodePath("logicaCriacaoGrafo")
+scriptCriacaoGrafo = ExtResource("7_0odl8")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
@@ -139,6 +139,3 @@ resourceNPC = ExtResource("5_tow86")
 position = Vector2(-3, 83)
 resourceNPC = ExtResource("7_bfw4o")
 nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/4")]
-
-[node name="logicaCriacaoGrafo" type="Node" parent="."]
-script = ExtResource("7_0odl8")
