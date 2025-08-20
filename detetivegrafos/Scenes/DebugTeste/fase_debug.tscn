@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="5_tow86"]
 [ext_resource type="Script" uid="uid://bmd3dfd08ts5m" path="res://Scripts/Fase/AleatorioBase.gd" id="7_0odl8"]
-[ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="7_bfw4o"]
+[ext_resource type="Resource" path="res://ResourcesNpcs/teste/testeVerde.tres" id="7_bfw4o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"

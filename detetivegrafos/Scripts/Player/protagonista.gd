@@ -18,8 +18,9 @@ var possoRoubarCor: bool
 
 
 func _process(delta: float) -> void:
-	if(idNPCTransformado == null):
-		possoConversar = false
+	#if(idNPCTransformado == null):
+		#possoConversar = false
+	pass
 
 
 #debug

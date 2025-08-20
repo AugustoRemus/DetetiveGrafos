@@ -1,10 +1,18 @@
 extends Area2D
+
+
 @export var player: CharacterBody2D
+
 #guarda o corpo atual pra desmarcar se vier um novo
 var corpoAtual: CharacterBody2D
 
+#nodo para cuidar das tags
+@export var tags:Node2D
+
 #esta parte ele apenas cuida quem ele pode pegar, nao qual ele realmente
 #vai pegar
+
+@export var transformadorNode: Node
 
 #pode consumir mt recursos eu acho
 func _physics_process(delta: float) -> void:
@@ -33,16 +41,15 @@ func _on_tester_timeout() -> void:
 		#n ta vazio
 	if corpos.size() == 0:
 		corpoAtual = null
-		#o jogador n tem ninguem perto para conversar nem roubar
-		#player.possoConversar = false
-		#player.possoRoubarCor = false
 		
-		#se n tem o id é pq ele n tem cor pra roubar
-		#if(player.idNPCTransformado != null):
-		#	player.possoTranformar = true
-		#else:
-		#	player.possoTranformar = false
-			
+		
+		tags.roubarCorLabel(false)
+		tags.conversar(false)
+		
+		if transformadorNode.podeTransformar != null:
+			tags.transformarLabel(true)
+		
+
 		return
 	
 	
@@ -71,8 +78,14 @@ func _on_tester_timeout() -> void:
 	#mostra a silhueta do corpo atual
 	#caso for null mudar na iu oq da pra fazer
 	corpoAtual.silhueta(1)
+	tags.roubarCorLabel(true)
+	tags.transformarLabel(false)
 	
-	#tem alguem perto para roubar
-	#player.possoRoubarCor = true
-	#player.possoConversar = true
-	#player.possoTransformar = false
+	if player.idNPCTransformado != null:
+		tags.conversar(true)
+		
+	else:
+		tags.conversar(false)
+		
+		
+	
