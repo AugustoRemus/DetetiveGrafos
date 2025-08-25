@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp04rhsw40lwt"]
+
+[ext_resource type="Script" uid="uid://br310fqy8o0wb" path="res://Scripts/menu.gd" id="1_1rerr"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 135.0
+offset_right = 149.0
+offset_bottom = 236.0
+
+[node name="Jogar" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="config" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Configurações"
+
+[node name="sair" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Sair
+"
+
+[connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="GridContainer/sair" to="." method="_on_sair_pressed"]
