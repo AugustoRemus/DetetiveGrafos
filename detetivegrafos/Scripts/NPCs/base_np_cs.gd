@@ -8,6 +8,10 @@ class_name NPCClasse
 ##define o id dele para montar o grafo e tals, definir na cena
 var id: int
 
+##se n for ter deixa null
+@export var hat: hatsResource = null
+
+
 ##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
 

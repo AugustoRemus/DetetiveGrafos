@@ -2,7 +2,7 @@ extends Node
 @export var sprite: Sprite2D
 @export var area : Area2D
 @onready var player: CharacterBody2D = $".."
-
+@export var hatSpritePlayer: Sprite2D
 @export var tags: Node2D
 
 #quando clicar E vai se transformar nesse
@@ -31,6 +31,14 @@ func _input(event: InputEvent) -> void:
 func transformar():
 	if podeTransformar:
 		sprite.texture = podeTransformar.sprite.texture
+		
+		if podeTransformar.hat:
+			hatSpritePlayer.texture = podeTransformar.hat.sprite
+			player.hatTransformado = podeTransformar.hat
+		else:
+			hatSpritePlayer.texture = null
+			player.hatTransformado = null
+			
 		player.idNPCTransformado = podeTransformar.id
 		podeTransformar = null
 		tags.transformarLabel(false)

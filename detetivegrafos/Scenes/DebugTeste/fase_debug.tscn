@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=14 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="5_tow86"]
 [ext_resource type="Script" uid="uid://bmd3dfd08ts5m" path="res://Scripts/Fase/AleatorioBase.gd" id="7_0odl8"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="7_bfw4o"]
+[ext_resource type="Resource" uid="uid://be4yad5y2ibvs" path="res://ResourcesNpcs/hats/teste1.tres" id="7_lackq"]
+[ext_resource type="Resource" uid="uid://bhjd461g6ghjv" path="res://ResourcesNpcs/hats/teste2.tres" id="9_kjhp6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -129,11 +131,13 @@ position = Vector2(357, 281)
 [node name="BaseNPCs" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
 position = Vector2(208, 200)
 resourceNPC = ExtResource("4_k7s56")
+hat = ExtResource("7_lackq")
 nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1"), NodePath("../../ArrayPontos/2")]
 
 [node name="BaseNPCs2" parent="NPCs" instance=ExtResource("3_ywf2r")]
 position = Vector2(147, 198)
 resourceNPC = ExtResource("5_tow86")
+hat = ExtResource("9_kjhp6")
 
 [node name="BaseNPCs3" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
 position = Vector2(-3, 83)

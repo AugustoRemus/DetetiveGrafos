@@ -9,6 +9,8 @@ extends CharacterBody2D
 #id do npc transformado, vai ser um int
 var idNPCTransformado = null
 
+var hatTransformado:hatsResource = null
+
 #se o personagem pode se transformar (n tem nada perto)
 var possoTransformar: bool 
 #se o personagem pode conversar

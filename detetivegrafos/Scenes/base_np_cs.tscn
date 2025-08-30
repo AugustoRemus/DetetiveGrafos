@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=17 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://sp1uarpyia7f" path="res://Scripts/NPCs/nome_cor.gd" id="8_lxbre"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
 [ext_resource type="Texture2D" uid="uid://blqrrynie23yc" path="res://Sprites/Placeholders/BalaoBasePNG.png" id="10_wbx1d"]
+[ext_resource type="Script" uid="uid://dw575fal2lmmw" path="res://Scripts/hat_node.gd" id="14_pcq1i"]
 
 [sub_resource type="Curve" id="Curve_4tvce"]
 _data = [Vector2(0.0691489, 1), 0.0, 0.0, 0, 0, Vector2(0.526596, 0.52809), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -53,6 +54,8 @@ script = ExtResource("3_y6ahf")
 visible = false
 texture = ExtResource("4_nf2cc")
 
+[node name="hatSprite" type="Sprite2D" parent="Sprite"]
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "logica", "timer")]
 script = ExtResource("4_y6ahf")
 base_np_cs = NodePath("..")
@@ -88,6 +91,11 @@ script = ExtResource("8_lxbre")
 [node name="LogicaInteracoes" type="Node" parent="." node_paths=PackedStringArray("logicaBalao")]
 script = ExtResource("9_taqbl")
 logicaBalao = NodePath("../BalaoBasePng")
+
+[node name="hatNode" type="Node2D" parent="." node_paths=PackedStringArray("character", "sprite")]
+script = ExtResource("14_pcq1i")
+character = NodePath("..")
+sprite = NodePath("../Sprite/hatSprite")
 
 [connection signal="timeout" from="BalaoBasePng/timerBalao" to="BalaoBasePng" method="_on_timer_balao_timeout"]
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]
