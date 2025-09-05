@@ -90,7 +90,7 @@ text = "E : Transformar "
 [node name="roubarCor" type="Label" parent="tags/GridContainer"]
 visible = false
 layout_mode = 2
-text = "Q: Roubar cor"
+text = "Q: Copiar cor"
 
 [node name="conversar" type="Label" parent="tags/GridContainer"]
 visible = false
