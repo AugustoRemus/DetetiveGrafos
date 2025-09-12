@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@export var vertice: Node
+
+@export var NPCs: Array[CharacterBody2D]
 
 
 func _input(event: InputEvent) -> void:
@@ -9,4 +12,3 @@ func _input(event: InputEvent) -> void:
 			visible = true
 		else:
 			visible = false
-		

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d32giarwu8rbf"]
+
+[ext_resource type="Script" uid="uid://mjp6g37b1v5c" path="res://scripts/vertice.gd" id="1_mkta5"]
+[ext_resource type="Texture2D" uid="uid://u4jbpgk8diog" path="res://Sprites/Placeholders/NPCAmarelo.png" id="1_p6hgy"]
+
+[node name="Vertice" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_p6hgy")
+script = ExtResource("1_mkta5")
