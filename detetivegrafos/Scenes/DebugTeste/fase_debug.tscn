@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=15 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="7_bfw4o"]
 [ext_resource type="Resource" uid="uid://be4yad5y2ibvs" path="res://ResourcesNpcs/hats/teste1.tres" id="7_lackq"]
 [ext_resource type="Resource" uid="uid://bhjd461g6ghjv" path="res://ResourcesNpcs/hats/teste2.tres" id="9_kjhp6"]
+[ext_resource type="PackedScene" uid="uid://bncy03thb73r8" path="res://Scenes/timer.tscn" id="11_ibreo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -100,6 +101,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-76, -63, 429, -61, 431
 script = ExtResource("1_umjxx")
 nodoNPCs = NodePath("NPCs")
 scriptCriacaoGrafo = ExtResource("7_0odl8")
+
+[node name="timer" parent="." instance=ExtResource("11_ibreo")]
+tempo = 4.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
