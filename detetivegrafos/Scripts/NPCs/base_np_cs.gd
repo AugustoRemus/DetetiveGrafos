@@ -33,7 +33,7 @@ var id: int
 @export var silhuetaNodo: Sprite2D
 @export var LogicaInteraçoes: Node
 
-
+var nomeCor: String
 
 
 #uma lista de npcs base que vai dizer quais ele gosta e quais n gosta
@@ -45,6 +45,7 @@ func _ready() -> void:
 	speedNPC = resourceNPC.Rspeed
 	tempoEsperaMin = resourceNPC.RtempoEsperaMin
 	tempoEsperaMax = resourceNPC.RtempoEsperaMax
+	nomeCor = resourceNPC.RnomeCor
 	sprite.texture = resourceNPC.Rsprite
 	
 	pass

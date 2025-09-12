@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=16 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="2_dhdj0"]
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="3_ywf2r"]
+[ext_resource type="PackedScene" uid="uid://cwqyfflrmmchj" path="res://Scenes/grafo_player.tscn" id="4_diom3"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="4_k7s56"]
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="5_tow86"]
 [ext_resource type="Script" uid="uid://bmd3dfd08ts5m" path="res://Scripts/Fase/AleatorioBase.gd" id="7_0odl8"]
@@ -105,6 +106,8 @@ scriptCriacaoGrafo = ExtResource("7_0odl8")
 [node name="timer" parent="." instance=ExtResource("11_ibreo")]
 tempo = 4.0
 metadata/_edit_use_anchors_ = true
+
+[node name="grafoPlayer" parent="." instance=ExtResource("4_diom3")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)

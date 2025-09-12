@@ -61,41 +61,65 @@ autostart = true
 [node name="Interador" type="Node" parent="area"]
 script = ExtResource("7_v853i")
 
-[node name="transformador" type="Node" parent="." node_paths=PackedStringArray("sprite", "area", "hatSpritePlayer", "tags")]
+[node name="transformador" type="Node" parent="." node_paths=PackedStringArray("sprite", "area", "hatSpritePlayer", "tags", "labelCor")]
 script = ExtResource("7_yl5ap")
 sprite = NodePath("../Sprite2D")
 area = NodePath("../area")
 hatSpritePlayer = NodePath("../Sprite2D/hatPlayer")
 tags = NodePath("../tags")
+labelCor = NodePath("../tags/CanvasLayer/GridContainer/CorCopiada")
 
-[node name="tags" type="Node2D" parent="." node_paths=PackedStringArray("_transformar", "_roubarCor", "_conversar")]
+[node name="tags" type="Node2D" parent="." node_paths=PackedStringArray("_transformar", "_roubarCor", "_conversar", "_corAtual")]
 script = ExtResource("9_qx68x")
-_transformar = NodePath("GridContainer/transformar")
-_roubarCor = NodePath("GridContainer/roubarCor")
-_conversar = NodePath("GridContainer/conversar")
+_transformar = NodePath("CanvasLayer/transformar")
+_roubarCor = NodePath("CanvasLayer/roubarCor")
+_conversar = NodePath("CanvasLayer/conversar")
+_corAtual = NodePath("CanvasLayer/GridContainer/CorCopiada")
 
-[node name="GridContainer" type="GridContainer" parent="tags"]
-offset_left = -55.0
-offset_top = 50.0
-offset_right = 64.0
-offset_bottom = 100.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="CanvasLayer" type="CanvasLayer" parent="tags"]
 
-[node name="transformar" type="Label" parent="tags/GridContainer"]
-visible = false
-layout_mode = 2
-text = "E : Transformar "
-
-[node name="roubarCor" type="Label" parent="tags/GridContainer"]
-visible = false
-layout_mode = 2
+[node name="roubarCor" type="Label" parent="tags/CanvasLayer"]
+offset_left = 9.0
+offset_top = 330.0
+offset_right = 110.0
+offset_bottom = 353.0
 text = "Q: Copiar cor"
 
-[node name="conversar" type="Label" parent="tags/GridContainer"]
-visible = false
+[node name="transformar" type="Label" parent="tags/CanvasLayer"]
+offset_left = 504.0
+offset_top = 330.0
+offset_right = 627.0
+offset_bottom = 353.0
+text = "E : Transformar "
+
+[node name="conversar" type="Label" parent="tags/CanvasLayer"]
+offset_left = 504.0
+offset_top = 330.0
+offset_right = 605.0
+offset_bottom = 353.0
+text = "E : Conversar"
+
+[node name="GridContainer" type="GridContainer" parent="tags/CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -32.0
+offset_right = 56.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="corText" type="Label" parent="tags/CanvasLayer/GridContainer"]
 layout_mode = 2
-text = "E: Conversar"
+text = "Cor Guardada:"
+
+[node name="CorCopiada" type="Label" parent="tags/CanvasLayer/GridContainer"]
+layout_mode = 2
+text = "verde"
 
 [connection signal="body_entered" from="area" to="area" method="_on_body_entered"]
 [connection signal="body_exited" from="area" to="area" method="_on_body_exited"]

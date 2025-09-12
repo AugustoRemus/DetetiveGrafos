@@ -5,6 +5,7 @@ extends Node
 @export var hatSpritePlayer: Sprite2D
 @export var tags: Node2D
 
+@export var labelCor: Label
 #quando clicar E vai se transformar nesse
 #adicionar quadrado no canto para saber em qual cor
 #vc pode se transformar no caso essa cor aqui
@@ -16,6 +17,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Q"):
 		if area.corpoAtual:
 			podeTransformar = area.corpoAtual
+			labelCor.text = podeTransformar.nomeCor
 			
 			#player.possoTransformar = true
 		else:
@@ -27,10 +29,11 @@ func _input(event: InputEvent) -> void:
 	
 	#passar o teste de input para cima e fazer o teste da area
 	#para ver se n tem alguem
-	
+
 func transformar():
 	if podeTransformar:
 		sprite.texture = podeTransformar.sprite.texture
+		labelCor.text = "Nenhuma"
 		
 		if podeTransformar.hat:
 			hatSpritePlayer.texture = podeTransformar.hat.sprite
