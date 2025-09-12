@@ -4,5 +4,6 @@ extends TextureButton
 
 
 func _ready() -> void:
-	texture_normal = npc.sprite.texture
+	pass
+	#texture_normal = npc.sprite.texture
 	
