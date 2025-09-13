@@ -1,10 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://d32giarwu8rbf"]
+[gd_scene load_steps=5 format=3 uid="uid://d32giarwu8rbf"]
 
 [ext_resource type="Script" uid="uid://mjp6g37b1v5c" path="res://scripts/vertice.gd" id="1_mkta5"]
 [ext_resource type="Texture2D" uid="uid://u4jbpgk8diog" path="res://Sprites/Placeholders/NPCAmarelo.png" id="1_p6hgy"]
+[ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/Placeholders/silhueta.png" id="3_srqp5"]
+[ext_resource type="Texture2D" uid="uid://cl5hxhfvi1v3c" path="res://Sprites/Placeholders/silhuetaAmarela.png" id="4_h5rbj"]
 
-[node name="Vertice" type="TextureButton"]
+[node name="Vertice" type="TextureButton" node_paths=PackedStringArray("labelNome")]
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_p6hgy")
 script = ExtResource("1_mkta5")
+silhueta = ExtResource("3_srqp5")
+silhuetaAmarela = ExtResource("4_h5rbj")
+labelNome = NodePath("nome cor")
+
+[node name="nome cor" type="Label" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = 46.0
+offset_right = 95.0
+offset_bottom = 95.0
+text = "Cor muito longa
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

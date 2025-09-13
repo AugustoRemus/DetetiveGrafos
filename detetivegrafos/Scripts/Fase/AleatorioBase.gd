@@ -19,7 +19,7 @@ func CriarGrafo(NPCS: Array[NPCClasse]) -> Array:
 				linha.append("x")
 			#se n zero
 			else:
-				linha.append(0)
+				linha.append("0")
 		#adiciona a linha
 		matriz_adjacencia.append(linha)
 
@@ -30,7 +30,7 @@ func CriarGrafo(NPCS: Array[NPCClasse]) -> Array:
 		for j in range(n):
 			if i != j:
 				#bota 0 ou 1 se forem diferente
-				matriz_adjacencia[i][j] = randi() % 2
+				matriz_adjacencia[i][j] = str(randi() % 2)
 				matriz_adjacencia[j][i] = matriz_adjacencia[i][j]
 			
 	return matriz_adjacencia

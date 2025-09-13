@@ -26,7 +26,10 @@ func organizar_em_circulo():
 		if child is Control:
 			var angle_deg = start_angle + i * angle_step
 			var angle_rad = deg_to_rad(angle_deg)
-
+			
+			#da o id para controlar a matriz
+			child._id = i
+			
 			#Calcula posição usando seno e cosseno
 			var x = radius * cos(angle_rad)
 			var y = radius * sin(angle_rad)

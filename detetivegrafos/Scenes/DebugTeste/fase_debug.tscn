@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbqdr3clwff2u"]
+[gd_scene load_steps=18 format=3 uid="uid://cbqdr3clwff2u"]
 
 [ext_resource type="Texture2D" uid="uid://8wi7rypkvgld" path="res://Sprites/Placeholders/tileSet.png" id="1_bskgw"]
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_umjxx"]
@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://be4yad5y2ibvs" path="res://ResourcesNpcs/hats/teste1.tres" id="7_lackq"]
 [ext_resource type="Resource" uid="uid://bhjd461g6ghjv" path="res://ResourcesNpcs/hats/teste2.tres" id="9_kjhp6"]
 [ext_resource type="PackedScene" uid="uid://bncy03thb73r8" path="res://Scenes/timer.tscn" id="11_ibreo"]
+[ext_resource type="Resource" uid="uid://cqdq6qnuwsrqm" path="res://ResourcesNpcs/teste/branco.tres" id="13_33qen"]
+[ext_resource type="Resource" uid="uid://6p5ynvtcsw5u" path="res://ResourcesNpcs/teste/laranja.tres" id="14_y7e5s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhdj0"]
 resource_name = "Grama1"
@@ -108,6 +110,7 @@ tempo = 4.0
 metadata/_edit_use_anchors_ = true
 
 [node name="grafoPlayer" parent="." node_paths=PackedStringArray("nodoDosNPC") instance=ExtResource("4_diom3")]
+visible = false
 nodoDosNPC = NodePath("../NPCs")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -153,10 +156,12 @@ position = Vector2(-3, 83)
 resourceNPC = ExtResource("7_bfw4o")
 nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/4")]
 
-[node name="BaseNPCs4" parent="NPCs" instance=ExtResource("3_ywf2r")]
+[node name="BaseNPCs4" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
 position = Vector2(29, 214)
-resourceNPC = ExtResource("7_bfw4o")
+resourceNPC = ExtResource("13_33qen")
+nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/4"), NodePath("../../ArrayPontos/2")]
 
-[node name="BaseNPCs5" parent="NPCs" instance=ExtResource("3_ywf2r")]
+[node name="BaseNPCs5" parent="NPCs" node_paths=PackedStringArray("nodosDestino") instance=ExtResource("3_ywf2r")]
 position = Vector2(317, 31)
-resourceNPC = ExtResource("4_k7s56")
+resourceNPC = ExtResource("14_y7e5s")
+nodosDestino = [NodePath("../../ArrayPontos/4"), NodePath("../../ArrayPontos/2"), NodePath("../../ArrayPontos/1"), NodePath("../../ArrayPontos/0")]

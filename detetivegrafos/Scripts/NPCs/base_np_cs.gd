@@ -64,3 +64,7 @@ func silhueta(numero):
 		
 func setID(novoId: int):
 	id = novoId
+	#print("sou da cor:")
+	#print(nomeCor)
+	#print("e meu id é :")
+	#print(id)

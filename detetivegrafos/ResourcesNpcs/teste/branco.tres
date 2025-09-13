@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://cqdq6qnuwsrqm"]
+
+[ext_resource type="Texture2D" uid="uid://clu5lpw4lg06a" path="res://Sprites/Placeholders/brancoDebug.png" id="1_8w6md"]
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://ResourcesNpcs/NPCsResource.gd" id="2_t3git"]
+
+[resource]
+script = ExtResource("2_t3git")
+Rsprite = ExtResource("1_8w6md")
+RnomeCor = "Branco"
+Rspeed = 30.0
+RbobSpeed = 0.0
+RtempoEsperaMin = 0.0
+RtempoEsperaMax = 30.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

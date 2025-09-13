@@ -58,4 +58,6 @@ func startNPCs():
 	#ta dando erro aqui, n ta passando
 	for npc in ListaNPCs:
 		npc.LogicaInteraçoes.setMatriz(matrizNPCs)
-		
+
+func finalizou():
+	print("fim d jogo")
