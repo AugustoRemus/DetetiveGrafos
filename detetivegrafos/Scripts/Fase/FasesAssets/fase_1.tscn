@@ -34,7 +34,7 @@ visible = false
 nodoDosNPC = NodePath("../NPCs")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-194, -10)
+position = Vector2(-61, 5)
 navigation_polygon = SubResource("NavigationPolygon_dhdj0")
 
 [node name="ArrayPontos" type="Node" parent="."]

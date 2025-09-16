@@ -92,7 +92,7 @@ position = Vector2(-292, 190)
 [node name="NPCs" type="Node" parent="."]
 
 [node name="rosa" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("5_j3qhg")]
-position = Vector2(-463, 252)
+position = Vector2(-463, 249)
 resourceNPC = ExtResource("6_ppdh7")
 quantDestinos = 4
 nodoComOsDestinos = NodePath("../../ArrayPontos")
