@@ -13,6 +13,7 @@ var carregarScena = null
 
 
 func _ready() -> void:
+	#testa quais ele pode jogar
 	for fase in range(Niveis.quantNiveis):
 		if Niveis.fasesPontos[fase] == -1:
 			var _botao = gridContainerBotoesLvl.get_child(fase - 1)
@@ -35,23 +36,27 @@ func _on_botao_start_pressed() -> void:
 
 
 func _on_fase_1_pressed() -> void:
+	carregarScena = "res://Scripts/Fase/FasesAssets/fase_1.tscn"
 	numeroFaseLabel.text = "fase 1"
 	botaoPlay.visible = true
 	medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[1]]
 
 func _on_fase_2_pressed() -> void:
+	carregarScena = "res://Scripts/Fase/FasesAssets/fase_2.tscn"
 	numeroFaseLabel.text = "fase 2"
 	botaoPlay.visible = true
 	medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[2]]
 
 
 func _on_fase_3_pressed() -> void:
+	carregarScena = "res://Scripts/Fase/FasesAssets/fase_3.tscn"
 	numeroFaseLabel.text = "fase 3"
 	botaoPlay.visible = true
 	medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[3]]
 
 
 func _on_fase_4_pressed() -> void:
+	carregarScena = "res://Scripts/Fase/FasesAssets/fase_4.tscn"
 	numeroFaseLabel.text = "fase 4"
 	botaoPlay.visible = true
 	medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[4]]
@@ -59,6 +64,7 @@ func _on_fase_4_pressed() -> void:
 
 
 func _on_fase_5_pressed() -> void:
+	carregarScena = "res://Scripts/Fase/FasesAssets/fase_5.tscn"
 	numeroFaseLabel.text = "fase 5"
 	botaoPlay.visible = true
 	medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[5]]

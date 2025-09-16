@@ -14,6 +14,12 @@ var id: int
 ##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
 
+##se deixar false o gerado vai ser o que botou na lista
+@export var randomDestinos: bool = true
+@export var quantDestinos: int
+@export var nodoComOsDestinos: Node
+
+
 ##amigos que terao intereçao caso o script seja o manual e n o 
 ##aleatorio, só tem q botar 1 dos 2
 @export var ListaAmigosSimples: Array[CharacterBody2D]
@@ -27,6 +33,7 @@ var id: int
 @export var tempoEsperaMin: float
 ##tempo max ate andar dnv, definido pelo resource
 @export var tempoEsperaMax: float
+
 
 @export_group("Nodos")
 @export var animacaoNode: Node
@@ -50,6 +57,12 @@ func _ready() -> void:
 	nomeCor = resourceNPC.RnomeCor
 	sprite.texture = resourceNPC.Rsprite
 	
+	#pega os destinos
+	if randomDestinos:
+		for i in range(quantDestinos):
+			var _nodoDestino = nodoComOsDestinos.get_child(randi()% 10)
+			nodosDestino.append(_nodoDestino)
+		
 	pass
 
 func _physics_process(delta: float) -> void:

@@ -19,7 +19,7 @@ var matrizNPCs
 var scriptCarregadoLogica
 
 func _ready() -> void:
-	Niveis.faseAtual = 0
+	Niveis.faseAtual = lvlAtual
 	scriptCarregadoLogica = scriptCriacaoGrafo.new()
 	#pega os filhos do nodo dos npcs
 	ListaNPCs.clear()
