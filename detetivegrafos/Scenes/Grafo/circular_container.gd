@@ -17,10 +17,10 @@ func organizar_em_circulo():
 	var angle_step = 360.0 / num_children 
 	
 	#se tiver mt aumenta o tamanho
-	if num_children> 5:
+	if num_children > 5:
 		var demais = num_children - 5
-		radius = demais * 10
-	
+		radius  = radius + demais * 15
+	#
 	for i in range(num_children):
 		var child = get_child(i)
 		if child is Control:

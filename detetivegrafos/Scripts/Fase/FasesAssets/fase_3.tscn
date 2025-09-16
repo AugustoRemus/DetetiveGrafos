@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dm0uskdyv2ndy"]
+[gd_scene load_steps=15 format=4 uid="uid://dm0uskdyv2ndy"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_pxi76"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ppdh7"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cwqyfflrmmchj" path="res://Scenes/Grafo/grafo_player.tscn" id="4_71tly"]
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="5_j3qhg"]
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://ResourcesNpcs/teste/testeAzul.tres" id="6_naant"]
-[ext_resource type="Resource" uid="uid://cs0ckhunrf7l4" path="res://ResourcesNpcs/teste/rosa.tres" id="6_ppdh7"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://ResourcesNpcs/teste/testeAmarelo.tres" id="7_wl0cs"]
 [ext_resource type="Resource" uid="uid://6p5ynvtcsw5u" path="res://ResourcesNpcs/teste/laranja.tres" id="8_6jk5h"]
 [ext_resource type="Resource" uid="uid://cqdq6qnuwsrqm" path="res://ResourcesNpcs/teste/branco.tres" id="9_66ncm"]
@@ -91,12 +90,6 @@ position = Vector2(-292, 190)
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="rosa" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("5_j3qhg")]
-position = Vector2(-463, 249)
-resourceNPC = ExtResource("6_ppdh7")
-quantDestinos = 4
-nodoComOsDestinos = NodePath("../../ArrayPontos")
-
 [node name="laranja" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_j3qhg")]
 position = Vector2(-390, 350)
 resourceNPC = ExtResource("8_6jk5h")
@@ -123,11 +116,12 @@ quantDestinos = 2
 nodoComOsDestinos = NodePath("../../ArrayPontos")
 ListaAmigosSimples = [NodePath("../branco"), NodePath("../Azul")]
 
-[node name="branco" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("5_j3qhg")]
+[node name="branco" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_j3qhg")]
 position = Vector2(-14, 332)
 resourceNPC = ExtResource("9_66ncm")
 quantDestinos = 4
 nodoComOsDestinos = NodePath("../../ArrayPontos")
+ListaAmigosSimples = [NodePath("../laranja")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)

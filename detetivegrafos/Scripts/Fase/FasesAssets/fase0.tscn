@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://7o1tn60hux7k"]
+[gd_scene load_steps=13 format=4 uid="uid://7o1tn60hux7k"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_6pv3x"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ulo56"]
@@ -11,7 +11,6 @@
 [ext_resource type="TileSet" uid="uid://o3ftoqrbjyne" path="res://Scripts/Fase/FasesAssets/tileset/tileSetCerca.tres" id="10_or1hc"]
 [ext_resource type="TileSet" uid="uid://b8p6r071duh7p" path="res://Scripts/Fase/FasesAssets/tileset/chaoTileSet.tres" id="11_ulo56"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="12_e04pu"]
-[ext_resource type="Resource" uid="uid://cqdq6qnuwsrqm" path="res://ResourcesNpcs/teste/branco.tres" id="13_3kwds"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
 vertices = PackedVector2Array(503.02344, -49.023438, 503.96875, 426.89063, -515.22656, 416.10156, -526.7422, -51.96875)
@@ -86,13 +85,6 @@ resourceNPC = ExtResource("12_e04pu")
 nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1")]
 randomDestinos = false
 nodoComOsDestinos = NodePath("../../ArrayPontos")
-
-[node name="branco" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("7_empmn")]
-position = Vector2(29, 214)
-resourceNPC = ExtResource("13_3kwds")
-quantDestinos = 5
-nodoComOsDestinos = NodePath("../../ArrayPontos")
-ListaAmigosSimples = [NodePath("../Azul")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
