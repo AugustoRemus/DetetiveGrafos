@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://by830mxx6jlot" path="res://Scripts/config.gd" id="1_kr0as"]
 
-[node name="Config" type="Control" node_paths=PackedStringArray("controleVolume")]
+[node name="Config" type="Control" node_paths=PackedStringArray("controleVolume", "dificuldades")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,39 +10,60 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kr0as")
-controleVolume = NodePath("CanvasLayer/GridContainer3/GridContainer2/HSlider")
+controleVolume = NodePath("CanvasLayer/tudo/volumeGrid/HSlider")
+dificuldades = [NodePath("CanvasLayer/tudo/dificuldadegrid/Facil"), NodePath("CanvasLayer/tudo/dificuldadegrid/medio"), NodePath("CanvasLayer/tudo/dificuldadegrid/dificiç")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GridContainer3" type="GridContainer" parent="CanvasLayer"]
+[node name="tudo" type="GridContainer" parent="CanvasLayer"]
 offset_left = 47.0
 offset_top = 68.0
 offset_right = 263.0
 offset_bottom = 118.0
 
-[node name="volume" type="Label" parent="CanvasLayer/GridContainer3"]
+[node name="volume" type="Label" parent="CanvasLayer/tudo"]
 layout_mode = 2
 text = "volume:"
 
-[node name="GridContainer2" type="GridContainer" parent="CanvasLayer/GridContainer3"]
+[node name="volumeGrid" type="GridContainer" parent="CanvasLayer/tudo"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 4
 columns = 3
 
-[node name="Label2" type="Label" parent="CanvasLayer/GridContainer3/GridContainer2"]
+[node name="Label2" type="Label" parent="CanvasLayer/tudo/volumeGrid"]
 layout_mode = 2
 text = "0"
 
-[node name="HSlider" type="HSlider" parent="CanvasLayer/GridContainer3/GridContainer2"]
+[node name="HSlider" type="HSlider" parent="CanvasLayer/tudo/volumeGrid"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 75.0
 
-[node name="Label" type="Label" parent="CanvasLayer/GridContainer3/GridContainer2"]
+[node name="Label" type="Label" parent="CanvasLayer/tudo/volumeGrid"]
 layout_mode = 2
 text = "100"
+
+[node name="dificuldade" type="Label" parent="CanvasLayer/tudo"]
+layout_mode = 2
+text = "dificuldade:"
+
+[node name="dificuldadegrid" type="GridContainer" parent="CanvasLayer/tudo"]
+layout_mode = 2
+columns = 6
+
+[node name="Facil" type="CheckBox" parent="CanvasLayer/tudo/dificuldadegrid"]
+layout_mode = 2
+text = "fácil"
+
+[node name="medio" type="CheckBox" parent="CanvasLayer/tudo/dificuldadegrid"]
+layout_mode = 2
+text = "médio"
+
+[node name="dificiç" type="CheckBox" parent="CanvasLayer/tudo/dificuldadegrid"]
+layout_mode = 2
+text = "difícil"
 
 [node name="LabelConfig" type="Label" parent="CanvasLayer"]
 offset_left = 2.0
@@ -58,5 +79,8 @@ offset_right = 639.0
 offset_bottom = 359.0
 text = "voltar"
 
-[connection signal="value_changed" from="CanvasLayer/GridContainer3/GridContainer2/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/tudo/volumeGrid/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/tudo/dificuldadegrid/Facil" to="." method="_on_facil_pressed"]
+[connection signal="pressed" from="CanvasLayer/tudo/dificuldadegrid/medio" to="." method="_on_medio_pressed"]
+[connection signal="pressed" from="CanvasLayer/tudo/dificuldadegrid/dificiç" to="." method="_on_dificiç_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

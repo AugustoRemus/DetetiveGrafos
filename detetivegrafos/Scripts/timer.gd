@@ -12,6 +12,16 @@ var rodando = true
 #daria pra fazer um script pra procurar
 @export var grafoPlayer: CanvasLayer
 
+
+func  _ready() -> void:
+	#ajusta dificuldade
+	if Niveis.dificuldade == 1:
+		tempo = tempo + 30
+	if Niveis.dificuldade == 0:
+		tempo = tempo + 60
+		
+
+
 #ser um pouco mais perdoavel se pa
 func _process(delta: float) -> void:
 	if rodando:
