@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dkbcnmufbpy2f"]
 
-[ext_resource type="Texture2D" uid="uid://c3ytclafnvlpb" path="res://Sprites/Placeholders/NPCVerde.png" id="1_7g32v"]
 [ext_resource type="Script" uid="uid://bgyj8csyi11cf" path="res://Scripts/Player/protagonista.gd" id="1_e0vkn"]
 [ext_resource type="Script" uid="uid://cnixnyhqnp2yp" path="res://Scripts/Player/move.gd" id="2_e0vkn"]
+[ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/Placeholders/silhueta.png" id="2_v853i"]
 [ext_resource type="Script" uid="uid://4sk7gtg25vtl" path="res://Scripts/Player/SpritePlayer.gd" id="3_k2hie"]
 [ext_resource type="Script" uid="uid://bpqkg4mcrldt4" path="res://Scripts/Player/area.gd" id="6_m0par"]
 [ext_resource type="Script" uid="uid://bm3l78ocmcjq0" path="res://Scripts/Player/interador.gd" id="7_v853i"]
@@ -22,7 +22,7 @@ transformador = NodePath("transformador")
 interador = NodePath("area/Interador")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7g32v")
+texture = ExtResource("2_v853i")
 script = ExtResource("3_k2hie")
 
 [node name="hatPlayer" type="Sprite2D" parent="Sprite2D"]
@@ -74,6 +74,21 @@ _corAtual = NodePath("CanvasLayer/GridContainer/CorCopiada")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="tags"]
 
+[node name="transformar" type="Label" parent="tags/CanvasLayer"]
+visible = false
+offset_left = 495.47
+offset_top = 326.0
+offset_right = 618.47
+offset_bottom = 349.0
+text = "E : Transformar "
+
+[node name="conversar" type="Label" parent="tags/CanvasLayer"]
+offset_left = 495.47
+offset_top = 326.0
+offset_right = 596.47
+offset_bottom = 349.0
+text = "E : Conversar"
+
 [node name="roubarCor" type="Label" parent="tags/CanvasLayer"]
 offset_left = 9.0
 offset_top = 330.0
@@ -81,19 +96,12 @@ offset_right = 110.0
 offset_bottom = 353.0
 text = "Q: Copiar cor"
 
-[node name="transformar" type="Label" parent="tags/CanvasLayer"]
-offset_left = 504.0
-offset_top = 330.0
-offset_right = 627.0
-offset_bottom = 353.0
-text = "E : Transformar "
-
-[node name="conversar" type="Label" parent="tags/CanvasLayer"]
-offset_left = 504.0
-offset_top = 330.0
-offset_right = 605.0
-offset_bottom = 353.0
-text = "E : Conversar"
+[node name="ColorRect" type="ColorRect" parent="tags/CanvasLayer"]
+offset_left = 209.7
+offset_top = 321.0
+offset_right = 425.6997
+offset_bottom = 361.0
+color = Color(0, 0, 0, 0.50980395)
 
 [node name="GridContainer" type="GridContainer" parent="tags/CanvasLayer"]
 anchors_preset = 7
@@ -101,9 +109,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -56.0
+offset_left = -80.0
 offset_top = -32.0
-offset_right = 56.0
+offset_right = 80.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0

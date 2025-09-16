@@ -26,6 +26,11 @@ text = "Jogar"
 layout_mode = 2
 text = "Configurações"
 
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Creditos
+"
+
 [node name="sair" type="Button" parent="GridContainer"]
 layout_mode = 2
 text = "Sair
@@ -33,4 +38,5 @@ text = "Sair
 
 [connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="GridContainer/sair" to="." method="_on_sair_pressed"]

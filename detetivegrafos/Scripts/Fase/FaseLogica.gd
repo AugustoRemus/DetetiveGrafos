@@ -3,6 +3,9 @@ extends Node2D
 ##lista de todos os NPCs
 var ListaNPCs: Array[NPCClasse]
 
+##nivel atual
+@export var lvlAtual : int
+
 ##nodo aonde estao os npcs
 @export var nodoNPCs: Node
 
@@ -16,6 +19,7 @@ var matrizNPCs
 var scriptCarregadoLogica
 
 func _ready() -> void:
+	Niveis.faseAtual = 0
 	scriptCarregadoLogica = scriptCriacaoGrafo.new()
 	#pega os filhos do nodo dos npcs
 	ListaNPCs.clear()
