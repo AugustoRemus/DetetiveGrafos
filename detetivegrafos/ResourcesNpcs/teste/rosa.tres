@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://cs0ckhunrf7l4"]
+
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://ResourcesNpcs/NPCsResource.gd" id="1_5lvqv"]
+[ext_resource type="Texture2D" uid="uid://c4pp5mynw1rgs" path="res://Sprites/Placeholders/rosaDebug.png" id="1_aukk3"]
+
+[resource]
+script = ExtResource("1_5lvqv")
+Rsprite = ExtResource("1_aukk3")
+RnomeCor = "Rosa"
+Rspeed = 100.0
+RtempoEsperaMin = 2.0
+RtempoEsperaMax = 4.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

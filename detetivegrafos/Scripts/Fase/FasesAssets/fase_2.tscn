@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="12_2jyrl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
-vertices = PackedVector2Array(503.0078, -49.070313, 503.96875, 427.07813, -153.03125, 432.90625, -154.96094, -53.921875)
+vertices = PackedVector2Array(503.02344, -49.023438, 503.96875, 426.89063, -515.22656, 416.10156, -526.7422, -51.96875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-165, -64, 513, -59, 514, 437, -163, 443)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-537, -62, 513, -59, 514, 437, -525, 426)])
 
 [node name="fase2" type="Node2D" node_paths=PackedStringArray("nodoNPCs")]
 script = ExtResource("1_l5502")
@@ -26,7 +26,7 @@ nodoNPCs = NodePath("NPCs")
 scriptCriacaoGrafo = ExtResource("2_gj5aw")
 
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_785bb")]
-tempo = 1000.0
+tempo = 160.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
@@ -35,6 +35,7 @@ visible = false
 nodoDosNPC = NodePath("../NPCs")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-19, 5)
 navigation_polygon = SubResource("NavigationPolygon_dhdj0")
 
 [node name="ArrayPontos" type="Node" parent="."]
@@ -69,32 +70,59 @@ position = Vector2(174, -31)
 [node name="10" type="Node2D" parent="ArrayPontos"]
 position = Vector2(24, 64)
 
+[node name="11" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-479, -5)
+
+[node name="12" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-508, 377)
+
+[node name="13" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-476, 218)
+
+[node name="14" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-282, 19)
+
+[node name="15" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-278, 356)
+
+[node name="16" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-292, 190)
+
 [node name="NPCs" type="Node" parent="."]
 
-[node name="Azul" parent="NPCs" node_paths=PackedStringArray("ListaAmigosSimples") instance=ExtResource("5_jydag")]
-position = Vector2(-271, 176)
+[node name="Azul" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+position = Vector2(210, 44)
 resourceNPC = ExtResource("9_op44m")
-ListaAmigosSimples = [NodePath("../Amarelo")]
+quantDestinos = 3
+nodoComOsDestinos = NodePath("../../ArrayPontos")
+ListaAmigosSimples = [NodePath("../Amarelo"), NodePath("../branco")]
 
-[node name="Amarelo" parent="NPCs" node_paths=PackedStringArray("ListaAmigosSimples") instance=ExtResource("5_jydag")]
-position = Vector2(208, 200)
+[node name="Amarelo" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+position = Vector2(-387, 62)
 resourceNPC = ExtResource("7_iht4m")
-ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Verde")]
+quantDestinos = 2
+nodoComOsDestinos = NodePath("../../ArrayPontos")
+ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Verde"), NodePath("../Azul")]
 
-[node name="laranja" parent="NPCs" node_paths=PackedStringArray("ListaAmigosSimples") instance=ExtResource("5_jydag")]
-position = Vector2(-542, 352)
+[node name="laranja" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+position = Vector2(-390, 350)
 resourceNPC = ExtResource("10_gj5aw")
+quantDestinos = 2
+nodoComOsDestinos = NodePath("../../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Amarelo")]
 
-[node name="branco" parent="NPCs" node_paths=PackedStringArray("ListaAmigosSimples") instance=ExtResource("5_jydag")]
-position = Vector2(29, 214)
+[node name="branco" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+position = Vector2(-14, 332)
 resourceNPC = ExtResource("6_qmhcp")
+nodoComOsDestinos = NodePath("../../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Amarelo")]
 
-[node name="Verde" parent="NPCs" node_paths=PackedStringArray("ListaAmigosSimples") instance=ExtResource("5_jydag")]
-position = Vector2(-3, 83)
+[node name="Verde" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+position = Vector2(373, 291)
 resourceNPC = ExtResource("8_jlxvu")
-ListaAmigosSimples = [NodePath("../Amarelo"), NodePath("../branco"), NodePath("../Azul")]
+quantDestinos = 4
+nodoComOsDestinos = NodePath("../../ArrayPontos")
+ListaAmigosSimples = [NodePath("../Amarelo"), NodePath("../branco"), NodePath("../Azul"), NodePath("../Azul"), NodePath("../branco"), NodePath("../Amarelo")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)

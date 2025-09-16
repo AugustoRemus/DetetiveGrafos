@@ -14,9 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/DebugTeste/protagonista.tscn" id="12_p0ou8"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
-vertices = PackedVector2Array(503.0078, -49.070313, 503.96875, 427.07813, -153.03125, 432.90625, -154.96094, -53.921875)
+vertices = PackedVector2Array(503.02344, -49.023438, 503.96875, 426.89063, -515.22656, 416.10156, -526.7422, -51.96875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-165, -64, 513, -59, 514, 437, -163, 443)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-537, -62, 513, -59, 514, 437, -525, 426)])
 
 [node name="fase1" type="Node2D" node_paths=PackedStringArray("nodoNPCs")]
 script = ExtResource("1_mwbko")
@@ -25,7 +25,7 @@ nodoNPCs = NodePath("NPCs")
 scriptCriacaoGrafo = ExtResource("2_u2i7p")
 
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_trfr5")]
-tempo = 100.0
+tempo = 75.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
