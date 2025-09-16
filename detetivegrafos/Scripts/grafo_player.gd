@@ -12,8 +12,13 @@ var _matrizPlayer
 
 @export var circularContainer: Control
 
+#guarda o numero
 var _NPC1Aresta = null
-#var _NPC2Aresta = null
+#guarda a posicao
+var _NPC1Pos = null
+
+
+
 
 func _ready() -> void:
 	pegaOsNPCs()
@@ -33,6 +38,8 @@ func _input(event: InputEvent) -> void:
 func pegaOsNPCs():
 	NPCS = nodoDosNPC.get_children()
 
+
+#cria a matriz do player, toda zerada
 func startGrafo():
 	#tanto de players
 	var n = NPCS.size()
@@ -56,6 +63,8 @@ func startGrafo():
 		matriz_adjacencia.append(linha)
 	_matrizPlayer = matriz_adjacencia
 
+
+#bota os filhos no container circular
 func _Teste_CriarFIlhos():
 	var contador = 0
 	for filho in NPCS:
@@ -66,51 +75,57 @@ func _Teste_CriarFIlhos():
 		circularContainer.add_child(botao) 
 	
 
-
+#quando clicar q terminou ou acabou o tempo
 func _on_entregar_pressed() -> void:
 	get_parent().finalizou()
 
 
 
 
-func addAresta(numeroIdNPC):
+func addAresta(numeroIdNPC, posicaoNPC):
 	#se só tem 1 clicado
 	if _NPC1Aresta == null:
 		_NPC1Aresta = numeroIdNPC
+		_NPC1Pos = posicaoNPC
+		
 		return
-	var existe = _checarAresta(numeroIdNPC,_NPC1Aresta)
+		
+	var existe = _existeAresta(numeroIdNPC,_NPC1Aresta)
+	
+	var newAresta = Aresta.new(_NPC1Pos,posicaoNPC,_NPC1Aresta,numeroIdNPC)
 	
 	#tirar aresta
 	if existe:
 		_matrizPlayer[_NPC1Aresta][numeroIdNPC] = "0"
 		_matrizPlayer[numeroIdNPC][_NPC1Aresta] = "0"
-		#remover o efeito
 		
-		print("aresta removida entre os id:")
-		print(_NPC1Aresta)
-		print(numeroIdNPC)
+		#parte visual
+		arestaManager.removeAresta(newAresta)
+		
+		#print("aresta removida entre os id:")
+		#print(_NPC1Aresta)
+		#print(numeroIdNPC)
 		
 	else:
-		
-		
-	
+		#aresta n existe ainda entao adiciona
 		_matrizPlayer[_NPC1Aresta][numeroIdNPC] = "1"
 		_matrizPlayer[numeroIdNPC][_NPC1Aresta] = "1"
 		
-		#add efeito
-		print("aresta adiciona entre os id:")
-		print(_NPC1Aresta)
-		print(numeroIdNPC)
-	#marca na matriz
-	
+		#parte visual
+		arestaManager.addAresta(newAresta)
 		
+		#print("aresta adiciona entre os id:")
+		#print(newAresta.Vertice1)
+		#print(newAresta.Vertice2)
+
 	#reseta todos
 	for filinhos in circularContainer.get_children():
 		filinhos.voltarNormal()
 	
 	#reseta o primeiro numero aqui salvo
 	_NPC1Aresta = null
-	_printMatriz()
+	_NPC1Pos = null
+	#_printMatriz()
 	
 	
 func _printMatriz():
@@ -124,10 +139,13 @@ func _printMatriz():
 	
 func resetClicado():
 	_NPC1Aresta = null
+	_NPC1Pos = null
 	#print("fui resetado")
 
-func _checarAresta(V1, V2)->bool:
-	if _matrizPlayer[V1][V2] =="1":
+
+
+func _existeAresta(V1, V2)->bool:
+	if _matrizPlayer[V1][V2] =="1" or _matrizPlayer[V2][V1] =="1":
 		return true
 	else:
 		return false

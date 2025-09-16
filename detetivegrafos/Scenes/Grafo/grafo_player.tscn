@@ -11,10 +11,10 @@ arestaManager = NodePath("ArestaManager")
 circularContainer = NodePath("CircularContainer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 111.0
-offset_top = 72.0
-offset_right = 521.0
-offset_bottom = 362.0
+offset_left = -13.0
+offset_top = -16.0
+offset_right = 641.0
+offset_bottom = 379.0
 color = Color(0.958839, 0.696485, 0.801812, 1)
 
 [node name="CircularContainer" type="Control" parent="."]
@@ -33,14 +33,16 @@ grow_vertical = 2
 script = ExtResource("2_i1jcp")
 
 [node name="Entregar" type="TextureButton" parent="."]
-offset_left = 120.0
-offset_top = 316.0
-offset_right = 248.0
-offset_bottom = 444.0
+offset_left = 15.0
+offset_top = 311.0
+offset_right = 143.0
+offset_bottom = 439.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("3_akgc4")
 
-[node name="ArestaManager" type="Node" parent="."]
+[node name="ArestaManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("4_icoyr")
 
 [connection signal="pressed" from="Entregar" to="." method="_on_entregar_pressed"]

@@ -27,11 +27,11 @@ func setarTextura(sprite):
 
 func combinar_texturasHover(tex1: Texture2D) -> Texture:
 	#cria uma imagem baseada na textura principal
-	var img = tex1.get_image()
+	var img = tex1.get_image().duplicate()
 	var base_size = img.get_size()
 
 	#copia a silhueta em cima
-	var img_sombra = silhueta.get_image()
+	var img_sombra = silhueta.get_image().duplicate()
 	img.blend_rect(img_sombra, Rect2(Vector2.ZERO, img_sombra.get_size()), Vector2.ZERO)
 
 	#converte
@@ -40,11 +40,12 @@ func combinar_texturasHover(tex1: Texture2D) -> Texture:
 
 func combinar_texturasClicado(tex1: Texture2D) -> Texture:
 	#cria uma imagem baseada na textura principal
-	var img = tex1.get_image()
+	var img = tex1.get_image().duplicate()
+
 	var base_size = img.get_size()
 
 	#copia a silhueta em cima
-	var img_sombra = silhuetaAmarela.get_image()
+	var img_sombra = silhuetaAmarela.get_image().duplicate()
 	img.blend_rect(img_sombra, Rect2(Vector2.ZERO, img_sombra.get_size()), Vector2.ZERO)
 
 	#converte
@@ -64,7 +65,9 @@ func _on_pressed() -> void:
 
 func fuiClicado(condicao):
 	if condicao:
-		get_parent().get_parent().addAresta(_id)
+		#passa o id e a posicao atua dele para desenhar a linha
+		var posicaoCerta = global_position + (size / 2)
+		get_parent().get_parent().addAresta(_id, posicaoCerta)
 	if !condicao:
 		get_parent().get_parent().resetClicado()
 	
