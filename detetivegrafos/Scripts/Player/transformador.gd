@@ -35,6 +35,7 @@ func transformar():
 		sprite.texture = podeTransformar.sprite.texture
 		labelCor.text = "Nenhuma"
 		
+		#inutil por enquanto
 		if podeTransformar.hat:
 			hatSpritePlayer.texture = podeTransformar.hat.sprite
 			player.hatTransformado = podeTransformar.hat
@@ -45,10 +46,12 @@ func transformar():
 		player.idNPCTransformado = podeTransformar.id
 		podeTransformar = null
 		tags.transformarLabel(false)
-		#player.possoTransformar = false
+		##barulho transformacao
 	else:
-		print("n da pra se transformar")
-		#barulho erro
+		#print("n da pra se transformar")
+		SomManager.erro.play()
+		##barulho erro
+		pass
 		
 		
 		

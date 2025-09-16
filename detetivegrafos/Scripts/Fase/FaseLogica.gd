@@ -39,7 +39,7 @@ func _ready() -> void:
 	matrizNPCs = scriptCarregadoLogica.CriarGrafo(ListaNPCs)
 	startNPCs()
 	
-	printar_matriz(matrizNPCs)
+	#printar_matriz(matrizNPCs)
 	
 	
 	

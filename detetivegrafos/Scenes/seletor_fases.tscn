@@ -99,6 +99,15 @@ text = "melhor pontuação:"
 [node name="medalhas" type="TextureRect" parent="ColorRect/GridContainer"]
 layout_mode = 2
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 327.0
+offset_right = 56.0
+offset_bottom = 358.0
+text = "voltar
+"
+
 [connection signal="pressed" from="GridContainer2/fase0" to="." method="_on_fase_0_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase1" to="." method="_on_fase_1_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase2" to="." method="_on_fase_2_pressed"]
@@ -106,3 +115,4 @@ layout_mode = 2
 [connection signal="pressed" from="GridContainer2/GridContainer/fase4" to="." method="_on_fase_4_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase5" to="." method="_on_fase_5_pressed"]
 [connection signal="pressed" from="ColorRect/botaoStart" to="." method="_on_botao_start_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -18,11 +18,13 @@ func addAresta(_aresta: Aresta):
 	linha.points = [ponto_a, ponto_b]
 	
 	add_child(linha)
-	print("linha adicionada")
+	SomManager.click.play()
+	#print("linha adicionada")
 	
 
 func removeAresta(_aresta: Aresta):
-	print("aresta repetida")
+	
+	SomManager.apagar.play()
 	var todasLinnhas = get_children()
 	#pra todos os filhos
 	for linha in todasLinnhas:

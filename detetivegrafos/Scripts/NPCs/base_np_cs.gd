@@ -40,7 +40,7 @@ var id: int
 @export var sprite: Sprite2D
 @export var silhuetaNodo: Sprite2D
 @export var LogicaInteraçoes: Node
-
+@export var labelNomeCor: Label
 var nomeCor: String
 
 
@@ -55,6 +55,7 @@ func _ready() -> void:
 	tempoEsperaMin = resourceNPC.RtempoEsperaMin
 	tempoEsperaMax = resourceNPC.RtempoEsperaMax
 	nomeCor = resourceNPC.RnomeCor
+	labelNomeCor.text = nomeCor
 	sprite.texture = resourceNPC.Rsprite
 	
 	#pega os destinos

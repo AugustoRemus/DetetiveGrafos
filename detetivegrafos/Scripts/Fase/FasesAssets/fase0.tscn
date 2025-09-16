@@ -27,6 +27,34 @@ tempo = 120.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
+[node name="tutorial" type="VBoxContainer" parent="timer"]
+offset_left = 393.0
+offset_top = 11.0
+offset_right = 640.0
+offset_bottom = 188.0
+
+[node name="tutorial1" type="FoldableContainer" parent="timer/tutorial"]
+layout_mode = 2
+title = "Tutorial 1"
+title_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="timer/tutorial/tutorial1"]
+layout_mode = 2
+text = "Bem-vindo ao jogo! Você é um detetive e deve montar um grafo baseado nas interações dos personagens no cenário. Para abrir seu grafo, clique em espaço!"
+fit_content = true
+
+[node name="tutorial2" type="FoldableContainer" parent="timer/tutorial"]
+layout_mode = 2
+folded = true
+title = "Tutorial 2"
+title_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="timer/tutorial/tutorial2"]
+visible = false
+layout_mode = 2
+text = "Voce deve primeiro clicar Q perto de algum personagem para copiar a sua cor, depois se afaste e clique E para se transformar, use o E para conversar com os outros personagem se estiver perto deles"
+fit_content = true
+
 [node name="grafoPlayer" parent="." node_paths=PackedStringArray("nodoDosNPC") instance=ExtResource("4_a3jqw")]
 visible = false
 nodoDosNPC = NodePath("../NPCs")
