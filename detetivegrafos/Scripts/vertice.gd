@@ -55,9 +55,12 @@ func combinar_texturasClicado(tex1: Texture2D) -> Texture:
 func _on_pressed() -> void:
 	#print("voce clicou agorora no id:")
 	#print(_id)
+	
 	if clicado:
+		#foi clicado novamente
 		voltarNormal()
 	else:
+		#foi selecionado
 		clicado = true
 		texture_normal = texturaClicado
 		fuiClicado(true)

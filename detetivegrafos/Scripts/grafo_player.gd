@@ -136,7 +136,8 @@ func _printMatriz():
 			linha_str += str(valor) + " "
 		print(linha_str.strip_edges())  
 
-	
+
+#usado no vertice, nao apagar!
 func resetClicado():
 	_NPC1Aresta = null
 	_NPC1Pos = null
