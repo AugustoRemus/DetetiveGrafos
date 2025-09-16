@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://b71e643tt8njg"]
+
+[ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_3iax5"]
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://ResourcesNpcs/NPCsResource.gd" id="1_ea71i"]
+
+[resource]
+script = ExtResource("1_ea71i")
+Rsprite = ExtResource("1_3iax5")
+Rid = 0
+RnomeCor = "Azul"
+Rspeed = 50.0
+RbobSpeed = 0.4
+RtempoEsperaMin = 2.0
+RtempoEsperaMax = 3.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

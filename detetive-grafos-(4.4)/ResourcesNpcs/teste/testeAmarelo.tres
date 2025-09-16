@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://dhkt6xknhj750"]
+
+[ext_resource type="Texture2D" uid="uid://u4jbpgk8diog" path="res://Sprites/Placeholders/NPCAmarelo.png" id="1_q2dm3"]
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://ResourcesNpcs/NPCsResource.gd" id="2_0bnas"]
+
+[resource]
+script = ExtResource("2_0bnas")
+Rsprite = ExtResource("1_q2dm3")
+Rid = 2
+RnomeCor = "Amarelo"
+Rspeed = 300.0
+RbobSpeed = 0.6
+RtempoEsperaMin = 0.0
+RtempoEsperaMax = 2.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

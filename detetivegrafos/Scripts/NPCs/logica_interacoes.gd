@@ -40,7 +40,7 @@ func interacaoID(idInteracao:int):
 		return
 		
 	#chama com o numero da interacao
-	logicaBalao.exibirBalao(_matriz[idInteracao][base_np_cs.id])
+	logicaBalao.exibirBalao(int(_matriz[idInteracao][base_np_cs.id]))
 		
 
 	

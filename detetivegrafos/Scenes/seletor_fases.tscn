@@ -25,3 +25,4 @@ layout_mode = 2
 text = "Fase2"
 
 [connection signal="pressed" from="GridContainer/Fase1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="GridContainer/Fase2" to="." method="_on_fase_2_pressed"]

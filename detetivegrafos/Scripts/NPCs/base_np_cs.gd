@@ -11,9 +11,12 @@ var id: int
 ##se n for ter deixa null
 @export var hat: hatsResource = null
 
-
 ##lista com os destinos possiveis do npcs para andar
 @export var nodosDestino: Array[Node2D]
+
+##amigos que terao intereçao caso o script seja o manual e n o 
+##aleatorio, só tem q botar 1 dos 2
+@export var ListaAmigosSimples: Array[CharacterBody2D]
 
 @export_group("Atriburos resource")
 
@@ -25,8 +28,6 @@ var id: int
 ##tempo max ate andar dnv, definido pelo resource
 @export var tempoEsperaMax: float
 
-
-
 @export_group("Nodos")
 @export var animacaoNode: Node
 @export var sprite: Sprite2D
@@ -34,6 +35,7 @@ var id: int
 @export var LogicaInteraçoes: Node
 
 var nomeCor: String
+
 
 
 #uma lista de npcs base que vai dizer quais ele gosta e quais n gosta

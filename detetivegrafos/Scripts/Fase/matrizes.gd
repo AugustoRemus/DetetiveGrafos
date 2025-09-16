@@ -1,0 +1,21 @@
+extends Node
+
+var MatrizCerta
+
+var MatrizPlayer
+
+#chamar inicio da fase
+func resetMatrizes():
+	MatrizPlayer = null
+	MatrizCerta = null
+
+func calcularErro():
+	var errosTotal = 0
+	var tamanhoMatriz = MatrizCerta.size()
+	for i in range(tamanhoMatriz):
+		for j in range(i+1, tamanhoMatriz):
+			if MatrizCerta[i][j] != MatrizPlayer[i][j]:
+				errosTotal +=1 
+				
+	return errosTotal
+	

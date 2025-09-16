@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cte80ldpkid66"]
+
+[ext_resource type="Script" uid="uid://6gxqm04ujth4" path="res://Scripts/seletor_fases.gd" id="1_w4kf5"]
+
+[node name="Seletor_Fases" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4kf5")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fase1" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Fase1"
+
+[node name="Fase2" type="Button" parent="GridContainer"]
+layout_mode = 2
+text = "Fase2"
+
+[connection signal="pressed" from="GridContainer/Fase1" to="." method="_on_fase_1_pressed"]

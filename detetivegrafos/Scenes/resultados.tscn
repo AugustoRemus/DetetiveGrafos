@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjme6imsja4xo"]
+
+[ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Fase/resultados.gd" id="1_yvfxy"]
+
+[node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvfxy")
+voltarBotao = NodePath("voltar")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 321.0
+offset_right = 629.0
+offset_bottom = 352.0
+text = "Menu
+"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

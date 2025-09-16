@@ -1,4 +1,5 @@
 extends Node2D
+
 ##lista de todos os NPCs
 var ListaNPCs: Array[NPCClasse]
 
@@ -43,6 +44,7 @@ func marcadoID():
 	var contador = 0
 	for npc in ListaNPCs:
 		npc.setID(contador)
+		print(npc.nomeCor)
 		print(npc.id)
 		contador+= 1
 		
@@ -59,5 +61,10 @@ func startNPCs():
 	for npc in ListaNPCs:
 		npc.LogicaInteraçoes.setMatriz(matrizNPCs)
 
-func finalizou():
-	print("fim d jogo")
+func finalizou(_matriz):
+	#botar um cronometro com o tempo da animação e
+	#no final botar esse resto d codigo:
+	Matrizes.MatrizCerta = matrizNPCs
+	Matrizes.MatrizPlayer = _matriz
+	get_tree().change_scene_to_file("res://Scenes/resultados.tscn")
+	

@@ -37,7 +37,7 @@ func _init() -> void:
 func _physics_process(delta):
 	_move()
 	#quando andar faz a animação
-	sprite._animation(direcao)
+	sprite._animation(direcao,delta)
 	#play audio de passos
 	#botar um teste para o player nao conseguir sair do mapa
 	

@@ -19,7 +19,6 @@ var _NPC1Pos = null
 
 
 
-
 func _ready() -> void:
 	pegaOsNPCs()
 	startGrafo()
@@ -74,12 +73,6 @@ func _Teste_CriarFIlhos():
 		contador+= 1
 		circularContainer.add_child(botao) 
 	
-
-#quando clicar q terminou ou acabou o tempo
-func _on_entregar_pressed() -> void:
-	get_parent().finalizou()
-
-
 
 
 func addAresta(numeroIdNPC, posicaoNPC):
@@ -151,3 +144,11 @@ func _existeAresta(V1, V2)->bool:
 	else:
 		return false
 	
+
+func entregar():
+	get_parent().finalizou(_matrizPlayer)
+
+
+#quando clicar q terminou ou acabou o tempo
+func _on_entregar_pressed() -> void:
+	entregar()
