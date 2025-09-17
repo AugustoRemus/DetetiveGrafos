@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bujci4me1jles"]
+
+[ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Fontes/Mechanical-g5Y5.otf" id="1_g6o35"]
+
+[resource]
+Label/fonts/font = ExtResource("1_g6o35")

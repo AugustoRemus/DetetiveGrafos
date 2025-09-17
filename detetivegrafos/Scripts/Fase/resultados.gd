@@ -8,6 +8,9 @@ extends Control
 @export var tempoRestante: Label
 @export var resultado: Label
 
+@export var estrelasTextura: TextureRect
+@export var arrayTexturas: Array[Texture2D]
+
 var _totalErros
 
 
@@ -21,11 +24,14 @@ func _ready() -> void:
 	#falhou
 	if _totalErros >= 3:
 		resultado.text = "FALHADA!"
+		estrelasTextura.texture = arrayTexturas[0]
 		return
 		#botar label e tals
 	else:
 		resultado.text = "CONCLUIDA!"
 		Niveis.fasesPontos[_nivelAtual] = _totalErros+1
+		estrelasTextura.texture = arrayTexturas[_totalErros+1]
+		
 		if _nivelAtual != Niveis.quantNiveis:
 			#libera o proximo nivel se n foi o ultimo
 			Niveis.fasesPontos[_nivelAtual+1] = 0
