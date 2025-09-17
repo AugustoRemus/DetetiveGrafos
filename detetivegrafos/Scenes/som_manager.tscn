@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://box2ygvvpd8p2"]
+[gd_scene load_steps=6 format=3 uid="uid://box2ygvvpd8p2"]
 
 [ext_resource type="AudioStream" uid="uid://7aqak6r2jh0x" path="res://Sons/SomErro.sfxr" id="1_4kwys"]
 [ext_resource type="Script" uid="uid://bxttcthpar5yx" path="res://Scripts/som_manager.gd" id="1_umwa6"]
 [ext_resource type="AudioStream" uid="uid://bmkhyyaxuxork" path="res://Sons/apagar.sfxr" id="3_fwodo"]
 [ext_resource type="AudioStream" uid="uid://cx4btmdqeuydx" path="res://Sons/click.sfxr" id="3_wm0oh"]
+[ext_resource type="AudioStream" uid="uid://mo1wmr3hkpe5" path="res://Sons/hover.sfxr" id="5_j0hpm"]
 
 [node name="SomManager" type="Node2D"]
 script = ExtResource("1_umwa6")
@@ -20,3 +21,6 @@ stream = ExtResource("3_wm0oh")
 
 [node name="apagar" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_fwodo")
+
+[node name="hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_j0hpm")

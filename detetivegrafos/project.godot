@@ -34,11 +34,15 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/shaker/plugin.cfg")
 
 [global_group]
 
 Alvo="pode ser transformado"
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [input]
 

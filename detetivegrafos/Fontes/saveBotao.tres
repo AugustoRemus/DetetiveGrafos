@@ -73,13 +73,14 @@ expand_margin_top = 5.0
 expand_margin_right = 10.0
 expand_margin_bottom = 5.0
 shadow_color = Color(0.7137255, 0.12941177, 0, 1)
-shadow_size = 10
+shadow_size = 5
 shadow_offset = Vector2(3, 3)
 
 [resource]
 default_font = ExtResource("1_u1h1l")
 Button/colors/font_disabled_color = Color(0.3328803, 0.33288088, 0.33288038, 0.5019608)
 Button/colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.7137255, 0.12941177, 0, 1)
 Button/colors/font_pressed_color = Color(0.7137255, 0.12941177, 0, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_u1h1l")
 Button/styles/focus = SubResource("StyleBoxEmpty_iun45")

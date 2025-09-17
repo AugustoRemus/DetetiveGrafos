@@ -12,6 +12,8 @@ var volume = 75
 
 @onready var apagar: AudioStreamPlayer2D = $apagar
 
+@onready var hover: AudioStreamPlayer2D = $hover
+
 
 @onready var todos_sons := [musica, erro, click, escrever, apagar]
 
