@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwqyfflrmmchj"]
+[gd_scene load_steps=11 format=3 uid="uid://cwqyfflrmmchj"]
 
 [ext_resource type="Script" uid="uid://cth6dtgl3qcuv" path="res://Scripts/grafo_player.gd" id="1_ds4nc"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Fontes/fundo.tres" id="2_6rqgk"]
 [ext_resource type="Script" uid="uid://b02agc5y4g24y" path="res://Scenes/Grafo/circular_container.gd" id="2_i1jcp"]
-[ext_resource type="Texture2D" uid="uid://2j7ortssax6w" path="res://icon.svg" id="3_akgc4"]
 [ext_resource type="Script" uid="uid://bp10ijjl3k8n0" path="res://Scenes/Grafo/aresta_manager.gd" id="4_icoyr"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="6_h0wb3"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="7_5nq24"]
+[ext_resource type="Theme" uid="uid://blmicg85n0boj" path="res://Fontes/botao.tres" id="8_5nq24"]
+[ext_resource type="Script" uid="uid://myt5uoeahs21" path="res://Scripts/conformar_desistir.gd" id="8_ha5to"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="9_6qs1o"]
+[ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://scripts/confirmar_entrega.gd" id="11_l735g"]
 
 [node name="grafoPlayer" type="CanvasLayer" node_paths=PackedStringArray("arestaManager", "circularContainer")]
 script = ExtResource("1_ds4nc")
-arestaManager = NodePath("ArestaManager")
+arestaManager = NodePath("Panel/ArestaManager")
 circularContainer = NodePath("Panel/CircularContainer")
 
 [node name="Panel" type="Panel" parent="."]
@@ -41,18 +46,163 @@ grow_vertical = 2
 script = ExtResource("2_i1jcp")
 grafo_player = NodePath("../..")
 
-[node name="Entregar" type="TextureButton" parent="Panel"]
-layout_mode = 0
-offset_left = -60.5
-offset_top = 285.5
-offset_right = 67.5
-offset_bottom = 413.5
-scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("3_akgc4")
+[node name="Entregar2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 82.0
+grow_vertical = 0
+theme = ExtResource("6_h0wb3")
+text = "Entregar"
+script = ExtResource("7_5nq24")
 
-[node name="ArestaManager" type="Control" parent="."]
-layout_mode = 3
+[node name="ArestaManager" type="Control" parent="Panel"]
 anchors_preset = 0
+offset_left = -75.5
+offset_top = -25.5
+offset_right = -75.5
+offset_bottom = -25.5
 script = ExtResource("4_icoyr")
 
-[connection signal="pressed" from="Panel/Entregar" to="." method="_on_entregar_pressed"]
+[node name="desistir" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_h0wb3")
+text = "Desistir"
+script = ExtResource("7_5nq24")
+
+[node name="conformar Desistir" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -123.0
+offset_right = 173.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_6rqgk")
+script = ExtResource("8_ha5to")
+
+[node name="txtConfirmarDesistencia" type="Label" parent="Panel/conformar Desistir"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -153.5
+offset_right = 153.5
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("9_6qs1o")
+text = "Tem Certeza que deseja desistir?"
+
+[node name="GridContainer" type="GridContainer" parent="Panel/conformar Desistir"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+columns = 2
+
+[node name="simDesistir" type="Button" parent="Panel/conformar Desistir/GridContainer"]
+layout_mode = 2
+theme = ExtResource("8_5nq24")
+text = "Sim"
+script = ExtResource("7_5nq24")
+
+[node name="naoDesistir" type="Button" parent="Panel/conformar Desistir/GridContainer"]
+layout_mode = 2
+theme = ExtResource("8_5nq24")
+text = "Não
+"
+script = ExtResource("7_5nq24")
+
+[node name="ConfirmarEntrega" type="Panel" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.5
+offset_top = -123.0
+offset_right = 173.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_6rqgk")
+script = ExtResource("11_l735g")
+
+[node name="txtConfirmarEntrega" type="Label" parent="Panel/ConfirmarEntrega"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_right = 192.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("9_6qs1o")
+text = "Tem certeza que deseja finalizar a fase?"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel/ConfirmarEntrega"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+columns = 2
+
+[node name="simEntrega" type="Button" parent="Panel/ConfirmarEntrega/GridContainer"]
+layout_mode = 2
+theme = ExtResource("8_5nq24")
+text = "Sim"
+script = ExtResource("7_5nq24")
+
+[node name="naoEntrega" type="Button" parent="Panel/ConfirmarEntrega/GridContainer"]
+layout_mode = 2
+theme = ExtResource("8_5nq24")
+text = "Não
+"
+script = ExtResource("7_5nq24")
+
+[connection signal="pressed" from="Panel/Entregar2" to="Panel/ConfirmarEntrega" method="_on_entregar_2_pressed"]
+[connection signal="pressed" from="Panel/desistir" to="." method="_on_desistir_pressed"]
+[connection signal="pressed" from="Panel/desistir" to="Panel/conformar Desistir" method="_on_desistir_pressed"]
+[connection signal="pressed" from="Panel/conformar Desistir/GridContainer/simDesistir" to="Panel/conformar Desistir" method="_on_sim_desistir_pressed"]
+[connection signal="pressed" from="Panel/conformar Desistir/GridContainer/naoDesistir" to="Panel/conformar Desistir" method="_on_nao_desistir_pressed"]
+[connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/simEntrega" to="." method="_on_sim_entrega_pressed"]
+[connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/simEntrega" to="Panel/ConfirmarEntrega" method="_on_sim_entrega_pressed"]
+[connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/naoEntrega" to="Panel/ConfirmarEntrega" method="_on_nao_entrega_pressed"]

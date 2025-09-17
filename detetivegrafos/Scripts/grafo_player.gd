@@ -13,7 +13,7 @@ var _matrizPlayer
 @export var circularContainer: Control
 
 var aparente = false
-var posEscondido = Vector2(75.5,200)
+var posEscondido = Vector2(75.5,400)
 var posMostrando = Vector2(75.5,25.5)
 #guarda o numero
 var _NPC1Aresta = null
@@ -22,23 +22,28 @@ var _NPC1Pos = null
 
 
 
+@onready var panel: Panel = $Panel
+
+
 func _ready() -> void:
+	visible = true
+	panel.position = posEscondido
 	pegaOsNPCs()
 	startGrafo()
 	_Teste_CriarFIlhos()
 	circularContainer.organizar_em_circulo()
+	#panel.position = posEscondido
+
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Espaco"): 
+	if event.is_action_pressed("Espaco") or event.is_action_pressed("esq") : 
 		if !aparente:
 			
-			visible = true
-			aparente = true
+			mostrar_animado()
 			#position = lerp(posEscondido,posMostrando,1)
 		else:
-			aparente = false
-			visible = false
+			esconder_animado()
 			
 
 func pegaOsNPCs():
@@ -157,5 +162,27 @@ func entregar():
 
 
 #quando clicar q terminou ou acabou o tempo
-func _on_entregar_pressed() -> void:
+
+
+
+
+func mostrar_animado():
+	#marca q ta mostrando
+	aparente = true
+	
+	#cria curva
+	var tween = create_tween()
+	tween.tween_property(self.panel, "position", posMostrando, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+func esconder_animado():
+	#marca escondido
+	aparente = false
+	
+	#volta
+	var tween = create_tween()
+	tween.tween_property(self.panel, "position", posEscondido, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+
+#entrega o grafo
+func _on_sim_entrega_pressed() -> void:
 	entregar()
