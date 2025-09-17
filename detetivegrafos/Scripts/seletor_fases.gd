@@ -84,7 +84,7 @@ func _on_fase_5_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	SomManager.click.play()
+	#SomManager.click.play()
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 

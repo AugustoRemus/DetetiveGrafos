@@ -3,21 +3,28 @@ extends Control
 
 @export var voltarBotao: Button
 
+
+@export var quantErros: Label
+@export var tempoRestante: Label
+@export var resultado: Label
+
 var _totalErros
 
 
 
 func _ready() -> void:
 	_totalErros = Matrizes.calcularErro()
-	debug.text = str(_totalErros)
+	quantErros.text = str(_totalErros)
 	
 	var _nivelAtual = Niveis.faseAtual
 	
 	#falhou
 	if _totalErros >= 3:
+		resultado.text = "FALHADA!"
 		return
 		#botar label e tals
 	else:
+		resultado.text = "CONCLUIDA!"
 		Niveis.fasesPontos[_nivelAtual] = _totalErros+1
 		if _nivelAtual != Niveis.quantNiveis:
 			#libera o proximo nivel se n foi o ultimo

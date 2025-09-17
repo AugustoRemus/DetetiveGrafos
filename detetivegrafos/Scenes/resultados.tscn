@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjme6imsja4xo"]
+[gd_scene load_steps=7 format=3 uid="uid://cjme6imsja4xo"]
 
 [ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Fase/resultados.gd" id="1_yvfxy"]
+[ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://experimentos/painel_fundo.tscn" id="2_acucp"]
+[ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Fontes/fundo.tres" id="3_mxs03"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="4_mxs03"]
+[ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Fontes/Mechanical-g5Y5.otf" id="4_p23a5"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="5_rl5xe"]
 
-[node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao")]
+[node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao", "quantErros", "tempoRestante", "resultado")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,11 +16,93 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yvfxy")
 voltarBotao = NodePath("voltar")
+quantErros = NodePath("Panel/GridContainer/Erros")
+tempoRestante = NodePath("Panel/GridContainer/tempo")
+resultado = NodePath("Panel/GridContainer/Resultado")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="painelFundo" parent="." instance=ExtResource("2_acucp")]
+layout_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 38.73
+offset_top = -146.0
+offset_right = 344.73
+offset_bottom = 146.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_mxs03")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_top = -103.92
+offset_right = 88.5
+offset_bottom = 135.0802
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TXTErros" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_p23a5")
+text = "Numero total de erros:"
+horizontal_alignment = 1
+
+[node name="Erros" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "numero"
+horizontal_alignment = 1
+
+[node name="nada" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TXTTempo" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "Tempo Restante:"
+horizontal_alignment = 1
+
+[node name="tempo" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "tempo"
+horizontal_alignment = 1
+
+[node name="nada3" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="nada2" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="TXTResultado" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "Resultado final:"
+horizontal_alignment = 1
+
+[node name="Resultado" type="Label" parent="Panel/GridContainer"]
+layout_mode = 2
+text = "Aprovado!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 8.69
+offset_right = 56.0
+offset_bottom = 31.689999
+grow_horizontal = 2
+text = "Relatorio Final"
 
 [node name="voltar" type="Button" parent="."]
 layout_mode = 0
@@ -23,7 +110,9 @@ offset_left = 576.0
 offset_top = 321.0
 offset_right = 629.0
 offset_bottom = 352.0
+theme = ExtResource("4_mxs03")
 text = "Menu
 "
+script = ExtResource("5_rl5xe")
 
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

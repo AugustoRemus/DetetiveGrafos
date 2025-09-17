@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cte80ldpkid66"]
+[gd_scene load_steps=10 format=3 uid="uid://cte80ldpkid66"]
 
 [ext_resource type="Script" uid="uid://6gxqm04ujth4" path="res://Scripts/seletor_fases.gd" id="1_w4kf5"]
 [ext_resource type="Texture2D" uid="uid://ba40qwobjtnst" path="res://Sprites/Placeholders/medalha0.png" id="2_yvhwx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://experimentos/painel_fundo.tscn" id="6_bxjtx"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="6_f5mdk"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="7_6o0jw"]
+[ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Fontes/fundo.tres" id="9_1gsgx"]
 
 [node name="Seletor_Fases" type="Control" node_paths=PackedStringArray("numeroFaseLabel", "botaoPlay", "labelFDS", "gridContainerBotoesLvl", "medalhaIcone", "todosBotoes")]
 layout_mode = 3
@@ -17,11 +18,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w4kf5")
-numeroFaseLabel = NodePath("ColorRect/numeroFase")
-botaoPlay = NodePath("ColorRect/botaoStart")
-labelFDS = NodePath("ColorRect/GridContainer/textFds")
+numeroFaseLabel = NodePath("Panel/numeroFase")
+botaoPlay = NodePath("Panel/botaoStart")
+labelFDS = NodePath("Panel/GridContainer/textFds")
 gridContainerBotoesLvl = NodePath("GridContainer2/GridContainer")
-medalhaIcone = NodePath("ColorRect/GridContainer/medalhas")
+medalhaIcone = NodePath("Panel/GridContainer/medalhas")
 medalhasSprites = Array[Texture2D]([ExtResource("2_yvhwx"), ExtResource("3_f5mdk"), ExtResource("4_6o0jw"), ExtResource("5_bxjtx")])
 todosBotoes = [NodePath("GridContainer2/fase0"), NodePath("GridContainer2/GridContainer/fase1"), NodePath("GridContainer2/GridContainer/fase2"), NodePath("GridContainer2/GridContainer/fase3"), NodePath("GridContainer2/GridContainer/fase4"), NodePath("GridContainer2/GridContainer/fase5")]
 
@@ -85,55 +86,82 @@ toggle_mode = true
 text = "Fase 5"
 script = ExtResource("7_6o0jw")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 59.0
-offset_right = 629.0
-offset_bottom = 277.0
-color = Color(0, 0, 0, 0.5411765)
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -147.58499
+offset_top = -93.5
+offset_right = -24.583984
+offset_bottom = 93.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("9_1gsgx")
 
-[node name="numeroFase" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 15.0
-offset_right = 137.0
-offset_bottom = 38.0
+[node name="numeroFase" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 23.0
+grow_horizontal = 2
 text = "Selecione a fase"
 horizontal_alignment = 1
 
-[node name="botaoStart" type="Button" parent="ColorRect"]
-visible = false
-layout_mode = 0
-offset_left = 51.0
-offset_top = 180.0
-offset_right = 99.0
-offset_bottom = 211.0
+[node name="botaoStart" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = 14.410004
+offset_right = 26.5
+offset_bottom = 45.410004
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_f5mdk")
 text = "Jogar"
+script = ExtResource("7_6o0jw")
 
-[node name="GridContainer" type="GridContainer" parent="ColorRect"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 62.0
-offset_right = 121.0
-offset_bottom = 102.0
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -20.0
+offset_right = 46.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="textFds" type="Label" parent="ColorRect/GridContainer"]
+[node name="textFds" type="Label" parent="Panel/GridContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "melhor pontuação:"
 
-[node name="medalhas" type="TextureRect" parent="ColorRect/GridContainer"]
+[node name="medalhas" type="TextureRect" parent="Panel/GridContainer"]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 327.0
-offset_right = 56.0
-offset_bottom = 358.0
+offset_left = 15.0
+offset_top = 314.0
+offset_right = 78.0
+offset_bottom = 345.0
+theme = ExtResource("6_f5mdk")
 text = "voltar
 "
+script = ExtResource("7_6o0jw")
 
 [connection signal="pressed" from="GridContainer2/fase0" to="." method="_on_fase_0_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase1" to="." method="_on_fase_1_pressed"]
@@ -141,5 +169,5 @@ text = "voltar
 [connection signal="pressed" from="GridContainer2/GridContainer/fase3" to="." method="_on_fase_3_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase4" to="." method="_on_fase_4_pressed"]
 [connection signal="pressed" from="GridContainer2/GridContainer/fase5" to="." method="_on_fase_5_pressed"]
-[connection signal="pressed" from="ColorRect/botaoStart" to="." method="_on_botao_start_pressed"]
+[connection signal="pressed" from="Panel/botaoStart" to="." method="_on_botao_start_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
