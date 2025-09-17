@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cte80ldpkid66"]
+[gd_scene load_steps=9 format=3 uid="uid://cte80ldpkid66"]
 
 [ext_resource type="Script" uid="uid://6gxqm04ujth4" path="res://Scripts/seletor_fases.gd" id="1_w4kf5"]
 [ext_resource type="Texture2D" uid="uid://ba40qwobjtnst" path="res://Sprites/Placeholders/medalha0.png" id="2_yvhwx"]
 [ext_resource type="Texture2D" uid="uid://d34fhldelagp7" path="res://Sprites/Placeholders/medalha1.png" id="3_f5mdk"]
 [ext_resource type="Texture2D" uid="uid://dulxd7qg6drmf" path="res://Sprites/Placeholders/medalha2.png" id="4_6o0jw"]
 [ext_resource type="Texture2D" uid="uid://dp1jtsyoqujtg" path="res://Sprites/Placeholders/medalha3.png" id="5_bxjtx"]
+[ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://experimentos/painel_fundo.tscn" id="6_bxjtx"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="6_f5mdk"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="7_6o0jw"]
 
@@ -23,6 +24,9 @@ gridContainerBotoesLvl = NodePath("GridContainer2/GridContainer")
 medalhaIcone = NodePath("ColorRect/GridContainer/medalhas")
 medalhasSprites = Array[Texture2D]([ExtResource("2_yvhwx"), ExtResource("3_f5mdk"), ExtResource("4_6o0jw"), ExtResource("5_bxjtx")])
 todosBotoes = [NodePath("GridContainer2/fase0"), NodePath("GridContainer2/GridContainer/fase1"), NodePath("GridContainer2/GridContainer/fase2"), NodePath("GridContainer2/GridContainer/fase3"), NodePath("GridContainer2/GridContainer/fase4"), NodePath("GridContainer2/GridContainer/fase5")]
+
+[node name="painelFundo" parent="." instance=ExtResource("6_bxjtx")]
+layout_mode = 1
 
 [node name="GridContainer2" type="GridContainer" parent="."]
 layout_mode = 1
