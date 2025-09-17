@@ -70,9 +70,9 @@ func fuiClicado(condicao):
 	if condicao:
 		#passa o id e a posicao atua dele para desenhar a linha
 		var posicaoCerta = global_position + (size / 2)
-		get_parent().get_parent().addAresta(_id, posicaoCerta)
+		get_parent().get_parent().get_parent().addAresta(_id, posicaoCerta)
 	if !condicao:
-		get_parent().get_parent().resetClicado()
+		get_parent().get_parent().get_parent().resetClicado()
 	
 func voltarNormal():
 	clicado = false

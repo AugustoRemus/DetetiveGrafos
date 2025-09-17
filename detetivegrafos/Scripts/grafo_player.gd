@@ -12,6 +12,9 @@ var _matrizPlayer
 
 @export var circularContainer: Control
 
+var aparente = false
+var posEscondido = Vector2(75.5,200)
+var posMostrando = Vector2(75.5,25.5)
 #guarda o numero
 var _NPC1Aresta = null
 #guarda a posicao
@@ -28,11 +31,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Espaco"): 
-		if !visible:
+		if !aparente:
 			
 			visible = true
+			aparente = true
+			#position = lerp(posEscondido,posMostrando,1)
 		else:
+			aparente = false
 			visible = false
+			
 
 func pegaOsNPCs():
 	NPCS = nodoDosNPC.get_children()

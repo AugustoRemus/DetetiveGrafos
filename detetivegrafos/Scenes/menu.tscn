@@ -47,7 +47,7 @@ script = ExtResource("3_cayip")
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
-text = "Creditos
+text = "Créditos
 "
 script = ExtResource("3_cayip")
 
