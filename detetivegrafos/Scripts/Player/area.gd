@@ -14,9 +14,8 @@ var corpoAtual: CharacterBody2D
 
 @export var transformadorNode: Node
 
-#pode consumir mt recursos eu acho
-func _physics_process(delta: float) -> void:
-	pass
+func _ready() -> void:
+	_on_tester_timeout()
 
 func getAtual():
 	return(corpoAtual)
@@ -33,7 +32,6 @@ func _on_tester_timeout() -> void:
 		if corpo.is_in_group("Alvo"):
 			corpos.append(corpo)
 	
-
 	#reinicia silhueta
 	if corpoAtual != null:
 		corpoAtual.silhueta(0)
@@ -41,30 +39,23 @@ func _on_tester_timeout() -> void:
 		#n ta vazio
 	if corpos.size() == 0:
 		corpoAtual = null
-		
-		
-		tags.roubarCorLabel(false)
-		tags.conversar(false)
-		
-		if transformadorNode.podeTransformar != null:
-			tags.transformarLabel(true)
-		
-
+		#n tem ninguem perto, n da pra fazer nada
+		tags.attLegenda(false)
+		#print("ninguem por perto!")
 		return
 	
 	
 	# inicia zerado
 	var menorDist = null
 	
-
 	#para cada corpo
 	for corpo in corpos:
 		#caso inicial
 		if menorDist == null:
 			menorDist = corpo.global_position.distance_to(player.global_position)
 			
-			
 			corpoAtual = corpo
+			
 		else:
 			#calcula distancia
 			var distanciaAtual = corpo.global_position.distance_to(player.global_position)
@@ -75,17 +66,16 @@ func _on_tester_timeout() -> void:
 				corpoAtual = corpo
 				menorDist = distanciaAtual
 		
-	#mostra a silhueta do corpo atual
-	#caso for null mudar na iu oq da pra fazer
-	corpoAtual.silhueta(1)
-	tags.roubarCorLabel(true)
-	tags.transformarLabel(false)
+	if corpoAtual != null:
+		#mostra a silhueta do corpo atual
+		#caso for null mudar na iu oq da pra fazer
+		corpoAtual.silhueta(1)
+		tags.attLegenda(true)
+		
+	#tem alguem perto
+
+
 	
-	if player.idNPCTransformado != null:
-		tags.conversar(true)
-		
-	else:
-		tags.conversar(false)
-		
+
 		
 	

@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://blmicg85n0boj" path="res://Fontes/botao.tres" id="8_5nq24"]
 [ext_resource type="Script" uid="uid://myt5uoeahs21" path="res://Scripts/conformar_desistir.gd" id="8_ha5to"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="9_6qs1o"]
-[ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://scripts/confirmar_entrega.gd" id="11_l735g"]
+[ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://Scripts/confirmar_entrega.gd" id="11_l735g"]
 
 [node name="grafoPlayer" type="CanvasLayer" node_paths=PackedStringArray("arestaManager", "circularContainer")]
 script = ExtResource("1_ds4nc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkbcnmufbpy2f"]
+[gd_scene load_steps=13 format=3 uid="uid://dkbcnmufbpy2f"]
 
 [ext_resource type="Script" uid="uid://bgyj8csyi11cf" path="res://Scripts/Player/protagonista.gd" id="1_e0vkn"]
 [ext_resource type="Script" uid="uid://cnixnyhqnp2yp" path="res://Scripts/Player/move.gd" id="2_e0vkn"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://bpqkg4mcrldt4" path="res://Scripts/Player/area.gd" id="6_m0par"]
 [ext_resource type="Script" uid="uid://bm3l78ocmcjq0" path="res://Scripts/Player/interador.gd" id="7_v853i"]
 [ext_resource type="Script" uid="uid://dwp0nr7sgpabl" path="res://Scripts/Player/transformador.gd" id="7_yl5ap"]
+[ext_resource type="StyleBox" uid="uid://c5s2jdijooef2" path="res://Fontes/TestePainelFundo.tres" id="9_nrmfe"]
 [ext_resource type="Script" uid="uid://dwmegbwcsgery" path="res://Scripts/Player/tags.gd" id="9_qx68x"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="10_40cbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2hie"]
 size = Vector2(14, 7)
@@ -54,8 +56,10 @@ shape = SubResource("CircleShape2D_k2hie")
 wait_time = 0.25
 autostart = true
 
-[node name="Interador" type="Node" parent="area"]
+[node name="Interador" type="Node" parent="area" node_paths=PackedStringArray("player", "area")]
 script = ExtResource("7_v853i")
+player = NodePath("../..")
+area = NodePath("..")
 
 [node name="transformador" type="Node" parent="." node_paths=PackedStringArray("sprite", "area", "hatSpritePlayer", "tags", "labelCor")]
 script = ExtResource("7_yl5ap")
@@ -63,67 +67,140 @@ sprite = NodePath("../Sprite2D")
 area = NodePath("../area")
 hatSpritePlayer = NodePath("../Sprite2D/hatPlayer")
 tags = NodePath("../tags")
-labelCor = NodePath("../tags/CanvasLayer/GridContainer/CorCopiada")
+labelCor = NodePath("")
 
-[node name="tags" type="Node2D" parent="." node_paths=PackedStringArray("_transformar", "_roubarCor", "_conversar", "_corAtual")]
+[node name="tags" type="Node2D" parent="." node_paths=PackedStringArray("canvasTeclas", "canvasCorTransformada", "labelNomeCor", "texturaSprite", "labelConversar")]
 script = ExtResource("9_qx68x")
-_transformar = NodePath("CanvasLayer/transformar")
-_roubarCor = NodePath("CanvasLayer/roubarCor")
-_conversar = NodePath("CanvasLayer/conversar")
-_corAtual = NodePath("CanvasLayer/GridContainer/CorCopiada")
+canvasTeclas = NodePath("CanvasComandos")
+canvasCorTransformada = NodePath("CanvasCor")
+labelNomeCor = NodePath("CanvasCor/painelCorAtualTXT/nomeCor")
+texturaSprite = NodePath("CanvasCor/painelCorAtualTXT2/TXTCor")
+labelConversar = NodePath("CanvasComandos/InteracoesPainel/InteracoesPerto/conversar")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="tags"]
+[node name="CanvasComandos" type="CanvasLayer" parent="tags"]
 
-[node name="transformar" type="Label" parent="tags/CanvasLayer"]
-visible = false
-offset_left = 495.47
-offset_top = 326.0
-offset_right = 618.47
-offset_bottom = 349.0
-text = "E : Transformar "
+[node name="InteracoesPainel" type="Panel" parent="tags/CanvasComandos"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+offset_right = 130.0
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("9_nrmfe")
 
-[node name="conversar" type="Label" parent="tags/CanvasLayer"]
-offset_left = 495.47
-offset_top = 326.0
-offset_right = 596.47
-offset_bottom = 349.0
-text = "E : Conversar"
+[node name="InteracoesPerto" type="GridContainer" parent="tags/CanvasComandos/InteracoesPainel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.25
+offset_top = -17.0
+offset_right = 56.25
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="roubarCor" type="Label" parent="tags/CanvasLayer"]
-offset_left = 9.0
-offset_top = 330.0
-offset_right = 110.0
-offset_bottom = 353.0
+[node name="roubarCor" type="Label" parent="tags/CanvasComandos/InteracoesPainel/InteracoesPerto"]
+layout_mode = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
 text = "Q: Copiar cor"
 
-[node name="ColorRect" type="ColorRect" parent="tags/CanvasLayer"]
-offset_left = 209.7
-offset_top = 321.0
-offset_right = 425.6997
-offset_bottom = 361.0
-color = Color(0, 0, 0, 0.50980395)
+[node name="conversar" type="Label" parent="tags/CanvasComandos/InteracoesPainel/InteracoesPerto"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "E: Interrogar"
 
-[node name="GridContainer" type="GridContainer" parent="tags/CanvasLayer"]
+[node name="CanvasCor" type="CanvasLayer" parent="tags"]
+
+[node name="painelCorAtualTXT2" type="Panel" parent="tags/CanvasCor"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("9_nrmfe")
+
+[node name="TXTCor" type="TextureRect" parent="tags/CanvasCor/painelCorAtualTXT2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -33.25
+offset_right = 32.0
+offset_bottom = 30.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="silhueta" type="TextureRect" parent="tags/CanvasCor/painelCorAtualTXT2/TXTCor"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_v853i")
+
+[node name="painelCorAtualTXT" type="Panel" parent="tags/CanvasCor"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = -32.0
-offset_right = 80.0
-offset_bottom = 8.0
+offset_left = 114.53
+offset_top = -53.0
+offset_right = 244.53113
 grow_horizontal = 2
 grow_vertical = 0
-columns = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("9_nrmfe")
 
-[node name="corText" type="Label" parent="tags/CanvasLayer/GridContainer"]
-layout_mode = 2
-text = "Cor Guardada:"
+[node name="TXTCor" type="Label" parent="tags/CanvasCor/painelCorAtualTXT"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.499565
+offset_top = 7.675
+offset_right = 80.50044
+offset_bottom = 30.675003
+grow_horizontal = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "Cor atual:"
+horizontal_alignment = 1
 
-[node name="CorCopiada" type="Label" parent="tags/CanvasLayer/GridContainer"]
-layout_mode = 2
-text = "verde"
+[node name="nomeCor" type="Label" parent="tags/CanvasCor/painelCorAtualTXT"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.53057
+offset_top = 4.5000076
+offset_right = 80.46944
+offset_bottom = 27.500015
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "Nenhuma"
+horizontal_alignment = 1
+text_overrun_behavior = 1
 
 [connection signal="body_entered" from="area" to="area" method="_on_body_entered"]
 [connection signal="body_exited" from="area" to="area" method="_on_body_exited"]

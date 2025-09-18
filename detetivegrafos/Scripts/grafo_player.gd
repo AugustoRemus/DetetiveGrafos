@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+#bug: n ta mais deletando a lnha dps q volta
+#a aparecencia
+
+
+
 @export var vertice : PackedScene = preload("res://Scenes/Grafo/vertice.tscn")
 
 @export var nodoDosNPC: Node
@@ -43,6 +48,11 @@ func _input(event: InputEvent) -> void:
 			mostrar_animado()
 			#position = lerp(posEscondido,posMostrando,1)
 		else:
+			for filinhos in circularContainer.get_children():
+				filinhos.voltarNormal()
+			_NPC1Aresta = null
+		
+			_NPC1Pos = null
 			esconder_animado()
 			
 

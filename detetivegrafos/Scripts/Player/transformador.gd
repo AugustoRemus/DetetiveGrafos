@@ -9,15 +9,14 @@ extends Node
 #quando clicar E vai se transformar nesse
 #adicionar quadrado no canto para saber em qual cor
 #vc pode se transformar no caso essa cor aqui
-var podeTransformar: CharacterBody2D
+
 
 #quando clica Q ele separa esse pra se transformar
 func _input(event: InputEvent) -> void:
 	#pega um possivel candidato para salvar a cor
 	if Input.is_action_just_pressed("Q"):
 		if area.corpoAtual:
-			podeTransformar = area.corpoAtual
-			labelCor.text = podeTransformar.nomeCor
+			transformar(area.corpoAtual)
 			
 			#player.possoTransformar = true
 		else:
@@ -30,22 +29,24 @@ func _input(event: InputEvent) -> void:
 	#passar o teste de input para cima e fazer o teste da area
 	#para ver se n tem alguem
 
-func transformar():
-	if podeTransformar:
-		sprite.texture = podeTransformar.sprite.texture
-		labelCor.text = "Nenhuma"
+func transformar(corpo):
+	if corpo:
+		sprite.texture = corpo.sprite.texture
+	
+		#atualiza ui
+		tags.attTransformacao(corpo)
+		
 		
 		#inutil por enquanto
-		if podeTransformar.hat:
-			hatSpritePlayer.texture = podeTransformar.hat.sprite
-			player.hatTransformado = podeTransformar.hat
+		if corpo.hat:
+			hatSpritePlayer.texture = corpo.hat.sprite
+			player.hatTransformado = corpo.hat
 		else:
 			hatSpritePlayer.texture = null
 			player.hatTransformado = null
 			
-		player.idNPCTransformado = podeTransformar.id
-		podeTransformar = null
-		tags.transformarLabel(false)
+		player.idNPCTransformado = corpo.id
+		
 		##barulho transformacao
 	else:
 		#print("n da pra se transformar")
