@@ -1,6 +1,6 @@
 extends Control
 
-var carregarScena = null
+var carregarScena: PackedScene
 
 @export var numeroFaseLabel : Label
 @export var botaoPlay:Button
@@ -27,86 +27,41 @@ func _ready() -> void:
 
 
 func _on_fase_0_pressed() -> void:
-	if numeroFaseLabel.text != "tutorial":
-		carregarScena = "res://FasesAssets/fase0.tscn"
-		numeroFaseLabel.text = "tutorial"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[0]] 
-		#SomManager.click.play()
-		_desclicarOutros(todosBotoes[0])
-	else:
-		_resetTodos()
+	
+	var scenaPacked0 = preload("res://FasesAssets/fase0.tscn")
+	_setarFase("tutorial",0, scenaPacked0)
+	
 		
 
 
 func _on_botao_start_pressed() -> void:
 	SomManager.click.play()
-	get_tree().change_scene_to_file(carregarScena)
+	get_tree().change_scene_to_packed(carregarScena)
 
 
 func _on_fase_1_pressed() -> void:
-	if numeroFaseLabel.text != "fase 1":
-		carregarScena = "res://FasesAssets/fase_1.tscn"
-		numeroFaseLabel.text = "fase 1"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[1]]
-		#SomManager.click.play()
-		_desclicarOutros(todosBotoes[1])
-	else:
-		_resetTodos()
+	var scenaPacked0 = preload("res://FasesAssets/fase_1.tscn")
+	_setarFase("fase 1",1, scenaPacked0)
+	
 
 func _on_fase_2_pressed() -> void:
-	if numeroFaseLabel.text != "fase 2":
-		carregarScena = "res://FasesAssets/fase_2.tscn"
-		numeroFaseLabel.text = "fase 2"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[2]]
-		#SomManager.click.play()
-		_desclicarOutros(todosBotoes[2])
-	else:
-		_resetTodos()
+	var scenaPacked0 = preload("res://FasesAssets/fase_2.tscn")
+	_setarFase("fase 2",2, scenaPacked0)
 
 func _on_fase_3_pressed() -> void:
-	if numeroFaseLabel.text != "fase 3":
-		
-		carregarScena = "res://FasesAssets/fase_3.tscn"
-		numeroFaseLabel.text = "fase 3"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[3]]
-		_desclicarOutros(todosBotoes[3])
-		#SomManager.click.play()
-	else:
-		_resetTodos()
+	var scenaPacked0 = preload("res://FasesAssets/fase_3.tscn")
+	_setarFase("fase 3",3, scenaPacked0)
 
 
 func _on_fase_4_pressed() -> void:
-	if numeroFaseLabel.text != "fase 4":
-		carregarScena = "res://FasesAssets/fase_4.tscn"
-		numeroFaseLabel.text = "fase 4"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[4]]
-		_desclicarOutros(todosBotoes[4])
-		#SomManager.click.play()
-	else:
-		_resetTodos()
+	var scenaPacked0 = preload("res://FasesAssets/fase_4.tscn")
+	_setarFase("fase 4",4, scenaPacked0)
 
 
 
 func _on_fase_5_pressed() -> void:
-	if numeroFaseLabel.text != "fase 5":
-		carregarScena = "res://FasesAssets/fase_5.tscn"
-		numeroFaseLabel.text = "fase 5"
-		botaoPlay.visible = true
-		labelPont.visible = true
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[5]]
-		_desclicarOutros(todosBotoes[5])
-	else:
-		_resetTodos()
+	var scenaPacked0 = preload("res://FasesAssets/fase_5.tscn")
+	_setarFase("fase 5",5, scenaPacked0)
 
 
 func _on_button_pressed() -> void:
@@ -129,7 +84,7 @@ func _desclicarOutros(clicado: Button):
 func _resetTodos():
 	
 	numeroFaseLabel.text = "Escolha a fase"
-	carregarScena = "null"
+	carregarScena = null
 	
 	botaoPlay.visible = false
 	labelPont.visible = false
@@ -140,3 +95,20 @@ func _resetTodos():
 			pass
 		else:
 			botao.button_pressed = false
+
+
+
+
+func _setarFase(_nomeFase: String,_numeroFase:int, _packedScene: PackedScene):
+	
+	#se nao estava clicado
+	if numeroFaseLabel.text != _nomeFase:
+		carregarScena = _packedScene
+		numeroFaseLabel.text = _nomeFase
+		botaoPlay.visible = true
+		labelPont.visible = true
+		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[_numeroFase]]
+		_desclicarOutros(todosBotoes[_numeroFase])
+	else:
+		#se estava clicado desclica
+		_resetTodos()

@@ -1,0 +1,183 @@
+[gd_scene load_steps=11 format=3 uid="uid://cte80ldpkid66"]
+
+[ext_resource type="Script" uid="uid://6gxqm04ujth4" path="res://Scripts/Menus/seletor_fases.gd" id="1_w4kf5"]
+[ext_resource type="Texture2D" uid="uid://ba40qwobjtnst" path="res://Sprites/Placeholders/medalha0.png" id="2_yvhwx"]
+[ext_resource type="Texture2D" uid="uid://d34fhldelagp7" path="res://Sprites/Placeholders/medalha1.png" id="3_f5mdk"]
+[ext_resource type="Texture2D" uid="uid://dulxd7qg6drmf" path="res://Sprites/Placeholders/medalha2.png" id="4_6o0jw"]
+[ext_resource type="Texture2D" uid="uid://dp1jtsyoqujtg" path="res://Sprites/Placeholders/medalha3.png" id="5_bxjtx"]
+[ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="6_bxjtx"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_f5mdk"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_6o0jw"]
+[ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="9_1gsgx"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="10_k1e0q"]
+
+[node name="Seletor_Fases" type="Control" node_paths=PackedStringArray("numeroFaseLabel", "botaoPlay", "labelPont", "gridContainerBotoesLvl", "medalhaIcone", "todosBotoes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w4kf5")
+numeroFaseLabel = NodePath("Panel/numeroFase")
+botaoPlay = NodePath("Panel/botaoStart")
+labelPont = NodePath("Panel/textpontuacao")
+gridContainerBotoesLvl = NodePath("GridContainer2/GridContainer")
+medalhaIcone = NodePath("Panel/medalhas")
+medalhasSprites = Array[Texture2D]([ExtResource("2_yvhwx"), ExtResource("3_f5mdk"), ExtResource("4_6o0jw"), ExtResource("5_bxjtx")])
+todosBotoes = [NodePath("GridContainer2/fase0"), NodePath("GridContainer2/GridContainer/fase1"), NodePath("GridContainer2/GridContainer/fase2"), NodePath("GridContainer2/GridContainer/fase3"), NodePath("GridContainer2/GridContainer/fase4"), NodePath("GridContainer2/GridContainer/fase5")]
+
+[node name="painelFundo" parent="." instance=ExtResource("6_bxjtx")]
+layout_mode = 1
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 99.0
+offset_right = 458.0
+offset_bottom = 165.0
+theme_override_constants/v_separation = 30
+
+[node name="fase0" type="Button" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "tutorial"
+script = ExtResource("7_6o0jw")
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+columns = 10
+
+[node name="fase1" type="Button" parent="GridContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "Fase 1"
+script = ExtResource("7_6o0jw")
+
+[node name="fase2" type="Button" parent="GridContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "Fase 2"
+script = ExtResource("7_6o0jw")
+
+[node name="fase3" type="Button" parent="GridContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "Fase 3"
+script = ExtResource("7_6o0jw")
+
+[node name="fase4" type="Button" parent="GridContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "Fase 4
+"
+script = ExtResource("7_6o0jw")
+
+[node name="fase5" type="Button" parent="GridContainer2/GridContainer"]
+layout_mode = 2
+theme = ExtResource("6_f5mdk")
+toggle_mode = true
+text = "Fase 5"
+script = ExtResource("7_6o0jw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -147.58499
+offset_top = -93.5
+offset_right = -24.583984
+offset_bottom = 93.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("9_1gsgx")
+
+[node name="numeroFase" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_right = 67.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("10_k1e0q")
+text = "Escolha a fase"
+horizontal_alignment = 1
+
+[node name="botaoStart" type="Button" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.5
+offset_top = 14.410004
+offset_right = 26.5
+offset_bottom = 45.410004
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_f5mdk")
+text = "Jogar"
+script = ExtResource("7_6o0jw")
+
+[node name="textpontuacao" type="Label" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.999504
+offset_top = -65.515
+offset_right = 51.000496
+offset_bottom = -54.515
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_k1e0q")
+theme_override_font_sizes/font_size = 10
+text = "melhor pontuação:"
+
+[node name="medalhas" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 314.0
+offset_right = 78.0
+offset_bottom = 345.0
+theme = ExtResource("6_f5mdk")
+text = "voltar
+"
+script = ExtResource("7_6o0jw")
+
+[connection signal="pressed" from="GridContainer2/fase0" to="." method="_on_fase_0_pressed"]
+[connection signal="pressed" from="GridContainer2/GridContainer/fase1" to="." method="_on_fase_1_pressed"]
+[connection signal="pressed" from="GridContainer2/GridContainer/fase2" to="." method="_on_fase_2_pressed"]
+[connection signal="pressed" from="GridContainer2/GridContainer/fase3" to="." method="_on_fase_3_pressed"]
+[connection signal="pressed" from="GridContainer2/GridContainer/fase4" to="." method="_on_fase_4_pressed"]
+[connection signal="pressed" from="GridContainer2/GridContainer/fase5" to="." method="_on_fase_5_pressed"]
+[connection signal="pressed" from="Panel/botaoStart" to="." method="_on_botao_start_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
