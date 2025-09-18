@@ -12,7 +12,7 @@ var _matriz
 
 
 #copia matriz
-func setMatriz(MatrizNpc, size: int):
+func setMatriz(MatrizNpc):
 	
 	_matriz = MatrizNpc.duplicate()
 	

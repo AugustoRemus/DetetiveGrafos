@@ -14,14 +14,7 @@ func _ready():
 	target_position = base_np_cs.global_position
 	set_target_position(target_position)
 
-func _process(delta: float) -> void:
-	
-	#teste debug
-	if Input.is_action_just_pressed("MouseDireito"):
-		var printDebug = logica.getNewPoit()
-		print(printDebug)
-		
-	
+
 
 func _physics_process(delta: float) -> void:
 	# se ainda n chegou no final
@@ -31,9 +24,9 @@ func _physics_process(delta: float) -> void:
 		#calcula a direção
 		var direction = (next_position - base_np_cs.global_position).normalized()
 		#usa direcao para calcular a velocidade
-		var velocity = direction * base_np_cs.speedNPC 
+		var _velocity = direction * base_np_cs.speedNPC 
 		#redefine a do character body
-		base_np_cs.velocity = velocity
+		base_np_cs.velocity = _velocity
 		#chama a funcao para se mover do character body
 		base_np_cs.move_and_slide()
 		
@@ -54,6 +47,11 @@ func _physics_process(delta: float) -> void:
 		#chama a funcao para se mover do character body
 		base_np_cs.move_and_slide()
 		
+		
+		
+	#tira warning
+	var _tiraWarning = delta
+	_tiraWarning =" SAIA"
 
 #starta o cronometro com um tempo do range
 func startCronometroRand():
