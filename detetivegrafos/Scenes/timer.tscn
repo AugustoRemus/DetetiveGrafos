@@ -41,6 +41,7 @@ animations = [{
 }]
 
 [node name="timer" type="CanvasLayer" node_paths=PackedStringArray("clock", "labelTempo")]
+layer = 2
 script = ExtResource("1_pvhx5")
 clock = NodePath("Panel/AnimatedSprite2D")
 labelTempo = NodePath("Panel/Label")
@@ -74,4 +75,4 @@ vertical_alignment = 1
 position = Vector2(23, 21)
 sprite_frames = SubResource("SpriteFrames_s7d24")
 autoplay = "default"
-frame_progress = 0.255701
+frame_progress = 0.9593584

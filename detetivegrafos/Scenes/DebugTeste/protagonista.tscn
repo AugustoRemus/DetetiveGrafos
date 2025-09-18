@@ -118,6 +118,7 @@ theme_override_font_sizes/font_size = 13
 text = "E: Interrogar"
 
 [node name="CanvasCor" type="CanvasLayer" parent="tags"]
+layer = 0
 
 [node name="painelCorAtualTXT2" type="Panel" parent="tags/CanvasCor"]
 anchors_preset = 3

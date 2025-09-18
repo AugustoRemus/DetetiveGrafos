@@ -98,16 +98,17 @@ func _Teste_CriarFIlhos():
 
 
 func addAresta(numeroIdNPC, posicaoNPC):
-	#se só tem 1 clicado
+	#é o primeiro botao clicado
 	if _NPC1Aresta == null:
 		_NPC1Aresta = numeroIdNPC
 		_NPC1Pos = posicaoNPC
-		
 		return
 		
 	var existe = _existeAresta(numeroIdNPC,_NPC1Aresta)
-	
 	var newAresta = Aresta.new(_NPC1Pos,posicaoNPC,_NPC1Aresta,numeroIdNPC)
+	
+
+	
 	
 	#tirar aresta
 	if existe:
@@ -126,17 +127,26 @@ func addAresta(numeroIdNPC, posicaoNPC):
 		_matrizPlayer[_NPC1Aresta][numeroIdNPC] = "1"
 		_matrizPlayer[numeroIdNPC][_NPC1Aresta] = "1"
 		
+		
+	
 		#parte visual
 		arestaManager.addAresta(newAresta)
 		
 		#print("aresta adiciona entre os id:")
 		#print(newAresta.Vertice1)
 		#print(newAresta.Vertice2)
-
-	#reseta todos
-	for filinhos in circularContainer.get_children():
-		filinhos.voltarNormal()
+		
+		
+	circularContainer.get_child(_NPC1Aresta).voltarNormal()
+	circularContainer.get_child(numeroIdNPC).voltarNormal()
 	
+		
+		##reseta todos
+	#for filinhos in circularContainer.get_children():
+		#filinhos.voltarNormal()
+	#
+	
+
 	#reseta o primeiro numero aqui salvo
 	_NPC1Aresta = null
 	_NPC1Pos = null

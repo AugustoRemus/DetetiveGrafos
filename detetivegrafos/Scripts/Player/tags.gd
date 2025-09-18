@@ -9,6 +9,8 @@ extends Node2D
 
 @export var labelConversar: Label
 
+var esconderParaUi = false
+
 func attLegenda(condicao):
 	canvasTeclas.visible = condicao
 
@@ -26,3 +28,12 @@ func attTransformacao(NPC: CharacterBody2D):
 	#para n aparecer que da pra conversar no inicio
 	labelConversar.visible = true
 	
+func esconderUiPlayer(condicao):
+	canvasCorTransformada.visible = condicao
+	canvasTeclas.visible = condicao
+	
+#func _input(event: InputEvent) -> void:
+	##so tranforma se n tem ninguem pra conversar
+	#if Input.is_action_just_pressed("Espaco"):
+		#esconderUiPlayer(visible)
+		#esconderParaUi = !esconderParaUi
