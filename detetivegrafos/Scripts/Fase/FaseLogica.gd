@@ -70,5 +70,5 @@ func finalizou(_matriz):
 	#no final botar esse resto d codigo:
 	Matrizes.MatrizCerta = matrizNPCs
 	Matrizes.MatrizPlayer = _matriz
-	get_tree().change_scene_to_file("res://Scenes/resultados.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/resultados.tscn")
 	

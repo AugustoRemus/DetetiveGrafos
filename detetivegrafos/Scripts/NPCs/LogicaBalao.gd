@@ -1,7 +1,5 @@
 extends Sprite2D
 
-@export var baloes: Array[Texture2D]
-
 @export var timer: Timer
 
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D

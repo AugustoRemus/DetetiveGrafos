@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalPlayer="*res://Scripts/global_player.gd"
+GlobalPlayer="*res://Scripts/Globais/global_player.gd"
 Matrizes="*res://Scripts/Fase/matrizes.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
-Niveis="*res://Scripts/niveis.gd"
+Niveis="*res://Scripts/Globais/niveis.gd"
 SomManager="*res://Scenes/som_manager.tscn"
 
 [display]

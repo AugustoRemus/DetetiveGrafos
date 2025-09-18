@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://066iuqd167ya"]
+
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="1_66k5h"]
+
+[node name="TesteBotao" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_66k5h")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

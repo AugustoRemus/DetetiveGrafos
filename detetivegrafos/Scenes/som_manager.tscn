@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://box2ygvvpd8p2"]
 
-[ext_resource type="AudioStream" uid="uid://7aqak6r2jh0x" path="res://Sons/SomErro.sfxr" id="1_4kwys"]
-[ext_resource type="Script" uid="uid://bxttcthpar5yx" path="res://Scripts/som_manager.gd" id="1_umwa6"]
-[ext_resource type="AudioStream" uid="uid://bmkhyyaxuxork" path="res://Sons/apagar.sfxr" id="3_fwodo"]
-[ext_resource type="AudioStream" uid="uid://cx4btmdqeuydx" path="res://Sons/click.sfxr" id="3_wm0oh"]
-[ext_resource type="AudioStream" uid="uid://b6wb8i2lbmb6l" path="res://Sons/escrever.sfxr" id="4_i3fcl"]
-[ext_resource type="AudioStream" uid="uid://mo1wmr3hkpe5" path="res://Sons/hover.sfxr" id="5_j0hpm"]
-[ext_resource type="AudioStream" uid="uid://bya0vbba0ero" path="res://Sons/interacaoPositiva.sfxr" id="7_xx07q"]
-[ext_resource type="AudioStream" uid="uid://3tltg6qk2cjv" path="res://Sons/interacaoNegativa.sfxr" id="8_roh87"]
+[ext_resource type="AudioStream" uid="uid://7aqak6r2jh0x" path="res://Sons/efeitosSonoros/SomErro.sfxr" id="1_4kwys"]
+[ext_resource type="Script" uid="uid://bxttcthpar5yx" path="res://Scripts/Globais/som_manager.gd" id="1_umwa6"]
+[ext_resource type="AudioStream" uid="uid://bmkhyyaxuxork" path="res://Sons/efeitosSonoros/apagar.sfxr" id="3_fwodo"]
+[ext_resource type="AudioStream" uid="uid://cx4btmdqeuydx" path="res://Sons/efeitosSonoros/click.sfxr" id="3_wm0oh"]
+[ext_resource type="AudioStream" uid="uid://b6wb8i2lbmb6l" path="res://Sons/efeitosSonoros/escrever.sfxr" id="4_i3fcl"]
+[ext_resource type="AudioStream" uid="uid://mo1wmr3hkpe5" path="res://Sons/efeitosSonoros/hover.sfxr" id="5_j0hpm"]
+[ext_resource type="AudioStream" uid="uid://bya0vbba0ero" path="res://Sons/efeitosSonoros/interacaoPositiva.sfxr" id="7_xx07q"]
+[ext_resource type="AudioStream" uid="uid://3tltg6qk2cjv" path="res://Sons/efeitosSonoros/interacaoNegativa.sfxr" id="8_roh87"]
 
 [node name="SomManager" type="Node2D"]
 script = ExtResource("1_umwa6")

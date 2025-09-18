@@ -39,4 +39,4 @@ func _ready() -> void:
 	
 
 func _on_voltar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/menu.tscn")

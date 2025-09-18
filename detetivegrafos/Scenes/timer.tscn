@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bncy03thb73r8"]
 
-[ext_resource type="Script" uid="uid://de1scqji2qvm6" path="res://Scripts/timer.gd" id="1_pvhx5"]
+[ext_resource type="Script" uid="uid://de1scqji2qvm6" path="res://Scripts/UI/timer.gd" id="1_pvhx5"]
 [ext_resource type="Texture2D" uid="uid://cg5c8gfleijiy" path="res://Sprites/Placeholders/relogioSprite1.png" id="2_sw2ev"]
-[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="2_wlgqq"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="2_wlgqq"]
 [ext_resource type="Texture2D" uid="uid://cyfpmyewviqsg" path="res://Sprites/Placeholders/relogioSprite2.png" id="3_wlgqq"]
 [ext_resource type="Texture2D" uid="uid://dld66rr3yglxe" path="res://Sprites/Placeholders/relogioSprite3.png" id="4_hng2x"]
 [ext_resource type="Texture2D" uid="uid://bj3a1j0ixyw03" path="res://Sprites/Placeholders/relogioSprite4.png" id="5_bk6x6"]
