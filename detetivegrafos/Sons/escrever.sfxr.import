@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://b6wb8i2lbmb6l"
+path="res://.godot/imported/escrever.sfxr-544ce842d12835454979e34258a38eda.sample"
+
+[deps]
+
+source_file="res://Sons/escrever.sfxr"
+dest_files=["res://.godot/imported/escrever.sfxr-544ce842d12835454979e34258a38eda.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

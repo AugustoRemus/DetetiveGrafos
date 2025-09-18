@@ -24,7 +24,7 @@ func addAresta(_aresta: Aresta):
 	_aresta._setLinha(linha)
 	arestas.append(_aresta)
 	
-	SomManager.click.play()
+	SomManager.escrever.play()
 	#print("linha adicionada")
 	
 
@@ -34,6 +34,7 @@ func removeAresta(_aresta: Aresta):
 		if _aresta._comparar(aresta):
 			aresta.linhaDesenho.queue_free()
 			arestas.erase(aresta)
+			SomManager.apagar.play()
 			
 	
 

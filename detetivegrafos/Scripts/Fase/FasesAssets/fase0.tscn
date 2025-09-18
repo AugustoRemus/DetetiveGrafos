@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://7o1tn60hux7k"]
+[gd_scene load_steps=15 format=4 uid="uid://7o1tn60hux7k"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_6pv3x"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ulo56"]
@@ -11,11 +11,14 @@
 [ext_resource type="TileSet" uid="uid://o3ftoqrbjyne" path="res://Scripts/Fase/FasesAssets/tileset/tileSetCerca.tres" id="10_or1hc"]
 [ext_resource type="TileSet" uid="uid://b8p6r071duh7p" path="res://Scripts/Fase/FasesAssets/tileset/chaoTileSet.tres" id="11_ulo56"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://ResourcesNpcs/teste/testeVerde.tres" id="12_e04pu"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="12_or1hc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
 vertices = PackedVector2Array(503.02344, -49.023438, 503.96875, 426.89063, -515.22656, 416.10156, -526.7422, -51.96875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-537, -62, 513, -59, 514, 437, -525, 426)])
+
+[sub_resource type="Theme" id="Theme_or1hc"]
 
 [node name="FaseDebug" type="Node2D" node_paths=PackedStringArray("nodoNPCs")]
 script = ExtResource("1_6pv3x")
@@ -26,34 +29,6 @@ scriptCriacaoGrafo = ExtResource("2_ulo56")
 tempo = 120.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
-
-[node name="tutorial" type="VBoxContainer" parent="timer"]
-offset_left = 656.0
-offset_top = 25.0
-offset_right = 903.0
-offset_bottom = 237.0
-
-[node name="tutorial1" type="FoldableContainer" parent="timer/tutorial"]
-layout_mode = 2
-title = "Tutorial 1"
-title_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="timer/tutorial/tutorial1"]
-layout_mode = 2
-text = "Bem-vindo ao jogo! Você é um detetive e deve montar um grafo baseado nas interações dos personagens no cenário. Para abrir seu grafo, clique em espaço!"
-fit_content = true
-
-[node name="tutorial2" type="FoldableContainer" parent="timer/tutorial"]
-layout_mode = 2
-folded = true
-title = "Tutorial 2"
-title_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="timer/tutorial/tutorial2"]
-visible = false
-layout_mode = 2
-text = "Voce deve primeiro clicar Q perto de algum personagem para copiar a sua cor, depois se afaste e clique E para se transformar, use o E para conversar com os outros personagem se estiver perto deles"
-fit_content = true
 
 [node name="grafoPlayer" parent="." node_paths=PackedStringArray("nodoDosNPC") instance=ExtResource("4_a3jqw")]
 visible = false
@@ -138,3 +113,41 @@ limit_top = -180
 limit_right = 632
 limit_bottom = 574
 editor_draw_limits = true
+
+[node name="tutorial" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="tutorial" type="VBoxContainer" parent="tutorial"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -247.0
+offset_bottom = 362.0
+grow_horizontal = 0
+theme = SubResource("Theme_or1hc")
+
+[node name="tutorial1" type="FoldableContainer" parent="tutorial/tutorial"]
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+title = "Tutorial 1"
+title_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial/tutorial1"]
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+text = "Bem-vindo ao jogo! Você é um detetive e deve montar um grafo baseado nas interações dos personagens no cenário. Para abrir seu grafo, clique em espaço!"
+fit_content = true
+
+[node name="tutorial2" type="FoldableContainer" parent="tutorial/tutorial"]
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+folded = true
+title = "Tutorial 2"
+title_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial/tutorial2"]
+visible = false
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+text = "Para se transformar em outra pessoa clique Q perto dela, após isso aperte E perto de outras pessoas para interagir com ela, monte seu grafo baseado nessas interações"
+fit_content = true
