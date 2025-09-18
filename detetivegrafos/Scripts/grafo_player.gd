@@ -104,9 +104,10 @@ func addAresta(numeroIdNPC, posicaoNPC):
 		_NPC1Pos = posicaoNPC
 		return
 		
-	var existe = _existeAresta(numeroIdNPC,_NPC1Aresta)
+	#var existe = _existeAresta(numeroIdNPC,_NPC1Aresta)
 	var newAresta = Aresta.new(_NPC1Pos,posicaoNPC,_NPC1Aresta,numeroIdNPC)
 	
+	var existe = arestaManager.existeAresta(newAresta)
 
 	
 	
@@ -170,12 +171,7 @@ func resetClicado():
 
 
 
-func _existeAresta(V1, V2)->bool:
-	if _matrizPlayer[V1][V2] =="1" or _matrizPlayer[V2][V1] =="1":
-		return true
-	else:
-		return false
-	
+
 
 func entregar():
 	get_parent().finalizou(_matrizPlayer)

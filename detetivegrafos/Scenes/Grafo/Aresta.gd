@@ -8,6 +8,8 @@ var Vertice2: int
 var posicao1: Vector2  
 var posicao2: Vector2  
 
+var linhaDesenho: Line2D
+
 func _init(_p1: Vector2, _p2: Vector2, _v1: int, _v2: int) -> void:
 	posicao1 = _p1
 	posicao2 = _p2
@@ -16,3 +18,13 @@ func _init(_p1: Vector2, _p2: Vector2, _v1: int, _v2: int) -> void:
 
 func _setId(_id: int):
 	id = _id
+
+func _setLinha(_linha: Line2D):
+	linhaDesenho = _linha
+	
+func _comparar(_aresta: Aresta):
+	if Vertice1 == _aresta.Vertice1 and Vertice2 == _aresta.Vertice2:
+		return true
+	if  Vertice1 == _aresta.Vertice2 and Vertice2 == _aresta.Vertice1:
+		return true
+	return false

@@ -35,7 +35,7 @@ func _on_pressed() -> void:
 		
 		silhuetaAmarela.visible = false
 		
-		fuiClicado(false)
+		get_parent().get_parent().get_parent().resetClicado()
 		
 	else:
 		#foi selecionado
@@ -43,20 +43,17 @@ func _on_pressed() -> void:
 		
 		silhuetaAmarela.visible = true
 		
-		fuiClicado(true)
-
-
-func fuiClicado(condicao):
-	if condicao:
-		#passa o id e a posicao atua dele para desenhar a linha
 		var posicaoCerta = global_position + (size / 2)
 		get_parent().get_parent().get_parent().addAresta(_id, posicaoCerta)
 		
-	if !condicao:
-		get_parent().get_parent().get_parent().resetClicado()
+
 	
 func voltarNormal():
 		clicado = false
-		#fuiClicado(false)
+		
 		silhuetaAmarela.visible = false
 	
+
+
+func _on_botao_secundario_pressed() -> void:
+	_on_pressed()

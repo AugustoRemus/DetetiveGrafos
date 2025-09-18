@@ -1,12 +1,13 @@
 extends Control
 
 #controla as arestas
-var arestas: Array[Vector2]
+var arestas: Array[Aresta]
 
 
+#adiciona uma nova aresta
 func addAresta(_aresta: Aresta):
 
-	arestas.append(Vector2(_aresta.Vertice1,_aresta.Vertice2))
+	
 	var ponto_a = _aresta.posicao1
 	var ponto_b = _aresta.posicao2
 	
@@ -17,22 +18,29 @@ func addAresta(_aresta: Aresta):
 	
 	linha.points = [ponto_a, ponto_b]
 	
+
 	add_child(linha)
+	
+	_aresta._setLinha(linha)
+	arestas.append(_aresta)
+	
 	SomManager.click.play()
 	#print("linha adicionada")
 	
 
+#remove a aresta se ela esta no aray apenas
 func removeAresta(_aresta: Aresta):
+	for aresta in arestas:
+		if _aresta._comparar(aresta):
+			aresta.linhaDesenho.queue_free()
+			arestas.erase(aresta)
+			
 	
-	SomManager.apagar.play()
-	var todasLinnhas = get_children()
-	#pra todos os filhos
-	for linha in todasLinnhas:
-		#se forem linha
-		if linha is Line2D:
-			var pontos = linha.points
-			#testa se forem iguais
-			if (pontos[0] == _aresta.posicao1 and pontos[1] == _aresta.posicao2) \
-			or  (pontos[1] == _aresta.posicao1 and pontos[0] == _aresta.posicao2):
-				linha.queue_free()
-	
+
+#retorna true se existe ou false se n
+func existeAresta(_aresta: Aresta):
+	for aresta in arestas:
+		if _aresta._comparar(aresta):
+			#removeAresta(aresta)
+			return true
+	return false

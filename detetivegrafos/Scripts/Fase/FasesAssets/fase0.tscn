@@ -28,10 +28,10 @@ grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
 [node name="tutorial" type="VBoxContainer" parent="timer"]
-offset_left = 393.0
-offset_top = 11.0
-offset_right = 640.0
-offset_bottom = 188.0
+offset_left = 656.0
+offset_top = 25.0
+offset_right = 903.0
+offset_bottom = 237.0
 
 [node name="tutorial1" type="FoldableContainer" parent="timer/tutorial"]
 layout_mode = 2
