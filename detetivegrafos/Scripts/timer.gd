@@ -41,13 +41,13 @@ func processTime(time):
 		labelTempo.text = (str(segundos))
 		if segundos == 59:
 			clock.speed_scale = 1.5
-			print("peguei 0")
+			#print("peguei 0")
 		if segundos == 30:
 			clock.speed_scale = 2
-			print("peguei 1")
+			#print("peguei 1")
 		elif segundos == 10:
 			clock.speed_scale = 3
-			print("peguei 2")
+			#print("peguei 2")
 			
 
 	

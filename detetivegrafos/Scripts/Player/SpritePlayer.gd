@@ -16,7 +16,7 @@ var bob_height := 3.0
 
 #adicionar move sprite para mover as mao?
 
-func _animation(direcao, delta):
+func _animation(direcao):
 	#personagem esta se movendo
 	#vai gerar uma onda e vai definindo a posição do sprite
 	#basiada nesse calculo, muita doidera e matematica

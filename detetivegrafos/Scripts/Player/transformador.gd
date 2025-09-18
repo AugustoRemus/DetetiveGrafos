@@ -20,8 +20,10 @@ func _input(event: InputEvent) -> void:
 			
 			#player.possoTransformar = true
 		else:
-			#barulho erro
-			print("nada perto")
+			SomManager.erro.play()
+			
+	var _tiraWarning = event
+	_tiraWarning = "afe"
 			
 	#se transforma na cor, porem apenas se ele n estiver perto de alguem
 	#pensar como posso fazer isso ou adicionar outra tecla
@@ -51,8 +53,7 @@ func transformar(corpo):
 	else:
 		#print("n da pra se transformar")
 		SomManager.erro.play()
-		##barulho erro
-		pass
+	
 		
 		
 		

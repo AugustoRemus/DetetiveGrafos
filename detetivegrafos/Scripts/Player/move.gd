@@ -31,17 +31,20 @@ func _ready() -> void:
 
 
 
-
-
 func _physics_process(delta):
+	
 	_move()
 	#quando andar faz a animação
-	sprite._animation(direcao,delta)
+	sprite._animation(direcao)
 	#play audio de passos
 	#botar um teste para o player nao conseguir sair do mapa
 	
 	player.move_and_slide()
 	
+	
+	#tira warning
+	var _deltaTiraWarning = delta
+	_deltaTiraWarning = + 6
 
 func _move():
 	#pega a direção que ele deve ir

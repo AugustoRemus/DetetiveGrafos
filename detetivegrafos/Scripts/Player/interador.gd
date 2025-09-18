@@ -15,7 +15,8 @@ func _input(event: InputEvent) -> void:
 		else:		
 			SomManager.erro.play()
 
-			##som de erro
+	var _tiraWarning = event
+	_tiraWarning = "sai"
 		
 
 func gerarInteracao(npc: NPCClasse, id:int):
