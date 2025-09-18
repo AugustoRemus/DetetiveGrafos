@@ -84,7 +84,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -53.0
-offset_right = 130.0
+offset_right = 170.0
 grow_vertical = 0
 size_flags_horizontal = 2
 size_flags_vertical = 0
@@ -108,7 +108,7 @@ grow_vertical = 2
 layout_mode = 2
 theme = ExtResource("10_40cbr")
 theme_override_font_sizes/font_size = 13
-text = "Q: Copiar cor"
+text = "Q: Copiar Aparencia"
 
 [node name="conversar" type="Label" parent="tags/CanvasComandos/InteracoesPainel/InteracoesPerto"]
 visible = false
@@ -161,7 +161,7 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 114.53
+offset_left = 99.0
 offset_top = -53.0
 offset_right = 244.53113
 grow_horizontal = 2
@@ -182,7 +182,7 @@ offset_bottom = 30.675003
 grow_horizontal = 2
 theme = ExtResource("10_40cbr")
 theme_override_font_sizes/font_size = 13
-text = "Cor atual:"
+text = "Aparencia atual:"
 horizontal_alignment = 1
 
 [node name="nomeCor" type="Label" parent="tags/CanvasCor/painelCorAtualTXT"]

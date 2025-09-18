@@ -129,25 +129,39 @@ theme = SubResource("Theme_or1hc")
 [node name="tutorial1" type="FoldableContainer" parent="tutorial/tutorial"]
 layout_mode = 2
 theme = ExtResource("12_or1hc")
-title = "Tutorial 1"
+title = "Basicos"
 title_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial/tutorial1"]
 layout_mode = 2
 theme = ExtResource("12_or1hc")
-text = "Bem-vindo ao jogo! Você é um detetive e deve montar um grafo baseado nas interações dos personagens no cenário. Para abrir seu grafo, clique em espaço!"
+text = "Bem-vindo ao jogo! Você é um detetive e deve montar um grafo baseado nas interações dos personagens no cenário. Para isso deve se copia-los para interrogar os demais."
 fit_content = true
 
 [node name="tutorial2" type="FoldableContainer" parent="tutorial/tutorial"]
 layout_mode = 2
 theme = ExtResource("12_or1hc")
 folded = true
-title = "Tutorial 2"
+title = "Controles"
 title_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial/tutorial2"]
 visible = false
 layout_mode = 2
 theme = ExtResource("12_or1hc")
-text = "Para se transformar em outra pessoa clique Q perto dela, após isso aperte E perto de outras pessoas para interagir com ela, monte seu grafo baseado nessas interações"
+text = "Para se transformar em outra pessoa clique Q perto dela, após isso aperte E perto de outras pessoas para interagir com ela, monte seu grafo baseado nessas interações."
+fit_content = true
+
+[node name="tutorial3" type="FoldableContainer" parent="tutorial/tutorial"]
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+folded = true
+title = "Grafo"
+title_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="tutorial/tutorial/tutorial3"]
+visible = false
+layout_mode = 2
+theme = ExtResource("12_or1hc")
+text = "Ao descobrir que dois personagem tem uma relação positiva aperte espaço, depois clique em um dos NPCs para seleciona-lo,  clique em outro para criar uma aresta,  clique nos mesmo dois novamente para apagar a aresta entre eles."
 fit_content = true
