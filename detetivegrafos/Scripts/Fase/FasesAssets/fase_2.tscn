@@ -109,12 +109,11 @@ resourceNPC = ExtResource("6_qmhcp")
 nodoComOsDestinos = NodePath("../../ArrayPontos")
 ListaAmigosSimples = [NodePath("../laranja")]
 
-[node name="Verde" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_jydag")]
+[node name="Verde" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("5_jydag")]
 position = Vector2(373, 291)
 resourceNPC = ExtResource("8_jlxvu")
 quantDestinos = 4
 nodoComOsDestinos = NodePath("../../ArrayPontos")
-ListaAmigosSimples = [NodePath(""), NodePath("../branco"), NodePath("../Azul"), NodePath("../Azul"), NodePath("../branco"), NodePath("")]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)

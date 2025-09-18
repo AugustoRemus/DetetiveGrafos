@@ -129,9 +129,10 @@ offset_left = -71.0
 offset_top = -70.0
 grow_horizontal = 0
 grow_vertical = 0
-size_flags_horizontal = 2
-size_flags_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 theme_override_styles/panel = ExtResource("9_nrmfe")
+metadata/_edit_use_anchors_ = true
 
 [node name="TXTCor" type="TextureRect" parent="tags/CanvasCor/painelCorAtualTXT2"]
 layout_mode = 1

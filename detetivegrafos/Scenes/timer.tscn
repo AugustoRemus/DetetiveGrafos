@@ -1,10 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://bncy03thb73r8"]
+[gd_scene load_steps=9 format=3 uid="uid://bncy03thb73r8"]
 
 [ext_resource type="Script" uid="uid://de1scqji2qvm6" path="res://Scripts/timer.gd" id="1_pvhx5"]
 [ext_resource type="Texture2D" uid="uid://cg5c8gfleijiy" path="res://Sprites/Placeholders/relogioSprite1.png" id="2_sw2ev"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Fontes/Labels.tres" id="2_wlgqq"]
 [ext_resource type="Texture2D" uid="uid://cyfpmyewviqsg" path="res://Sprites/Placeholders/relogioSprite2.png" id="3_wlgqq"]
 [ext_resource type="Texture2D" uid="uid://dld66rr3yglxe" path="res://Sprites/Placeholders/relogioSprite3.png" id="4_hng2x"]
 [ext_resource type="Texture2D" uid="uid://bj3a1j0ixyw03" path="res://Sprites/Placeholders/relogioSprite4.png" id="5_bk6x6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sw2ev"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.5882353)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+shadow_size = 5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7d24"]
 animations = [{
@@ -23,38 +37,41 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
-[node name="timer" type="CanvasLayer" node_paths=PackedStringArray("labelTempo")]
+[node name="timer" type="CanvasLayer" node_paths=PackedStringArray("clock", "labelTempo")]
 script = ExtResource("1_pvhx5")
-labelTempo = NodePath("ColorRect/Label")
+clock = NodePath("Panel/AnimatedSprite2D")
+labelTempo = NodePath("Panel/Label")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 26.0
-offset_top = 1.0
-offset_right = 131.0
-offset_bottom = 41.0
-color = Color(0, 0, 0, 0.38431373)
+[node name="Panel" type="Panel" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 128.0
+offset_bottom = 43.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sw2ev")
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.5
-offset_top = -13.0
-offset_right = 51.5
-offset_bottom = 36.0
+offset_left = -17.645
+offset_top = -9.0
+offset_right = 44.35501
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "tempo
-"
+theme = ExtResource("2_wlgqq")
+text = "1 : 20"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
-position = Vector2(23, 20)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(23, 21)
 sprite_frames = SubResource("SpriteFrames_s7d24")
 autoplay = "default"
+frame_progress = 0.255701

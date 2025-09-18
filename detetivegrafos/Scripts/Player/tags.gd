@@ -1,5 +1,7 @@
 extends Node2D
 
+#configurações futuras, maior ui!
+
 @export var canvasTeclas: CanvasLayer
 @export var canvasCorTransformada: CanvasLayer
 @export var labelNomeCor: Label

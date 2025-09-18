@@ -2,8 +2,7 @@ extends CanvasLayer
 
 @export var tempo: float
 
-signal acabouTempo
-
+@export var clock: AnimatedSprite2D
 
 var rodando = true
 
@@ -15,6 +14,7 @@ var rodando = true
 
 func  _ready() -> void:
 	#ajusta dificuldade
+	clock.speed_scale = 1
 	if Niveis.dificuldade == 1:
 		tempo = tempo + 30
 	if Niveis.dificuldade == 0:
@@ -26,12 +26,33 @@ func  _ready() -> void:
 func _process(delta: float) -> void:
 	if rodando:
 		tempo -= delta
-		labelTempo.text = str(int(tempo))
+		processTime(tempo)
 		if tempo <= 0:
 			grafoPlayer.entregar()
 			rodando = false
 			
+func processTime(time):
+	var minutos = int(time/60)
+	var segundos = int(int(time)%60)
+	if minutos >= 1:
+		labelTempo.text = (str(minutos) + " : " + str(segundos).pad_zeros(2))
+	else:
+		
+		labelTempo.text = (str(segundos))
+		if segundos == 59:
+			clock.speed_scale = 1.5
+			print("peguei 0")
+		if segundos == 30:
+			clock.speed_scale = 2
+			print("peguei 1")
+		elif segundos == 10:
+			clock.speed_scale = 3
+			print("peguei 2")
 			
+
+	
+		
+	
 func pausar():
 	rodando = false
 	
