@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsenhq16ac4oo"]
+[gd_scene load_steps=8 format=3 uid="uid://dsenhq16ac4oo"]
 
 [ext_resource type="Script" uid="uid://by830mxx6jlot" path="res://Scripts/config.gd" id="1_kr0as"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Fontes/fundo.tres" id="2_tkr1x"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="4_a7ocr"]
 [ext_resource type="Theme" uid="uid://blmicg85n0boj" path="res://Fontes/botao.tres" id="4_p4uu7"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://experimentos/painel_fundo.tscn" id="5_g5g34"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="6_a7ocr"]
 
 [node name="Config" type="Control" node_paths=PackedStringArray("controleVolume", "dificuldades")]
 layout_mode = 3
@@ -135,6 +136,7 @@ offset_right = 627.0
 offset_bottom = 349.0
 theme = ExtResource("4_a7ocr")
 text = "voltar"
+script = ExtResource("6_a7ocr")
 
 [node name="painelFundo" parent="." instance=ExtResource("5_g5g34")]
 layout_mode = 1

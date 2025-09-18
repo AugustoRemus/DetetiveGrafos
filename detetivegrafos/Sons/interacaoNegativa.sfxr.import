@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://3tltg6qk2cjv"
+path="res://.godot/imported/interacaoNegativa.sfxr-9e638196632587a08c75430b5a287559.sample"
+
+[deps]
+
+source_file="res://Sons/interacaoNegativa.sfxr"
+dest_files=["res://.godot/imported/interacaoNegativa.sfxr-9e638196632587a08c75430b5a287559.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

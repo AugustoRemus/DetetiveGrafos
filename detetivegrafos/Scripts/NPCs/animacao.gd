@@ -16,13 +16,15 @@ var bob_height := 3.0
 func _ready() -> void:
 	bob_speed = base_np_cs.resourceNPC.RbobSpeed
 
-
-#passa a velocity do character do npc
-func _animation(direcao):
+func _physics_process(delta: float) -> void:
+	var _ignoaraWarning = delta
+	_ignoaraWarning = 1
+	
 	#vai ver se o npc esta se movendo
-	if direcao != Vector2.ZERO:
+	if base_np_cs.velocity != Vector2.ZERO:
 		bob_time += bob_speed
 		spriteNPC.position.y = sin(bob_time) * bob_height
 	else:
 		#esta parado entao vai resetando aos poucos
 		spriteNPC.position.y = lerp(spriteNPC.position.y, 0.0, 0.2)
+	

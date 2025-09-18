@@ -7,11 +7,6 @@ extends Node
 var _matriz
 
 
-
-
-
-
-
 #copia matriz
 func setMatriz(MatrizNpc):
 	#copia a matriz
@@ -21,16 +16,10 @@ func setMatriz(MatrizNpc):
 
 
 
-func printar_matriz(matriz: Array) -> void:
-	for linha in matriz:
-		var linha_str = ""
-		for valor in linha:
-			linha_str += str(valor) + " "
-		print(linha_str.strip_edges())  
-
-#cuida das inteacoes, peso nas arestas pode ser feito com 
-#numeros negativos pq ele testa se n é igual antes
+#recebe um pedido de interacao
 func interacaoID(idInteracao:int):
+	
+	var myId = base_np_cs.id
 	
 	#sao da mesma cor, esta pedindo o id igual
 	if(idInteracao == base_np_cs.id):
@@ -40,7 +29,7 @@ func interacaoID(idInteracao:int):
 		return
 		
 	#chama com o numero da interacao
-	logicaBalao.exibirBalao(int(_matriz[idInteracao][base_np_cs.id]))
+	#logicaBalao.exibirBalao(int(_matriz[idInteracao][]))
 		
 
 	

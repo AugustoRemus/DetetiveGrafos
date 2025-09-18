@@ -66,10 +66,6 @@ func _ready() -> void:
 		
 	pass
 
-func _physics_process(delta: float) -> void:
-
-	animacaoNode._animation(velocity)
-	
 	
 func silhueta(numero):
 	if numero == 1:

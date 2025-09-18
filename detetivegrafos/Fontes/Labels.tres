@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bujci4me1jles"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bujci4me1jles"]
 
 [ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Fontes/Mechanical-g5Y5.otf" id="1_g6o35"]
 [ext_resource type="StyleBox" uid="uid://c5s2jdijooef2" path="res://Fontes/TestePainelFundo.tres" id="2_37tbo"]
@@ -15,13 +15,26 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37tbo"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.5882353)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+
 [resource]
 FoldableContainer/font_sizes/font_size = 22
 FoldableContainer/fonts/font = ExtResource("1_g6o35")
 FoldableContainer/styles/focus = null
 FoldableContainer/styles/panel = SubResource("StyleBoxFlat_a4mus")
-FoldableContainer/styles/title_collapsed_hover_panel = ExtResource("2_37tbo")
-FoldableContainer/styles/title_collapsed_panel = ExtResource("2_37tbo")
+FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxFlat_37tbo")
+FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_37tbo")
 FoldableContainer/styles/title_hover_panel = ExtResource("2_37tbo")
 FoldableContainer/styles/title_panel = ExtResource("2_37tbo")
 Label/fonts/font = ExtResource("1_g6o35")

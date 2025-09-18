@@ -12,11 +12,11 @@ extends Sprite2D
 @export var _duracao: float 
 
 
-func exibirBalao(balao:int):
+func exibirBalao(_interacao: interacao):
 	#starta o timer
 	timer.start()
 	#define a textura
-	texture = baloes[balao]
+	texture = _interacao.sprite
 	#mostra
 	visible = true
 

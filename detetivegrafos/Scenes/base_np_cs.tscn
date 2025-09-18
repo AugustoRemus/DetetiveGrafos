@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=15 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/Placeholders/NPCAzul.png" id="1_udhxp"]
@@ -13,10 +13,6 @@
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
 [ext_resource type="Texture2D" uid="uid://blqrrynie23yc" path="res://Sprites/Placeholders/BalaoBasePNG.png" id="10_wbx1d"]
 [ext_resource type="Script" uid="uid://dw575fal2lmmw" path="res://Scripts/hat_node.gd" id="14_pcq1i"]
-
-[sub_resource type="Curve" id="Curve_4tvce"]
-_data = [Vector2(0.0691489, 1), 0.0, 0.0, 0, 0, Vector2(0.526596, 0.52809), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
@@ -41,7 +37,6 @@ texture = ExtResource("10_wbx1d")
 script = ExtResource("3_8tr8j")
 baloes = Array[Texture2D]([ExtResource("4_4tvce"), ExtResource("5_pcq1i")])
 timer = NodePath("timerBalao")
-_visibitiCurve = SubResource("Curve_4tvce")
 
 [node name="timerBalao" type="Timer" parent="BalaoBasePng"]
 wait_time = 3.0

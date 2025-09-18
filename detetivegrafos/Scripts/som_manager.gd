@@ -14,8 +14,13 @@ var volume = 75
 
 @onready var hover: AudioStreamPlayer2D = $hover
 
+@onready var interacao_positiva: AudioStreamPlayer2D = $InteracaoPositiva
 
-@onready var todos_sons := [musica, erro, click, escrever, apagar,hover]
+@onready var interacao_negativa: AudioStreamPlayer2D = $interacaoNegativa
+
+
+@onready var todos_sons := [musica, erro, click, escrever, apagar,hover,
+interacao_negativa, interacao_positiva]
 
 func _ready():
 	atualizar_volume(volume)

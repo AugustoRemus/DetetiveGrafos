@@ -16,7 +16,7 @@ var direcao : Vector2
 #pega a speed do player
 #quando tiver upgrades testar a logica para pegar o certo
 var Speed: float = 500 #pra debugar
-#GlobalPlayer.velocidadeMovimentoPlayer
+
 
 #arrumar depois pra ver como fica mais agradavel
 @export_range(0.0001, 0.9999) var aceleration: float
@@ -26,12 +26,10 @@ var Speed: float = 500 #pra debugar
 #endregion
 
 
+func _ready() -> void:
+	Speed = GlobalPlayer.velocidadeMovimentoPlayer
 
 
-
-func _init() -> void:
-
-	pass
 
 
 
