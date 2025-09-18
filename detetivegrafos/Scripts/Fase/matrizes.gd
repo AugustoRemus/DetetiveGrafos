@@ -13,9 +13,9 @@ func calcularErro():
 	var errosTotal = 0
 	var tamanhoMatriz = MatrizCerta.size()
 	for i in range(tamanhoMatriz):
-		for j in range(i+1, tamanhoMatriz):
+		for j in range(tamanhoMatriz):
 			if MatrizCerta[i][j] != MatrizPlayer[i][j]:
 				errosTotal +=1 
 				
-	return errosTotal
+	return errosTotal/2
 	

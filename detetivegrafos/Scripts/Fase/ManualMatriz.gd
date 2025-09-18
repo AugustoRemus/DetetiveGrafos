@@ -1,7 +1,6 @@
 extends LogicaGrafo
 class_name CriarManual
 
-#vao ser 4 npcs
 func CriarGrafo(NPCS: Array[NPCClasse]) -> Array:
 	var n = NPCS.size()
 	var matriz_adjacencia = []

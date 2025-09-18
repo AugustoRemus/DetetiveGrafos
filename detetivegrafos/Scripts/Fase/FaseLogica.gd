@@ -61,9 +61,9 @@ func printar_matriz(matriz: Array) -> void:
 		print(linha_str.strip_edges())  
 
 func startNPCs():
-	#ta dando erro aqui, n ta passando
+	printar_matriz(matrizNPCs)
 	for npc in ListaNPCs:
-		npc.LogicaInteraçoes.setMatriz(matrizNPCs)
+		npc.LogicaInteraçoes.setMatriz(matrizNPCs, ListaNPCs.size())
 
 func finalizou(_matriz):
 	#botar um cronometro com o tempo da animação e

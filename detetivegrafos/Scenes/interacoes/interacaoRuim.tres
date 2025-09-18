@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="interacao" load_steps=4 format=3 uid="uid://bdfd2w2wqrft2"]
+
+[ext_resource type="AudioStream" uid="uid://3tltg6qk2cjv" path="res://Sons/interacaoNegativa.sfxr" id="1_semhh"]
+[ext_resource type="Script" uid="uid://njpxav4trtyw" path="res://Scenes/interacoes/InteracoesResource.gd" id="1_suo2h"]
+[ext_resource type="Texture2D" uid="uid://cmairux3gbi5n" path="res://Sprites/Placeholders/deslikePNG.png" id="2_ju5vw"]
+
+[resource]
+script = ExtResource("1_suo2h")
+nome = "interacaoRuim"
+sprite = ExtResource("2_ju5vw")
+nomeAudio = "interacao_negativa"
+audioDaInteracao = ExtResource("1_semhh")
+metadata/_custom_type_script = "uid://njpxav4trtyw"

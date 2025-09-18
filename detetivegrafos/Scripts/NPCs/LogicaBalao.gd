@@ -4,6 +4,7 @@ extends Sprite2D
 
 @export var timer: Timer
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 #curva q vai definir a visibilidade, implementar dps
 @export var _visibitiCurve: Curve
@@ -17,6 +18,13 @@ func exibirBalao(_interacao: interacao):
 	timer.start()
 	#define a textura
 	texture = _interacao.sprite
+	audio_stream_player_2d.stream = _interacao.audioDaInteracao
+	audio_stream_player_2d.play()
+	
+	#ajusta o volume
+	var db = linear_to_db(SomManager.volume / 100.0)
+	audio_stream_player_2d.volume_db = db
+	
 	#mostra
 	visible = true
 

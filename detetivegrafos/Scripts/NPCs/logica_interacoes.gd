@@ -3,33 +3,36 @@ extends Node
 
 @export var logicaBalao: Sprite2D
 
+@export var interacaoPositiva: interacao
+@export var interacaoNegativa: interacao
+
+
 #matriz
 var _matriz
 
 
 #copia matriz
-func setMatriz(MatrizNpc):
-	#copia a matriz
-	_matriz = MatrizNpc.duplicate(true)
+func setMatriz(MatrizNpc, size: int):
 	
-	#printar_matriz(_matriz)
+	_matriz = MatrizNpc.duplicate()
+	
 
-
+	
 
 #recebe um pedido de interacao
 func interacaoID(idInteracao:int):
 	
 	var myId = base_np_cs.id
 	
-	#sao da mesma cor, esta pedindo o id igual
-	if(idInteracao == base_np_cs.id):
-		logicaBalao.exibirBalao(0)
-		#sai para n testar
-		#chama funcao de fantasma da logica
-		return
+	if _matriz[myId][idInteracao] == "x":
+		logicaBalao.exibirBalao(interacaoNegativa)
+	elif _matriz[myId][idInteracao] == "0":
+		logicaBalao.exibirBalao(interacaoNegativa)
+	elif _matriz[myId][idInteracao] == "1":
+		logicaBalao.exibirBalao(interacaoPositiva)
+	
+	
 		
-	#chama com o numero da interacao
-	#logicaBalao.exibirBalao(int(_matriz[idInteracao][]))
-		
+	
 
 	

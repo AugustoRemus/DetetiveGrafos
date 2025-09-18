@@ -7,3 +7,5 @@ class_name interacao
 @export var sprite: Texture2D
 
 @export var nomeAudio: String
+
+@export var audioDaInteracao: AudioStreamWAV
