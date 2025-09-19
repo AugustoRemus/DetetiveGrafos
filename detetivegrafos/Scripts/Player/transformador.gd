@@ -15,7 +15,7 @@ extends Node
 func _input(event: InputEvent) -> void:
 	#pega um possivel candidato para salvar a cor
 	if Input.is_action_just_pressed("Q"):
-		if area.corpoAtual:
+		if area.corpoAtual and area.corpoAtual.id!=player.idNPCTransformado:
 			transformar(area.corpoAtual)
 			
 			#player.possoTransformar = true
