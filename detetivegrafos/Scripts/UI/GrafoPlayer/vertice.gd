@@ -2,30 +2,31 @@ extends TextureButton
 
 @export var texturaNPC: TextureRect
 
-@export var silhueta = TextureRect
-
 @export var silhuetaAmarela = TextureRect
 
-@export var labelNome= Label
+@export var labelNome = Label
 
 @export var npc = CharacterBody2D
 
 var nomeCor
 
-var _id
+var id
 
-var clicado = false
 
 var clicavel = true
 
 
 signal fuiClicado(botao:Button)
 
-func setarTextura(sprite):
+
+func setarTextura(_npc, _id):
 	
-	texturaNPC.texture = sprite.Rsprite
-	labelNome.text = sprite.RnomeCor
-	nomeCor = sprite.RnomeCor
+	texturaNPC.texture = _npc.resourceNPC.Rsprite
+	nomeCor = _npc.resourceNPC.RnomeCor
+	labelNome.text =  str(nomeCor)
+	id = _id
+	print(nomeCor)
+	print(id)
 
 
 
@@ -34,15 +35,24 @@ func _on_pressed() -> void:
 		fuiClicado.emit(self)
 
 	
+	
 func desativar():
-		clicado = false
 		silhuetaAmarela.visible = false
 	
 
 
 func ativar():
-	clicado = true
 	silhuetaAmarela.visible = true
+
+
+func bloquear():
+	silhuetaAmarela.visible = false
+	clicavel = false
+	
+
+func desbloquear():
+	clicavel = true
+	
 
 
 

@@ -81,7 +81,6 @@ func _desclicarOutros(clicado: Button):
 			else:
 				botao.button_pressed = false
 		
-		
 func _resetTodos():
 	
 	numeroFaseLabel.text = "Escolha a fase"
@@ -90,8 +89,7 @@ func _resetTodos():
 	botaoPlay.visible = false
 	labelPont.visible = false
 	medalhaIcone.texture = null
-	var botaoNulo : Button = null
-	_desclicarOutros(botaoNulo)
+	_desclicarOutros(todosBotoes[5])
 	for botao in todosBotoes:
 		if botao.disabled:
 			pass
