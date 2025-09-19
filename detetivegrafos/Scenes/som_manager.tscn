@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bhpfm11irk4fq" path="res://Sons/efeitosSonoros/fechandoGrafo.sfxr" id="10_vh76v"]
 [ext_resource type="AudioStream" uid="uid://drb6daoj44u4" path="res://Sons/efeitosSonoros/Erro2.sfxr" id="11_vh76v"]
 [ext_resource type="AudioStream" uid="uid://2xclyl4vei6e" path="res://Sons/efeitosSonoros/transformacao.sfxr" id="12_8aww3"]
-[ext_resource type="AudioStream" uid="uid://c6jjqxpq8xmue" path="res://Sons/musica/musicaBasica.wav" id="16_c4ava"]
+[ext_resource type="AudioStream" uid="uid://cisywhycb4yk2" path="res://Sons/musica/testeMusica.wav" id="16_c4ava"]
 
 [node name="SomManager" type="Node2D"]
 script = ExtResource("1_umwa6")
