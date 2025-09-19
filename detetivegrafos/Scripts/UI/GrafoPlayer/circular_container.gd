@@ -4,11 +4,25 @@ class_name CircularContainer
 var radius: float = 100
 var start_angle: float = 0.0 
 
+var botaoAtivo: Button
+
 @export var grafo_player: CanvasLayer
 @export var vertice_scene: PackedScene = preload("res://Scenes/Grafo/vertice.tscn")
 func _ready() -> void:
 	organizar_em_circulo()
+
+
+
+
+
+func fuiApertado(botaoApertado):
+	pass
 	
+
+
+
+
+
 func organizar_em_circulo():
 	var num_children = get_children().size()
 	

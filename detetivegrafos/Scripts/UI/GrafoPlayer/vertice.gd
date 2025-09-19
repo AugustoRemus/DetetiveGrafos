@@ -11,12 +11,14 @@ extends TextureButton
 @export var npc = CharacterBody2D
 
 
-
-
 var _id
 
 var clicado = false
 
+var clicavel = true
+
+
+signal fuiClicado(botao:Button)
 
 func setarTextura(sprite):
 	
@@ -26,6 +28,9 @@ func setarTextura(sprite):
 
 
 func _on_pressed() -> void:
+	# se n estiver clicavel ignora
+	if !clicavel:
+		return
 	#print("voce clicou agorora no id:")
 	#print(_id)
 	

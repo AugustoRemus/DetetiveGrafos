@@ -8,9 +8,12 @@ extends CanvasLayer
 @export var vertice : PackedScene = preload("res://Scenes/Grafo/vertice.tscn")
 
 @export var nodoDosNPC: Node
+
 var NPCS: Array[Node]
 
 var _matrizPlayer
+
+var _todosBotoes: Array[Button]
 
 @export var arestaManager: Node
 
@@ -41,19 +44,42 @@ func _ready() -> void:
 
 
 
+func _physics_process(delta: float) -> void:
+	if panel.position == Vector2(75.5, 25.5):
+		for botao in _todosBotoes:
+			botao.clicavel = true
+	else:
+		_NPC1Aresta = null
+		_NPC1Pos = null
+		for botao in _todosBotoes:
+			botao.clicavel = false
+			botao.voltarNormal()
+			
+		
+		
+		
+		
+	var _warningKiller = delta
+	_warningKiller = 3
+
+
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Espaco") or event.is_action_pressed("esq") : 
+		_NPC1Aresta = null
+		_NPC1Pos = null
+		
+		for botao in _todosBotoes:
+			
+			botao.voltarNormal()
+		
 		if !aparente:
 			
 			mostrar_animado()
-			#position = lerp(posEscondido,posMostrando,1)
-		else:
-			for filinhos in circularContainer.get_children():
-				filinhos.voltarNormal()
-			_NPC1Aresta = null
-		
-			_NPC1Pos = null
+			
+		else:	
 			esconder_animado()
+			
 			
 
 func pegaOsNPCs():
@@ -94,6 +120,7 @@ func _Teste_CriarFIlhos():
 		botao.setarTextura(NPCS[contador].resourceNPC)
 		contador+= 1
 		circularContainer.add_child(botao) 
+		_todosBotoes.append(botao)
 	
 
 
@@ -190,7 +217,7 @@ func mostrar_animado():
 	#cria curva
 	var tween = create_tween()
 	tween.tween_property(self.panel, "position", posMostrando, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
+	
 
 func esconder_animado():
 	#marca escondido
