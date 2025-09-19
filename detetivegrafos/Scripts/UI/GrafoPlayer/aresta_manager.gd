@@ -3,6 +3,8 @@ extends Control
 #controla as arestas
 var arestas: Array[Aresta]
 
+signal mudarMatrizPlayer(v1,v2, novoValor)
+
 
 #adiciona uma nova aresta
 func addAresta(_aresta: Aresta):
@@ -45,3 +47,16 @@ func existeAresta(_aresta: Aresta):
 			#removeAresta(aresta)
 			return true
 	return false
+
+
+func tratarAresta(_aresta: Aresta):
+	var v1 = _aresta.Vertice1
+	var v2 = _aresta.Vertice2
+	if existeAresta(_aresta):
+		removeAresta(_aresta)
+		mudarMatrizPlayer.emit(v1,v2,"0")
+		mudarMatrizPlayer.emit(v2,v1,"0")
+	else:
+		addAresta(_aresta)
+		mudarMatrizPlayer.emit(v1,v2,"1")
+		mudarMatrizPlayer.emit(v2,v1,"1")

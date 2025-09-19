@@ -103,11 +103,16 @@ func _setarFase(_nomeFase: String,_numeroFase:int, _packedScene: PackedScene):
 	
 	#se nao estava clicado
 	if numeroFaseLabel.text != _nomeFase:
+		#carrega sena e dados
 		carregarScena = _packedScene
 		numeroFaseLabel.text = _nomeFase
+		#deixa as coisa visiveis
 		botaoPlay.visible = true
 		labelPont.visible = true
+		medalhaIcone.visible = true
+		#seta o icone
 		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[_numeroFase]]
+		
 		_desclicarOutros(todosBotoes[_numeroFase])
 	else:
 		#se estava clicado desclica

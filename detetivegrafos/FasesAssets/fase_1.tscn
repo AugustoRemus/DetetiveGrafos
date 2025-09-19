@@ -41,8 +41,8 @@ tempo = 75.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
-[node name="grafoPlayer" parent="." instance=ExtResource("4_luc2p")]
-visible = false
+[node name="grafoPlayer" parent="." node_paths=PackedStringArray("nodeComOsNPCs") instance=ExtResource("4_luc2p")]
+nodeComOsNPCs = NodePath("../NPCs")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-61, 5)

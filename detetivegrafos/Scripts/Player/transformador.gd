@@ -48,11 +48,11 @@ func transformar(corpo):
 			player.hatTransformado = null
 			
 		player.idNPCTransformado = corpo.id
+		SomManager.transformacao.play()
 		
-		##barulho transformacao
 	else:
 		#print("n da pra se transformar")
-		SomManager.erro.play()
+		SomManager.erro_2.play()
 	
 		
 		

@@ -19,3 +19,14 @@ func calcularErro():
 				
 	return errosTotal/2
 	
+	
+func printMatriz(_matriz):
+	print("matriz:")
+	for linha in _matriz:
+		var linha_str = ""
+		for valor in linha:
+			linha_str += str(valor) + " "
+		print(linha_str.strip_edges())  
+
+
+	

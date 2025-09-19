@@ -38,12 +38,12 @@ func _on_pressed() -> void:
 
 	
 	
-func desativar():
+func desamarelar():
 		silhuetaAmarela.visible = false
 	
 
 
-func ativar():
+func amarelar():
 	silhuetaAmarela.visible = true
 
 

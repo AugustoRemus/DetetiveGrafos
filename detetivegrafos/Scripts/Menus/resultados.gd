@@ -29,7 +29,16 @@ func _ready() -> void:
 		#botar label e tals
 	else:
 		resultado.text = "CONCLUIDA!"
-		Niveis.fasesPontos[_nivelAtual] = _totalErros+1
+		#seta o nivel e libera a proxima fase
+		
+		#deixa o menor
+		if Niveis.fasesPontos[_nivelAtual] == 0:
+			Niveis.fasesPontos[_nivelAtual] = _totalErros + 1
+				
+		elif Niveis.fasesPontos[_nivelAtual] >_totalErros + 1:
+			Niveis.fasesPontos[_nivelAtual] = _totalErros + 1
+			
+		#mostra o sprite
 		estrelasTextura.texture = arrayTexturas[_totalErros+1]
 		
 		if _nivelAtual != Niveis.quantNiveis:

@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://2xclyl4vei6e"
+path="res://.godot/imported/transformacao.sfxr-72be86c7b574664e1b8dd7bfdec505d9.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/transformacao.sfxr"
+dest_files=["res://.godot/imported/transformacao.sfxr-72be86c7b574664e1b8dd7bfdec505d9.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

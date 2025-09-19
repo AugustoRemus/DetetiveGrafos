@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bhpfm11irk4fq"
+path="res://.godot/imported/fechandoGrafo.sfxr-9ccce136fc8f2c7e0094dcfa253ebc5f.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/fechandoGrafo.sfxr"
+dest_files=["res://.godot/imported/fechandoGrafo.sfxr-9ccce136fc8f2c7e0094dcfa253ebc5f.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

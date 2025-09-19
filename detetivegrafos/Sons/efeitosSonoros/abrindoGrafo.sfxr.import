@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bqokyhtwpaaly"
+path="res://.godot/imported/abrindoGrafo.sfxr-43c5a2e12fede46455907386bfdd6e66.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/abrindoGrafo.sfxr"
+dest_files=["res://.godot/imported/abrindoGrafo.sfxr-43c5a2e12fede46455907386bfdd6e66.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

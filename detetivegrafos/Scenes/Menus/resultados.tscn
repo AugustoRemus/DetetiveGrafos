@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cjme6imsja4xo"]
 
-[ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Fase/resultados.gd" id="1_yvfxy"]
+[ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Menus/resultados.gd" id="1_yvfxy"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_acucp"]
 [ext_resource type="Texture2D" uid="uid://d34fhldelagp7" path="res://Sprites/Placeholders/medalha1.png" id="3_2wvmg"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="3_mxs03"]

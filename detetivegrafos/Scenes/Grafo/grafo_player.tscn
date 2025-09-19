@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cth6dtgl3qcuv" path="res://Scripts/UI/GrafoPlayer/grafo_player.gd" id="1_ds4nc"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="2_6rqgk"]
 [ext_resource type="Script" uid="uid://b02agc5y4g24y" path="res://Scripts/UI/GrafoPlayer/circular_container.gd" id="2_i1jcp"]
-[ext_resource type="Script" uid="uid://c78eydfep5tla" path="res://Scripts/UI/GrafoPlayer/click_control.gd" id="3_l735g"]
+[ext_resource type="Script" uid="uid://ndowdpq8min1" path="res://Scripts/UI/GrafoPlayer/color_rect.gd" id="2_l735g"]
 [ext_resource type="Script" uid="uid://bp10ijjl3k8n0" path="res://Scripts/UI/GrafoPlayer/aresta_manager.gd" id="4_icoyr"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_h0wb3"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_5nq24"]
@@ -16,7 +16,18 @@
 script = ExtResource("1_ds4nc")
 nodoCircularContainer = NodePath("Panel/CircularContainer")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6156863)
+script = ExtResource("2_l735g")
+posicao_final = Vector2(0, 400)
+
 [node name="Panel" type="Panel" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,14 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rqgk")
 
-[node name="clickControl" type="Control" parent="Panel" node_paths=PackedStringArray("container")]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_l735g")
-container = NodePath("../CircularContainer")
-
-[node name="CircularContainer" type="Control" parent="Panel"]
+[node name="CircularContainer" type="Control" parent="Panel" node_paths=PackedStringArray("arestaManager")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,6 +56,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_i1jcp")
 angulo_inicial = 90.0
+arestaManager = NodePath("../ArestaManager")
 
 [node name="ArestaManager" type="Control" parent="Panel"]
 layout_mode = 1
@@ -216,8 +221,7 @@ text = "Não
 "
 script = ExtResource("7_5nq24")
 
-[connection signal="botaoClicado" from="Panel/CircularContainer" to="Panel/clickControl" method="_on_circular_container_botao_clicado"]
-[connection signal="organizado" from="Panel/CircularContainer" to="Panel/clickControl" method="_on_circular_container_organizado"]
+[connection signal="mudarMatrizPlayer" from="Panel/ArestaManager" to="." method="_on_aresta_manager_mudar_matriz_player"]
 [connection signal="pressed" from="Panel/Entregar2" to="Panel/ConfirmarEntrega" method="_on_entregar_2_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="." method="_on_desistir_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="Panel/conformar Desistir" method="_on_desistir_pressed"]
