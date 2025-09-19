@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cwqyfflrmmchj"]
+[gd_scene load_steps=12 format=3 uid="uid://cwqyfflrmmchj"]
 
 [ext_resource type="Script" uid="uid://cth6dtgl3qcuv" path="res://Scripts/UI/GrafoPlayer/grafo_player.gd" id="1_ds4nc"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="2_6rqgk"]
 [ext_resource type="Script" uid="uid://b02agc5y4g24y" path="res://Scripts/UI/GrafoPlayer/circular_container.gd" id="2_i1jcp"]
+[ext_resource type="Script" uid="uid://c78eydfep5tla" path="res://Scripts/UI/GrafoPlayer/click_control.gd" id="3_l735g"]
 [ext_resource type="Script" uid="uid://bp10ijjl3k8n0" path="res://Scripts/UI/GrafoPlayer/aresta_manager.gd" id="4_icoyr"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_h0wb3"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_5nq24"]
@@ -29,6 +30,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rqgk")
 
+[node name="clickControl" type="Control" parent="Panel" node_paths=PackedStringArray("container")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_l735g")
+container = NodePath("../CircularContainer")
+
 [node name="CircularContainer" type="Control" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -36,27 +44,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -7.0
+offset_top = -30.324997
+offset_right = 9.0
+offset_bottom = -10.325027
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_i1jcp")
-
-[node name="Entregar2" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 393.5
-offset_top = -53.5
-offset_right = 475.50018
-offset_bottom = -22.5
-grow_vertical = 0
-theme = ExtResource("6_h0wb3")
-text = "Entregar"
-script = ExtResource("7_5nq24")
+angulo_inicial = 90.0
 
 [node name="ArestaManager" type="Control" parent="Panel"]
 layout_mode = 1
@@ -72,6 +67,20 @@ offset_bottom = -154.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_icoyr")
+
+[node name="Entregar2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 393.5
+offset_top = -53.5
+offset_right = 475.50018
+offset_bottom = -22.5
+grow_vertical = 0
+theme = ExtResource("6_h0wb3")
+text = "Entregar"
+script = ExtResource("7_5nq24")
 
 [node name="desistir" type="Button" parent="Panel"]
 layout_mode = 1
@@ -207,6 +216,8 @@ text = "Não
 "
 script = ExtResource("7_5nq24")
 
+[connection signal="botaoClicado" from="Panel/CircularContainer" to="Panel/clickControl" method="_on_circular_container_botao_clicado"]
+[connection signal="organizado" from="Panel/CircularContainer" to="Panel/clickControl" method="_on_circular_container_organizado"]
 [connection signal="pressed" from="Panel/Entregar2" to="Panel/ConfirmarEntrega" method="_on_entregar_2_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="." method="_on_desistir_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="Panel/conformar Desistir" method="_on_desistir_pressed"]

@@ -16,7 +16,7 @@ var id
 var clicavel = true
 
 
-signal fuiClicado(botao:Button)
+signal fuiClicado(botao:TextureButton)
 
 
 func setarTextura(_npc, _id):
@@ -25,13 +25,15 @@ func setarTextura(_npc, _id):
 	nomeCor = _npc.resourceNPC.RnomeCor
 	labelNome.text =  str(nomeCor)
 	id = _id
-	print(nomeCor)
-	print(id)
+	#print(nomeCor)
+	#print(id)
 
 
 
 func _on_pressed() -> void:
+	
 	if clicavel:
+		
 		fuiClicado.emit(self)
 
 	

@@ -12,7 +12,7 @@ var vertice: PackedScene = preload("uid://d32giarwu8rbf")
 func _ready() -> void:
 	
 	arrayNPCs = nodeComOsNPCs.get_children().duplicate()
-	print(arrayNPCs)
+	#print(arrayNPCs)
 	
 	var contador = 0
 	for npc in arrayNPCs:
@@ -30,4 +30,7 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Espaco"):
 		visible = !visible
 		aparecendo = !aparecendo
-		
+
+
+func entregar():
+	pass
