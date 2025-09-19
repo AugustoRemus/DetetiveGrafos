@@ -5,15 +5,11 @@ extends CanvasLayer
 
 
 
-@export var vertice : PackedScene = preload("res://Scenes/Grafo/vertice.tscn")
-
 @export var nodoDosNPC: Node
 
 var NPCS: Array[Node]
 
 var _matrizPlayer
-
-var _todosBotoes: Array[Button]
 
 @export var arestaManager: Node
 
@@ -23,10 +19,6 @@ var _todosBotoes: Array[Button]
 var aparente = false
 var posEscondido = Vector2(75.5,400)
 var posMostrando = Vector2(75.5,25.5)
-#guarda o numero
-var _NPC1Aresta = null
-#guarda a posicao
-var _NPC1Pos = null
 
 
 
@@ -38,7 +30,7 @@ func _ready() -> void:
 	panel.position = posEscondido
 	pegaOsNPCs()
 	startGrafo()
-	_Teste_CriarFIlhos()
+	circularContainer.adicionarFilhos(NPCS)
 	circularContainer.organizar_em_circulo()
 	#panel.position = posEscondido
 
@@ -46,17 +38,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if panel.position == Vector2(75.5, 25.5):
-		for botao in _todosBotoes:
-			botao.clicavel = true
+		circularContainer.liberarTodos()
+		
 	else:
-		_NPC1Aresta = null
-		_NPC1Pos = null
-		for botao in _todosBotoes:
-			botao.clicavel = false
-			botao.voltarNormal()
-			
-		
-		
+	
+		circularContainer.trancarTodos()
 		
 		
 	var _warningKiller = delta
@@ -66,13 +52,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Espaco") or event.is_action_pressed("esq") : 
-		_NPC1Aresta = null
-		_NPC1Pos = null
-		
-		for botao in _todosBotoes:
-			
-			botao.voltarNormal()
-		
+		circularContainer.resetarTodos()
 		if !aparente:
 			
 			mostrar_animado()
@@ -111,76 +91,10 @@ func startGrafo():
 	_matrizPlayer = matriz_adjacencia
 
 
-#bota os filhos no container circular
-func _Teste_CriarFIlhos():
-	var contador = 0
-	for filho in NPCS:
-		var botao = vertice.instantiate()
+func addArestaMatriz(v1: int, v2: int, conteudo : String):
+	_matrizPlayer[v1][v2] = conteudo
+	_matrizPlayer[v2][v1] = conteudo
 		
-		botao.setarTextura(NPCS[contador].resourceNPC)
-		contador+= 1
-		circularContainer.add_child(botao) 
-		_todosBotoes.append(botao)
-	
-
-
-func addAresta(numeroIdNPC, posicaoNPC):
-	#é o primeiro botao clicado
-	if _NPC1Aresta == null:
-		_NPC1Aresta = numeroIdNPC
-		_NPC1Pos = posicaoNPC
-		return
-		
-	#var existe = _existeAresta(numeroIdNPC,_NPC1Aresta)
-	var newAresta = Aresta.new(_NPC1Pos,posicaoNPC,_NPC1Aresta,numeroIdNPC)
-	
-	var existe = arestaManager.existeAresta(newAresta)
-
-	
-	
-	#tirar aresta
-	if existe:
-		_matrizPlayer[_NPC1Aresta][numeroIdNPC] = "0"
-		_matrizPlayer[numeroIdNPC][_NPC1Aresta] = "0"
-		
-		#parte visual
-		arestaManager.removeAresta(newAresta)
-		
-		#print("aresta removida entre os id:")
-		#print(_NPC1Aresta)
-		#print(numeroIdNPC)
-		
-	else:
-		#aresta n existe ainda entao adiciona
-		_matrizPlayer[_NPC1Aresta][numeroIdNPC] = "1"
-		_matrizPlayer[numeroIdNPC][_NPC1Aresta] = "1"
-		
-		
-	
-		#parte visual
-		arestaManager.addAresta(newAresta)
-		
-		#print("aresta adiciona entre os id:")
-		#print(newAresta.Vertice1)
-		#print(newAresta.Vertice2)
-		
-		
-	circularContainer.get_child(_NPC1Aresta).voltarNormal()
-	circularContainer.get_child(numeroIdNPC).voltarNormal()
-	
-		
-		##reseta todos
-	#for filinhos in circularContainer.get_children():
-		#filinhos.voltarNormal()
-	#
-	
-
-	#reseta o primeiro numero aqui salvo
-	_NPC1Aresta = null
-	_NPC1Pos = null
-	#_printMatriz()
-	
-	
 func _printMatriz():
 	print("matriz player mudou")
 	for linha in _matrizPlayer:
@@ -188,13 +102,6 @@ func _printMatriz():
 		for valor in linha:
 			linha_str += str(valor) + " "
 		print(linha_str.strip_edges())  
-
-
-#usado no vertice, nao apagar!
-func resetClicado():
-	_NPC1Aresta = null
-	_NPC1Pos = null
-	#print("fui resetado")
 
 
 

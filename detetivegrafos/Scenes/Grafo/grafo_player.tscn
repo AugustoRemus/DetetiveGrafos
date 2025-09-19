@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://Scripts/UI/GrafoPlayer/confirmar_entrega.gd" id="11_l735g"]
 
 [node name="grafoPlayer" type="CanvasLayer" node_paths=PackedStringArray("arestaManager", "circularContainer")]
+visible = false
 script = ExtResource("1_ds4nc")
 arestaManager = NodePath("Panel/ArestaManager")
 circularContainer = NodePath("Panel/CircularContainer")
@@ -30,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rqgk")
 
-[node name="CircularContainer" type="Control" parent="Panel" node_paths=PackedStringArray("grafo_player")]
+[node name="CircularContainer" type="Control" parent="Panel" node_paths=PackedStringArray("grafo_player", "arestaManager")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,6 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_i1jcp")
 grafo_player = NodePath("../..")
+arestaManager = NodePath("../ArestaManager")
 
 [node name="Entregar2" type="Button" parent="Panel"]
 layout_mode = 1
@@ -60,13 +62,15 @@ theme = ExtResource("6_h0wb3")
 text = "Entregar"
 script = ExtResource("7_5nq24")
 
-[node name="ArestaManager" type="Control" parent="Panel"]
+[node name="ArestaManager" type="Control" parent="Panel" node_paths=PackedStringArray("grafoPlayer", "panel")]
 anchors_preset = 0
 offset_left = -75.5
 offset_top = -25.5
 offset_right = -75.5
 offset_bottom = -25.5
 script = ExtResource("4_icoyr")
+grafoPlayer = NodePath("../..")
+panel = NodePath("..")
 
 [node name="desistir" type="Button" parent="Panel"]
 layout_mode = 1

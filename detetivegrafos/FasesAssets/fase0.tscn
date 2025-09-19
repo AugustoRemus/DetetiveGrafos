@@ -43,7 +43,6 @@ grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
 [node name="grafoPlayer" parent="." node_paths=PackedStringArray("nodoDosNPC") instance=ExtResource("4_a3jqw")]
-visible = false
 nodoDosNPC = NodePath("../NPCs")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

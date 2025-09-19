@@ -10,7 +10,7 @@ var posicao2: Vector2
 
 var linhaDesenho: Line2D
 
-func _init(_p1: Vector2, _p2: Vector2, _v1: int, _v2: int) -> void:
+func _init( _v1: int,_p1: Vector2,_v2: int, _p2: Vector2) -> void:
 	posicao1 = _p1
 	posicao2 = _p2
 	Vertice1 = _v1

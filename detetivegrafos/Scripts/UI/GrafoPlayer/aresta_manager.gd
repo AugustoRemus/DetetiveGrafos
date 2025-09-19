@@ -1,7 +1,10 @@
 extends Control
 
+@export var grafoPlayer: CanvasLayer
+@export var panel: Panel
+
 #controla as arestas
-var arestas: Array[Aresta]
+var arestas: Array[Aresta] =  []
 
 
 #adiciona uma nova aresta
@@ -11,21 +14,27 @@ func addAresta(_aresta: Aresta):
 	var ponto_a = _aresta.posicao1
 	var ponto_b = _aresta.posicao2
 	
+	#print("tentando criar uma aresta entre")
+	#print(ponto_a)
+	#print(ponto_b)
+	#
+	
 	#cria a linha
 	var linha = Line2D.new()
 	linha.width = 4.0 
 	linha.default_color = Color.YELLOW
 	
 	linha.points = [ponto_a, ponto_b]
-	
-
-	add_child(linha)
+	#ta saindo la no canto, posicao ta vindo errada
+	panel.add_child(linha)
 	
 	_aresta._setLinha(linha)
+	
 	arestas.append(_aresta)
 	
 	SomManager.escrever.play()
-	#print("linha adicionada")
+	
+	#setar no grafo
 	
 
 #remove a aresta se ela esta no aray apenas
@@ -45,3 +54,12 @@ func existeAresta(_aresta: Aresta):
 			#removeAresta(aresta)
 			return true
 	return false
+	
+func lidarAresta(_aresta:Aresta):
+	
+	var existe = existeAresta(_aresta)
+	
+	if existe:
+		removeAresta(_aresta)
+	else:
+		addAresta(_aresta)

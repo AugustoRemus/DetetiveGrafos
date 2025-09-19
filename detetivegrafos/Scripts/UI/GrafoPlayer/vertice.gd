@@ -10,6 +10,7 @@ extends TextureButton
 
 @export var npc = CharacterBody2D
 
+var nomeCor
 
 var _id
 
@@ -24,40 +25,25 @@ func setarTextura(sprite):
 	
 	texturaNPC.texture = sprite.Rsprite
 	labelNome.text = sprite.RnomeCor
+	nomeCor = sprite.RnomeCor
 
 
 
 func _on_pressed() -> void:
-	# se n estiver clicavel ignora
-	if !clicavel:
-		return
-	#print("voce clicou agorora no id:")
-	#print(_id)
-	
-	if clicado:
-		#foi clicado novamente
-		clicado = false
-		
-		silhuetaAmarela.visible = false
-		
-		get_parent().get_parent().get_parent().resetClicado()
-		
-	else:
-		#foi selecionado
-		clicado = true
-		
-		silhuetaAmarela.visible = true
-		
-		var posicaoCerta = global_position + (size / 2)
-		get_parent().get_parent().get_parent().addAresta(_id, posicaoCerta)
-		
+	if clicavel:
+		fuiClicado.emit(self)
 
 	
-func voltarNormal():
+func desativar():
 		clicado = false
-		
 		silhuetaAmarela.visible = false
 	
+
+
+func ativar():
+	clicado = true
+	silhuetaAmarela.visible = true
+
 
 
 func _on_botao_secundario_pressed() -> void:
