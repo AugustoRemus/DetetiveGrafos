@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://box2ygvvpd8p2"]
+[gd_scene load_steps=17 format=3 uid="uid://box2ygvvpd8p2"]
 
 [ext_resource type="AudioStream" uid="uid://7aqak6r2jh0x" path="res://Sons/efeitosSonoros/SomErro.sfxr" id="1_4kwys"]
 [ext_resource type="Script" uid="uid://bxttcthpar5yx" path="res://Scripts/Globais/som_manager.gd" id="1_umwa6"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bhpfm11irk4fq" path="res://Sons/efeitosSonoros/fechandoGrafo.sfxr" id="10_vh76v"]
 [ext_resource type="AudioStream" uid="uid://drb6daoj44u4" path="res://Sons/efeitosSonoros/Erro2.sfxr" id="11_vh76v"]
 [ext_resource type="AudioStream" uid="uid://2xclyl4vei6e" path="res://Sons/efeitosSonoros/transformacao.sfxr" id="12_8aww3"]
+[ext_resource type="AudioStream" uid="uid://c6jjqxpq8xmue" path="res://Sons/musica/musicaBasica.wav" id="16_c4ava"]
 
 [node name="SomManager" type="Node2D"]
 script = ExtResource("1_umwa6")
@@ -62,3 +63,9 @@ stream = ExtResource("11_vh76v")
 
 [node name="Transformacao" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_8aww3")
+
+[node name="MusicaBasica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_c4ava")
+autoplay = true
+
+[connection signal="finished" from="MusicaBasica" to="." method="_on_musica_basica_finished"]

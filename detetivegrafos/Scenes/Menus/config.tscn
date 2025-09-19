@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="5_g5g34"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="6_a7ocr"]
 
-[node name="Config" type="Control" node_paths=PackedStringArray("controleVolume", "dificuldades")]
+[node name="Config" type="Control" node_paths=PackedStringArray("controleVolume", "controlVolumeMusica", "dificuldades")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kr0as")
 controleVolume = NodePath("CanvasLayer/Panel/tudo/volumeGrid/HSlider")
+controlVolumeMusica = NodePath("CanvasLayer/Panel/tudo/volumeGrid2/musicaSlider")
 dificuldades = [NodePath("CanvasLayer/Panel/tudo/dificuldadegrid/Facil"), NodePath("CanvasLayer/Panel/tudo/dificuldadegrid/medio"), NodePath("CanvasLayer/Panel/tudo/dificuldadegrid/dificiç")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -47,11 +48,8 @@ grow_vertical = 2
 [node name="volume" type="Label" parent="CanvasLayer/Panel/tudo"]
 layout_mode = 2
 theme = ExtResource("3_p4uu7")
-text = "Volume:"
+text = "Volume efeito sonoros:"
 horizontal_alignment = 1
-
-[node name="nada2" type="Label" parent="CanvasLayer/Panel/tudo"]
-layout_mode = 2
 
 [node name="volumeGrid" type="GridContainer" parent="CanvasLayer/Panel/tudo"]
 layout_mode = 2
@@ -75,8 +73,33 @@ layout_mode = 2
 theme = ExtResource("3_p4uu7")
 text = "100"
 
-[node name="nada" type="Label" parent="CanvasLayer/Panel/tudo"]
+[node name="musica" type="Label" parent="CanvasLayer/Panel/tudo"]
 layout_mode = 2
+theme = ExtResource("3_p4uu7")
+text = "Volume musica:"
+horizontal_alignment = 1
+
+[node name="volumeGrid2" type="GridContainer" parent="CanvasLayer/Panel/tudo"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 4
+columns = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/tudo/volumeGrid2"]
+layout_mode = 2
+theme = ExtResource("3_p4uu7")
+text = "0"
+
+[node name="musicaSlider" type="HSlider" parent="CanvasLayer/Panel/tudo/volumeGrid2"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 75.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/tudo/volumeGrid2"]
+layout_mode = 2
+theme = ExtResource("3_p4uu7")
+text = "100"
 
 [node name="nada4" type="Label" parent="CanvasLayer/Panel/tudo"]
 layout_mode = 2
@@ -142,6 +165,7 @@ script = ExtResource("6_a7ocr")
 layout_mode = 1
 
 [connection signal="value_changed" from="CanvasLayer/Panel/tudo/volumeGrid/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Panel/tudo/volumeGrid2/musicaSlider" to="." method="_on_musica_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Panel/tudo/dificuldadegrid/Facil" to="." method="_on_facil_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/tudo/dificuldadegrid/medio" to="." method="_on_medio_pressed"]
 [connection signal="pressed" from="CanvasLayer/Panel/tudo/dificuldadegrid/dificiç" to="." method="_on_dificiç_pressed"]

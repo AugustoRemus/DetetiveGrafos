@@ -40,8 +40,15 @@ transformacao,botao_dif_hard,botao_dif_izi,botao_dif_medio]
 
 @onready var sonsErro = [erro_2,erro]
 
+@onready var musica_basica: AudioStreamPlayer = $MusicaBasica
+
+
+var volumeMusica = 25
+
 func _ready():
 	atualizar_volume(volume)
+	atualizar_volume_musica(volumeMusica)
+	#musica_basica.play()
 
 func erroTocar():
 	sonsErro.pick_random().play()
@@ -54,3 +61,12 @@ func atualizar_volume(_newVolume):
 		if som:
 			som.volume_db = db
 	
+
+func atualizar_volume_musica(_newVolume):
+	volumeMusica = int(_newVolume)
+	var db = linear_to_db(volumeMusica / 100.0)
+	musica_basica.volume_db = db
+	
+
+func _on_musica_basica_finished() -> void:
+	musica_basica.play()

@@ -2,10 +2,13 @@ extends Control
 
 @export var controleVolume: Control
 
+@export var controlVolumeMusica: Control
+
 @export var dificuldades: Array[CheckBox]
 
 func _ready() -> void:
 	controleVolume.value = SomManager.volume
+	controlVolumeMusica.value = SomManager.volumeMusica
 	_setDificultStart()
 
 func _on_button_pressed() -> void:
@@ -50,3 +53,7 @@ func _on_medio_pressed() -> void:
 func _on_dificiç_pressed() -> void:
 	SomManager.botao_dif_hard.play()
 	_setDificult(2)
+
+
+func _on_musica_slider_value_changed(value: float) -> void:
+	SomManager.atualizar_volume_musica(value)
