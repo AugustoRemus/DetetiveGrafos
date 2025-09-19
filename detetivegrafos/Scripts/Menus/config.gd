@@ -14,6 +14,7 @@ func _on_button_pressed() -> void:
 
 
 func _on_h_slider_value_changed(value: float) -> void:
+	SomManager.click.play()
 	SomManager.atualizar_volume(value)
 	
 	
@@ -25,6 +26,7 @@ func _setDificultStart():
 	pass
 	
 func _setDificult(dif):
+	
 	for i in dificuldades.size():
 		if i == dif:
 			pass
@@ -36,12 +38,15 @@ func _setDificult(dif):
 
 
 func _on_facil_pressed() -> void:
+	SomManager.botao_dif_izi.play()
 	_setDificult(0)
 
 
 func _on_medio_pressed() -> void:
+	SomManager.botao_dif_medio.play()
 	_setDificult(1)
 
 
 func _on_dificiç_pressed() -> void:
+	SomManager.botao_dif_hard.play()
 	_setDificult(2)

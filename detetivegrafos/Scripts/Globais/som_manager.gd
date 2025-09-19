@@ -28,9 +28,15 @@ var volume = 75
 
 @onready var transformacao: AudioStreamPlayer = $Transformacao
 
+@onready var botao_dif_hard: AudioStreamPlayer = $BotaoDifHard
+@onready var botao_dif_izi: AudioStreamPlayer = $BotaoDifIzi
+@onready var botao_dif_medio: AudioStreamPlayer = $Dif1
+
+
+
 @onready var todos_sons := [musica, erro, click, escrever, apagar,hover,
 interacao_negativa, interacao_positiva,abrindo_grafo,fechando_grafo, erro_2,
-transformacao]
+transformacao,botao_dif_hard,botao_dif_izi,botao_dif_medio]
 
 @onready var sonsErro = [erro_2,erro]
 
