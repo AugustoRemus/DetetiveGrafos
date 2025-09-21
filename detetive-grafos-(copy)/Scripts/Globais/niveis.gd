@@ -10,5 +10,5 @@ var dificuldade = 1
 
 #o indice é a fase, se ta -1 é pq ta bloqueado
 #mais q isso é as estrelas
-#var fasesPontos = [0, 0, 0,-1,2,-1]
-var fasesPontos = [0, -1, -1,-1,-1,-1] #certo
+var fasesPontos = [0, 0, 0,0,2,0]
+#var fasesPontos = [0, -1, -1,-1,-1,-1] #certo
