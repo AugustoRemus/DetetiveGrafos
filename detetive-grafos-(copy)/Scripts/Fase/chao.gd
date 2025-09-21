@@ -1,21 +1,13 @@
 extends TileMapLayer
 
-@export var tileBarreira: TileMapLayer = null
+
+@onready var tileBarreira: TileMapLayer = $"../barreiraTeste"
 
 
-func _ready() -> void:
-	var todosNodes = get_parent().get_children()
-	for nodos in todosNodes:
-		if nodos.name == "barreira":
-			tileBarreira = nodos
-			print(tileBarreira)
-			return
 			
-			
-			
+#essa funcao vai dizer se a cordenada deve ser atualizada na hora de rodar
+#ou vai ficar somente como ta no editor se eu entendi corretamente
 func _use_tile_data_runtime_update(coords: Vector2i) -> bool:
-	if !tileBarreira:
-		return false
 	
 	if coords in tileBarreira.get_used_cells_by_id(0):
 		return true
@@ -24,6 +16,4 @@ func _use_tile_data_runtime_update(coords: Vector2i) -> bool:
 	
 	
 func _tile_data_runtime_update(coords: Vector2i, tile_data: TileData) -> void:
-	if tileBarreira:
-		if coords in tileBarreira.get_used_cells_by_id(0):
-			tile_data.set_navigation_polygon(0,null)
+	tile_data.set_navigation_polygon(0, null)
