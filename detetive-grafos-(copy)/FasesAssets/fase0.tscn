@@ -21,6 +21,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-537, -62, 513, -59, 51
 [sub_resource type="Theme" id="Theme_or1hc"]
 
 [node name="FaseDebug" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_6pv3x")
 scriptCriacaoGrafo = ExtResource("2_ulo56")
 
@@ -79,26 +80,22 @@ position = Vector2(174, -31)
 [node name="10" type="Node2D" parent="ArrayPontos"]
 position = Vector2(24, 64)
 
-[node name="NPCs" type="Node2D" parent="."]
-z_index = 1
-y_sort_enabled = true
-
-[node name="Azul" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("7_empmn")]
+[node name="Azul" parent="." node_paths=PackedStringArray("nodoComOsDestinos") instance=ExtResource("7_empmn")]
 position = Vector2(-271, 176)
 resourceNPC = ExtResource("10_dkkyd")
-nodoComOsDestinos = NodePath("../../ArrayPontos")
+nodoComOsDestinos = NodePath("../ArrayPontos")
 
-[node name="Verde" parent="NPCs" node_paths=PackedStringArray("nodosDestino", "nodoComOsDestinos") instance=ExtResource("7_empmn")]
+[node name="Verde" parent="." node_paths=PackedStringArray("nodosDestino", "nodoComOsDestinos") instance=ExtResource("7_empmn")]
 position = Vector2(-3, 83)
 resourceNPC = ExtResource("12_e04pu")
-nodosDestino = [NodePath("../../ArrayPontos/0"), NodePath("../../ArrayPontos/1")]
+nodosDestino = [NodePath("../ArrayPontos/0"), NodePath("../ArrayPontos/1")]
 randomDestinos = false
-nodoComOsDestinos = NodePath("../../ArrayPontos")
+nodoComOsDestinos = NodePath("../ArrayPontos")
 
-[node name="Amarelo" parent="NPCs" node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("7_empmn")]
+[node name="Amarelo" parent="." node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("7_empmn")]
 position = Vector2(208, 200)
 resourceNPC = ExtResource("8_rkyc0")
-nodoComOsDestinos = NodePath("../../ArrayPontos")
+nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Verde")]
 
 [node name="Player" parent="." instance=ExtResource("6_o2eoq")]

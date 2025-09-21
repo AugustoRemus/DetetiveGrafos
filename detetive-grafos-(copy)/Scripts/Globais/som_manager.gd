@@ -1,6 +1,6 @@
 extends Node2D
 
-var volume = 75
+var volume = 4
 
 @onready var musica: AudioStreamPlayer2D = $Musica
 

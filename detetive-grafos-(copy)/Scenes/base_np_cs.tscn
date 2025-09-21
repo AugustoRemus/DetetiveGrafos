@@ -39,6 +39,7 @@ interacaoNegativa = ExtResource("4_5mvnr")
 
 [node name="BalaoBasePng" type="Sprite2D" parent="." node_paths=PackedStringArray("timer")]
 visible = false
+z_index = 2
 position = Vector2(1, -38)
 offset = Vector2(0, -25)
 script = ExtResource("3_8tr8j")
