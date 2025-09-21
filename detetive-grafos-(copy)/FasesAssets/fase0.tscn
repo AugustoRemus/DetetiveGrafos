@@ -89,6 +89,7 @@ nodoComOsDestinos = NodePath("../ArrayPontos")
 [node name="Amarelo" parent="." node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("7_empmn")]
 position = Vector2(208, 200)
 resourceNPC = ExtResource("8_rkyc0")
+quantDestinos = 4
 nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Verde")]
 

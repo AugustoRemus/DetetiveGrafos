@@ -6,6 +6,12 @@ extends NavigationAgent2D
 
 var destinoExiste := false
 
+var last_position: Vector2
+
+
+
+
+
 func _ready():
 	#espera pra começar
 	startCronometroRand()
@@ -28,9 +34,17 @@ func _physics_process(delta: float) -> void:
 		#redefine a do character body
 		base_np_cs.velocity = _velocity
 		#chama a funcao para se mover do character body
+		
 		base_np_cs.move_and_slide()
 		
+		#ta travado
+		if last_position == base_np_cs.position:
+			print("to travado")
+		else:
+			last_position = base_np_cs.position
 		
+		
+
 		
 	#chegou no final, fica parado
 	else:

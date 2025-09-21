@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://cs0ckhunrf7l4"]
 
 [ext_resource type="Script" uid="uid://b12qt62netlng" path="res://Resources/NPCs/NPCsResource.gd" id="1_5lvqv"]
-[ext_resource type="Texture2D" uid="uid://c4pp5mynw1rgs" path="res://Sprites/NPCs/rosaDebug.png" id="1_aukk3"]
+[ext_resource type="Texture2D" uid="uid://dtbmj7l3vdu5p" path="res://Sprites/NPCs/rosa.png" id="1_7gkeq"]
 
 [resource]
 script = ExtResource("1_5lvqv")
-Rsprite = ExtResource("1_aukk3")
+Rsprite = ExtResource("1_7gkeq")
 RnomeCor = "Rosa"
 Rspeed = 100.0
 RtempoEsperaMin = 2.0
