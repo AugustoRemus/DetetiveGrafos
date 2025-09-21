@@ -26,7 +26,20 @@ tile_set = ExtResource("3_2cyrm")
 script = ExtResource("4_dkd10")
 
 [node name="barreiraFisica" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADB/xEAAAAAAAEAAADC/xEAAAAAAAEAAADD/xEAAAAAAAEAAADE/xEAAAAAAAEAAADF/xEAAAAAAAEAAADG/xEAAAAAAAEAAADH/xEAAAAAAAEAAADI/xEAAAAAAAEAAADJ/xEAAAAAAAEAAADJ/xIAAAAAAAEAAADJ/xMAAAAAAAEAAADJ/xQAAAAAAAEAAADJ/xUAAAAAAAEAAADI/xUAAAAAAAEAAADH/xUAAAAAAAEAAADG/xUAAAAAAAEAAADF/xUAAAAAAAEAAADE/xUAAAAAAAEAAADD/xUAAAAAAAEAAADC/xUAAAAAAAEAAADB/xUAAAAAAAEAAADB/xQAAAAAAAEAAADB/xIAAAAAAAEAAADB/xMAAAAAAAEAAADC/xIAAAAAAAEAAADC/xMAAAAAAAEAAADC/xQAAAAAAAEAAADD/xIAAAAAAAEAAADD/xMAAAAAAAEAAADD/xQAAAAAAAEAAADE/xIAAAAAAAEAAADE/xMAAAAAAAEAAADE/xQAAAAAAAEAAADF/xIAAAAAAAEAAADF/xMAAAAAAAEAAADF/xQAAAAAAAEAAADG/xIAAAAAAAEAAADG/xMAAAAAAAEAAADG/xQAAAAAAAEAAADH/xQAAAAAAAEAAADH/xIAAAAAAAEAAADI/xMAAAAAAAEAAADI/xQAAAAAAAEAAADI/xIAAAAAAAEAAADH/xMAAAAAAAEAAAA=")
 tile_set = ExtResource("5_jvxc8")
+script = ExtResource("8_0x1pj")
+
+[node name="Label" type="Label" parent="barreiraFisica"]
+offset_left = -516.0
+offset_top = 89.0
+offset_right = 100.0
+offset_bottom = 223.0
+text = "essa barreira 
+some quando 
+começa mas fica 
+com a sua fisica, 
+nao da pra passar"
 
 [node name="objetos" type="TileMapLayer" parent="."]
 z_index = 1
@@ -35,9 +48,21 @@ tile_map_data = PackedByteArray("AADt/wkAAAAAAAAAAAD8/wsAAAAAAAAAAAD3/xMAAAAAAAA
 tile_set = ExtResource("6_jpmbr")
 
 [node name="BarreiraNPCs" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD4/wgAAAAAAAAAAAD4/wYAAAAAAAAAAAD4/wQAAAAAAAAAAAD4/wcAAAAAAAEAAAD4/wUAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD4/wgAAAAAAAAAAAD4/wYAAAAAAAAAAAD4/wQAAAAAAAAAAAD4/wcAAAAAAAEAAAD4/wUAAAAAAAEAAAD5/wAAAAAAAAEAAAD6/wAAAAAAAAEAAAD5/wEAAAAAAAEAAAD6/wEAAAAAAAEAAAD5/wIAAAAAAAEAAAD6/wIAAAAAAAEAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAEAAAA=")
 tile_set = ExtResource("7_2g3tu")
 script = ExtResource("8_0x1pj")
+
+[node name="Label" type="Label" parent="BarreiraNPCs"]
+offset_left = -347.0
+offset_top = -39.0
+offset_right = 269.0
+offset_bottom = 95.0
+text = "essa quando
+inicio tira 
+a navegacao 
+do chao, 
+ai os npcs 
+n passam em cima"
 
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("9_kti26")]
 tempo = 75.0
