@@ -8,16 +8,17 @@ class_name NPCClasse
 ##define o id dele para montar o grafo e tals, definir na cena
 var id: int
 
-##se n for ter deixa null
-@export var hat: hatsResource = null
 
-##lista com os destinos possiveis do npcs para andar
-@export var nodosDestino: Array[Node2D]
+@export_enum("Aleatoria", "fila", "Estatico") var logicaMov: int = 0 
 
-##se deixar false o gerado vai ser o que botou na lista
-@export var randomDestinos: bool = true
+##lista com os destinos possiveis do npcs para andar se for fila
+@export var nodosDestinoFila: Array[Node2D]
+
+##se for random
 @export var quantDestinos: int
-@export var nodoComOsDestinos: Node
+
+##se for random
+@export var nodoComOsDestinosRandom: Node
 
 
 ##amigos que terao intereçao caso o script seja o manual e n o 
@@ -43,6 +44,7 @@ var id: int
 @export var labelNomeCor: Label
 var nomeCor: String
 
+@onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 
 
 #uma lista de npcs base que vai dizer quais ele gosta e quais n gosta
@@ -58,20 +60,23 @@ func _ready() -> void:
 	labelNomeCor.text = nomeCor
 	sprite.texture = resourceNPC.Rsprite
 	
-	#pega os destinos
-	if randomDestinos:
-		for i in range(quantDestinos):
-			var _nodoDestino = nodoComOsDestinos.get_child(randi()% 10)
-			nodosDestino.append(_nodoDestino)
+	var listaDestinos
+	
+	#se for random
+	if logicaMov == 0:
+		listaDestinos = nodoComOsDestinosRandom.get_children()
+		navigation_agent_2d.logica = $NavigationAgent2D/logicaRandom
 		
-	pass
+	#se for fila
+	elif logicaMov == 1:
+		listaDestinos = nodosDestinoFila.duplicate()
+		navigation_agent_2d.logica = $NavigationAgent2D/logicaFila
+	
+	elif logicaMov == 2:
+		navigation_agent_2d.logica =$NavigationAgent2D/logicaStatica
 
-
-
-func _process(delta):
-	#z_index = int(position.y)
-	#print(position)
-	pass
+	#todos tem essa func
+	navigation_agent_2d.logica._setarPontos(quantDestinos,listaDestinos)
 
 	
 func silhueta(numero):

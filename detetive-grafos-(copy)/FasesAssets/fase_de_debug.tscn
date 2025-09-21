@@ -79,11 +79,14 @@ position = Vector2(-295, 227)
 [node name="Node2D" type="Node2D" parent="ArrayPontos"]
 position = Vector2(-165, 240)
 
-[node name="cinza" parent="." node_paths=PackedStringArray("nodosDestino") instance=ExtResource("11_5g6yh")]
+[node name="Node2D3" type="Node2D" parent="ArrayPontos"]
+position = Vector2(-243, 377)
+
+[node name="cinza" parent="." node_paths=PackedStringArray("nodosDestinoFila") instance=ExtResource("11_5g6yh")]
 position = Vector2(-166, 248)
 resourceNPC = ExtResource("12_k66iu")
-nodosDestino = [NodePath("../ArrayPontos/Node2D"), NodePath("../ArrayPontos/Node2D2")]
-randomDestinos = false
+logicaMov = 2
+nodosDestinoFila = [NodePath("../ArrayPontos/Node2D3"), NodePath("../ArrayPontos/Node2D2")]
 
 [node name="Player" parent="." instance=ExtResource("13_e16mi")]
 position = Vector2(-161, 182)

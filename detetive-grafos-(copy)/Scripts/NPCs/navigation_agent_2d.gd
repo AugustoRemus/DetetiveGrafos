@@ -1,14 +1,12 @@
 extends NavigationAgent2D
 
 @export var base_np_cs: CharacterBody2D 
-@export var logica: Node
+var logica: Node
 @export var timer: Timer
 
 var destinoExiste := false
 
 var last_position: Vector2
-
-
 
 
 
@@ -36,19 +34,7 @@ func _physics_process(delta: float) -> void:
 		#chama a funcao para se mover do character body
 		
 		base_np_cs.move_and_slide()
-		
-		
-		##n ta dando certo!
-		#print(last_position.distance_to(base_np_cs.position))
-		#if last_position.distance_to(base_np_cs.position) <= 5:
-			#print("to travado")
-		#
-		#last_position = base_np_cs.position
-		#
-		
-
-		
-	#chegou no final, fica parado
+	
 	else:
 		#isso serve para chamar a func de escolher destino apenas 
 		#uma vez

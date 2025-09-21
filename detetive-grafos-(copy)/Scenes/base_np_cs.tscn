@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=15 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/NPCs/NPCAzul.png" id="1_udhxp"]
@@ -8,10 +8,11 @@
 [ext_resource type="Resource" uid="uid://bdfd2w2wqrft2" path="res://Resources/interacoes/interacaoRuim.tres" id="4_5mvnr"]
 [ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="4_nf2cc"]
 [ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
-[ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logica_destino.gd" id="5_ujk41"]
+[ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logicaMov/logica_destino.gd" id="5_ujk41"]
 [ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
-[ext_resource type="Script" uid="uid://dw575fal2lmmw" path="res://Scripts/NPCs/hat_node.gd" id="14_pcq1i"]
+[ext_resource type="Script" uid="uid://2tlwpdjpjfng" path="res://Scripts/NPCs/logicaMov/filaLogica.gd" id="11_pcn8s"]
+[ext_resource type="Script" uid="uid://duvnf2b58jy7g" path="res://Scripts/NPCs/logicaMov/logica_statica.gd" id="12_4tvce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
@@ -62,21 +63,23 @@ visible = false
 texture = ExtResource("4_nf2cc")
 offset = Vector2(0, -25)
 
-[node name="hatSprite" type="Sprite2D" parent="Sprite"]
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "logica", "timer")]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "timer")]
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 20.0
 debug_enabled = true
 script = ExtResource("4_y6ahf")
 base_np_cs = NodePath("..")
-logica = NodePath("logicaDestino")
 timer = NodePath("../timerDestino")
 
-[node name="logicaDestino" type="Node" parent="NavigationAgent2D" node_paths=PackedStringArray("npc")]
+[node name="logicaRandom" type="Node" parent="NavigationAgent2D"]
 script = ExtResource("5_ujk41")
-npc = NodePath("../..")
+
+[node name="logicaFila" type="Node" parent="NavigationAgent2D"]
+script = ExtResource("11_pcn8s")
+
+[node name="logicaStatica" type="Node" parent="NavigationAgent2D"]
+script = ExtResource("12_4tvce")
 
 [node name="timerDestino" type="Timer" parent="."]
 one_shot = true
@@ -98,11 +101,6 @@ text = "Cor"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="hatNode" type="Node2D" parent="." node_paths=PackedStringArray("character", "sprite")]
-script = ExtResource("14_pcq1i")
-character = NodePath("..")
-sprite = NodePath("../Sprite/hatSprite")
 
 [connection signal="timeout" from="BalaoBasePng/timerBalao" to="BalaoBasePng" method="_on_timer_balao_timeout"]
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]
