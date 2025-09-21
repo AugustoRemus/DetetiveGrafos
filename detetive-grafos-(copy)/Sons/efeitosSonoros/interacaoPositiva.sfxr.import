@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bya0vbba0ero"
+path="res://.godot/imported/interacaoPositiva.sfxr-690ab622fee968f27d40c12e3fdfdb18.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/interacaoPositiva.sfxr"
+dest_files=["res://.godot/imported/interacaoPositiva.sfxr-690ab622fee968f27d40c12e3fdfdb18.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

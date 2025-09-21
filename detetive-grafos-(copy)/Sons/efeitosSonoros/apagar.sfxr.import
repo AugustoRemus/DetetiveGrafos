@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bmkhyyaxuxork"
+path="res://.godot/imported/apagar.sfxr-d11be1978d2874f62090c767500ae7a6.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/apagar.sfxr"
+dest_files=["res://.godot/imported/apagar.sfxr-d11be1978d2874f62090c767500ae7a6.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

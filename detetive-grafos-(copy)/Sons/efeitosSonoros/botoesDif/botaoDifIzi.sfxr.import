@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://bxassur84fnok"
+path="res://.godot/imported/botaoDifIzi.sfxr-3e4e625a947b4871855f2e8119d14339.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/botoesDif/botaoDifIzi.sfxr"
+dest_files=["res://.godot/imported/botaoDifIzi.sfxr-3e4e625a947b4871855f2e8119d14339.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

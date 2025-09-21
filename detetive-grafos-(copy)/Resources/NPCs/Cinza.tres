@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://cgp5cqdtkm3wu"]
+
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://Resources/NPCs/NPCsResource.gd" id="1_6jaib"]
+[ext_resource type="Texture2D" uid="uid://4cljf77ixsev" path="res://Sprites/NPCs/npcCinza.png" id="1_uhefy"]
+
+[resource]
+script = ExtResource("1_6jaib")
+Rsprite = ExtResource("1_uhefy")
+RnomeCor = "Cinza"
+Rspeed = 300.0
+RtempoEsperaMin = 1.0
+RtempoEsperaMax = 2.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

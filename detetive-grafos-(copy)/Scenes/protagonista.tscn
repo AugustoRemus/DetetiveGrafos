@@ -1,0 +1,208 @@
+[gd_scene load_steps=13 format=3 uid="uid://dkbcnmufbpy2f"]
+
+[ext_resource type="Script" uid="uid://bgyj8csyi11cf" path="res://Scripts/Player/protagonista.gd" id="1_e0vkn"]
+[ext_resource type="Script" uid="uid://cnixnyhqnp2yp" path="res://Scripts/Player/move.gd" id="2_e0vkn"]
+[ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="2_v853i"]
+[ext_resource type="Script" uid="uid://4sk7gtg25vtl" path="res://Scripts/Player/SpritePlayer.gd" id="3_k2hie"]
+[ext_resource type="Script" uid="uid://bpqkg4mcrldt4" path="res://Scripts/Player/area.gd" id="6_m0par"]
+[ext_resource type="Script" uid="uid://bm3l78ocmcjq0" path="res://Scripts/Player/interador.gd" id="7_v853i"]
+[ext_resource type="Script" uid="uid://dwp0nr7sgpabl" path="res://Scripts/Player/transformador.gd" id="7_yl5ap"]
+[ext_resource type="StyleBox" uid="uid://c5s2jdijooef2" path="res://Visual/TestePainelFundo.tres" id="9_nrmfe"]
+[ext_resource type="Script" uid="uid://dwmegbwcsgery" path="res://Scripts/Player/tags.gd" id="9_qx68x"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="10_40cbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2hie"]
+size = Vector2(14, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k2hie"]
+radius = 68.0074
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("area", "transformador", "interador")]
+script = ExtResource("1_e0vkn")
+area = NodePath("area")
+transformador = NodePath("transformador")
+interador = NodePath("area/Interador")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v853i")
+script = ExtResource("3_k2hie")
+
+[node name="hatPlayer" type="Sprite2D" parent="Sprite2D"]
+
+[node name="Move" type="Node" parent="." node_paths=PackedStringArray("player", "sprite")]
+script = ExtResource("2_e0vkn")
+player = NodePath("..")
+sprite = NodePath("../Sprite2D")
+aceleration = 0.1311
+fric = 0.1531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 25.5)
+shape = SubResource("RectangleShape2D_k2hie")
+
+[node name="area" type="Area2D" parent="." node_paths=PackedStringArray("player", "tags", "transformadorNode")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("6_m0par")
+player = NodePath("..")
+tags = NodePath("../tags")
+transformadorNode = NodePath("../transformador")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_k2hie")
+
+[node name="Tester" type="Timer" parent="area"]
+wait_time = 0.25
+autostart = true
+
+[node name="Interador" type="Node" parent="area" node_paths=PackedStringArray("player", "area")]
+script = ExtResource("7_v853i")
+player = NodePath("../..")
+area = NodePath("..")
+
+[node name="transformador" type="Node" parent="." node_paths=PackedStringArray("sprite", "area", "hatSpritePlayer", "tags")]
+script = ExtResource("7_yl5ap")
+sprite = NodePath("../Sprite2D")
+area = NodePath("../area")
+hatSpritePlayer = NodePath("../Sprite2D/hatPlayer")
+tags = NodePath("../tags")
+
+[node name="tags" type="Node2D" parent="." node_paths=PackedStringArray("canvasTeclas", "canvasCorTransformada", "labelNomeCor", "texturaSprite", "labelConversar")]
+script = ExtResource("9_qx68x")
+canvasTeclas = NodePath("CanvasComandos")
+canvasCorTransformada = NodePath("CanvasCor")
+labelNomeCor = NodePath("CanvasCor/painelCorAtualTXT/nomeCor")
+texturaSprite = NodePath("CanvasCor/painelCorAtualTXT2/TXTCor")
+labelConversar = NodePath("CanvasComandos/InteracoesPainel/InteracoesPerto/conversar")
+
+[node name="CanvasComandos" type="CanvasLayer" parent="tags"]
+
+[node name="InteracoesPainel" type="Panel" parent="tags/CanvasComandos"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+offset_right = 170.0
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("9_nrmfe")
+
+[node name="InteracoesPerto" type="GridContainer" parent="tags/CanvasComandos/InteracoesPainel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.25
+offset_top = -17.0
+offset_right = 56.25
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="roubarCor" type="Label" parent="tags/CanvasComandos/InteracoesPainel/InteracoesPerto"]
+layout_mode = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "Q: Copiar Aparencia"
+
+[node name="conversar" type="Label" parent="tags/CanvasComandos/InteracoesPainel/InteracoesPerto"]
+visible = false
+layout_mode = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "E: Interrogar"
+
+[node name="CanvasCor" type="CanvasLayer" parent="tags"]
+layer = 0
+
+[node name="painelCorAtualTXT2" type="Panel" parent="tags/CanvasCor"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_styles/panel = ExtResource("9_nrmfe")
+metadata/_edit_use_anchors_ = true
+
+[node name="TXTCor" type="TextureRect" parent="tags/CanvasCor/painelCorAtualTXT2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -33.25
+offset_right = 32.0
+offset_bottom = 30.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="silhueta" type="TextureRect" parent="tags/CanvasCor/painelCorAtualTXT2/TXTCor"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_v853i")
+
+[node name="painelCorAtualTXT" type="Panel" parent="tags/CanvasCor"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 99.0
+offset_top = -53.0
+offset_right = 244.53113
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("9_nrmfe")
+
+[node name="TXTCor" type="Label" parent="tags/CanvasCor/painelCorAtualTXT"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.499565
+offset_top = 7.675
+offset_right = 80.50044
+offset_bottom = 30.675003
+grow_horizontal = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "Aparencia atual:"
+horizontal_alignment = 1
+
+[node name="nomeCor" type="Label" parent="tags/CanvasCor/painelCorAtualTXT"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.53057
+offset_top = 4.5000076
+offset_right = 80.46944
+offset_bottom = 27.500015
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_40cbr")
+theme_override_font_sizes/font_size = 13
+text = "Nenhuma"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[connection signal="body_entered" from="area" to="area" method="_on_body_entered"]
+[connection signal="body_exited" from="area" to="area" method="_on_body_exited"]
+[connection signal="timeout" from="area/Tester" to="area" method="_on_tester_timeout"]

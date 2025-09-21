@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://p06c8bn2f2o4"]
+
+[ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
+[ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/NPCs/NPCAzul.png" id="1_udhxp"]
+[ext_resource type="Script" uid="uid://77eldh1g5rrx" path="res://Scripts/NPCs/LogicaBalao.gd" id="3_8tr8j"]
+[ext_resource type="Resource" uid="uid://bpwrs7jrrw2vp" path="res://Resources/interacoes/interacaoBoa.tres" id="3_pcq1i"]
+[ext_resource type="Script" uid="uid://do2li500nlhjs" path="res://Scripts/NPCs/spriteNPCs.gd" id="3_y6ahf"]
+[ext_resource type="Resource" uid="uid://bdfd2w2wqrft2" path="res://Resources/interacoes/interacaoRuim.tres" id="4_5mvnr"]
+[ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="4_nf2cc"]
+[ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
+[ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logica_destino.gd" id="5_ujk41"]
+[ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
+[ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
+[ext_resource type="Script" uid="uid://dw575fal2lmmw" path="res://Scripts/NPCs/hat_node.gd" id="14_pcq1i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
+size = Vector2(13, 12)
+
+[node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite", "silhuetaNodo", "LogicaInteraçoes", "labelNomeCor") groups=["Alvo"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_cf2bg")
+speedNPC = 100.0
+tempoEsperaMin = 1.0
+tempoEsperaMax = 3.0
+animacaoNode = NodePath("animacao")
+sprite = NodePath("Sprite")
+silhuetaNodo = NodePath("Sprite/Silhueta")
+"LogicaInteraçoes" = NodePath("LogicaInteracoes")
+labelNomeCor = NodePath("NomeCor")
+
+[node name="LogicaInteracoes" type="Node" parent="." node_paths=PackedStringArray("logicaBalao")]
+script = ExtResource("9_taqbl")
+logicaBalao = NodePath("../BalaoBasePng")
+interacaoPositiva = ExtResource("3_pcq1i")
+interacaoNegativa = ExtResource("4_5mvnr")
+
+[node name="BalaoBasePng" type="Sprite2D" parent="." node_paths=PackedStringArray("timer")]
+visible = false
+position = Vector2(1, -38)
+script = ExtResource("3_8tr8j")
+timer = NodePath("timerBalao")
+
+[node name="timerBalao" type="Timer" parent="BalaoBasePng"]
+wait_time = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BalaoBasePng"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_udhxp")
+script = ExtResource("3_y6ahf")
+
+[node name="Silhueta" type="Sprite2D" parent="Sprite"]
+visible = false
+texture = ExtResource("4_nf2cc")
+
+[node name="hatSprite" type="Sprite2D" parent="Sprite"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "logica", "timer")]
+script = ExtResource("4_y6ahf")
+base_np_cs = NodePath("..")
+logica = NodePath("logicaDestino")
+timer = NodePath("../timerDestino")
+
+[node name="logicaDestino" type="Node" parent="NavigationAgent2D" node_paths=PackedStringArray("npc")]
+script = ExtResource("5_ujk41")
+npc = NodePath("../..")
+
+[node name="timerDestino" type="Timer" parent="."]
+one_shot = true
+
+[node name="animacao" type="Node" parent="." node_paths=PackedStringArray("spriteNPC")]
+script = ExtResource("6_ypi4a")
+spriteNPC = NodePath("../Sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 24)
+shape = SubResource("RectangleShape2D_ypi4a")
+
+[node name="NomeCor" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 24.0
+offset_right = 20.0
+offset_bottom = 47.0
+text = "Cor"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="hatNode" type="Node2D" parent="." node_paths=PackedStringArray("character", "sprite")]
+script = ExtResource("14_pcq1i")
+character = NodePath("..")
+sprite = NodePath("../Sprite/hatSprite")
+
+[connection signal="timeout" from="BalaoBasePng/timerBalao" to="BalaoBasePng" method="_on_timer_balao_timeout"]
+[connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]

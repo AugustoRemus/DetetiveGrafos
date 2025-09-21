@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://c8mkdkpdjpsh3"
+path="res://.godot/imported/interessante.sfxr-534a4cd651e2e4745ae2255aaf63a0d6.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/interessante.sfxr"
+dest_files=["res://.godot/imported/interessante.sfxr-534a4cd651e2e4745ae2255aaf63a0d6.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

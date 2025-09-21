@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://mo1wmr3hkpe5"
+path="res://.godot/imported/hover.sfxr-e50099ae982796f048b0813c5514feb1.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/hover.sfxr"
+dest_files=["res://.godot/imported/hover.sfxr-e50099ae982796f048b0813c5514feb1.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

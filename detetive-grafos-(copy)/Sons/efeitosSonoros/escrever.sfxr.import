@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://b6wb8i2lbmb6l"
+path="res://.godot/imported/escrever.sfxr-31a63b49cae9126c4552bde555e0a0e3.sample"
+
+[deps]
+
+source_file="res://Sons/efeitosSonoros/escrever.sfxr"
+dest_files=["res://.godot/imported/escrever.sfxr-31a63b49cae9126c4552bde555e0a0e3.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

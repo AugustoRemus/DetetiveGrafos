@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://dp04rhsw40lwt"]
+
+[ext_resource type="Script" uid="uid://br310fqy8o0wb" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://dkqstnsygcwbt" path="res://experimentos/panel.gd" id="2_158mb"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Fontes/saveBotao.tres" id="2_xhh6f"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://experimentos/teste_botao.gd" id="3_cayip"]
+
+[sub_resource type="Gradient" id="Gradient_wwsa2"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.3559322, 0.6864407, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.64406776, 0.64406776, 0.64406776, 1, 0.31355926, 0.31355926, 0.31355926, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_158mb"]
+gradient = SubResource("Gradient_wwsa2")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.47252747, 0)
+fill_to = Vector2(0.510989, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbdvm"]
+texture = SubResource("GradientTexture2D_158mb")
+
+[sub_resource type="Curve" id="Curve_158mb"]
+_data = [Vector2(0.016304344, 0.19101131), 0.0, 0.0, 0, 0, Vector2(0.30978262, 0.6741574), 0.0, 0.0, 0, 0, Vector2(0.4836957, 0.25842702), 0.0, 0.0, 0, 0, Vector2(0.6467391, 0.73033714), 0.0, 0.0, 0, 0, Vector2(0.83152175, 0.3370787), 0.0, 0.0, 0, 0, Vector2(0.99456525, 0.84269667), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rerr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wbdvm")
+script = ExtResource("2_158mb")
+curva = SubResource("Curve_158mb")
+factor = 1
+
+[node name="fundo" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -353.0
+offset_top = -205.0
+offset_right = 353.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -68.0
+offset_right = 59.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
+
+[node name="Jogar" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "Jogar"
+script = ExtResource("3_cayip")
+
+[node name="config" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "Configurações"
+script = ExtResource("3_cayip")
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "Creditos
+"
+script = ExtResource("3_cayip")
+
+[node name="sair" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "Sair
+"
+script = ExtResource("3_cayip")
+
+[connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="GridContainer/sair" to="GridContainer/sair" method="_on_mouse_entered"]
+[connection signal="pressed" from="GridContainer/sair" to="." method="_on_sair_pressed"]
