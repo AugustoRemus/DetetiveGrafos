@@ -44,7 +44,7 @@ nao da pra passar"
 [node name="objetos" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADt/wkAAAAAAAAAAAD8/wsAAAAAAAAAAAD3/xMAAAAAAAAAAAD6/w4AAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADt/wkAAAAAAAAAAAD8/wsAAAAAAAAAAAD3/xMAAAAAAAAAAAD6/w4AAAAAAAAAAADr/wcAAAAEAAAAAAA=")
 tile_set = ExtResource("6_jpmbr")
 
 [node name="BarreiraNPCs" type="TileMapLayer" parent="."]

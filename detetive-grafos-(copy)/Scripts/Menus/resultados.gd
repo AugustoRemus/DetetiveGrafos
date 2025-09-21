@@ -17,9 +17,10 @@ var _totalErros
 
 func _ready() -> void:
 	_totalErros = Matrizes.calcularErro()
+	
 	quantErros.text = str(_totalErros)
 	
-	var _nivelAtual = Niveis.faseAtual
+	var _nivelAtual = Niveis.faseAtual.numero
 	
 	#falhou
 	if _totalErros >= 3:
@@ -32,18 +33,18 @@ func _ready() -> void:
 		#seta o nivel e libera a proxima fase
 		
 		#deixa o menor
-		if Niveis.fasesPontos[_nivelAtual] == 0:
-			Niveis.fasesPontos[_nivelAtual] = _totalErros + 1
+		if Niveis.fases[_nivelAtual].melhorPontuacao == 0:
+			Niveis.fases[_nivelAtual].melhorPontuacao = _totalErros + 1
 				
-		elif Niveis.fasesPontos[_nivelAtual] >_totalErros + 1:
-			Niveis.fasesPontos[_nivelAtual] = _totalErros + 1
+		elif Niveis.fases[_nivelAtual].melhorPontuacao >_totalErros + 1:
+			Niveis.fases[_nivelAtual].melhorPontuacao = _totalErros + 1
 			
 		#mostra o sprite
 		estrelasTextura.texture = arrayTexturas[_totalErros+1]
 		
 		if _nivelAtual != Niveis.quantNiveis:
 			#libera o proximo nivel se n foi o ultimo
-			Niveis.fasesPontos[_nivelAtual+1] = 0
+			Niveis.fases[_nivelAtual+1].liberada = true
 		
 	
 

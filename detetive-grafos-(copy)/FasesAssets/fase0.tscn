@@ -46,7 +46,6 @@ tile_set = ExtResource("6_8042e")
 script = ExtResource("7_n3xwa")
 
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_sija4")]
-tempo = 120.0
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 

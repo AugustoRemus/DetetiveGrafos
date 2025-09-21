@@ -1,6 +1,7 @@
 extends Control
 
 var carregarScena: PackedScene
+var faseSelecionada: fase = null
 
 @export var numeroFaseLabel : Label
 @export var botaoPlay:Button
@@ -17,9 +18,9 @@ var carregarScena: PackedScene
 func _ready() -> void:
 	#testa quais ele pode jogar
 	for fase in range(Niveis.quantNiveis):
-		if Niveis.fasesPontos[fase] == -1:
+		if Niveis.fases[fase].liberada == false:
+			#desabilita
 			var _botao = gridContainerBotoesLvl.get_child(fase - 1)
-			
 			_botao.disabled = true
 		
 		
@@ -29,7 +30,7 @@ func _ready() -> void:
 func _on_fase_0_pressed() -> void:
 	
 	var scenaPacked0 = preload("res://FasesAssets/fase0.tscn")
-	_setarFase("tutorial",0, scenaPacked0)
+	_setarFase(Niveis.fases[0])
 	
 		
 
@@ -40,29 +41,20 @@ func _on_botao_start_pressed() -> void:
 
 
 func _on_fase_1_pressed() -> void:
-	var scenaPacked0 = preload("res://FasesAssets/fase_1.tscn")
-	_setarFase("fase 1",1, scenaPacked0)
-	
+	_setarFase(Niveis.fases[1])
 
 func _on_fase_2_pressed() -> void:
-	var scenaPacked0 = preload("res://FasesAssets/fase_2.tscn")
-	_setarFase("fase 2",2, scenaPacked0)
-
+	_setarFase(Niveis.fases[2])
+	
 func _on_fase_3_pressed() -> void:
-	var scenaPacked0 = preload("res://FasesAssets/fase_3.tscn")
-	_setarFase("fase 3",3, scenaPacked0)
-
+	_setarFase(Niveis.fases[3])
 
 func _on_fase_4_pressed() -> void:
-	var scenaPacked0 = preload("res://FasesAssets/fase_4.tscn")
-	_setarFase("fase 4",4, scenaPacked0)
-
+	_setarFase(Niveis.fases[4])
 
 
 func _on_fase_5_pressed() -> void:
-	var scenaPacked0 = preload("res://FasesAssets/fase_5.tscn")
-	_setarFase("fase 5",5, scenaPacked0)
-
+	_setarFase(Niveis.fases[5])
 
 func _on_button_pressed() -> void:
 	#SomManager.click.play()
@@ -99,21 +91,23 @@ func _resetTodos():
 
 
 
-func _setarFase(_nomeFase: String,_numeroFase:int, _packedScene: PackedScene):
+func _setarFase(_faseClicada: fase):
 	
 	#se nao estava clicado
-	if numeroFaseLabel.text != _nomeFase:
+	if faseSelecionada != _faseClicada:
+		faseSelecionada = _faseClicada
 		#carrega sena e dados
-		carregarScena = _packedScene
-		numeroFaseLabel.text = _nomeFase
+		carregarScena = faseSelecionada.scena
+		numeroFaseLabel.text = faseSelecionada.nome
 		#deixa as coisa visiveis
 		botaoPlay.visible = true
 		labelPont.visible = true
 		medalhaIcone.visible = true
 		#seta o icone
-		medalhaIcone.texture =medalhasSprites[ Niveis.fasesPontos[_numeroFase]]
+		medalhaIcone.texture =medalhasSprites[faseSelecionada.melhorPontuacao]
 		
-		_desclicarOutros(todosBotoes[_numeroFase])
+		#passa o numero da fase pra desclciar os outros
+		_desclicarOutros(todosBotoes[faseSelecionada.numero])
 	else:
 		#se estava clicado desclica
 		_resetTodos()

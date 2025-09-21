@@ -3,6 +3,7 @@ extends Node2D
 ##lista de todos os NPCs
 
 var ListaNPCs: Array[NPCClasse]
+
 ##nivel atual
 @export var lvlAtual : int
 
@@ -15,8 +16,16 @@ var matrizNPCs
 #objeto que vai ser criado para chamar a função do script
 var scriptCarregadoLogica
 
+var faseClasse: fase
+
+
+
 func _ready() -> void:
-	Niveis.faseAtual = lvlAtual
+	faseClasse = Niveis.fases[lvlAtual]
+	setarTimer()
+
+	Niveis.faseAtual = faseClasse
+	
 	scriptCarregadoLogica = scriptCriacaoGrafo.new()
 	#pega os filhos do nodo dos npcs
 	ListaNPCs.clear()
@@ -52,14 +61,6 @@ func marcadoID():
 		#print(npc.id)
 		contador+= 1
 		
-		
-func printar_matriz(matriz: Array) -> void:
-	for linha in matriz:
-		var linha_str = ""
-		for valor in linha:
-			linha_str += str(valor) + " "
-		print(linha_str.strip_edges())  
-
 func startNPCs():
 	#printar_matriz(matrizNPCs)
 	for npc in ListaNPCs:
@@ -72,3 +73,10 @@ func finalizou(_matriz):
 	Matrizes.MatrizPlayer = _matriz
 	get_tree().change_scene_to_file("res://Scenes/Menus/resultados.tscn")
 	
+
+func setarTimer():
+	var _todos = get_children()
+	for nodo in _todos:
+		if nodo.name == "timer":
+			#print(faseClasse.tempo)
+			nodo.tempo = float(faseClasse.tempo)
