@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b3di2e406e87m"]
+
+[ext_resource type="Texture2D" uid="uid://dbkd7cj0i8681" path="res://Sprites/tileSets/tileMapOutros.png" id="1_jgisu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hravw"]
+texture = ExtResource("1_jgisu")
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 5)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 5)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 5)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 5)
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 11)
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_hravw")
