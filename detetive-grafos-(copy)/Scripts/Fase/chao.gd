@@ -1,8 +1,12 @@
 extends TileMapLayer
 
+#em todo layer de chao de fase tem q ter esse script
 
-@onready var tileBarreira: TileMapLayer = $"../barreiraTeste"
 
+
+#barreira de npc, sempre que botar tem que ter a barreira de npcs
+
+@onready var tileBarreira: TileMapLayer = $"../BarreiraNPCs"
 
 			
 #essa funcao vai dizer se a cordenada deve ser atualizada na hora de rodar
