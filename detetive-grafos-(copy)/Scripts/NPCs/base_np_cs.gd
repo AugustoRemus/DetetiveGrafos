@@ -8,6 +8,11 @@ class_name NPCClasse
 ##define o id dele para montar o grafo e tals, definir na cena
 var id: int
 
+##amigos que terao intereçao caso o script seja o manual e n o 
+##aleatorio, só tem q botar 1 dos 2
+@export var ListaAmigosSimples: Array[CharacterBody2D]
+
+
 
 @export_enum("Aleatoria", "fila", "Estatico") var logicaMov: int = 0 
 
@@ -21,9 +26,6 @@ var id: int
 @export var nodoComOsDestinosRandom: Node
 
 
-##amigos que terao intereçao caso o script seja o manual e n o 
-##aleatorio, só tem q botar 1 dos 2
-@export var ListaAmigosSimples: Array[CharacterBody2D]
 
 @export_group("Atriburos resource")
 
