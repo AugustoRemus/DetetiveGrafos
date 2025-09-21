@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://svxd78rnba0f"]
+[gd_scene load_steps=14 format=4 uid="uid://svxd78rnba0f"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_mwbko"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_u2i7p"]
@@ -14,11 +14,6 @@
 [ext_resource type="TileSet" uid="uid://b8p6r071duh7p" path="res://FasesAssets/tileset/chaoTileSet.tres" id="10_xdfxl"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/protagonista.tscn" id="12_p0ou8"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_dhdj0"]
-vertices = PackedVector2Array(503.02344, -49.023438, 503.96875, 426.89063, -515.22656, 416.10156, -526.7422, -51.96875)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-537, -62, 513, -59, 514, 437, -525, 426)])
-
 [node name="fase1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_mwbko")
@@ -30,13 +25,13 @@ tile_map_data = PackedByteArray("AADt//z/AQABAAAAAADt//3/AQABAAAAAADt//7/AQABAAA
 tile_set = ExtResource("10_xdfxl")
 
 [node name="barreira" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AADU/xcAAQAAAAAAAADU/xgAAQAAAAAAAADU/xkAAQAAAAAAAADV/xoAAQAAAAAAAADV/xsAAQAAAAAAAADV/xwAAQAAAAAAAADV/x0AAQAAAAAAAADV/x4AAQAAAAAAAADV/x8AAQAAAAAAAADV/yAAAQAAAAAAAADV/yEAAQAAAAAAAADV/yIAAQAAAAAAAADV/yMAAQAAAAAAAADV/yQAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADt/yYAAQAAAAEAAADu/yYAAQAAAAEAAADw/yYAAQAAAAEAAADv/yYAAQAAAAEAAADz/xwAAQAAAAEAAAD0/xwAAQAAAAEAAAD2/xwAAQAAAAEAAAD1/xwAAQAAAAEAAAD4/xYAAQAAAAEAAAD5/xYAAQAAAAEAAAD6/xYAAQAAAAEAAAD3/xYAAQAAAAEAAADZ/xIAAQAAAAEAAADa/xIAAQAAAAEAAADb/xIAAQAAAAEAAADc/xIAAQAAAAEAAAA=")
 tile_set = ExtResource("4_a6i6t")
 
 [node name="objetos" type="TileMapLayer" parent="."]
 z_index = 1
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AADt/wkAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADt/wkAAAAAAAAAAAD8/wsAAAAAAAAAAAD3/xMAAAAAAAAAAAD6/w4AAAAAAAAAAAA=")
 tile_set = ExtResource("5_40nhx")
 
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_trfr5")]
@@ -45,10 +40,6 @@ grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
 [node name="grafoPlayer" parent="." instance=ExtResource("4_luc2p")]
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-61, 5)
-navigation_polygon = SubResource("NavigationPolygon_dhdj0")
 
 [node name="ArrayPontos" type="Node" parent="."]
 

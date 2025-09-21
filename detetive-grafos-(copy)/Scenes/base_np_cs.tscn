@@ -21,6 +21,8 @@ z_index = 1
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 8
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_cf2bg")
 speedNPC = 100.0
 tempoEsperaMin = 1.0
@@ -63,6 +65,9 @@ offset = Vector2(0, -25)
 [node name="hatSprite" type="Sprite2D" parent="Sprite"]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "logica", "timer")]
+path_postprocessing = 1
+avoidance_enabled = true
+radius = 20.0
 script = ExtResource("4_y6ahf")
 base_np_cs = NodePath("..")
 logica = NodePath("logicaDestino")
