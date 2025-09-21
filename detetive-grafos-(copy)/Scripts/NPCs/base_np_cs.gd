@@ -70,7 +70,7 @@ func _ready() -> void:
 
 func _process(delta):
 	#z_index = int(position.y)
-	print(position)
+	#print(position)
 	pass
 
 	

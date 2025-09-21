@@ -37,11 +37,13 @@ func _physics_process(delta: float) -> void:
 		
 		base_np_cs.move_and_slide()
 		
-		#ta travado
-		if last_position == base_np_cs.position:
+		
+		#n ta dando certo!
+		print(last_position.distance_to(base_np_cs.position))
+		if last_position.distance_to(base_np_cs.position) <= 5:
 			print("to travado")
-		else:
-			last_position = base_np_cs.position
+		
+		last_position = base_np_cs.position
 		
 		
 
