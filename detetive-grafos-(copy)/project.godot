@@ -39,6 +39,7 @@ enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/phantom
 [global_group]
 
 Alvo="pode ser transformado"
+NPCs="para pegar todos os npc da fase"
 
 [gui]
 

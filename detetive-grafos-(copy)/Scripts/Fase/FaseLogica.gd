@@ -1,13 +1,10 @@
 extends Node2D
 
 ##lista de todos os NPCs
-var ListaNPCs: Array[NPCClasse]
 
+var ListaNPCs: Array[NPCClasse]
 ##nivel atual
 @export var lvlAtual : int
-
-##nodo aonde estao os npcs
-@export var nodoNPCs: Node
 
 ##script com afunçao de criação da matriz
 @export var scriptCriacaoGrafo: Script
@@ -24,13 +21,16 @@ func _ready() -> void:
 	#pega os filhos do nodo dos npcs
 	ListaNPCs.clear()
 	
-	var nodosFilhos = nodoNPCs.get_children()
-	#adiciona cada filho individualmente
-	for filho in nodosFilhos:
-		if filho != null:
-			ListaNPCs.append(filho)
-	#ListaNPCs = 
 	
+
+	#pega todos os npcs da fase
+	var _listaTemp = get_tree().get_nodes_in_group("NPCs")
+	
+	for _npc in _listaTemp:
+		if _npc is NPCClasse:
+			ListaNPCs.append(_npc)
+			
+	#print(ListaNPCs)
 	
 	
 	#sorteia os id pros jogadores

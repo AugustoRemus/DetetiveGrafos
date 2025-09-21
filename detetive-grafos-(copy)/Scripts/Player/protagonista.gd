@@ -19,4 +19,8 @@ var possoConversar: bool
 var possoRoubarCor: bool
 
 
+func _process(delta):
+	#z_index = int(position.y)
+	#print(position)
+	pass
 #debug

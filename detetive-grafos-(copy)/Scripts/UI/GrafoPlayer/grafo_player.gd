@@ -6,7 +6,6 @@ var aparecendo = false
 
 @onready var tudo: Panel = $Panel
 
-@export var nodeComOsNPCs: Node
 
 @onready var color_rect: ColorRect = $ColorRect
 
@@ -23,7 +22,11 @@ func _ready() -> void:
 	nodoFase = get_parent()
 	var arrayNPCs: Array[Node]
 	
-	arrayNPCs = nodeComOsNPCs.get_children().duplicate()
+	#arrayNPCs = nodeComOsNPCs.get_children().duplicate()
+	
+	#duplicate?
+	arrayNPCs= get_tree().get_nodes_in_group("NPCs")
+	
 	
 	var contador = 0
 	for npc in arrayNPCs:

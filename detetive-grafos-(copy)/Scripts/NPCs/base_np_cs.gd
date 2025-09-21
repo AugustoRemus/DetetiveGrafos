@@ -66,6 +66,12 @@ func _ready() -> void:
 		
 	pass
 
+
+
+func _process(delta):
+	#z_index = int(position.y)
+	pass
+
 	
 func silhueta(numero):
 	if numero == 1:

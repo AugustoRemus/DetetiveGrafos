@@ -18,6 +18,8 @@ size = Vector2(14, 7)
 radius = 68.0074
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("area", "transformador", "interador")]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_e0vkn")
 area = NodePath("area")
 transformador = NodePath("transformador")
@@ -25,6 +27,7 @@ interador = NodePath("area/Interador")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_v853i")
+offset = Vector2(0, -25.465)
 script = ExtResource("3_k2hie")
 
 [node name="hatPlayer" type="Sprite2D" parent="Sprite2D"]
@@ -37,10 +40,10 @@ aceleration = 0.1311
 fric = 0.1531
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 25.5)
 shape = SubResource("RectangleShape2D_k2hie")
 
 [node name="area" type="Area2D" parent="." node_paths=PackedStringArray("player", "tags", "transformadorNode")]
+position = Vector2(0, -10.68)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("6_m0par")
