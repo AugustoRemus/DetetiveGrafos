@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://p06c8bn2f2o4"]
+[gd_scene load_steps=16 format=3 uid="uid://p06c8bn2f2o4"]
 
 [ext_resource type="Script" uid="uid://qr814uioqvcr" path="res://Scripts/NPCs/base_np_cs.gd" id="1_cf2bg"]
 [ext_resource type="Texture2D" uid="uid://cyjrq7vohb5rb" path="res://Sprites/NPCs/NPCAzul.png" id="1_udhxp"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="4_nf2cc"]
 [ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logicaMov/logica_destino.gd" id="5_ujk41"]
+[ext_resource type="Texture2D" uid="uid://c2wumafichcfv" path="res://Sprites/outros/sombraBasica.png" id="9_4tvce"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
 [ext_resource type="Script" uid="uid://2tlwpdjpjfng" path="res://Scripts/NPCs/logicaMov/filaLogica.gd" id="11_pcn8s"]
 [ext_resource type="Script" uid="uid://duvnf2b58jy7g" path="res://Scripts/NPCs/logicaMov/logica_statica.gd" id="12_4tvce"]
@@ -64,6 +65,13 @@ script = ExtResource("3_y6ahf")
 visible = false
 texture = ExtResource("4_nf2cc")
 offset = Vector2(0, -25)
+
+[node name="sombra" type="Sprite2D" parent="Sprite"]
+modulate = Color(1, 1, 1, 0.4862745)
+show_behind_parent = true
+position = Vector2(0, 7)
+scale = Vector2(1.035, 1.035)
+texture = ExtResource("9_4tvce")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." node_paths=PackedStringArray("base_np_cs", "timer")]
 path_postprocessing = 1
