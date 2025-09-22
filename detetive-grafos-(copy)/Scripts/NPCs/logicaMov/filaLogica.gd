@@ -6,7 +6,7 @@ var numAtual = 0
 
 
 func _setarPontos(_numerosDestino: int, _arrayPontos):
-	print(_arrayPontos)
+	#print(_arrayPontos)
 	#pra quantia de numeros sortei pontos diferentes da lista
 
 	var newArray = _arrayPontos.duplicate()

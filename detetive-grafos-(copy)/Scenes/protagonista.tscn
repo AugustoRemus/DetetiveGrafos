@@ -37,7 +37,7 @@ script = ExtResource("2_e0vkn")
 player = NodePath("..")
 sprite = NodePath("../Sprite2D")
 aceleration = 0.1311
-fric = 0.1531
+fric = 0.21109999999999998
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k2hie")

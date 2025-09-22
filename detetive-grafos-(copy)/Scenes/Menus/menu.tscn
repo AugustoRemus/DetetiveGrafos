@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp04rhsw40lwt"]
+[gd_scene load_steps=6 format=3 uid="uid://dp04rhsw40lwt"]
 
 [ext_resource type="Script" uid="uid://br310fqy8o0wb" path="res://Scripts/Menus/menu.gd" id="1_1rerr"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_158mb"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="2_xhh6f"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="3_cayip"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="3_hg7h7"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -16,6 +17,20 @@ script = ExtResource("1_1rerr")
 
 [node name="painelFundo" parent="." instance=ExtResource("2_158mb")]
 layout_mode = 1
+
+[node name="titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 35.24
+offset_right = 67.5
+offset_bottom = 58.24001
+grow_horizontal = 2
+theme = ExtResource("3_hg7h7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Detetve Grafos"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -35,26 +50,26 @@ theme_override_constants/v_separation = 20
 [node name="Jogar" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
-text = "Jogar"
+text = "- Jogar -"
 script = ExtResource("3_cayip")
 
 [node name="config" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
-text = "Configurações"
+text = "- Configurações -"
 script = ExtResource("3_cayip")
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
-text = "Créditos
+text = "- Créditos -
 "
 script = ExtResource("3_cayip")
 
 [node name="sair" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
-text = "Sair
+text = "- Sair - 
 "
 script = ExtResource("3_cayip")
 

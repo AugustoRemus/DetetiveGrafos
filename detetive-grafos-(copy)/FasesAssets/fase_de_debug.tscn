@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bbipb06r5fnkb"]
+[gd_scene load_steps=17 format=4 uid="uid://bbipb06r5fnkb"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_br23q"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_fqax2"]
@@ -13,6 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="11_5g6yh"]
 [ext_resource type="Resource" uid="uid://cgp5cqdtkm3wu" path="res://Resources/NPCs/Cinza.tres" id="12_k66iu"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/protagonista.tscn" id="13_e16mi"]
+[ext_resource type="PackedScene" uid="uid://c1ktgv2j38hdf" path="res://experimentos/teste_planta.tscn" id="14_fqax2"]
+
+[sub_resource type="Gradient" id="Gradient_br23q"]
+colors = PackedColorArray(1, 1, 1, 0.14509805, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fqax2"]
+gradient = SubResource("Gradient_br23q")
+fill = 1
+fill_from = Vector2(0.48598132, 0.4906542)
 
 [node name="faseDeDebug" type="Node2D"]
 y_sort_enabled = true
@@ -96,4 +105,20 @@ limit_left = -663
 limit_top = -180
 limit_right = 632
 limit_bottom = 574
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 editor_draw_limits = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(14, -193)
+color = Color(1, 1, 1, 0.09019608)
+energy = 0.8
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.9764706)
+texture = SubResource("GradientTexture2D_fqax2")
+texture_scale = 24.3
+
+[node name="testePlanta" parent="." instance=ExtResource("14_fqax2")]
+position = Vector2(-300, 241)

@@ -11,10 +11,21 @@ extends Node
 var bob_time := 0.0
 var bob_speed := 0.4
 var bob_height := 3.0
+var base_offset
 
 
 func _ready() -> void:
 	bob_speed = base_np_cs.resourceNPC.RbobSpeed
+	base_offset = offset
+
+
+	if direcao != Vector2.ZERO:
+		bob_time += bob_speed 
+		offset.y = base_offset.y + sin(bob_time) * bob_height
+	else:
+		
+		offset.y = lerp(offset.y, base_offset.y, 0.2)
+
 
 func _physics_process(delta: float) -> void:
 	var _ignoaraWarning = delta

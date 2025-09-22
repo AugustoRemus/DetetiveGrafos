@@ -9,13 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="4_nf2cc"]
 [ext_resource type="Script" uid="uid://c7vb66rsbo7d4" path="res://Scripts/NPCs/navigation_agent_2d.gd" id="4_y6ahf"]
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logicaMov/logica_destino.gd" id="5_ujk41"]
-[ext_resource type="Script" uid="uid://tuo8pkkfmcsi" path="res://Scripts/NPCs/animacao.gd" id="6_ypi4a"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
 [ext_resource type="Script" uid="uid://2tlwpdjpjfng" path="res://Scripts/NPCs/logicaMov/filaLogica.gd" id="11_pcn8s"]
 [ext_resource type="Script" uid="uid://duvnf2b58jy7g" path="res://Scripts/NPCs/logicaMov/logica_statica.gd" id="12_4tvce"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypi4a"]
 size = Vector2(13, 12)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4tvce"]
+polygon = PackedVector2Array(6, -4, 6, 4, -8, 5, -7, -5, 6, -4)
 
 [node name="BaseNPCs" type="CharacterBody2D" node_paths=PackedStringArray("animacaoNode", "sprite", "silhuetaNodo", "LogicaInteraçoes", "labelNomeCor") groups=["Alvo", "NPCs"]]
 z_index = 1
@@ -84,9 +86,7 @@ script = ExtResource("12_4tvce")
 [node name="timerDestino" type="Timer" parent="."]
 one_shot = true
 
-[node name="animacao" type="Node" parent="." node_paths=PackedStringArray("spriteNPC")]
-script = ExtResource("6_ypi4a")
-spriteNPC = NodePath("../Sprite")
+[node name="animacao" type="Node" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.33)
@@ -101,6 +101,11 @@ text = "Cor"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
+position = Vector2(1, 0)
+occluder = SubResource("OccluderPolygon2D_4tvce")
 
 [connection signal="timeout" from="BalaoBasePng/timerBalao" to="BalaoBasePng" method="_on_timer_balao_timeout"]
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]

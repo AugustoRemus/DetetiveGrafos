@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ktgv2j38hdf"]
+
+[ext_resource type="Texture2D" uid="uid://dbkd7cj0i8681" path="res://Sprites/tileSets/tileMapOutros.png" id="1_bager"]
+
+[node name="testePlanta" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(1, -14)
+texture = ExtResource("1_bager")
+region_enabled = true
+region_rect = Rect2(98, 17, 11, 31)
+
+[node name="Area2D" type="Area2D" parent="."]

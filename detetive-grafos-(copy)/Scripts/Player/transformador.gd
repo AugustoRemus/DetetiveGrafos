@@ -38,14 +38,7 @@ func transformar(corpo):
 		#atualiza ui
 		tags.attTransformacao(corpo)
 		
-		
-		#inutil por enquanto
-		if corpo.hat:
-			hatSpritePlayer.texture = corpo.hat.sprite
-			player.hatTransformado = corpo.hat
-		else:
-			hatSpritePlayer.texture = null
-			player.hatTransformado = null
+	
 			
 		player.idNPCTransformado = corpo.id
 		SomManager.transformacao.play()

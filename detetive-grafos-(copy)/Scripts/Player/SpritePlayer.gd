@@ -6,15 +6,13 @@ extends Sprite2D
 var bob_time := 0.0
 var bob_speed := GlobalPlayer.bobSpeedPlayer
 var bob_height := 3.0
-
+var base_offset
 #endregion
 
 
-#olhar caso esteja parado na parede parar a animação ao inves de
-#quando tiver dire!
-
-
-#adicionar move sprite para mover as mao?
+func _ready():
+	
+	base_offset = offset
 
 func _animation(direcao):
 	#personagem esta se movendo
@@ -23,7 +21,7 @@ func _animation(direcao):
 	
 	if direcao != Vector2.ZERO:
 		bob_time += bob_speed 
-		position.y = sin(bob_time) * bob_height
+		offset.y = base_offset.y + sin(bob_time) * bob_height
 	else:
-		#esta parado entao vai resetando aos poucos
-		position.y = lerp(position.y, 0.0, 0.2)
+		
+		offset.y = lerp(offset.y, base_offset.y, 0.2)
