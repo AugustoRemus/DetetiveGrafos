@@ -77,7 +77,6 @@ texture = ExtResource("9_4tvce")
 path_postprocessing = 1
 avoidance_enabled = true
 radius = 20.0
-debug_enabled = true
 script = ExtResource("4_y6ahf")
 base_np_cs = NodePath("..")
 timer = NodePath("../timerDestino")

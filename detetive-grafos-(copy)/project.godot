@@ -30,7 +30,8 @@ window/size/viewport_height=360
 window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_height"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -40,6 +41,7 @@ enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/phantom
 
 Alvo="pode ser transformado"
 NPCs="para pegar todos os npc da fase"
+PositionNode="para pegar posicoes"
 
 [gui]
 
@@ -119,3 +121,4 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true

@@ -41,6 +41,9 @@ func _physics_process(delta):
 	
 	player.move_and_slide()
 	
+	#ISTO MUDA VIDAS!
+	player.position = player.position.round()
+	
 	
 	#tira warning
 	var _deltaTiraWarning = delta

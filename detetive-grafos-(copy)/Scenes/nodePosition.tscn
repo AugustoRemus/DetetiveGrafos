@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d275guh72iwdt"]
+
+[ext_resource type="Script" uid="uid://62lxac2q4ggc" path="res://Scripts/Fase/node_position.gd" id="1_jyf0d"]
+[ext_resource type="Texture2D" uid="uid://te111mnqtlig" path="res://Sprites/tileSets/barreiraDeMovNPCs.png" id="1_nfwdb"]
+
+[node name="Node2D" type="Node2D" groups=["PositionNode"]]
+script = ExtResource("1_jyf0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nfwdb")
+region_enabled = true
+region_rect = Rect2(2, 35, 27, 26)

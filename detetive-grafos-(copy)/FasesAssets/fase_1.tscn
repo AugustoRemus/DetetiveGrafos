@@ -73,34 +73,34 @@ position = Vector2(-3, -39)
 [node name="10" type="Node2D" parent="ArrayPontos"]
 position = Vector2(-153, 56)
 
-[node name="Azul" parent="." node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_xm5w5")]
+[node name="Azul" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_xm5w5")]
 position = Vector2(-271, 176)
 resourceNPC = ExtResource("9_jc7dx")
-quantDestinos = 2
-nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Amarelo"), NodePath("../branco")]
+quantDestinos = 5
+nodoComOsDestinosRandom = NodePath("../ArrayPontos")
 
-[node name="Amarelo" parent="." node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_xm5w5")]
+[node name="Amarelo" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_xm5w5")]
 position = Vector2(208, 200)
 resourceNPC = ExtResource("7_4wdg7")
-quantDestinos = 2
-nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Verde")]
+quantDestinos = 2
+nodoComOsDestinosRandom = NodePath("../ArrayPontos")
 
-[node name="branco" parent="." node_paths=PackedStringArray("nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_xm5w5")]
+[node name="branco" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_xm5w5")]
 position = Vector2(29, 214)
 resourceNPC = ExtResource("6_dvofq")
-quantDestinos = 3
-nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Azul")]
+logicaMov = 2
+quantDestinos = 3
+nodoComOsDestinosRandom = NodePath("../ArrayPontos")
 
-[node name="Verde" parent="." node_paths=PackedStringArray("nodosDestino", "nodoComOsDestinos", "ListaAmigosSimples") instance=ExtResource("5_xm5w5")]
+[node name="Verde" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_xm5w5")]
 position = Vector2(-3, 83)
 resourceNPC = ExtResource("8_hg4hc")
-nodosDestino = [NodePath("../ArrayPontos/0"), NodePath("../ArrayPontos/1")]
-quantDestinos = 5
-nodoComOsDestinos = NodePath("../ArrayPontos")
 ListaAmigosSimples = [NodePath("../Azul"), NodePath("../Amarelo"), NodePath("../branco")]
+quantDestinos = 5
+nodoComOsDestinosRandom = NodePath("../ArrayPontos")
 
 [node name="Player" parent="." instance=ExtResource("12_p0ou8")]
 position = Vector2(-161, 182)

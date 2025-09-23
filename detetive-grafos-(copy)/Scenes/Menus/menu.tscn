@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp04rhsw40lwt"]
+[gd_scene load_steps=7 format=3 uid="uid://dp04rhsw40lwt"]
 
 [ext_resource type="Script" uid="uid://br310fqy8o0wb" path="res://Scripts/Menus/menu.gd" id="1_1rerr"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_158mb"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="2_xhh6f"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="3_cayip"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="3_hg7h7"]
+[ext_resource type="Script" uid="uid://dujeyeln10sxk" path="res://Scripts/Menus/titulo.gd" id="4_wudlr"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -30,7 +31,8 @@ offset_bottom = 58.24001
 grow_horizontal = 2
 theme = ExtResource("3_hg7h7")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Detetve Grafos"
+text = "- Detetve Grafos -"
+script = ExtResource("4_wudlr")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1

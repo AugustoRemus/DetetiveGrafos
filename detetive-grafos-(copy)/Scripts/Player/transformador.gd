@@ -6,6 +6,8 @@ extends Node
 @export var tags: Node2D
 
 @export var labelCor: Label
+
+signal transformei()
 #quando clicar E vai se transformar nesse
 #adicionar quadrado no canto para saber em qual cor
 #vc pode se transformar no caso essa cor aqui
@@ -41,6 +43,9 @@ func transformar(corpo):
 	
 			
 		player.idNPCTransformado = corpo.id
+		
+		transformei.emit()
+		
 		SomManager.transformacao.play()
 		
 	else:

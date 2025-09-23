@@ -40,3 +40,7 @@ func _animation(direcao):
 		#volta
 		offset.y = lerp(offset.y, base_offset.y, 0.2)
 		sombra.scale = sombra.scale.lerp(base_sombra_scale, 0.2)
+
+
+func _on_transformador_transformei() -> void:
+	sombra.visible = true

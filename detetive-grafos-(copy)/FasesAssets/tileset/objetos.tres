@@ -15,6 +15,15 @@ texture = ExtResource("1_jgisu")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 11)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.568798, -7.6471386, 14.568556, -7.01449, 15.647711, 2.8777409, -13.849122, 2.6978817)
+4:2/size_in_atlas = Vector2i(2, 1)
+4:2/0 = 0
+4:2/0/texture_origin = Vector2i(0, 6)
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 6.115196, -8, 5.5756207, -1.0791512, -6.115196, -1.0791512)
+6:1/size_in_atlas = Vector2i(1, 2)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(0, 15)
 
 [resource]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hravw")
