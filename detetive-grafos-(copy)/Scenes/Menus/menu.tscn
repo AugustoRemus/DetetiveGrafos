@@ -55,6 +55,12 @@ theme = ExtResource("2_xhh6f")
 text = "- Jogar -"
 script = ExtResource("3_cayip")
 
+[node name="hats" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_xhh6f")
+text = "- Chapéus -"
+script = ExtResource("3_cayip")
+
 [node name="config" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
@@ -76,6 +82,7 @@ text = "- Sair -
 script = ExtResource("3_cayip")
 
 [connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="GridContainer/hats" to="." method="_on_hats_pressed"]
 [connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="GridContainer/sair" to="GridContainer/sair" method="_on_mouse_entered"]

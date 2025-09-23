@@ -4,6 +4,7 @@ extends Sprite2D
 @onready var base_np_cs: CharacterBody2D = $".."
 @onready var silhueta: Sprite2D = $Silhueta
 @onready var sombra: Sprite2D = $sombra
+@onready var hat: Sprite2D = $hat
 
 #pode variar se o npc for mais rapido, adicionar no resource
 #no bob_speed
@@ -36,7 +37,9 @@ func _physics_process(delta: float) -> void:
 		
 		var bob = sin(bob_time) * bob_height
 		offset.y = base_offset.y + bob
+	
 		silhueta.offset.y = base_offset.y + bob
+	
 		
 		#ajustando a sombra
 		var scale_factor = 1.0 - (bob / (bob_height * 2.0))
@@ -45,4 +48,7 @@ func _physics_process(delta: float) -> void:
 		#volta
 		offset.y = lerp(offset.y, base_offset.y, 0.2)
 		silhueta.offset.y = lerp(offset.y, base_offset.y, 0.2)
+	
+		#sombra
 		sombra.scale = sombra.scale.lerp(base_sombra_scale, 0.2)
+		

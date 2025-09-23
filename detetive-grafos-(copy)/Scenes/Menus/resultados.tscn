@@ -1,16 +1,16 @@
 [gd_scene load_steps=12 format=3 uid="uid://cjme6imsja4xo"]
 
 [ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Menus/resultados.gd" id="1_yvfxy"]
+[ext_resource type="Texture2D" uid="uid://b2mqlfi54yb0r" path="res://Sprites/estrelas/estrela0.png" id="2_1i2rr"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_acucp"]
-[ext_resource type="Texture2D" uid="uid://d34fhldelagp7" path="res://Sprites/Placeholders/medalha1.png" id="3_2wvmg"]
+[ext_resource type="Texture2D" uid="uid://bndlni8mmyrs1" path="res://Sprites/estrelas/estrela1.png" id="3_enhvw"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="3_mxs03"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="4_08a8k"]
-[ext_resource type="Texture2D" uid="uid://dulxd7qg6drmf" path="res://Sprites/Placeholders/medalha2.png" id="4_ca532"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="4_mxs03"]
+[ext_resource type="Texture2D" uid="uid://d1ys2auoxbui" path="res://Sprites/estrelas/estrela2.png" id="4_no05l"]
 [ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Visual/Fontes/Mechanical-g5Y5.otf" id="4_p23a5"]
-[ext_resource type="Texture2D" uid="uid://dp1jtsyoqujtg" path="res://Sprites/Placeholders/medalha3.png" id="5_36jm3"]
+[ext_resource type="Texture2D" uid="uid://cdvjgoe13dtq0" path="res://Sprites/estrelas/estrela3.png" id="5_7xt8f"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="5_rl5xe"]
-[ext_resource type="Texture2D" uid="uid://ba40qwobjtnst" path="res://Sprites/Placeholders/medalha0.png" id="8_hog0c"]
 
 [node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao", "quantErros", "tempoRestante", "resultado", "estrelasTextura")]
 layout_mode = 3
@@ -24,8 +24,8 @@ voltarBotao = NodePath("voltar")
 quantErros = NodePath("Panel/GridContainer/Erros")
 tempoRestante = NodePath("Panel/GridContainer/tempo")
 resultado = NodePath("Panel/GridContainer/Resultado")
-estrelasTextura = NodePath("PanelEstrelas/TextureRect")
-arrayTexturas = Array[Texture2D]([ExtResource("8_hog0c"), ExtResource("3_2wvmg"), ExtResource("4_ca532"), ExtResource("5_36jm3")])
+estrelasTextura = NodePath("Panel/GridContainer/TextureRect")
+arrayTexturas = Array[Texture2D]([ExtResource("2_1i2rr"), ExtResource("3_enhvw"), ExtResource("4_no05l"), ExtResource("5_7xt8f")])
 
 [node name="painelFundo" parent="." instance=ExtResource("2_acucp")]
 layout_mode = 1
@@ -90,15 +90,18 @@ horizontal_alignment = 1
 layout_mode = 2
 horizontal_alignment = 1
 
-[node name="nada2" type="Label" parent="Panel/GridContainer"]
-layout_mode = 2
-horizontal_alignment = 1
-
 [node name="TXTResultado" type="Label" parent="Panel/GridContainer"]
 layout_mode = 2
 theme = ExtResource("4_08a8k")
 text = "Resultado final:"
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_1i2rr")
+stretch_mode = 2
 
 [node name="Resultado" type="Label" parent="Panel/GridContainer"]
 layout_mode = 2
@@ -131,6 +134,7 @@ text = "Menu
 script = ExtResource("5_rl5xe")
 
 [node name="PanelEstrelas" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -156,20 +160,5 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme = ExtResource("4_08a8k")
 text = "Pontuação:"
-
-[node name="TextureRect" type="TextureRect" parent="PanelEstrelas"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_hog0c")
 
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

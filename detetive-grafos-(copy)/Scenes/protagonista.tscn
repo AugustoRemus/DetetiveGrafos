@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkbcnmufbpy2f"]
+[gd_scene load_steps=15 format=3 uid="uid://dkbcnmufbpy2f"]
 
 [ext_resource type="Script" uid="uid://bgyj8csyi11cf" path="res://Scripts/Player/protagonista.gd" id="1_e0vkn"]
 [ext_resource type="Script" uid="uid://cnixnyhqnp2yp" path="res://Scripts/Player/move.gd" id="2_e0vkn"]
 [ext_resource type="Texture2D" uid="uid://u1m0qrq4xts8" path="res://Sprites/NPCs/silhueta.png" id="2_v853i"]
 [ext_resource type="Script" uid="uid://4sk7gtg25vtl" path="res://Scripts/Player/SpritePlayer.gd" id="3_k2hie"]
 [ext_resource type="Texture2D" uid="uid://c2wumafichcfv" path="res://Sprites/outros/sombraBasica.png" id="4_k1x2j"]
+[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/NPCs/hats/bone.png" id="5_isdkh"]
 [ext_resource type="Script" uid="uid://bpqkg4mcrldt4" path="res://Scripts/Player/area.gd" id="6_m0par"]
 [ext_resource type="Script" uid="uid://bm3l78ocmcjq0" path="res://Scripts/Player/interador.gd" id="7_v853i"]
 [ext_resource type="Script" uid="uid://dwp0nr7sgpabl" path="res://Scripts/Player/transformador.gd" id="7_yl5ap"]
@@ -40,6 +41,10 @@ show_behind_parent = true
 position = Vector2(0, 7)
 scale = Vector2(1.035, 1.035)
 texture = ExtResource("4_k1x2j")
+
+[node name="hat" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, -28)
+texture = ExtResource("5_isdkh")
 
 [node name="Move" type="Node" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("2_e0vkn")

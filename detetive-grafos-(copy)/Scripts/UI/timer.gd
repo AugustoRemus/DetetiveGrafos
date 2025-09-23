@@ -49,7 +49,7 @@ func processTime(time):
 			clock.speed_scale = 3
 			#print("peguei 2")
 			
-
+	Matrizes.TempoFinalFase = labelTempo.text
 	
 		
 	

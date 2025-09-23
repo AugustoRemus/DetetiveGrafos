@@ -18,6 +18,7 @@ var scriptCarregadoLogica
 
 var faseClasse: fase
 
+@onready var timer: CanvasLayer = $timer
 
 
 func _ready() -> void:
@@ -69,6 +70,7 @@ func startNPCs():
 func finalizou(_matriz):
 	#botar um cronometro com o tempo da animação e
 	#no final botar esse resto d codigo:
+	
 	Matrizes.MatrizCerta = matrizNPCs
 	Matrizes.MatrizPlayer = _matriz
 	get_tree().change_scene_to_file("res://Scenes/Menus/resultados.tscn")

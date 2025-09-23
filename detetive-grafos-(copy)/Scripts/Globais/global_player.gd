@@ -1,5 +1,13 @@
 extends Node
 
+var hatAtual: hat
+
+var moedas: int
+#para debug botar outros
+#var hatsDesbloqueados: Array[hat] = []
+
+
+var hatsDesbloqueados: Array[hat] = []
 
 
 var velocidadeMovimentoPlayer := 250.0

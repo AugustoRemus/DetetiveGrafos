@@ -4,6 +4,8 @@ var MatrizCerta
 
 var MatrizPlayer
 
+var TempoFinalFase:String
+
 #chamar inicio da fase
 func resetMatrizes():
 	MatrizPlayer = null

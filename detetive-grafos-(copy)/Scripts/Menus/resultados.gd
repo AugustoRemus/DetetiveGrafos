@@ -20,6 +20,9 @@ func _ready() -> void:
 	
 	quantErros.text = str(_totalErros)
 	
+	
+	tempoRestante.text = Matrizes.TempoFinalFase
+	
 	var _nivelAtual = Niveis.faseAtual.numero
 	
 	#falhou

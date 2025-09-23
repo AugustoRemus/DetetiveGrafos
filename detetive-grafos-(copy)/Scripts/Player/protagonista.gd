@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var transformador: Node
 @export var interador: Node
 
+@onready var move: Node = $Move
+
 #id do npc transformado, vai ser um int
 var idNPCTransformado = null
 

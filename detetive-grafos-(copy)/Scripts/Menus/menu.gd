@@ -23,3 +23,7 @@ func _on_sair_pressed() -> void:
 func _on_button_pressed() -> void:
 	#SomManager.click.play()
 	pass # Replace with function body.
+
+
+func _on_hats_pressed() -> void:
+	pass # Replace with function body.

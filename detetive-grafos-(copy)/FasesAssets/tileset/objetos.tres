@@ -31,6 +31,10 @@ texture = ExtResource("1_jgisu")
 8:4/0 = 0
 8:4/0/texture_origin = Vector2i(0, 22)
 8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.662199, -16.547003, 24.215939, -18.161953, 23.561495, -6.115196, 8, 0.71943474, -8, 1.978447, -22.842058, -5.5756197)
+8:1/0 = 0
+8:1/0/texture_origin = Vector2i(0, 5)
+9:1/0 = 0
+9:1/0/texture_origin = Vector2i(-3, 5)
 
 [resource]
 physics_layer_0/collision_layer = 1

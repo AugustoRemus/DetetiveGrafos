@@ -13,11 +13,15 @@ var base_offset
 var base_sombra_scale: Vector2
 var base_sombra_offset: Vector2
 
+var base_offsetHat:Vector2
+
+@onready var hat: Sprite2D = $hat
+
 #endregion
 
 
 func _ready():
-	
+	base_offsetHat = hat.offset
 	base_offset = offset
 	base_sombra_scale = sombra.scale
 	base_sombra_offset = sombra.offset
@@ -32,6 +36,7 @@ func _animation(direcao):
 		
 		var bob = sin(bob_time) * bob_height
 		offset.y = base_offset.y + bob
+		hat.offset.y = base_offsetHat.y + bob
 		
 		#ajustando a sombra
 		var scale_factor = 1.0 - (bob / (bob_height * 2.0))
@@ -39,6 +44,8 @@ func _animation(direcao):
 	else:
 		#volta
 		offset.y = lerp(offset.y, base_offset.y, 0.2)
+		hat.offset.y = lerp(hat.offset.y, base_offsetHat.y, 0.2)
+		
 		sombra.scale = sombra.scale.lerp(base_sombra_scale, 0.2)
 
 
