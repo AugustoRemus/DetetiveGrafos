@@ -23,6 +23,14 @@ texture = ExtResource("1_jgisu")
 6:1/size_in_atlas = Vector2i(1, 2)
 6:1/0 = 0
 6:1/0/texture_origin = Vector2i(0, 15)
+0:4/size_in_atlas = Vector2i(4, 4)
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(-4, 25)
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.3957615, -11.690817, 7.733927, -9.712371, 10.251947, 0.5395775, -10.791523, -1.4388695)
+8:4/size_in_atlas = Vector2i(3, 4)
+8:4/0 = 0
+8:4/0/texture_origin = Vector2i(0, 22)
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.662199, -16.547003, 24.215939, -18.161953, 23.561495, -6.115196, 8, 0.71943474, -8, 1.978447, -22.842058, -5.5756197)
 
 [resource]
 physics_layer_0/collision_layer = 1
