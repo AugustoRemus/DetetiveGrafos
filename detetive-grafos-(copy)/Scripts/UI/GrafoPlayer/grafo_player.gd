@@ -98,3 +98,10 @@ func _on_aresta_manager_mudar_matriz_player(v1: Variant, v2: Variant, novoValor:
 
 func _on_sim_entrega_pressed() -> void:
 	entregar()
+
+
+func _on_sair_pressed() -> void:
+	SomManager.fechando_grafo.play()
+	color_rect.deslizar()
+	tudo.visible = !tudo.visible
+	aparecendo = !aparecendo

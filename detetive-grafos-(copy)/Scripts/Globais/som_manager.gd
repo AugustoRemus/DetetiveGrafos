@@ -46,9 +46,13 @@ transformacao,botao_dif_hard,botao_dif_izi,botao_dif_medio]
 var volumeMusica = 0
 
 func _ready():
+
 	atualizar_volume(volume)
 	atualizar_volume_musica(volumeMusica)
 	#musica_basica.play()
+
+
+
 
 func erroTocar():
 	sonsErro.pick_random().play()

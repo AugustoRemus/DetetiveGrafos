@@ -7,6 +7,8 @@
 script = ExtResource("1_jyf0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.007843138, 1, 1)
+self_modulate = Color(1, 0.14901961, 1, 1)
 texture = ExtResource("1_nfwdb")
 region_enabled = true
 region_rect = Rect2(2, 35, 27, 26)

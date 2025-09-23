@@ -221,6 +221,21 @@ text = "Não
 "
 script = ExtResource("7_5nq24")
 
+[node name="sair" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.899994
+offset_top = 5.32
+offset_right = -7.899994
+offset_bottom = 28.32
+grow_horizontal = 0
+theme = ExtResource("6_h0wb3")
+text = "Voltar
+"
+script = ExtResource("7_5nq24")
+
 [connection signal="mudarMatrizPlayer" from="Panel/ArestaManager" to="." method="_on_aresta_manager_mudar_matriz_player"]
 [connection signal="pressed" from="Panel/Entregar2" to="Panel/ConfirmarEntrega" method="_on_entregar_2_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="." method="_on_desistir_pressed"]
@@ -230,3 +245,4 @@ script = ExtResource("7_5nq24")
 [connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/simEntrega" to="." method="_on_sim_entrega_pressed"]
 [connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/simEntrega" to="Panel/ConfirmarEntrega" method="_on_sim_entrega_pressed"]
 [connection signal="pressed" from="Panel/ConfirmarEntrega/GridContainer/naoEntrega" to="Panel/ConfirmarEntrega" method="_on_nao_entrega_pressed"]
+[connection signal="pressed" from="Panel/sair" to="." method="_on_sair_pressed"]
