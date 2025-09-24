@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="sorriso" load_steps=3 format=3 uid="uid://dc7sogqyx73k5"]
+
+[ext_resource type="Script" uid="uid://bf6isxkvt37j6" path="res://Resources/hats/sorriso.gd" id="1_x1ogr"]
+[ext_resource type="Texture2D" uid="uid://dw2c4oln6u75m" path="res://Sprites/hats/feliz.png" id="2_7188k"]
+
+[resource]
+script = ExtResource("1_x1ogr")
+nome = "Sorriso"
+descricao = "Aumenta sua área de interação"
+sprite = ExtResource("2_7188k")
+preco = 1
+metadata/_custom_type_script = "uid://bf6isxkvt37j6"

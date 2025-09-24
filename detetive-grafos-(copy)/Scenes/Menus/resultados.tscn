@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cjme6imsja4xo"]
+[gd_scene load_steps=13 format=3 uid="uid://cjme6imsja4xo"]
 
 [ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Menus/resultados.gd" id="1_yvfxy"]
 [ext_resource type="Texture2D" uid="uid://b2mqlfi54yb0r" path="res://Sprites/estrelas/estrela0.png" id="2_1i2rr"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Visual/Fontes/Mechanical-g5Y5.otf" id="4_p23a5"]
 [ext_resource type="Texture2D" uid="uid://cdvjgoe13dtq0" path="res://Sprites/estrelas/estrela3.png" id="5_7xt8f"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="5_rl5xe"]
+[ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="12_1i2rr"]
 
 [node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao", "quantErros", "tempoRestante", "resultado", "estrelasTextura")]
 layout_mode = 3
@@ -132,6 +133,8 @@ theme = ExtResource("4_mxs03")
 text = "Menu
 "
 script = ExtResource("5_rl5xe")
+carregadorScena = true
+scenaCarregar = ExtResource("12_1i2rr")
 
 [node name="PanelEstrelas" type="Panel" parent="."]
 visible = false
@@ -160,5 +163,3 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme = ExtResource("4_08a8k")
 text = "Pontuação:"
-
-[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

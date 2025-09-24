@@ -25,6 +25,11 @@ func _ready():
 	base_offset = offset
 	base_sombra_scale = sombra.scale
 	base_sombra_offset = sombra.offset
+	
+	if GlobalPlayer.hatAtual:
+		hat.texture = GlobalPlayer.hatAtual.sprite
+	else:
+		hat.texture = null
 
 func _animation(direcao):
 	#personagem esta se movendo

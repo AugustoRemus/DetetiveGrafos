@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hi64ifl0o1dn"]
+[gd_scene load_steps=16 format=3 uid="uid://hi64ifl0o1dn"]
 
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="1_4nf6k"]
 [ext_resource type="Script" uid="uid://bpq3o86mflejg" path="res://Scripts/Menus/chapeus.gd" id="1_ceqwd"]
@@ -9,9 +9,14 @@
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="3_vdgsc"]
 [ext_resource type="Resource" uid="uid://cadpy1a1vf7v8" path="res://Resources/hats/ampulheta.tres" id="4_aovg5"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="4_bmcql"]
+[ext_resource type="Resource" uid="uid://dc7sogqyx73k5" path="res://Resources/hats/sorriso.tres" id="5_d4jq1"]
+[ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="6_nbd27"]
 [ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="10_633a3"]
+[ext_resource type="Script" uid="uid://ddd78eyltb0is" path="res://Scripts/Menus/moedas_atual.gd" id="11_buaqj"]
+[ext_resource type="Texture2D" uid="uid://dw11fqw88r8pg" path="res://Sprites/moeda.png" id="12_jupot"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="14_d4jq1"]
 
-[node name="chapeus" type="Control" node_paths=PackedStringArray("labelNome", "labelDescricao", "sprite", "botaoUsar", "botaoComprar", "botaoDesequipar", "labelComprarPreco")]
+[node name="chapeus" type="Control" node_paths=PackedStringArray("labelNome", "labelDescricao", "sprite", "gridPreco", "labelDica", "botaoUsar", "botaoComprar", "botaoDesequipar", "labelComprarPreco")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,14 +27,21 @@ script = ExtResource("1_ceqwd")
 hat1 = ExtResource("2_5wksw")
 hat2 = ExtResource("2_bmcql")
 hat3 = ExtResource("4_aovg5")
-hat4 = ExtResource("3_5wksw")
+hat4 = ExtResource("5_d4jq1")
+hat5 = ExtResource("3_5wksw")
 labelNome = NodePath("Panel/descricaoComprado/nome")
 labelDescricao = NodePath("Panel/descricaoComprado/descricao")
 sprite = NodePath("Panel/descricaoComprado/sprite")
+gridPreco = NodePath("Panel/descricaoComprado/valor")
+labelDica = NodePath("Panel/descricaoComprado/dica")
 botaoUsar = NodePath("Panel/descricaoComprado/usar")
 botaoComprar = NodePath("Panel/descricaoComprado/comprar")
 botaoDesequipar = NodePath("Panel/descricaoComprado/desequipar")
-labelComprarPreco = NodePath("Panel/descricaoComprado/preco")
+labelComprarPreco = NodePath("Panel/descricaoComprado/valor/preco")
+
+[node name="painelFundo" parent="." instance=ExtResource("6_nbd27")]
+layout_mode = 1
+theme = ExtResource("14_d4jq1")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -46,7 +58,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_4nf6k")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="titulo" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -55,9 +67,10 @@ offset_left = -33.5
 offset_right = 33.5
 offset_bottom = 23.0
 grow_horizontal = 2
+theme = ExtResource("14_d4jq1")
 text = "Chapéus"
 
-[node name="GridContainer" type="GridContainer" parent="Panel"]
+[node name="botoesHats" type="GridContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,39 +85,36 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/v_separation = 19
 
-[node name="hatBotao" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao" type="Button" parent="Panel/botoesHats"]
 layout_mode = 2
 theme = ExtResource("3_vdgsc")
-text = "chapeu 1
+text = "Boné
 "
 script = ExtResource("4_bmcql")
 
-[node name="hatBotao2" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao2" type="Button" parent="Panel/botoesHats"]
 layout_mode = 2
 theme = ExtResource("3_vdgsc")
-text = "chapeu 1
+text = "Faixa de corrida"
+script = ExtResource("4_bmcql")
+
+[node name="hatBotao3" type="Button" parent="Panel/botoesHats"]
+layout_mode = 2
+theme = ExtResource("3_vdgsc")
+text = "Ampulheta
 "
 script = ExtResource("4_bmcql")
 
-[node name="hatBotao3" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao4" type="Button" parent="Panel/botoesHats"]
 layout_mode = 2
 theme = ExtResource("3_vdgsc")
-text = "chapeu 1
-"
+text = "Sorriso"
 script = ExtResource("4_bmcql")
 
-[node name="hatBotao4" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao5" type="Button" parent="Panel/botoesHats"]
 layout_mode = 2
 theme = ExtResource("3_vdgsc")
-text = "chapeu 1
-"
-script = ExtResource("4_bmcql")
-
-[node name="hatBotao5" type="Button" parent="Panel/GridContainer"]
-layout_mode = 2
-theme = ExtResource("3_vdgsc")
-text = "chapeu 1
-"
+text = "Primeiro olho"
 script = ExtResource("4_bmcql")
 
 [node name="descricaoComprado" type="Panel" parent="Panel"]
@@ -114,7 +124,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
+offset_left = 22.0
 offset_top = -103.0
 offset_right = 204.0
 offset_bottom = 105.0
@@ -127,66 +137,132 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -22.5
-offset_right = 22.5
-offset_bottom = 23.0
+offset_left = -60.5
+offset_right = 60.5
+offset_bottom = 18.0
 grow_horizontal = 2
+theme = ExtResource("14_d4jq1")
 text = "nome"
+horizontal_alignment = 1
 
 [node name="descricao" type="Label" parent="Panel/descricaoComprado"]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 42.0
-offset_right = 93.0
-offset_bottom = 65.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.5
+offset_top = 30.075
+offset_right = 86.5
+offset_bottom = 67.225006
+grow_horizontal = 2
+theme = ExtResource("14_d4jq1")
+theme_override_font_sizes/font_size = 10
 text = "oque faço"
+horizontal_alignment = 1
 
 [node name="sprite" type="TextureRect" parent="Panel/descricaoComprado"]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 107.0
-offset_right = 103.0
-offset_bottom = 171.0
+offset_left = 59.0
+offset_top = 73.705
+offset_right = 123.0
+offset_bottom = 137.70502
 texture = ExtResource("2_ci0an")
+stretch_mode = 2
 
-[node name="preco" type="Label" parent="Panel/descricaoComprado"]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 134.0
-offset_right = 95.0
-offset_bottom = 157.0
-text = "1 moeda"
+[node name="valor" type="GridContainer" parent="Panel/descricaoComprado"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -79.725006
+offset_right = 36.0
+offset_bottom = -39.724945
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="txtPreco" type="Label" parent="Panel/descricaoComprado/valor"]
+layout_mode = 2
+theme = ExtResource("14_d4jq1")
+text = "custa:"
+
+[node name="preco" type="Label" parent="Panel/descricaoComprado/valor"]
+layout_mode = 2
+theme = ExtResource("14_d4jq1")
+text = "1"
+horizontal_alignment = 1
 
 [node name="comprar" type="Button" parent="Panel/descricaoComprado"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 159.0
-offset_right = 108.0
-offset_bottom = 190.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -36.255005
+offset_right = 37.5
+offset_bottom = -6.255005
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("3_vdgsc")
 text = "comprar"
 script = ExtResource("4_bmcql")
 
 [node name="usar" type="Button" parent="Panel/descricaoComprado"]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 161.0
-offset_right = 93.0
-offset_bottom = 192.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -36.255005
+offset_right = 22.0
+offset_bottom = -6.255005
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("3_vdgsc")
 text = "Usar
 "
 script = ExtResource("4_bmcql")
 
 [node name="desequipar" type="Button" parent="Panel/descricaoComprado"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 165.0
-offset_right = 124.0
-offset_bottom = 188.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.5
+offset_top = -36.255005
+offset_right = 50.5
+offset_bottom = -6.255005
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("3_vdgsc")
 text = "Desequipar"
 script = ExtResource("4_bmcql")
+
+[node name="dica" type="Label" parent="Panel/descricaoComprado"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_d4jq1")
+text = "dica"
 
 [node name="voltar" type="Button" parent="."]
 layout_mode = 0
@@ -201,10 +277,51 @@ script = ExtResource("4_bmcql")
 carregadorScena = true
 scenaCarregar = ExtResource("10_633a3")
 
-[connection signal="pressed" from="Panel/GridContainer/hatBotao" to="." method="_on_hat_botao_pressed"]
-[connection signal="pressed" from="Panel/GridContainer/hatBotao2" to="." method="_on_hat_botao_2_pressed"]
-[connection signal="pressed" from="Panel/GridContainer/hatBotao3" to="." method="_on_hat_botao_3_pressed"]
-[connection signal="pressed" from="Panel/GridContainer/hatBotao4" to="." method="_on_hat_botao_4_pressed"]
+[node name="moedasAtual" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 61.0
+offset_bottom = 49.0
+theme_override_styles/panel = ExtResource("1_4nf6k")
+script = ExtResource("11_buaqj")
+
+[node name="moedasTexture" type="TextureRect" parent="moedasAtual"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_jupot")
+
+[node name="quantMoedas" type="Label" parent="moedasAtual"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_right = 18.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_d4jq1")
+theme_override_font_sizes/font_size = 20
+text = "2"
+
+[connection signal="pressed" from="Panel/botoesHats/hatBotao" to="." method="_on_hat_botao_pressed"]
+[connection signal="pressed" from="Panel/botoesHats/hatBotao2" to="." method="_on_hat_botao_2_pressed"]
+[connection signal="pressed" from="Panel/botoesHats/hatBotao3" to="." method="_on_hat_botao_3_pressed"]
+[connection signal="pressed" from="Panel/botoesHats/hatBotao4" to="." method="_on_hat_botao_4_pressed"]
+[connection signal="pressed" from="Panel/botoesHats/hatBotao5" to="." method="_on_hat_botao_5_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/usar" to="." method="_on_usar_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/desequipar" to="." method="_on_desequipar_pressed"]

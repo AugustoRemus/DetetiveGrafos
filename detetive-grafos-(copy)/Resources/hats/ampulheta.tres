@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_mmt5b")
 nome = "Ampulheta"
-descricao = "te da mais tempo"
+descricao = "Te da mais tempo"
 sprite = ExtResource("2_wkole")
 preco = 2
 metadata/_custom_type_script = "uid://bidyau1tlalvb"

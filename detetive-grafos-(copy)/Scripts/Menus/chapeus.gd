@@ -8,6 +8,7 @@ var hatSelecionado: hat
 @export var hat2: hat
 @export var hat3: hat
 @export var hat4: hat
+@export var hat5: hat
 
 
 @export var labelNome:Label
@@ -16,6 +17,8 @@ var hatSelecionado: hat
 
 @export var sprite: TextureRect
 
+@export var gridPreco: GridContainer
+@export var labelDica: Label
 @export var botaoUsar: Button
 @export var botaoComprar: Button
 @export var botaoDesequipar: Button
@@ -74,23 +77,29 @@ func _attBoes(_setar: int, _hat):
 		
 		#se ele for compravel mostra o valor
 		if _hat.compravel:
+			
+			labelDica.visible = false
+			gridPreco.visible = true
 		#botar o preco 
 			#n tem o dinheiro
 			if _hat.preco > GlobalPlayer.moedas:
 				botaoComprar.visible = false
+				
 			#tem o dinheiro
-			else:
+			if _hat.preco <= GlobalPlayer.moedas:
 				botaoComprar.visible = true
 			#mostra opcao comprar
-		
-			labelComprarPreco.visible = true
+			gridPreco.visible = true
+			#labelComprarPreco.visible = true
 			labelComprarPreco.text = str(_hat.preco)
 			
 		#se ele n for compravel mostra a dica para desbloquear
 		else:
+			gridPreco.visible = false
 			botaoComprar.visible = false
-			labelComprarPreco.visible = true
-			labelComprarPreco.text = str(_hat.dica)
+			#labelComprarPreco.visible = true
+			labelDica.visible = true
+			labelDica.text = str(_hat.dica)
 			
 		#esconce o usar
 		botaoUsar.visible = false
@@ -174,3 +183,7 @@ func _on_hat_botao_3_pressed() -> void:
 
 func _on_hat_botao_4_pressed() -> void:
 	botaoClicado(hat4)
+
+
+func _on_hat_botao_5_pressed() -> void:
+	botaoClicado(hat5)
