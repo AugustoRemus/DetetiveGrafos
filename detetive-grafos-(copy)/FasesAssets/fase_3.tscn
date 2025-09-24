@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dm0uskdyv2ndy"]
+[gd_scene load_steps=25 format=4 uid="uid://dm0uskdyv2ndy"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_pxi76"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ppdh7"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://coj7pn4ojw7tl" path="res://Scripts/Fase/SumirTileSet.gd" id="7_o5rjb"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://Resources/NPCs/testeAmarelo.tres" id="7_wl0cs"]
 [ext_resource type="TileSet" uid="uid://b3di2e406e87m" path="res://FasesAssets/tileset/objetos.tres" id="8_cm0n0"]
-[ext_resource type="Resource" uid="uid://cqdq6qnuwsrqm" path="res://Resources/NPCs/branco.tres" id="9_66ncm"]
 [ext_resource type="TileSet" uid="uid://dao6le70nyyby" path="res://FasesAssets/tileset/BarreiraNPCsNavegacao.tres" id="9_28807"]
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_yxvsj"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/protagonista.tscn" id="13_a7aua"]
@@ -124,14 +123,6 @@ position = Vector2(-405, 7)
 
 [node name="Node2D11" parent="ArrayPontos" instance=ExtResource("12_yxvsj")]
 position = Vector2(-224, 12)
-
-[node name="branco" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodosDestinoFila", "nodoComOsDestinosRandom") instance=ExtResource("5_j3qhg")]
-position = Vector2(281, -18)
-resourceNPC = ExtResource("9_66ncm")
-ListaAmigosSimples = [NodePath("../rosa")]
-nodosDestinoFila = [NodePath("../ArrayPontos/Node2D14"), NodePath("../ArrayPontos/Node2D13"), NodePath("../ArrayPontos/Node2D12")]
-quantDestinos = 6
-nodoComOsDestinosRandom = NodePath("../ArrayPontos")
 
 [node name="amarelo" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_j3qhg")]
 position = Vector2(-556, 464)

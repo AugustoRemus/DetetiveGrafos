@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bvvvnj8tnoaol"]
+[gd_scene load_steps=26 format=4 uid="uid://bvvvnj8tnoaol"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_463j0"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_nhjev"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://b71e643tt8njg" path="res://Resources/NPCs/testeAzul.tres" id="8_t4de6"]
 [ext_resource type="TileSet" uid="uid://dao6le70nyyby" path="res://FasesAssets/tileset/BarreiraNPCsNavegacao.tres" id="9_rspfs"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://Resources/NPCs/testeAmarelo.tres" id="10_yl6cc"]
+[ext_resource type="Resource" uid="uid://cqdq6qnuwsrqm" path="res://Resources/NPCs/branco.tres" id="11_hqkk3"]
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_e4y5o"]
 [ext_resource type="PackedScene" uid="uid://dkbcnmufbpy2f" path="res://Scenes/protagonista.tscn" id="14_wgl67"]
 [ext_resource type="Resource" uid="uid://cgp5cqdtkm3wu" path="res://Resources/NPCs/Cinza.tres" id="15_tnax1"]
@@ -124,10 +125,17 @@ position = Vector2(-405, 7)
 [node name="Node2D11" parent="ArrayPontos" instance=ExtResource("12_e4y5o")]
 position = Vector2(-224, 12)
 
+[node name="branco" parent="." node_paths=PackedStringArray("nodoComOsDestinosRandom") instance=ExtResource("5_hiwvq")]
+position = Vector2(534, 467)
+resourceNPC = ExtResource("11_hqkk3")
+logicaMov = 2
+quantDestinos = 6
+nodoComOsDestinosRandom = NodePath("../ArrayPontos")
+
 [node name="amarelo" parent="." node_paths=PackedStringArray("ListaAmigosSimples", "nodoComOsDestinosRandom") instance=ExtResource("5_hiwvq")]
 position = Vector2(-556, 464)
 resourceNPC = ExtResource("10_yl6cc")
-ListaAmigosSimples = [NodePath("../cinza")]
+ListaAmigosSimples = [NodePath("../cinza"), NodePath("../branco")]
 logicaMov = 2
 nodoComOsDestinosRandom = NodePath("")
 

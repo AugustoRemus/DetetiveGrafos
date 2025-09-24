@@ -25,11 +25,11 @@ func _ready() -> void:
 	_fase = fase.new("fase 2", 2, "fasenda2", 120,preload("uid://dqeil05tuy0vk") )
 	fases.append(_fase)
 	
-	_fase = fase.new("fase 3", 3, "fasenda3", 120,preload("uid://dm0uskdyv2ndy"))
+	_fase = fase.new("fase 3", 3, "fasenda3", 100,preload("uid://dm0uskdyv2ndy"))
 	fases.append(_fase)
 	
 	
-	_fase = fase.new("fase 4", 4, "fasenda4", 120, preload("uid://bvvvnj8tnoaol"))
+	_fase = fase.new("fase 4", 4, "fasenda4", 100, preload("uid://bvvvnj8tnoaol"))
 	fases.append(_fase)
 	
 	
