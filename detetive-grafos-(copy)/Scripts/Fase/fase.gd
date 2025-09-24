@@ -10,6 +10,7 @@ var descricao: String
 var tempo: int
 
 var liberada: bool
+var concluida: bool
 var melhorPontuacao: int
 
 var scena: PackedScene
@@ -26,3 +27,4 @@ func _init(_nome: String, _numero: int, _descricao: String, _temp: int, _scena: 
 	liberada = false
 	melhorPontuacao = 0
 	scena = _scena
+	concluida = false

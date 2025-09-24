@@ -23,7 +23,7 @@ var hatSelecionado: hat
 @export var botaoComprar: Button
 @export var botaoDesequipar: Button
 @export var labelComprarPreco: Label
-
+@export var lalbelTXTCusta: Label
 
 func _ready() -> void:
 	#começa mopstrando o atual ou o primeiro
@@ -90,7 +90,8 @@ func _attBoes(_setar: int, _hat):
 				botaoComprar.visible = true
 			#mostra opcao comprar
 			gridPreco.visible = true
-			#labelComprarPreco.visible = true
+			labelComprarPreco.visible = true
+			lalbelTXTCusta.visible = true
 			labelComprarPreco.text = str(_hat.preco)
 			
 		#se ele n for compravel mostra a dica para desbloquear
@@ -115,7 +116,7 @@ func _attBoes(_setar: int, _hat):
 		#esconce opcao comprar
 		botaoComprar.visible = false
 		labelComprarPreco.visible = false
-		
+		lalbelTXTCusta.visible = false		
 		#esconce opcao desequipar
 		botaoDesequipar.visible = false
 		

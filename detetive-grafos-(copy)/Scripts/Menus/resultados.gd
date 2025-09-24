@@ -34,7 +34,11 @@ func _ready() -> void:
 	else:
 		resultado.text = "CONCLUIDA!"
 		#seta o nivel e libera a proxima fase
-		
+		#se n estava concluida
+		if !Niveis.fases[_nivelAtual].concluida:
+			Niveis.fases[_nivelAtual].concluida = true
+			GlobalPlayer.moedas += 1
+			
 		#deixa o menor
 		if Niveis.fases[_nivelAtual].melhorPontuacao == 0:
 			Niveis.fases[_nivelAtual].melhorPontuacao = _totalErros + 1

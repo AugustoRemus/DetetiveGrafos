@@ -3,6 +3,8 @@ extends Area2D
 
 @export var player: CharacterBody2D
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
 #guarda o corpo atual pra desmarcar se vier um novo
 var corpoAtual: CharacterBody2D
 
@@ -15,6 +17,7 @@ var corpoAtual: CharacterBody2D
 @export var transformadorNode: Node
 
 func _ready() -> void:
+	collision_shape_2d.scale = GlobalPlayer.scaleAreaInteracoes
 	_on_tester_timeout()
 
 func getAtual():

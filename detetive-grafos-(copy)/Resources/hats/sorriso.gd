@@ -4,9 +4,9 @@ class_name sorriso
 
 
 func _equip():
-	GlobalPlayer.scaleAreaInteracoes = 1.3
+	GlobalPlayer.scaleAreaInteracoes = Vector2(2,2)
 	#ass
 
 func _desEquip():
-	GlobalPlayer.scaleAreaInteracoes = 1
+	GlobalPlayer.scaleAreaInteracoes = Vector2(1.0,1.0)
 	#pass

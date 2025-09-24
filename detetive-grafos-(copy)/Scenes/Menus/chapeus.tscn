@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dw11fqw88r8pg" path="res://Sprites/moeda.png" id="12_jupot"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="14_d4jq1"]
 
-[node name="chapeus" type="Control" node_paths=PackedStringArray("labelNome", "labelDescricao", "sprite", "gridPreco", "labelDica", "botaoUsar", "botaoComprar", "botaoDesequipar", "labelComprarPreco")]
+[node name="chapeus" type="Control" node_paths=PackedStringArray("labelNome", "labelDescricao", "sprite", "gridPreco", "labelDica", "botaoUsar", "botaoComprar", "botaoDesequipar", "labelComprarPreco", "lalbelTXTCusta")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,6 +38,7 @@ botaoUsar = NodePath("Panel/descricaoComprado/usar")
 botaoComprar = NodePath("Panel/descricaoComprado/comprar")
 botaoDesequipar = NodePath("Panel/descricaoComprado/desequipar")
 labelComprarPreco = NodePath("Panel/descricaoComprado/valor/preco")
+lalbelTXTCusta = NodePath("Panel/descricaoComprado/valor/txtPreco")
 
 [node name="painelFundo" parent="." instance=ExtResource("6_nbd27")]
 layout_mode = 1
@@ -248,21 +249,23 @@ text = "Desequipar"
 script = ExtResource("4_bmcql")
 
 [node name="dica" type="Label" parent="Panel/descricaoComprado"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -91.0
+offset_top = 9.955002
+offset_right = 95.0
+offset_bottom = 58.454987
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("14_d4jq1")
 text = "dica"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="voltar" type="Button" parent="."]
 layout_mode = 0

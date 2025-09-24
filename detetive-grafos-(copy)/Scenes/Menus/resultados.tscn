@@ -26,7 +26,7 @@ quantErros = NodePath("Panel/GridContainer/Erros")
 tempoRestante = NodePath("Panel/GridContainer/tempo")
 resultado = NodePath("Panel/GridContainer/Resultado")
 estrelasTextura = NodePath("Panel/GridContainer/TextureRect")
-arrayTexturas = Array[Texture2D]([ExtResource("2_1i2rr"), ExtResource("3_enhvw"), ExtResource("4_no05l"), ExtResource("5_7xt8f")])
+arrayTexturas = Array[Texture2D]([ExtResource("2_1i2rr"), ExtResource("5_7xt8f"), ExtResource("4_no05l"), ExtResource("3_enhvw")])
 
 [node name="painelFundo" parent="." instance=ExtResource("2_acucp")]
 layout_mode = 1

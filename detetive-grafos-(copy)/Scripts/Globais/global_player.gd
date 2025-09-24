@@ -10,7 +10,7 @@ var hatsDesbloqueados: Array[hat] = []
 
 var terceiroOlho:bool = false
 
-var scaleAreaInteracoes:float = 1
+var scaleAreaInteracoes:Vector2 = Vector2(1,1)
 
 var tempoAdicional:float = 0
 

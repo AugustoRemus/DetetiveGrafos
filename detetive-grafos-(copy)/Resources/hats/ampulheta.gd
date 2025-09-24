@@ -4,9 +4,9 @@ class_name ampulheta
 
 func _equip():
 	
-	print("mais tempo")
+	GlobalPlayer.tempoAdicional = 15
 	pass
 
 func _desEquip():
-	print("menos tempo")
+	GlobalPlayer.tempoAdicional = 0
 	pass

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cte80ldpkid66"]
 
 [ext_resource type="Script" uid="uid://6gxqm04ujth4" path="res://Scripts/Menus/seletor_fases.gd" id="1_w4kf5"]
-[ext_resource type="Texture2D" uid="uid://ba40qwobjtnst" path="res://Sprites/Placeholders/medalha0.png" id="2_yvhwx"]
-[ext_resource type="Texture2D" uid="uid://d34fhldelagp7" path="res://Sprites/Placeholders/medalha1.png" id="3_f5mdk"]
-[ext_resource type="Texture2D" uid="uid://dulxd7qg6drmf" path="res://Sprites/Placeholders/medalha2.png" id="4_6o0jw"]
-[ext_resource type="Texture2D" uid="uid://dp1jtsyoqujtg" path="res://Sprites/Placeholders/medalha3.png" id="5_bxjtx"]
+[ext_resource type="Texture2D" uid="uid://b2mqlfi54yb0r" path="res://Sprites/estrelas/estrela0.png" id="2_mximk"]
+[ext_resource type="Texture2D" uid="uid://cdvjgoe13dtq0" path="res://Sprites/estrelas/estrela3.png" id="3_7vefo"]
+[ext_resource type="Texture2D" uid="uid://d1ys2auoxbui" path="res://Sprites/estrelas/estrela2.png" id="4_hhijo"]
+[ext_resource type="Texture2D" uid="uid://bndlni8mmyrs1" path="res://Sprites/estrelas/estrela1.png" id="5_hjxoo"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="6_bxjtx"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_f5mdk"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_6o0jw"]
@@ -24,7 +24,7 @@ botaoPlay = NodePath("Panel/botaoStart")
 labelPont = NodePath("Panel/textpontuacao")
 gridContainerBotoesLvl = NodePath("GridContainer2/GridContainer")
 medalhaIcone = NodePath("Panel/medalhas")
-medalhasSprites = Array[Texture2D]([ExtResource("2_yvhwx"), ExtResource("3_f5mdk"), ExtResource("4_6o0jw"), ExtResource("5_bxjtx")])
+medalhasSprites = Array[Texture2D]([ExtResource("2_mximk"), ExtResource("3_7vefo"), ExtResource("4_hhijo"), ExtResource("5_hjxoo")])
 todosBotoes = [NodePath("GridContainer2/fase0"), NodePath("GridContainer2/GridContainer/fase1"), NodePath("GridContainer2/GridContainer/fase2"), NodePath("GridContainer2/GridContainer/fase3"), NodePath("GridContainer2/GridContainer/fase4"), NodePath("GridContainer2/GridContainer/fase5")]
 
 [node name="painelFundo" parent="." instance=ExtResource("6_bxjtx")]
