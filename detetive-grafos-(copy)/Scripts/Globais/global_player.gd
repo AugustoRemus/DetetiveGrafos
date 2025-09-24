@@ -1,13 +1,21 @@
 extends Node
+#debug
+const TERCEIRO_OLHO = preload("uid://cdmh2bdqw5bk0")
 
-var hatAtual: hat
+#debyg
+var hatAtual: hat #= TERCEIRO_OLHO
 
-var moedas: int
+var moedas: int = 2
+
 #para debug botar outros
 #var hatsDesbloqueados: Array[hat] = []
 
+#debyg?
+const HAT_INUTIL = preload("uid://xle4fefbmcyf")
 
-var hatsDesbloqueados: Array[hat] = []
+var hatsDesbloqueados: Array[hat] = [HAT_INUTIL]
+
+var terceiroOlho = false
 
 
 var velocidadeMovimentoPlayer := 250.0

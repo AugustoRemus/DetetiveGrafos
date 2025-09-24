@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ex78oa4urld"
-path="res://.godot/imported/hatTeste2.png-d7ae69b1f049de7eea92d8550900f686.ctex"
+uid="uid://dw2c4oln6u75m"
+path="res://.godot/imported/feliz.png-791206304060a66ec0972a980d84e7a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/hats/hatTeste2.png"
-dest_files=["res://.godot/imported/hatTeste2.png-d7ae69b1f049de7eea92d8550900f686.ctex"]
+source_file="res://Sprites/hats/feliz.png"
+dest_files=["res://.godot/imported/feliz.png-791206304060a66ec0972a980d84e7a2.ctex"]
 
 [params]
 

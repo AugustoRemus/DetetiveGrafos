@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpl46phlokucx"
-path="res://.godot/imported/bone.png-2b30d28c5d5ae006f67983e1b922470f.ctex"
+path="res://.godot/imported/bone.png-8404275d4b8fa95cb07ee3f6ed4601fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPCs/hats/bone.png"
-dest_files=["res://.godot/imported/bone.png-2b30d28c5d5ae006f67983e1b922470f.ctex"]
+source_file="res://Sprites/hats/bone.png"
+dest_files=["res://.godot/imported/bone.png-8404275d4b8fa95cb07ee3f6ed4601fd.ctex"]
 
 [params]
 

@@ -3,7 +3,8 @@ extends Button
 @export var hoverScale: Vector2 = Vector2(1.1,1.1)
 @export var pressedScale: Vector2 = Vector2(0.9,0.9)
 
-
+@export var carregadorScena: bool = false
+@export var scenaCarregar : PackedScene
 
 
 func _ready() -> void:
@@ -21,7 +22,8 @@ func _on_pressed() -> void:
 	button_press_tween.tween_property(self,"scale",pressedScale,0.06).set_trans(Tween.TRANS_SINE)
 	button_press_tween.tween_property(self,"scale",hoverScale,0.12).set_trans(Tween.TRANS_SINE)
 
-	
+	if carregadorScena:
+		get_tree().change_scene_to_packed(scenaCarregar)
 	
 func buttonExit() -> void:
 	if !disabled:

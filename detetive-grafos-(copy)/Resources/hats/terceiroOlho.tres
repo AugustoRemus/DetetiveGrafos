@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="terceiroOlho" load_steps=3 format=3 uid="uid://cdmh2bdqw5bk0"]
+
+[ext_resource type="Script" uid="uid://6i5yqg8c086p" path="res://Resources/hats/terceiroOlho.gd" id="1_ing04"]
+[ext_resource type="Texture2D" uid="uid://8p3qggjlw7u8" path="res://Sprites/hats/olho.png" id="2_rsrtl"]
+
+[resource]
+script = ExtResource("1_ing04")
+nome = "Primeiro olho"
+descricao = "Veja mais?"
+sprite = ExtResource("2_rsrtl")
+dica = "Zere o jogo com a pontuacao maxima"
+compravel = false
+metadata/_custom_type_script = "uid://6i5yqg8c086p"

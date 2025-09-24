@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="hatSpeed" load_steps=3 format=3 uid="uid://cmupo0gg4jhd2"]
 
 [ext_resource type="Script" uid="uid://c102ghps2snyg" path="res://Resources/hats/hatSpeed.gd" id="1_5pf1n"]
-[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/NPCs/hats/bone.png" id="2_2s188"]
+[ext_resource type="Texture2D" uid="uid://gvb0qfwo3ry4" path="res://Sprites/hats/faixaCorrida.png" id="2_2s188"]
 
 [resource]
 script = ExtResource("1_5pf1n")
-nome = "Helicoptero"
+nome = "Faixa de corrida"
+descricao = "Ande mais rápido"
 sprite = ExtResource("2_2s188")
+preco = 1
 metadata/_custom_type_script = "uid://c102ghps2snyg"

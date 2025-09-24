@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://ckf1g5wqysw3g" path="res://Scripts/NPCs/logicaMov/logica_destino.gd" id="5_ujk41"]
 [ext_resource type="Texture2D" uid="uid://c2wumafichcfv" path="res://Sprites/outros/sombraBasica.png" id="9_4tvce"]
 [ext_resource type="Script" uid="uid://dhl8l8mv4waxx" path="res://Scripts/NPCs/logica_interacoes.gd" id="9_taqbl"]
-[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/NPCs/hats/bone.png" id="10_pcq1i"]
+[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/hats/bone.png" id="10_pcq1i"]
 [ext_resource type="Script" uid="uid://2tlwpdjpjfng" path="res://Scripts/NPCs/logicaMov/filaLogica.gd" id="11_pcn8s"]
 [ext_resource type="Script" uid="uid://duvnf2b58jy7g" path="res://Scripts/NPCs/logicaMov/logica_statica.gd" id="12_4tvce"]
 

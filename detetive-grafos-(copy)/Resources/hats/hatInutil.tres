@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="hat" load_steps=3 format=3 uid="uid://xle4fefbmcyf"]
+
+[ext_resource type="Script" uid="uid://ctlhgmlaa88v7" path="res://Resources/hats/hats.gd" id="1_m0u2n"]
+[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/hats/bone.png" id="2_2bb78"]
+
+[resource]
+script = ExtResource("1_m0u2n")
+nome = "Boné"
+descricao = "Faz absolutamente nada"
+sprite = ExtResource("2_2bb78")
+metadata/_custom_type_script = "uid://ctlhgmlaa88v7"

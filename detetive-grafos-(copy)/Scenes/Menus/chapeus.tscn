@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://hi64ifl0o1dn"]
+[gd_scene load_steps=11 format=3 uid="uid://hi64ifl0o1dn"]
 
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="1_4nf6k"]
 [ext_resource type="Script" uid="uid://bpq3o86mflejg" path="res://Scripts/Menus/chapeus.gd" id="1_ceqwd"]
-[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/NPCs/hats/bone.png" id="2_ci0an"]
+[ext_resource type="Resource" uid="uid://xle4fefbmcyf" path="res://Resources/hats/hatInutil.tres" id="2_5wksw"]
+[ext_resource type="Resource" uid="uid://cmupo0gg4jhd2" path="res://Resources/hats/speedHat.tres" id="2_bmcql"]
+[ext_resource type="Texture2D" uid="uid://dpl46phlokucx" path="res://Sprites/hats/bone.png" id="2_ci0an"]
+[ext_resource type="Resource" uid="uid://cdmh2bdqw5bk0" path="res://Resources/hats/terceiroOlho.tres" id="3_5wksw"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="3_vdgsc"]
+[ext_resource type="Resource" uid="uid://cadpy1a1vf7v8" path="res://Resources/hats/ampulheta.tres" id="4_aovg5"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="4_bmcql"]
+[ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="10_633a3"]
 
-[node name="chapeus" type="Control"]
+[node name="chapeus" type="Control" node_paths=PackedStringArray("labelNome", "labelDescricao", "sprite", "botaoUsar", "botaoComprar", "botaoDesequipar", "labelComprarPreco")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +19,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ceqwd")
+hat1 = ExtResource("2_5wksw")
+hat2 = ExtResource("2_bmcql")
+hat3 = ExtResource("4_aovg5")
+hat4 = ExtResource("3_5wksw")
+labelNome = NodePath("Panel/descricaoComprado/nome")
+labelDescricao = NodePath("Panel/descricaoComprado/descricao")
+sprite = NodePath("Panel/descricaoComprado/sprite")
+botaoUsar = NodePath("Panel/descricaoComprado/usar")
+botaoComprar = NodePath("Panel/descricaoComprado/comprar")
+botaoDesequipar = NodePath("Panel/descricaoComprado/desequipar")
+labelComprarPreco = NodePath("Panel/descricaoComprado/preco")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -46,31 +64,48 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -220.0
-offset_top = -115.5
-offset_right = -33.0
-offset_bottom = 115.5
+offset_left = -224.0
+offset_top = -113.0
+offset_right = -37.0
+offset_bottom = 118.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/v_separation = 19
 
-[node name="Button" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
+theme = ExtResource("3_vdgsc")
 text = "chapeu 1
 "
+script = ExtResource("4_bmcql")
 
-[node name="Button2" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao2" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "chapeu 2"
-
-[node name="Button3" type="Button" parent="Panel/GridContainer"]
-layout_mode = 2
-text = "chapeu 3
+theme = ExtResource("3_vdgsc")
+text = "chapeu 1
 "
+script = ExtResource("4_bmcql")
 
-[node name="Button4" type="Button" parent="Panel/GridContainer"]
+[node name="hatBotao3" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "chapeu 4
+theme = ExtResource("3_vdgsc")
+text = "chapeu 1
 "
+script = ExtResource("4_bmcql")
+
+[node name="hatBotao4" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_vdgsc")
+text = "chapeu 1
+"
+script = ExtResource("4_bmcql")
+
+[node name="hatBotao5" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+theme = ExtResource("3_vdgsc")
+text = "chapeu 1
+"
+script = ExtResource("4_bmcql")
 
 [node name="descricaoComprado" type="Panel" parent="Panel"]
 layout_mode = 1
@@ -87,7 +122,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_4nf6k")
 
-[node name="Label" type="Label" parent="Panel/descricaoComprado"]
+[node name="nome" type="Label" parent="Panel/descricaoComprado"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -114,13 +149,23 @@ offset_right = 103.0
 offset_bottom = 171.0
 texture = ExtResource("2_ci0an")
 
+[node name="preco" type="Label" parent="Panel/descricaoComprado"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 134.0
+offset_right = 95.0
+offset_bottom = 157.0
+text = "1 moeda"
+
 [node name="comprar" type="Button" parent="Panel/descricaoComprado"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 159.0
 offset_right = 108.0
 offset_bottom = 190.0
+theme = ExtResource("3_vdgsc")
 text = "comprar"
+script = ExtResource("4_bmcql")
 
 [node name="usar" type="Button" parent="Panel/descricaoComprado"]
 layout_mode = 0
@@ -128,5 +173,38 @@ offset_left = 49.0
 offset_top = 161.0
 offset_right = 93.0
 offset_bottom = 192.0
+theme = ExtResource("3_vdgsc")
 text = "Usar
 "
+script = ExtResource("4_bmcql")
+
+[node name="desequipar" type="Button" parent="Panel/descricaoComprado"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 165.0
+offset_right = 124.0
+offset_bottom = 188.0
+theme = ExtResource("3_vdgsc")
+text = "Desequipar"
+script = ExtResource("4_bmcql")
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 322.0
+offset_right = 620.0
+offset_bottom = 345.0
+theme = ExtResource("3_vdgsc")
+text = "Voltar
+"
+script = ExtResource("4_bmcql")
+carregadorScena = true
+scenaCarregar = ExtResource("10_633a3")
+
+[connection signal="pressed" from="Panel/GridContainer/hatBotao" to="." method="_on_hat_botao_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/hatBotao2" to="." method="_on_hat_botao_2_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/hatBotao3" to="." method="_on_hat_botao_3_pressed"]
+[connection signal="pressed" from="Panel/GridContainer/hatBotao4" to="." method="_on_hat_botao_4_pressed"]
+[connection signal="pressed" from="Panel/descricaoComprado/comprar" to="." method="_on_comprar_pressed"]
+[connection signal="pressed" from="Panel/descricaoComprado/usar" to="." method="_on_usar_pressed"]
+[connection signal="pressed" from="Panel/descricaoComprado/desequipar" to="." method="_on_desequipar_pressed"]
