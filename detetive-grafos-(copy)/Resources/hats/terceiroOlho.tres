@@ -8,6 +8,6 @@ script = ExtResource("1_ing04")
 nome = "Primeiro olho"
 descricao = "Veja mais?"
 sprite = ExtResource("2_rsrtl")
-dica = "Zere o jogo com a pontuacao maxima"
+dica = "Veja além do obvio"
 compravel = false
 metadata/_custom_type_script = "uid://6i5yqg8c086p"

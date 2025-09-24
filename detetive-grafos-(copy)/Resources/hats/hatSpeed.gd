@@ -3,8 +3,8 @@ class_name hatSpeed
 
 
 func _equip():
-	GlobalPlayer.velocidadeMovimentoPlayer = 350
-	GlobalPlayer.bobSpeedPlayer = 0.9
+	GlobalPlayer.velocidadeMovimentoPlayer = 300
+	GlobalPlayer.bobSpeedPlayer = 0.8
 	pass
 
 func _desEquip():

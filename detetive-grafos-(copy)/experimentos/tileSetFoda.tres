@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=34 format=3 uid="uid://bii76q5db671s"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://bii76q5db671s"]
 
 [ext_resource type="Texture2D" uid="uid://dcie3v3rs7kvm" path="res://Sprites/tileSets/spirteShadersTilesetPNG.png" id="1_bu0rl"]
 
@@ -136,6 +136,8 @@ vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8b7f1"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p0cqu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -291,6 +293,7 @@ separation = Vector2i(1, 1)
 5:1/0/terrain_set = 0
 5:1/0/terrains_peering_bit/top_right_corner = 0
 5:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_s10rd")
+7:0/next_alternative_id = 2
 7:0/0 = 0
 7:0/0/terrain_set = 0
 7:0/0/terrain = 0
@@ -303,6 +306,9 @@ separation = Vector2i(1, 1)
 7:0/0/terrains_peering_bit/top_side = 0
 7:0/0/terrains_peering_bit/top_right_corner = 0
 7:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mv2n7")
+7:0/1 = 1
+7:0/1/navigation_layer_0/polygon = SubResource("NavigationPolygon_8b7f1")
+8:0/next_alternative_id = 2
 8:0/0 = 0
 8:0/0/terrain_set = 0
 8:0/0/terrain = 0
@@ -315,6 +321,7 @@ separation = Vector2i(1, 1)
 8:0/0/terrains_peering_bit/top_side = 0
 8:0/0/terrains_peering_bit/top_right_corner = 0
 8:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_mrt0q")
+8:0/1 = 1
 9:0/0 = 0
 9:0/0/terrain_set = 0
 9:0/0/terrain = 0

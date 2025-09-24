@@ -8,5 +8,5 @@ script = ExtResource("1_x1ogr")
 nome = "Sorriso"
 descricao = "Aumenta sua área de interação"
 sprite = ExtResource("2_7188k")
-preco = 1
+preco = 3
 metadata/_custom_type_script = "uid://bf6isxkvt37j6"

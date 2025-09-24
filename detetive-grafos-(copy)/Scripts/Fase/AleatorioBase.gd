@@ -23,7 +23,7 @@ func CriarGrafo(NPCS: Array[NPCClasse]) -> Array:
 		#adiciona a linha
 		matriz_adjacencia.append(linha)
 
-
+	
 	#preenche com coisa aleatoria, faz até a metade para ficar 
 	#um lado igual do outro pois e uma grafo simples
 	for i in range(n/2):
@@ -32,5 +32,11 @@ func CriarGrafo(NPCS: Array[NPCClasse]) -> Array:
 				#bota 0 ou 1 se forem diferente
 				matriz_adjacencia[i][j] = str(randi() % 2)
 				matriz_adjacencia[j][i] = matriz_adjacencia[i][j]
+				if matriz_adjacencia[i][j] == "1":
+					NPCS[i].ListaAmigosSimples.append(NPCS[j])
+				
+
+		
+	Matrizes.printMatriz(matriz_adjacencia)
 			
 	return matriz_adjacencia

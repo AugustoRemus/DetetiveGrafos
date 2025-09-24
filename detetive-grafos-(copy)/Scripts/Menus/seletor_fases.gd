@@ -29,7 +29,7 @@ func _ready() -> void:
 
 func _on_fase_0_pressed() -> void:
 	
-	var scenaPacked0 = preload("res://FasesAssets/fase0.tscn")
+	#var scenaPacked0 = preload("res://FasesAssets/fase0.tscn")
 	_setarFase(Niveis.fases[0])
 	
 		
@@ -77,6 +77,7 @@ func _resetTodos():
 	
 	numeroFaseLabel.text = "Escolha a fase"
 	carregarScena = null
+	faseSelecionada = null
 	
 	botaoPlay.visible = false
 	labelPont.visible = false

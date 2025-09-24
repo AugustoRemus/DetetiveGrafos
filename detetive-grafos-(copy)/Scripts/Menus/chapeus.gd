@@ -129,6 +129,7 @@ func _attBoes(_setar: int, _hat):
 		botaoUsar.visible = false
 		#esconde opcao comprar
 		labelComprarPreco.visible = false
+		lalbelTXTCusta.visible = false
 		botaoComprar.visible = false
 		
 		#pass

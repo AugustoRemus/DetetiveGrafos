@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_d4142")
 Rsprite = ExtResource("1_twxwq")
-RnomeCor = "verde"
+RnomeCor = "Verde"
 Rspeed = 30.0
 RbobSpeed = 0.3
 RtempoEsperaMin = 2.0

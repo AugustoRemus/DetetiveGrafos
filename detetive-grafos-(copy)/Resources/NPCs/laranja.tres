@@ -8,6 +8,7 @@ script = ExtResource("2_iix28")
 Rsprite = ExtResource("1_4uto7")
 RnomeCor = "Laranja"
 Rspeed = 100.0
+RbobSpeed = 0.3
 RtempoEsperaMin = 2.0
 RtempoEsperaMax = 2.0
 metadata/_custom_type_script = "uid://b12qt62netlng"

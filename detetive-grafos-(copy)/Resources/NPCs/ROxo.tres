@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="NPCs" load_steps=3 format=3 uid="uid://daf8d6ga66di5"]
+
+[ext_resource type="Script" uid="uid://b12qt62netlng" path="res://Resources/NPCs/NPCsResource.gd" id="1_5qmhy"]
+[ext_resource type="Texture2D" uid="uid://d2sj3pn1mmw01" path="res://Sprites/NPCs/roxo.png" id="1_uedbr"]
+
+[resource]
+script = ExtResource("1_5qmhy")
+Rsprite = ExtResource("1_uedbr")
+RnomeCor = "Roxo"
+Rspeed = 150.0
+RbobSpeed = 0.6
+RtempoEsperaMin = 4.0
+RtempoEsperaMax = 6.0
+metadata/_custom_type_script = "uid://b12qt62netlng"

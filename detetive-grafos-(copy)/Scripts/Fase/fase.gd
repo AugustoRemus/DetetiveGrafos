@@ -15,7 +15,7 @@ var melhorPontuacao: int
 
 var scena: PackedScene
 
-
+var final : bool 
 
 func _init(_nome: String, _numero: int, _descricao: String, _temp: int, _scena: PackedScene) -> void:
 	
@@ -28,3 +28,4 @@ func _init(_nome: String, _numero: int, _descricao: String, _temp: int, _scena: 
 	melhorPontuacao = 0
 	scena = _scena
 	concluida = false
+	final = false

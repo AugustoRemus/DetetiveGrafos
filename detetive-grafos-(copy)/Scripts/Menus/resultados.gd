@@ -29,6 +29,11 @@ func _ready() -> void:
 	if _totalErros >= 3:
 		resultado.text = "FALHADA!"
 		estrelasTextura.texture = arrayTexturas[0]
+		
+		#se perdeu no 0
+		if Niveis.fases[0] == Niveis.faseAtual:
+			GlobalPlayer.hatsDesbloqueados.append(preload("uid://cdmh2bdqw5bk0"))
+			resultado.text = "FALHADA!?!?"
 		return
 		#botar label e tals
 	else:
@@ -50,7 +55,7 @@ func _ready() -> void:
 		estrelasTextura.texture = arrayTexturas[_totalErros+1]
 		
 		#testa se n é o ultimo nivel
-		if _nivelAtual != Niveis.quantNiveis:
+		if !Niveis.faseAtual.final:
 			Niveis.fases[_nivelAtual+1].liberada = true
 		#se for o ultimo nivel
 		else:

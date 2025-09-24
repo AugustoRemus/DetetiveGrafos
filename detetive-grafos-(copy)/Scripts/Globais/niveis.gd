@@ -33,6 +33,7 @@ func _ready() -> void:
 	fases.append(_fase)
 	
 	
-	_fase = fase.new("fase 5", 5, "fasenda5", 120, preload("uid://dkjj5eo8dulo3"))
+	_fase = fase.new("Aleatório", 5, "fasenda5", 120, preload("uid://dkjj5eo8dulo3"))
+	_fase.final = true
 	fases.append(_fase)
 	
