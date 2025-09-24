@@ -81,4 +81,5 @@ func setarTimer():
 	for nodo in _todos:
 		if nodo.name == "timer":
 			#print(faseClasse.tempo)
-			nodo.tempo = float(faseClasse.tempo)
+			
+			nodo.setTimer(float(faseClasse.tempo))

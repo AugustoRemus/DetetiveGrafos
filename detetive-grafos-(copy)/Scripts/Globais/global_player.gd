@@ -12,7 +12,7 @@ var terceiroOlho:bool = false
 
 var scaleAreaInteracoes:Vector2 = Vector2(1,1)
 
-var tempoAdicional:float = 0
+var tempoAdicional: float = 0
 
 
 var velocidadeMovimentoPlayer := 250.0

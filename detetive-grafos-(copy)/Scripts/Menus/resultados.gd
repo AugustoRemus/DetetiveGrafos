@@ -49,8 +49,15 @@ func _ready() -> void:
 		#mostra o sprite
 		estrelasTextura.texture = arrayTexturas[_totalErros+1]
 		
+		#testa se n é o ultimo nivel
 		if _nivelAtual != Niveis.quantNiveis:
-			#libera o proximo nivel se n foi o ultimo
 			Niveis.fases[_nivelAtual+1].liberada = true
+		#se for o ultimo nivel
+		else:
+			
+			#falta testar
+			GlobalPlayer.hatsDesbloqueados.append(preload("uid://cdmh2bdqw5bk0"))
+			
+		
 		
 	

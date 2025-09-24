@@ -14,12 +14,22 @@ var rodando = true
 
 func  _ready() -> void:
 	#ajusta dificuldade
+	
 	clock.speed_scale = 1
+	
+
+
+func setTimer(_tempoBase: float):
+	tempo = _tempoBase
 	if Niveis.dificuldade == 1:
 		tempo = tempo + 30
 	if Niveis.dificuldade == 0:
 		tempo = tempo + 60
-		
+	
+	tempo = tempo + GlobalPlayer.tempoAdicional
+	
+
+
 
 
 #ser um pouco mais perdoavel se pa
