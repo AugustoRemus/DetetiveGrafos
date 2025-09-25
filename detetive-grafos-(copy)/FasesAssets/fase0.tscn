@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://7o1tn60hux7k"]
+[gd_scene load_steps=26 format=4 uid="uid://7o1tn60hux7k"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_6pv3x"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ulo56"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="7_empmn"]
 [ext_resource type="Script" uid="uid://coj7pn4ojw7tl" path="res://Scripts/Fase/SumirTileSet.gd" id="7_n3xwa"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://Resources/NPCs/testeAmarelo.tres" id="8_rkyc0"]
+[ext_resource type="Texture2D" uid="uid://xyngb37y3t26" path="res://Sprites/tutorial/tutorialclicarEAse.png" id="11_gy4co"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://Resources/NPCs/testeVerde.tres" id="12_e04pu"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="12_or1hc"]
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_y5uwd"]
@@ -67,6 +68,9 @@ script = ExtResource("7_n3xwa")
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_sija4")]
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="timer"]
+texture = ExtResource("11_gy4co")
 
 [node name="grafoPlayer" parent="." instance=ExtResource("4_a3jqw")]
 

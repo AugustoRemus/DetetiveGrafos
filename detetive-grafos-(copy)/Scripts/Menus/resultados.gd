@@ -11,9 +11,12 @@ extends Control
 @export var estrelasTextura: TextureRect
 @export var arrayTexturas: Array[Texture2D]
 
+
+@export var botaoProxFase: Button
+
 var _totalErros
 
-
+signal resultadoSignal(ganhou: bool)
 
 func _ready() -> void:
 	_totalErros = Matrizes.calcularErro()
@@ -28,6 +31,9 @@ func _ready() -> void:
 	#falhou
 	if _totalErros >= 3:
 		resultado.text = "FALHADA!"
+		
+		resultadoSignal.emit(false)
+		
 		estrelasTextura.texture = arrayTexturas[0]
 		
 		#se perdeu no 0
@@ -38,6 +44,8 @@ func _ready() -> void:
 		#botar label e tals
 	else:
 		resultado.text = "CONCLUIDA!"
+		#ativa botao next fase
+		resultadoSignal.emit(true)
 		#seta o nivel e libera a proxima fase
 		#se n estava concluida
 		if !Niveis.fases[_nivelAtual].concluida:

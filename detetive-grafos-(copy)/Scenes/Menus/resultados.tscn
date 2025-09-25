@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjme6imsja4xo"]
+[gd_scene load_steps=14 format=3 uid="uid://cjme6imsja4xo"]
 
 [ext_resource type="Script" uid="uid://c8rpn6sp5ah6b" path="res://Scripts/Menus/resultados.gd" id="1_yvfxy"]
 [ext_resource type="Texture2D" uid="uid://b2mqlfi54yb0r" path="res://Sprites/estrelas/estrela0.png" id="2_1i2rr"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cdvjgoe13dtq0" path="res://Sprites/estrelas/estrela3.png" id="5_7xt8f"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="5_rl5xe"]
 [ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="12_1i2rr"]
+[ext_resource type="Script" uid="uid://b6b1gh82hw2ed" path="res://Scripts/Menus/nextFase.gd" id="13_enhvw"]
 
-[node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao", "quantErros", "tempoRestante", "resultado", "estrelasTextura")]
+[node name="Resultados" type="Control" node_paths=PackedStringArray("voltarBotao", "quantErros", "tempoRestante", "resultado", "estrelasTextura", "botaoProxFase")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +28,7 @@ tempoRestante = NodePath("Panel/GridContainer/tempo")
 resultado = NodePath("Panel/GridContainer/Resultado")
 estrelasTextura = NodePath("Panel/GridContainer/TextureRect")
 arrayTexturas = Array[Texture2D]([ExtResource("2_1i2rr"), ExtResource("5_7xt8f"), ExtResource("4_no05l"), ExtResource("3_enhvw")])
+botaoProxFase = NodePath("Node/ProximaFase")
 
 [node name="painelFundo" parent="." instance=ExtResource("2_acucp")]
 layout_mode = 1
@@ -124,11 +126,18 @@ theme = ExtResource("4_08a8k")
 text = "Relatorio Final"
 
 [node name="voltar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 321.0
-offset_right = 629.0
-offset_bottom = 352.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -261.275
+offset_top = -34.91501
+offset_right = -208.27505
+offset_bottom = -9.820007
+grow_horizontal = 0
+grow_vertical = 0
 theme = ExtResource("4_mxs03")
 text = "Menu
 "
@@ -163,3 +172,25 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme = ExtResource("4_08a8k")
 text = "Pontuação:"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("13_enhvw")
+
+[node name="ProximaFase" type="Button" parent="Node"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -145.53
+offset_top = -34.91501
+offset_right = -15.530029
+offset_bottom = -9.820007
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_mxs03")
+text = "Proxima Fase "
+script = ExtResource("5_rl5xe")
+
+[connection signal="resultadoSignal" from="." to="Node" method="_on_resultados_resultado_signal"]
+[connection signal="pressed" from="Node/ProximaFase" to="Node" method="_on_proxima_fase_pressed"]
