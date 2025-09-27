@@ -129,7 +129,7 @@ position = Vector2(-405, 7)
 position = Vector2(-224, 12)
 
 [node name="corpoVerde" parent="." instance=ExtResource("15_d7pes")]
-position = Vector2(-180, 572)
+position = Vector2(471, -270)
 slide_on_ceiling = false
 
 [node name="amarelo" parent="." node_paths=PackedStringArray("nodoComOsDestinosRandom") instance=ExtResource("5_jydag")]
@@ -167,7 +167,7 @@ nodosDestinoFila = [NodePath("../ArrayPontos/Node2D14"), NodePath("../ArrayPonto
 quantDestinos = 6
 
 [node name="Player" parent="." instance=ExtResource("12_2jyrl")]
-position = Vector2(-161, 182)
+position = Vector2(-179, 252)
 
 [node name="Area2D" type="Area2D" parent="Player"]
 
