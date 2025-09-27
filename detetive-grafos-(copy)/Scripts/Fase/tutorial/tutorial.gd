@@ -2,17 +2,16 @@ extends CanvasLayer
 
 @onready var panel: Panel = $Panel
 
-@onready var tutorial_2: Button = $tutorial2
+@onready var espaço: AnimatedSprite2D = $espaço
 
-var aberto = true
 
-func _on_tutorial_2_pressed() -> void:
-	panel.visible = !panel.visible
-	if aberto:
-		tutorial_2.text = "tutorial"
-		
-	if !aberto:
-		tutorial_2.text = "fechar"
-		
-	aberto = !aberto
-	pass # Replace with function body.
+func _on_player_transformei_tutorial() -> void:
+	espaço.play("E")
+
+
+func _on_player_interagi_com(npc: Variant) -> void:
+	espaço.play("Espaco")
+
+
+func _on_grafo_player_mudei_valor_tutorial() -> void:
+	queue_free()

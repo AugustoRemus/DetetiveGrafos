@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://7o1tn60hux7k"]
+[gd_scene load_steps=38 format=4 uid="uid://7o1tn60hux7k"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_6pv3x"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ulo56"]
@@ -14,15 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="7_empmn"]
 [ext_resource type="Script" uid="uid://coj7pn4ojw7tl" path="res://Scripts/Fase/SumirTileSet.gd" id="7_n3xwa"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://Resources/NPCs/testeAmarelo.tres" id="8_rkyc0"]
-[ext_resource type="Texture2D" uid="uid://xyngb37y3t26" path="res://Sprites/tutorial/tutorialclicarEAse.png" id="11_gy4co"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://Resources/NPCs/testeVerde.tres" id="12_e04pu"]
-[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="12_or1hc"]
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_y5uwd"]
 [ext_resource type="Resource" uid="uid://6p5ynvtcsw5u" path="res://Resources/NPCs/laranja.tres" id="16_y5uwd"]
-[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="17_mo8d8"]
 [ext_resource type="Script" uid="uid://xivxx2mwnjwr" path="res://Scripts/Fase/tutorial/tutorial.gd" id="17_swvk5"]
-[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="18_swvk5"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="20_fhhmd"]
+[ext_resource type="Texture2D" uid="uid://bwr86k2hqwum4" path="res://Sprites/tutorial/TUTORIAL E RELACAOpngpng.png" id="22_4x2ci"]
+[ext_resource type="Texture2D" uid="uid://cq2n5gcjpt3sk" path="res://Sprites/tutorial/TUTORIALESPACOpng.png" id="23_gy4co"]
+[ext_resource type="Texture2D" uid="uid://dhwlo4usdqa55" path="res://Sprites/tutorial/TUTORIAL Q TRANSFORMARpng.png" id="24_r7jjm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y5uwd"]
 texture = ExtResource("3_vcgx8")
@@ -32,6 +31,108 @@ texture = ExtResource("3_vcgx8")
 
 [sub_resource type="TileSet" id="TileSet_mo8d8"]
 sources/0 = SubResource("TileSetAtlasSource_y5uwd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrtd"]
+atlas = ExtResource("22_4x2ci")
+region = Rect2(0, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndg44"]
+atlas = ExtResource("22_4x2ci")
+region = Rect2(196, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mdda"]
+atlas = ExtResource("22_4x2ci")
+region = Rect2(392, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qlih"]
+atlas = ExtResource("22_4x2ci")
+region = Rect2(588, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x2ci"]
+atlas = ExtResource("23_gy4co")
+region = Rect2(0, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7jjm"]
+atlas = ExtResource("23_gy4co")
+region = Rect2(196, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y3ei"]
+atlas = ExtResource("23_gy4co")
+region = Rect2(392, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vmab"]
+atlas = ExtResource("23_gy4co")
+region = Rect2(588, 0, 196, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2fg0"]
+atlas = ExtResource("24_r7jjm")
+region = Rect2(0, 0, 197, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3ig4"]
+atlas = ExtResource("24_r7jjm")
+region = Rect2(197, 0, 197, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxgsd"]
+atlas = ExtResource("24_r7jjm")
+region = Rect2(394, 0, 197, 69)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da2su"]
+atlas = ExtResource("24_r7jjm")
+region = Rect2(591, 0, 197, 69)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjrtd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrtd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndg44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mdda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qlih")
+}],
+"loop": true,
+"name": &"E",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x2ci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7jjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y3ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1vmab")
+}],
+"loop": true,
+"name": &"Espaco",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2fg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3ig4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxgsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da2su")
+}],
+"loop": true,
+"name": &"Q",
+"speed": 8.0
+}]
 
 [node name="FaseDebug" type="Node2D"]
 y_sort_enabled = true
@@ -68,9 +169,6 @@ script = ExtResource("7_n3xwa")
 [node name="timer" parent="." node_paths=PackedStringArray("grafoPlayer") instance=ExtResource("3_sija4")]
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="timer"]
-texture = ExtResource("11_gy4co")
 
 [node name="grafoPlayer" parent="." instance=ExtResource("4_a3jqw")]
 
@@ -124,7 +222,7 @@ resourceNPC = ExtResource("8_rkyc0")
 logicaMov = 2
 
 [node name="Verde" parent="." node_paths=PackedStringArray("nodoComOsDestinosRandom") instance=ExtResource("7_empmn")]
-position = Vector2(-78, 175)
+position = Vector2(213, 40)
 resourceNPC = ExtResource("12_e04pu")
 quantDestinos = 5
 nodoComOsDestinosRandom = NodePath("../ArrayPontos")
@@ -151,57 +249,23 @@ editor_draw_limits = true
 layer = 0
 script = ExtResource("17_swvk5")
 
-[node name="tutorial2" type="Button" parent="tutorial"]
-offset_left = 542.0
-offset_top = 10.0
-offset_right = 624.0
-offset_bottom = 33.0
-theme = ExtResource("17_mo8d8")
-text = "fechar"
-script = ExtResource("18_swvk5")
-
 [node name="Panel" type="Panel" parent="tutorial"]
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -201.5
-offset_top = -110.5
-offset_right = 201.5
-offset_bottom = 110.5
+offset_left = -92.0
+offset_right = 92.0
+offset_bottom = 67.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = ExtResource("20_fhhmd")
 
-[node name="Label" type="Label" parent="tutorial/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme = ExtResource("12_or1hc")
-theme_override_font_sizes/font_size = 30
-text = "Tutorial:"
+[node name="espaço" type="AnimatedSprite2D" parent="tutorial"]
+position = Vector2(318.5, 32.5)
+sprite_frames = SubResource("SpriteFrames_fjrtd")
+animation = &"Q"
+autoplay = "Q"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="tutorial/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -65.5
-offset_right = 187.0
-offset_bottom = 65.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("12_or1hc")
-theme_override_font_sizes/normal_font_size = 13
-theme_override_font_sizes/bold_font_size = 10
-theme_override_font_sizes/bold_italics_font_size = 10
-theme_override_font_sizes/italics_font_size = 10
-theme_override_font_sizes/mono_font_size = 10
-text = "Bem vindo ao Detetive Grafos, seu trabalho é descobrir as relações dos NPCs e anotar em seu grafo, para isso se transforme neles clicando Q e depois converse com os outros usando E, ao descobrir as relações clique Espaço para anotar, Clique em 2 NPCs para criar uma aresta entre eles, e novamente para apagar, quando terminiar clique em confirmar!"
-
-[connection signal="pressed" from="tutorial/tutorial2" to="tutorial" method="_on_tutorial_2_pressed"]
+[connection signal="mudeiValorTutorial" from="grafoPlayer" to="tutorial" method="_on_grafo_player_mudei_valor_tutorial"]
+[connection signal="TransformeiTutorial" from="Player" to="tutorial" method="_on_player_transformei_tutorial"]
+[connection signal="interagiCom" from="Player" to="tutorial" method="_on_player_interagi_com"]

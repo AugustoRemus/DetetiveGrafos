@@ -4,6 +4,8 @@ extends Node
 
 @export var area = Area2D
 
+signal interagi(npc)
+
 #zoom esta bugando as texturas
 func _input(event: InputEvent) -> void:
 	#so tranforma se n tem ninguem pra conversar
@@ -11,7 +13,7 @@ func _input(event: InputEvent) -> void:
 		#se tiver algo no id 
 		if (player.idNPCTransformado!= null and area.corpoAtual != null ):
 			gerarInteracao(area.corpoAtual, player.idNPCTransformado)
-			
+			interagi.emit(area.corpoAtual)
 		else:		
 			SomManager.erro.play()
 
@@ -20,6 +22,11 @@ func _input(event: InputEvent) -> void:
 		
 
 func gerarInteracao(npc: NPCClasse, id:int):
+	
+	#cena especialFinal
+	if npc.nomeCor == "Laranja" and player.corDoMorto:
+		print("cena secreta")
+	
 	npc.LogicaInteraçoes.interacaoID(id)
 	
 	pass

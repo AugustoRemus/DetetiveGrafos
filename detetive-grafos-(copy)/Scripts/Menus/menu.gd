@@ -1,6 +1,9 @@
 extends Control
 
 
+func _ready() -> void:
+	get_tree().get_root().set_transparent_background(true)
+
 func _on_jogar_pressed() -> void:
 	#SomManager.click.play()
 	get_tree().change_scene_to_file("res://Scenes/Menus/seletor_fases.tscn")

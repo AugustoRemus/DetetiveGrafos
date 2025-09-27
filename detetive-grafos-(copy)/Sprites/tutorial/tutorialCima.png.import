@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oeinebj7wa1l"
-path="res://.godot/imported/Clicar E.png-b993f0db1489bbac1c7c252cea8356b6.ctex"
+uid="uid://bvut05gh4pbti"
+path="res://.godot/imported/tutorialCima.png-15f682bb45b8099ae39fff60ad6059b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tutorial/Clicar E.png"
-dest_files=["res://.godot/imported/Clicar E.png-b993f0db1489bbac1c7c252cea8356b6.ctex"]
+source_file="res://Sprites/tutorial/tutorialCima.png"
+dest_files=["res://.godot/imported/tutorialCima.png-15f682bb45b8099ae39fff60ad6059b1.ctex"]
 
 [params]
 

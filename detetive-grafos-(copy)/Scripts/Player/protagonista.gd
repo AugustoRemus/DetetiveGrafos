@@ -19,9 +19,25 @@ var possoConversar: bool
 #se o personagem pode roubar a cor 
 var possoRoubarCor: bool
 
+var corDoMorto = false
+
+signal TransformeiTutorial()
+signal interagiCom(npc)
 
 func _process(delta):
 	#z_index = int(position.y)
 	#print(position)
 	pass
 #debug
+
+
+func _on_transformador_transformei() -> void:
+	TransformeiTutorial.emit()
+
+
+func _on_interador_interagi(npc) -> void:
+	interagiCom.emit(npc)
+
+
+func _on_transformador_virei_verde() -> void:
+	corDoMorto = true

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s4up22jisxe"]
+
+[ext_resource type="Script" uid="uid://cklxi4hdfoild" path="res://Scripts/NPCs/corpo_verde.gd" id="1_7ylfp"]
+[ext_resource type="Texture2D" uid="uid://c3ytclafnvlpb" path="res://Sprites/NPCs/NPCVerde.png" id="2_g45ay"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g45ay"]
+
+[node name="corpoVerde" type="CharacterBody2D" groups=["Alvo"]]
+light_mask = 3
+visibility_layer = 25
+script = ExtResource("1_7ylfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 17
+shape = SubResource("CircleShape2D_g45ay")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_g45ay")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("2_g45ay")

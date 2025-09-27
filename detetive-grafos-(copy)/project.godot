@@ -27,9 +27,10 @@ SomManager="*res://Scenes/som_manager.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=4
 window/size/resizable=false
 window/size/borderless=true
+window/size/transparent=true
+window/size/maximize_disabled=true
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
@@ -40,8 +41,8 @@ enabled=PackedStringArray("res://addons/gdfxr/plugin.cfg", "res://addons/phantom
 [global_group]
 
 Alvo="pode ser transformado"
-NPCs="para pegar todos os npc da fase"
 PositionNode="para pegar posicoes"
+NPCs=""
 
 [gui]
 

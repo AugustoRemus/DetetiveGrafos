@@ -32,6 +32,7 @@ func _on_tester_timeout() -> void:
 	var corpos: Array = []
 	#bota os alvos no novo aray
 	for corpo in todos:
+		print(corpo)
 		if corpo.is_in_group("Alvo"):
 			corpos.append(corpo)
 	
@@ -72,7 +73,8 @@ func _on_tester_timeout() -> void:
 	if corpoAtual != null:
 		#mostra a silhueta do corpo atual
 		#caso for null mudar na iu oq da pra fazer
-		corpoAtual.silhueta(1)
+		if corpoAtual is NPCClasse:
+			corpoAtual.silhueta(1)
 		tags.attLegenda(true)
 		
 	#tem alguem perto

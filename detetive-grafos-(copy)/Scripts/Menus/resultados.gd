@@ -38,7 +38,7 @@ func _ready() -> void:
 		
 		#se perdeu no 0
 		if Niveis.fases[0] == Niveis.faseAtual:
-			GlobalPlayer.hatsDesbloqueados.append(preload("uid://cdmh2bdqw5bk0"))
+			#GlobalPlayer.hatsDesbloqueados.append(preload("uid://cdmh2bdqw5bk0"))
 			resultado.text = "FALHADA!?!?"
 		return
 		#botar label e tals

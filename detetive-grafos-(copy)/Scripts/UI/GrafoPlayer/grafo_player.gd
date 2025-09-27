@@ -14,6 +14,8 @@ var aparecendo = false
 
 var _matrizPlayer
 
+signal mudeiValorTutorial()
+
 
 var vertice: PackedScene = preload("uid://d32giarwu8rbf")
 
@@ -92,6 +94,7 @@ func entregar():
 
 func _on_aresta_manager_mudar_matriz_player(v1: Variant, v2: Variant, novoValor: Variant) -> void:
 	_matrizPlayer[v1][v2] = novoValor
+	mudeiValorTutorial.emit()
 	#Matrizes.printMatriz(_matrizPlayer)
 
 

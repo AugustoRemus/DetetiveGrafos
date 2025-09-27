@@ -8,6 +8,7 @@ extends Node
 @export var labelCor: Label
 
 signal transformei()
+signal vireiVerde()
 #quando clicar E vai se transformar nesse
 #adicionar quadrado no canto para saber em qual cor
 #vc pode se transformar no caso essa cor aqui
@@ -17,6 +18,13 @@ signal transformei()
 func _input(event: InputEvent) -> void:
 	#pega um possivel candidato para salvar a cor
 	if Input.is_action_just_pressed("Q"):
+		
+		#final atlternativo
+		if area.corpoAtual == corpoVerde:
+			sprite.texture = area.corpoAtual.sprite
+			vireiVerde.emit()
+			
+			
 		if area.corpoAtual and area.corpoAtual.id!=player.idNPCTransformado:
 			transformar(area.corpoAtual)
 			
@@ -40,8 +48,6 @@ func transformar(corpo):
 		#atualiza ui
 		tags.attTransformacao(corpo)
 		
-	
-			
 		player.idNPCTransformado = corpo.id
 		
 		transformei.emit()

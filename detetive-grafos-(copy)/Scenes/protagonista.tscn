@@ -225,4 +225,7 @@ text_overrun_behavior = 1
 [connection signal="body_entered" from="area" to="area" method="_on_body_entered"]
 [connection signal="body_exited" from="area" to="area" method="_on_body_exited"]
 [connection signal="timeout" from="area/Tester" to="area" method="_on_tester_timeout"]
+[connection signal="interagi" from="area/Interador" to="." method="_on_interador_interagi"]
+[connection signal="transformei" from="transformador" to="." method="_on_transformador_transformei"]
 [connection signal="transformei" from="transformador" to="Sprite2D" method="_on_transformador_transformei"]
+[connection signal="vireiVerde" from="transformador" to="." method="_on_transformador_virei_verde"]

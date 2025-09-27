@@ -43,7 +43,7 @@ transformacao,botao_dif_hard,botao_dif_izi,botao_dif_medio]
 @onready var musica_basica: AudioStreamPlayer = $MusicaBasica
 
 
-var volumeMusica = 5
+var volumeMusica = 0
 
 func _ready():
 
