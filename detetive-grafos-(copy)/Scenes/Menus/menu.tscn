@@ -81,6 +81,14 @@ text = "- Sair -
 "
 script = ExtResource("3_cayip")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 331.0
+offset_right = 628.0
+offset_bottom = 354.0
+text = "v1.2"
+
 [connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="GridContainer/hats" to="." method="_on_hats_pressed"]
 [connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]

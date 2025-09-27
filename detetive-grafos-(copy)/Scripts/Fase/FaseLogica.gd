@@ -59,6 +59,14 @@ func marcadoID():
 	for npc in ListaNPCs:
 		npc.setID(contador)
 		#print(npc.nomeCor)teraçoes.setMatriz(matrizNPCs)
+			#print(npc.nomeCor)
+		#print(npc.id)
+		contador+= 1
+		
+func startNPCs():
+	#printar_matriz(matrizNPCs)
+	for npc in ListaNPCs:
+		npc.LogicaInteraçoes.setMatriz(matrizNPCs)
 
 func finalizou(_matriz):
 	#botar um cronometro com o tempo da animação e
