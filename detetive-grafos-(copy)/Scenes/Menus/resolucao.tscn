@@ -39,7 +39,8 @@ theme_override_constants/v_separation = 15
 [node name="R0" type="Button" parent="resolucoes"]
 layout_mode = 2
 theme = ExtResource("3_3wcg6")
-text = "640x320"
+text = "640x360
+"
 script = ExtResource("2_1vakh")
 
 [node name="R1" type="Button" parent="resolucoes"]
@@ -89,38 +90,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -31.5
-offset_right = 70.0
-offset_bottom = 31.5
+offset_left = -95.5
+offset_top = -43.75
+offset_right = 95.5
+offset_bottom = 43.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("6_778oj")
 
 [node name="nao" type="Button" parent="salvarPergunta"]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 29.0
-offset_right = 122.0
-offset_bottom = 60.0
+offset_left = 135.53
+offset_top = 45.0
+offset_right = 173.53
+offset_bottom = 76.0
 theme = ExtResource("3_3wcg6")
 text = "nao
 "
 
 [node name="sim" type="Button" parent="salvarPergunta"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 29.0
-offset_right = 44.0
-offset_bottom = 60.0
+offset_left = 18.0
+offset_top = 45.0
+offset_right = 54.0
+offset_bottom = 76.0
 theme = ExtResource("3_3wcg6")
 text = "sim
 "
 
 [node name="Label" type="Label" parent="salvarPergunta"]
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_top = 11.65
+offset_right = 70.0
+offset_bottom = 34.649994
+grow_horizontal = 2
 theme = ExtResource("7_3wcg6")
 text = "confirmar?"
 horizontal_alignment = 1

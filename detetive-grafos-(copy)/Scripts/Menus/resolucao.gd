@@ -7,6 +7,7 @@ extends Control
 const BASE_RES = Vector2i(640, 360)
 
 func _set_resolution(multiplier: int):
+	
 	var new_size = BASE_RES * multiplier
 	
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
