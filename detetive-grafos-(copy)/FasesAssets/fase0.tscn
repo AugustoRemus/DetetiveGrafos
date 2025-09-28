@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_y5uwd"]
 [ext_resource type="Resource" uid="uid://6p5ynvtcsw5u" path="res://Resources/NPCs/laranja.tres" id="16_y5uwd"]
 [ext_resource type="Script" uid="uid://xivxx2mwnjwr" path="res://Scripts/Fase/tutorial/tutorial.gd" id="17_swvk5"]
-[ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="20_fhhmd"]
 [ext_resource type="Texture2D" uid="uid://bwr86k2hqwum4" path="res://Sprites/tutorial/TUTORIAL E RELACAOpngpng.png" id="22_4x2ci"]
 [ext_resource type="Texture2D" uid="uid://cq2n5gcjpt3sk" path="res://Sprites/tutorial/TUTORIALESPACOpng.png" id="23_gy4co"]
 [ext_resource type="Texture2D" uid="uid://dhwlo4usdqa55" path="res://Sprites/tutorial/TUTORIAL Q TRANSFORMARpng.png" id="24_r7jjm"]
@@ -31,6 +30,18 @@ texture = ExtResource("3_vcgx8")
 
 [sub_resource type="TileSet" id="TileSet_mo8d8"]
 sources/0 = SubResource("TileSetAtlasSource_y5uwd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhhmd"]
+bg_color = Color(0.06, 0.06, 0.06, 0.85490197)
+border_color = Color(0.7, 0.7, 0.7, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+corner_detail = 9
+shadow_color = Color(0, 0, 0, 0.16470589)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrtd"]
 atlas = ExtResource("22_4x2ci")
@@ -253,12 +264,12 @@ script = ExtResource("17_swvk5")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -92.0
-offset_right = 92.0
+offset_left = -98.0
+offset_right = 96.0
 offset_bottom = 67.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-theme_override_styles/panel = ExtResource("20_fhhmd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_fhhmd")
 
 [node name="espaço" type="AnimatedSprite2D" parent="tutorial"]
 position = Vector2(318.5, 32.5)

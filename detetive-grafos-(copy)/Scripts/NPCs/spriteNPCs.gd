@@ -6,6 +6,8 @@ extends Sprite2D
 @onready var sombra: Sprite2D = $sombra
 @onready var hat: Sprite2D = $hat
 
+@onready var botoes: AnimatedSprite2D = $Botoes
+
 #pode variar se o npc for mais rapido, adicionar no resource
 #no bob_speed
 var bob_time := 0.0

@@ -48,6 +48,7 @@ var nomeCor: String
 
 @onready var navigation_agent_2d: NavigationAgent2D = $NavigationAgent2D
 
+@onready var botoes: AnimatedSprite2D = $Sprite/Botoes
 
 #uma lista de npcs base que vai dizer quais ele gosta e quais n gosta
 #bota aqui e é utilizado por outro nodo dele para a logica
@@ -84,8 +85,10 @@ func _ready() -> void:
 func silhueta(numero):
 	if numero == 1:
 		silhuetaNodo.visible= true
+		botoes.visible = true
 	if numero == 0:
 		silhuetaNodo.visible= false
+		botoes.visible = false
 		
 		
 func setID(novoId: int):

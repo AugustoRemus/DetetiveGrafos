@@ -32,7 +32,7 @@ func _on_tester_timeout() -> void:
 	var corpos: Array = []
 	#bota os alvos no novo aray
 	for corpo in todos:
-		print(corpo)
+		#print(corpo)
 		if corpo.is_in_group("Alvo"):
 			corpos.append(corpo)
 	
