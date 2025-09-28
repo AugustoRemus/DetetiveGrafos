@@ -129,7 +129,7 @@ position = Vector2(-405, 7)
 position = Vector2(-224, 12)
 
 [node name="corpoVerde" parent="." instance=ExtResource("15_d7pes")]
-position = Vector2(471, -270)
+position = Vector2(472, -300)
 slide_on_ceiling = false
 
 [node name="amarelo" parent="." node_paths=PackedStringArray("nodoComOsDestinosRandom") instance=ExtResource("5_jydag")]
