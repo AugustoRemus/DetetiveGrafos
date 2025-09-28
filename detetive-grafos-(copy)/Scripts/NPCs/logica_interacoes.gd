@@ -10,6 +10,7 @@ extends Node
 #matriz
 var _matriz
 
+signal sendNot()
 
 #copia matriz
 func setMatriz(MatrizNpc):
@@ -29,6 +30,7 @@ func interacaoID(idInteracao:int):
 	elif _matriz[myId][idInteracao] == "0":
 		logicaBalao.exibirBalao(interacaoNegativa)
 	elif _matriz[myId][idInteracao] == "1":
+		sendNot.emit()
 		logicaBalao.exibirBalao(interacaoPositiva)
 	
 	

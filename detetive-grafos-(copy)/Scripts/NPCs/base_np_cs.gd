@@ -93,3 +93,7 @@ func silhueta(numero):
 		
 func setID(novoId: int):
 	id = novoId
+
+
+func _on_logica_interacoes_send_not() -> void:
+	get_parent().notficacao()

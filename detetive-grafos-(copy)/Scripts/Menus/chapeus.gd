@@ -9,7 +9,7 @@ var hatSelecionado: hat
 @export var hat3: hat
 @export var hat4: hat
 @export var hat5: hat
-
+@export var hat6: hat
 
 @export var labelNome:Label
 
@@ -189,3 +189,7 @@ func _on_hat_botao_4_pressed() -> void:
 
 func _on_hat_botao_5_pressed() -> void:
 	botaoClicado(hat5)
+
+
+func _on_hat_botao_6_pressed() -> void:
+	botaoClicado(hat6)

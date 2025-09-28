@@ -4,6 +4,8 @@ extends Node2D
 
 var ListaNPCs: Array[NPCClasse]
 
+@onready var grafo_player: CanvasLayer = $grafoPlayer
+
 ##nivel atual
 @export var lvlAtual : int
 
@@ -19,6 +21,7 @@ var scriptCarregadoLogica
 var faseClasse: fase
 
 @onready var timer: CanvasLayer = $timer
+
 
 
 func _ready() -> void:
@@ -51,7 +54,8 @@ func _ready() -> void:
 	
 	#printar_matriz(matrizNPCs)
 	
-	
+func notficacao():
+	grafo_player.ligarNot()
 	
 func marcadoID():
 	#sortei os ids

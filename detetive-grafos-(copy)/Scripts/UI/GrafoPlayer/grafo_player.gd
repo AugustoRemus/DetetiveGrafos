@@ -16,6 +16,7 @@ var _matrizPlayer
 
 signal mudeiValorTutorial()
 
+@onready var aviso: AnimatedSprite2D = $aviso
 
 var vertice: PackedScene = preload("uid://d32giarwu8rbf")
 
@@ -42,6 +43,12 @@ func _ready() -> void:
 	
 	_startMatrizPlayer(arrayNPCs.size())
 
+
+
+func ligarNot():
+	aviso.aparecer()
+	
+	
 func _input(event: InputEvent) -> void:
 	#mudar dps se pa
 	if Input.is_action_just_pressed("Espaco") or Input.is_action_just_pressed("esq"):

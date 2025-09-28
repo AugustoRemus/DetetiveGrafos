@@ -158,5 +158,6 @@ visible = false
 position = Vector2(1, 0)
 occluder = SubResource("OccluderPolygon2D_4tvce")
 
+[connection signal="sendNot" from="LogicaInteracoes" to="." method="_on_logica_interacoes_send_not"]
 [connection signal="timeout" from="BalaoBasePng/timerBalao" to="BalaoBasePng" method="_on_timer_balao_timeout"]
 [connection signal="timeout" from="timerDestino" to="NavigationAgent2D" method="_on_timer_destino_timeout"]

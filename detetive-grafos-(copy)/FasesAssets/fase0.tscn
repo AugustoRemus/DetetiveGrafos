@@ -148,6 +148,7 @@ animations = [{
 [node name="FaseDebug" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6pv3x")
+lvlAtual = null
 scriptCriacaoGrafo = ExtResource("2_ulo56")
 
 [node name="terra" type="TileMapLayer" parent="."]

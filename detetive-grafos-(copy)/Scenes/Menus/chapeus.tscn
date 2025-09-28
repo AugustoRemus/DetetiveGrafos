@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hi64ifl0o1dn"]
+[gd_scene load_steps=17 format=3 uid="uid://hi64ifl0o1dn"]
 
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="1_4nf6k"]
 [ext_resource type="Script" uid="uid://bpq3o86mflejg" path="res://Scripts/Menus/chapeus.gd" id="1_ceqwd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cadpy1a1vf7v8" path="res://Resources/hats/ampulheta.tres" id="4_aovg5"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="4_bmcql"]
 [ext_resource type="Resource" uid="uid://dc7sogqyx73k5" path="res://Resources/hats/sorriso.tres" id="5_d4jq1"]
+[ext_resource type="Resource" uid="uid://po1xatflb55e" path="res://Resources/hats/cabelo.tres" id="6_f8tdi"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="6_nbd27"]
 [ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="10_633a3"]
 [ext_resource type="Script" uid="uid://ddd78eyltb0is" path="res://Scripts/Menus/moedas_atual.gd" id="11_buaqj"]
@@ -28,7 +29,8 @@ hat1 = ExtResource("2_5wksw")
 hat2 = ExtResource("2_bmcql")
 hat3 = ExtResource("4_aovg5")
 hat4 = ExtResource("5_d4jq1")
-hat5 = ExtResource("3_5wksw")
+hat5 = ExtResource("6_f8tdi")
+hat6 = ExtResource("3_5wksw")
 labelNome = NodePath("Panel/descricaoComprado/nome")
 labelDescricao = NodePath("Panel/descricaoComprado/descricao")
 sprite = NodePath("Panel/descricaoComprado/sprite")
@@ -52,9 +54,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -255.25
-offset_top = -141.0
+offset_top = -154.5
 offset_right = 255.25
-offset_bottom = 141.0
+offset_bottom = 154.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("1_4nf6k")
@@ -64,12 +66,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -33.5
-offset_right = 33.5
-offset_bottom = 23.0
+offset_left = -74.5
+offset_top = 7.415
+offset_right = 74.5
+offset_bottom = 38.415
 grow_horizontal = 2
 theme = ExtResource("14_d4jq1")
-text = "Chapéus"
+theme_override_font_sizes/font_size = 30
+text = "- Chapéus -"
 
 [node name="botoesHats" type="GridContainer" parent="Panel"]
 layout_mode = 1
@@ -115,6 +119,12 @@ script = ExtResource("4_bmcql")
 [node name="hatBotao5" type="Button" parent="Panel/botoesHats"]
 layout_mode = 2
 theme = ExtResource("3_vdgsc")
+text = "Cabelo"
+script = ExtResource("4_bmcql")
+
+[node name="hatBotao6" type="Button" parent="Panel/botoesHats"]
+layout_mode = 2
+theme = ExtResource("3_vdgsc")
 text = "Primeiro olho"
 script = ExtResource("4_bmcql")
 
@@ -143,6 +153,7 @@ offset_right = 60.5
 offset_bottom = 18.0
 grow_horizontal = 2
 theme = ExtResource("14_d4jq1")
+theme_override_font_sizes/font_size = 20
 text = "nome"
 horizontal_alignment = 1
 
@@ -325,6 +336,7 @@ text = "2"
 [connection signal="pressed" from="Panel/botoesHats/hatBotao3" to="." method="_on_hat_botao_3_pressed"]
 [connection signal="pressed" from="Panel/botoesHats/hatBotao4" to="." method="_on_hat_botao_4_pressed"]
 [connection signal="pressed" from="Panel/botoesHats/hatBotao5" to="." method="_on_hat_botao_5_pressed"]
+[connection signal="pressed" from="Panel/botoesHats/hatBotao6" to="." method="_on_hat_botao_6_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/comprar" to="." method="_on_comprar_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/usar" to="." method="_on_usar_pressed"]
 [connection signal="pressed" from="Panel/descricaoComprado/desequipar" to="." method="_on_desequipar_pressed"]

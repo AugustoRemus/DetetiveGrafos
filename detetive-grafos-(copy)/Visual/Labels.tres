@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bujci4me1jles"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bujci4me1jles"]
 
 [ext_resource type="FontFile" uid="uid://dhkcifywklffw" path="res://Visual/Fontes/Mechanical-g5Y5.otf" id="1_g6o35"]
+[ext_resource type="FontFile" uid="uid://dgfymulm64odo" path="res://Visual/Fontes/Umbara-AReLL.otf" id="1_lchde"]
 [ext_resource type="StyleBox" uid="uid://c5s2jdijooef2" path="res://Visual/TestePainelFundo.tres" id="2_37tbo"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="2_a4mus"]
 
@@ -30,14 +31,14 @@ shadow_size = 5
 
 [resource]
 FoldableContainer/font_sizes/font_size = 22
-FoldableContainer/fonts/font = ExtResource("1_g6o35")
+FoldableContainer/fonts/font = ExtResource("1_lchde")
 FoldableContainer/styles/focus = null
 FoldableContainer/styles/panel = SubResource("StyleBoxFlat_a4mus")
 FoldableContainer/styles/title_collapsed_hover_panel = SubResource("StyleBoxFlat_37tbo")
 FoldableContainer/styles/title_collapsed_panel = SubResource("StyleBoxFlat_37tbo")
 FoldableContainer/styles/title_hover_panel = ExtResource("2_37tbo")
 FoldableContainer/styles/title_panel = ExtResource("2_37tbo")
-Label/fonts/font = ExtResource("1_g6o35")
+Label/fonts/font = ExtResource("1_lchde")
 RichTextLabel/fonts/normal_font = ExtResource("1_g6o35")
 RichTextLabel/styles/background = ExtResource("2_a4mus")
 RichTextLabel/styles/focus = null

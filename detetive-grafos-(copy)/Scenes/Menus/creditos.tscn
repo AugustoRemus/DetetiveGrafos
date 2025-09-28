@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0l1hegdhd3uu"]
+
+[ext_resource type="Script" uid="uid://d2akqfhy0jts0" path="res://Scripts/Menus/creditos.gd" id="1_gteax"]
+[ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_spryi"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="3_q55gq"]
+[ext_resource type="Script" uid="uid://dujeyeln10sxk" path="res://Scripts/Menus/titulo.gd" id="4_4uogq"]
+[ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="5_enrqm"]
+[ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="6_qjwbl"]
+[ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="7_spryi"]
+[ext_resource type="Texture2D" uid="uid://cubllxwecoslf" path="res://Sprites/logoUFFS.png" id="8_q55gq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5oi3t"]
+bg_color = Color(0.06, 0.06, 0.06, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.7, 0.7, 0.7, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 9
+expand_margin_left = 5.0
+expand_margin_top = 10.0
+expand_margin_right = 5.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0, 0, 0, 0.16470589)
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Theme" id="Theme_4uogq"]
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gteax")
+
+[node name="painelFundo" parent="." instance=ExtResource("2_spryi")]
+layout_mode = 1
+
+[node name="texto" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -77.0
+offset_right = 274.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5oi3t")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="texto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_q55gq")
+text = "Orientador: Andrei Braga
+Arte: Paula Frison Padilha 
+
+A persistencia é a chave do progresso.
+Muito obrigado ao professor Andrei por tornar este projeto possível e a você que está jogando. Este jogo é de código aberto, sinta-se livre para usar o código como quiser. Links abaixo!
+"
+fit_content = true
+
+[node name="titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 35.24
+offset_right = 67.5
+offset_bottom = 58.24001
+grow_horizontal = 2
+theme = ExtResource("3_q55gq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "- Créditos -"
+horizontal_alignment = 1
+script = ExtResource("4_4uogq")
+
+[node name="botoes" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.5
+offset_top = -87.0
+offset_right = 25.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/v_separation = 10
+
+[node name="linkGit" type="Button" parent="botoes"]
+layout_mode = 2
+theme = ExtResource("5_enrqm")
+text = "GitHub"
+script = ExtResource("6_qjwbl")
+
+[node name="linkIticio" type="Button" parent="botoes"]
+layout_mode = 2
+theme = ExtResource("5_enrqm")
+text = "Itch.io"
+script = ExtResource("6_qjwbl")
+
+[node name="LogoUffs" type="Sprite2D" parent="botoes"]
+position = Vector2(307.49997, -234.00002)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("8_q55gq")
+
+[node name="voltar2" type="Button" parent="botoes"]
+layout_mode = 2
+theme = ExtResource("5_enrqm")
+text = "Voltar"
+script = ExtResource("6_qjwbl")
+carregadorScena = true
+scenaCarregar = ExtResource("7_spryi")
+
+[node name="botaoSecretoFuturochave" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 149.0
+offset_right = 281.0
+offset_bottom = 177.0
+theme = SubResource("Theme_4uogq")
+
+[connection signal="pressed" from="botoes/linkGit" to="." method="_on_link_git_pressed"]
+[connection signal="pressed" from="botoes/linkIticio" to="." method="_on_link_iticio_pressed"]
+[connection signal="pressed" from="botoes/voltar2" to="." method="_on_voltar_2_pressed"]
+[connection signal="pressed" from="botaoSecretoFuturochave" to="." method="_on_botao_secreto_futurochave_pressed"]

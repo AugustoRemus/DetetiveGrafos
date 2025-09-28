@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cwqyfflrmmchj"]
+[gd_scene load_steps=19 format=3 uid="uid://cwqyfflrmmchj"]
 
 [ext_resource type="Script" uid="uid://cth6dtgl3qcuv" path="res://Scripts/UI/GrafoPlayer/grafo_player.gd" id="1_ds4nc"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="2_6rqgk"]
 [ext_resource type="Script" uid="uid://b02agc5y4g24y" path="res://Scripts/UI/GrafoPlayer/circular_container.gd" id="2_i1jcp"]
 [ext_resource type="Script" uid="uid://ndowdpq8min1" path="res://Scripts/UI/GrafoPlayer/color_rect.gd" id="2_l735g"]
+[ext_resource type="Texture2D" uid="uid://ub5cke426eyw" path="res://Sprites/tutorial/notificaocao.png" id="3_uhnkw"]
+[ext_resource type="Script" uid="uid://cx6lpwo3ieeup" path="res://Scripts/Player/avisoGrafo.gd" id="4_8nv0v"]
 [ext_resource type="Script" uid="uid://bp10ijjl3k8n0" path="res://Scripts/UI/GrafoPlayer/aresta_manager.gd" id="4_icoyr"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_h0wb3"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_5nq24"]
@@ -11,6 +13,42 @@
 [ext_resource type="Script" uid="uid://myt5uoeahs21" path="res://Scripts/UI/GrafoPlayer/conformar_desistir.gd" id="8_ha5to"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="9_6qs1o"]
 [ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://Scripts/UI/GrafoPlayer/confirmar_entrega.gd" id="11_l735g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nv0v"]
+atlas = ExtResource("3_uhnkw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s68j1"]
+atlas = ExtResource("3_uhnkw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7iae"]
+atlas = ExtResource("3_uhnkw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t34pt"]
+atlas = ExtResource("3_uhnkw")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n231c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nv0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s68j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7iae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t34pt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="grafoPlayer" type="CanvasLayer" node_paths=PackedStringArray("nodoCircularContainer")]
 script = ExtResource("1_ds4nc")
@@ -25,6 +63,14 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.6156863)
 script = ExtResource("2_l735g")
 posicao_final = Vector2(0, 400)
+
+[node name="aviso" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 339.42)
+sprite_frames = SubResource("SpriteFrames_n231c")
+autoplay = "default"
+script = ExtResource("4_8nv0v")
+
+[node name="Timer" type="Timer" parent="aviso"]
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -236,6 +282,7 @@ text = "Voltar
 "
 script = ExtResource("7_5nq24")
 
+[connection signal="timeout" from="aviso/Timer" to="aviso" method="_on_timer_timeout"]
 [connection signal="mudarMatrizPlayer" from="Panel/ArestaManager" to="." method="_on_aresta_manager_mudar_matriz_player"]
 [connection signal="pressed" from="Panel/Entregar2" to="Panel/ConfirmarEntrega" method="_on_entregar_2_pressed"]
 [connection signal="pressed" from="Panel/desistir" to="." method="_on_desistir_pressed"]

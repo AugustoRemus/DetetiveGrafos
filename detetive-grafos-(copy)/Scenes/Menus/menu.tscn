@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp04rhsw40lwt"]
+[gd_scene load_steps=8 format=3 uid="uid://dp04rhsw40lwt"]
 
 [ext_resource type="Script" uid="uid://br310fqy8o0wb" path="res://Scripts/Menus/menu.gd" id="1_1rerr"]
 [ext_resource type="PackedScene" uid="uid://cn0yfmj4x3uel" path="res://Scenes/Menus/painel_fundo.tscn" id="2_wudlr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="3_cayip"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="3_hg7h7"]
 [ext_resource type="Script" uid="uid://dujeyeln10sxk" path="res://Scripts/Menus/titulo.gd" id="4_wudlr"]
+[ext_resource type="PackedScene" uid="uid://b0l1hegdhd3uu" path="res://Scenes/Menus/creditos.tscn" id="7_jsdrk"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -67,12 +68,14 @@ theme = ExtResource("2_xhh6f")
 text = "- Configurações -"
 script = ExtResource("3_cayip")
 
-[node name="Button" type="Button" parent="GridContainer"]
+[node name="Creditos" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_xhh6f")
 text = "- Créditos -
 "
 script = ExtResource("3_cayip")
+carregadorScena = true
+scenaCarregar = ExtResource("7_jsdrk")
 
 [node name="sair" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -92,6 +95,6 @@ text = "v1.2"
 [connection signal="pressed" from="GridContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="GridContainer/hats" to="." method="_on_hats_pressed"]
 [connection signal="pressed" from="GridContainer/config" to="." method="_on_config_pressed"]
-[connection signal="pressed" from="GridContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GridContainer/Creditos" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="GridContainer/sair" to="GridContainer/sair" method="_on_mouse_entered"]
 [connection signal="pressed" from="GridContainer/sair" to="." method="_on_sair_pressed"]
