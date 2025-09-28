@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://dujeyeln10sxk" path="res://Scripts/Menus/titulo.gd" id="4_4uogq"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="5_enrqm"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="6_qjwbl"]
-
-
+[ext_resource type="PackedScene" uid="uid://dp04rhsw40lwt" path="res://Scenes/Menus/menu.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://cubllxwecoslf" path="res://Sprites/logoUFFS.png" id="8_q55gq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5oi3t"]
@@ -123,7 +122,13 @@ position = Vector2(307.49997, -234.00002)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("8_q55gq")
 
-
+[node name="voltar" type="Button" parent="botoes"]
+layout_mode = 2
+theme = ExtResource("5_enrqm")
+text = "Voltar"
+script = ExtResource("6_qjwbl")
+carregadorScena = true
+scenaCarregar = ExtResource("7")
 
 [node name="botaoSecretoFuturochave" type="TextureButton" parent="."]
 layout_mode = 0
@@ -135,5 +140,4 @@ theme = SubResource("Theme_4uogq")
 
 [connection signal="pressed" from="botoes/linkGit" to="." method="_on_link_git_pressed"]
 [connection signal="pressed" from="botoes/linkIticio" to="." method="_on_link_iticio_pressed"]
-[connection signal="pressed" from="botoes/voltar2" to="." method="_on_voltar_2_pressed"]
 [connection signal="pressed" from="botaoSecretoFuturochave" to="." method="_on_botao_secreto_futurochave_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cwqyfflrmmchj"]
+[gd_scene load_steps=18 format=3 uid="uid://cwqyfflrmmchj"]
 
 [ext_resource type="Script" uid="uid://cth6dtgl3qcuv" path="res://Scripts/UI/GrafoPlayer/grafo_player.gd" id="1_ds4nc"]
 [ext_resource type="StyleBox" uid="uid://dolq1wjvg4ca3" path="res://Visual/fundo.tres" id="2_6rqgk"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://bp10ijjl3k8n0" path="res://Scripts/UI/GrafoPlayer/aresta_manager.gd" id="4_icoyr"]
 [ext_resource type="Theme" uid="uid://bq6xwlkcamw5v" path="res://Visual/saveBotao.tres" id="6_h0wb3"]
 [ext_resource type="Script" uid="uid://bjb4beg5ct1nm" path="res://Visual/teste_botao.gd" id="7_5nq24"]
-[ext_resource type="Theme" uid="uid://blmicg85n0boj" path="res://Visual/Fontes/botao.tres" id="8_5nq24"]
 [ext_resource type="Script" uid="uid://myt5uoeahs21" path="res://Scripts/UI/GrafoPlayer/conformar_desistir.gd" id="8_ha5to"]
 [ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="9_6qs1o"]
 [ext_resource type="Script" uid="uid://xtxfkcldycc8" path="res://Scripts/UI/GrafoPlayer/confirmar_entrega.gd" id="11_l735g"]
@@ -65,6 +64,7 @@ script = ExtResource("2_l735g")
 posicao_final = Vector2(0, 400)
 
 [node name="aviso" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(320, 339.42)
 sprite_frames = SubResource("SpriteFrames_n231c")
 autoplay = "default"
@@ -124,10 +124,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 393.5
-offset_top = -53.5
-offset_right = 475.50018
-offset_bottom = -22.5
+offset_left = 389.18
+offset_top = -41.0
+offset_right = 471.18018
+offset_bottom = -10.0
 grow_vertical = 0
 theme = ExtResource("6_h0wb3")
 text = "Entregar"
@@ -140,10 +140,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -476.165
-offset_top = -53.5
-offset_right = -394.165
-offset_bottom = -22.5
+offset_left = -473.025
+offset_top = -41.0
+offset_right = -391.02515
+offset_bottom = -10.0000305
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("6_h0wb3")
@@ -158,10 +158,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -123.0
-offset_right = 173.5
-offset_bottom = 123.0
+offset_left = -133.75
+offset_top = -85.0
+offset_right = 133.75
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rqgk")
@@ -172,9 +172,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -153.5
-offset_right = 153.5
-offset_bottom = 18.0
+offset_left = -114.25
+offset_top = 10.455
+offset_right = 114.25
+offset_bottom = 28.455
 grow_horizontal = 2
 theme = ExtResource("9_6qs1o")
 text = "Tem Certeza que deseja desistir?"
@@ -186,10 +187,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
+offset_left = -79.5
 offset_top = -20.0
-offset_right = 36.0
-offset_bottom = 20.0
+offset_right = 79.5
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 100
@@ -197,13 +198,14 @@ columns = 2
 
 [node name="simDesistir" type="Button" parent="Panel/conformar Desistir/GridContainer"]
 layout_mode = 2
-theme = ExtResource("8_5nq24")
+size_flags_vertical = 3
+theme = ExtResource("6_h0wb3")
 text = "Sim"
 script = ExtResource("7_5nq24")
 
 [node name="naoDesistir" type="Button" parent="Panel/conformar Desistir/GridContainer"]
 layout_mode = 2
-theme = ExtResource("8_5nq24")
+theme = ExtResource("6_h0wb3")
 text = "Não
 "
 script = ExtResource("7_5nq24")
@@ -216,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -173.5
-offset_top = -123.0
-offset_right = 173.5
-offset_bottom = 123.0
+offset_left = -149.5
+offset_top = -85.0
+offset_right = 149.5
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_6rqgk")
@@ -230,9 +232,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_right = 192.0
-offset_bottom = 71.0
+offset_left = -144.25
+offset_top = 7.33
+offset_right = 144.25
+offset_bottom = 78.33
 grow_horizontal = 2
 theme = ExtResource("9_6qs1o")
 text = "Tem certeza que deseja finalizar a fase?"
@@ -256,13 +259,14 @@ columns = 2
 
 [node name="simEntrega" type="Button" parent="Panel/ConfirmarEntrega/GridContainer"]
 layout_mode = 2
-theme = ExtResource("8_5nq24")
+size_flags_vertical = 3
+theme = ExtResource("6_h0wb3")
 text = "Sim"
 script = ExtResource("7_5nq24")
 
 [node name="naoEntrega" type="Button" parent="Panel/ConfirmarEntrega/GridContainer"]
 layout_mode = 2
-theme = ExtResource("8_5nq24")
+theme = ExtResource("6_h0wb3")
 text = "Não
 "
 script = ExtResource("7_5nq24")
@@ -272,10 +276,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -70.899994
-offset_top = 5.32
-offset_right = -7.899994
-offset_bottom = 28.32
+offset_left = -80.03
+offset_top = 8.69
+offset_right = -17.029999
+offset_bottom = 31.689999
 grow_horizontal = 0
 theme = ExtResource("6_h0wb3")
 text = "Voltar

@@ -11,12 +11,12 @@ func _on_botao_secreto_futurochave_pressed() -> void:
 	
 
 func _on_link_iticio_pressed() -> void:
-	#OS.shell_open(linkItcio)
+	OS.shell_open(linkItcio)
 	pass
 
 
 func _on_link_git_pressed() -> void:
-	#OS.shell_open(linkGitHub)
+	OS.shell_open(linkGitHub)
 	pass
 
 
