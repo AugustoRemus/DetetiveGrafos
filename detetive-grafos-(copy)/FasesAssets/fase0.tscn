@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://7o1tn60hux7k"]
+[gd_scene load_steps=39 format=4 uid="uid://7o1tn60hux7k"]
 
 [ext_resource type="Script" uid="uid://bl17n5dpuvk5e" path="res://Scripts/Fase/FaseLogica.gd" id="1_6pv3x"]
 [ext_resource type="Script" uid="uid://lqenpbtfripi" path="res://Scripts/Fase/ManualMatriz.gd" id="2_ulo56"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://p06c8bn2f2o4" path="res://Scenes/base_np_cs.tscn" id="7_empmn"]
 [ext_resource type="Script" uid="uid://coj7pn4ojw7tl" path="res://Scripts/Fase/SumirTileSet.gd" id="7_n3xwa"]
 [ext_resource type="Resource" uid="uid://dhkt6xknhj750" path="res://Resources/NPCs/testeAmarelo.tres" id="8_rkyc0"]
+[ext_resource type="Theme" uid="uid://bujci4me1jles" path="res://Visual/Labels.tres" id="11_y5uwd"]
 [ext_resource type="Resource" uid="uid://b54b5ae8pdg2b" path="res://Resources/NPCs/testeVerde.tres" id="12_e04pu"]
 [ext_resource type="PackedScene" uid="uid://d275guh72iwdt" path="res://Scenes/nodePosition.tscn" id="12_y5uwd"]
 [ext_resource type="Resource" uid="uid://6p5ynvtcsw5u" path="res://Resources/NPCs/laranja.tres" id="16_y5uwd"]
@@ -182,7 +183,37 @@ script = ExtResource("7_n3xwa")
 grafoPlayer = NodePath("../grafoPlayer")
 metadata/_edit_use_anchors_ = true
 
+[node name="t1" type="Label" parent="timer"]
+offset_left = 450.0
+offset_top = 9.0
+offset_right = 629.0
+offset_bottom = 57.0
+theme = ExtResource("11_y5uwd")
+text = "Descubra as relações dos 
+NPCs e marque no grafo!"
+
+[node name="t2" type="Label" parent="timer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -44.0
+offset_right = 131.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("11_y5uwd")
+theme_override_font_sizes/font_size = 14
+text = "Clique \"Q\" para se transformar, \"E\" para
+ interagir e \"Espaço para abrir o grafo\""
+
 [node name="grafoPlayer" parent="." instance=ExtResource("4_a3jqw")]
+
+[node name="t3" type="Label" parent="grafoPlayer"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="ArrayPontos" type="Node" parent="."]
 
